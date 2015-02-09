@@ -80,11 +80,11 @@
             </objects>
             <point key="canvasLocation" x="853.5" y="1081"/>
         </scene>
-        <!--Item-->
+        <!--Games-->
         <scene sceneID="d5H-4Z-NK9">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hN6-Za-cIc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="Rpz-eo-BZe"/>
+                    <tabBarItem key="tabBarItem" title="Games" image="games" id="Rpz-eo-BZe"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iaq-zd-EbH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -134,7 +134,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gl-kz-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="505.5" y="-1093"/>
+            <point key="canvasLocation" x="493.5" y="-1093"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dsq-ac-AY5">
@@ -157,11 +157,11 @@
             </objects>
             <point key="canvasLocation" x="-292.5" y="-387"/>
         </scene>
-        <!--Item-->
+        <!--Search-->
         <scene sceneID="Ep7-Pe-XXo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Fw-93-RS3" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="bBi-KT-nFa"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="searchGames" id="bBi-KT-nFa"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="zHP-qD-aqo">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -176,11 +176,11 @@
             </objects>
             <point key="canvasLocation" x="-667.5" y="361"/>
         </scene>
-        <!--Item-->
+        <!--Player Bio-->
         <scene sceneID="8b8-ao-Msh">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="eKX-wh-tEp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="diI-e2-PY0"/>
+                    <tabBarItem key="tabBarItem" title="Player Bio" image="playa1" id="diI-e2-PY0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S0I-kd-yFL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -195,11 +195,11 @@
             </objects>
             <point key="canvasLocation" x="94.5" y="361"/>
         </scene>
-        <!--Item-->
+        <!--History-->
         <scene sceneID="n60-hM-BK5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9ND-M2-Rxf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="UK8-Be-eQ0"/>
+                    <tabBarItem key="tabBarItem" title="History" image="gamesPlayed" id="UK8-Be-eQ0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNg-Wy-SpD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -233,4 +233,10 @@
             <point key="canvasLocation" x="-1078.5" y="-1093"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="games" width="35" height="35"/>
+        <image name="gamesPlayed" width="35" height="35"/>
+        <image name="playa1" width="35" height="36"/>
+        <image name="searchGames" width="40" height="40"/>
+    </resources>
 </document>
