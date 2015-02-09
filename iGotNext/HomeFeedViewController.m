@@ -7,8 +7,11 @@
 //
 
 #import "HomeFeedViewController.h"
+#import "HomeFeedTableViewCell.h"
 
-@interface HomeFeedViewController ()
+@interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tableView;
 
 @end
 
@@ -16,6 +19,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return 1;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
+
+    return cell;
 }
 
 @end

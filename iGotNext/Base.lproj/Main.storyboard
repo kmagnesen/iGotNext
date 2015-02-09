@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nld-Mb-46e">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Home Feed View Controller-->
+        <!--Game Feed-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="HomeFeedViewController" sceneMemberID="viewController">
@@ -15,15 +16,223 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d7Q-8T-7fh">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeFeedCell" id="pyu-Qu-XWF" customClass="HomeFeedTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pyu-Qu-XWF" id="dze-A1-ty5">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iki-C6-JKS">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="13" y="8" width="260" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lBl-7F-c8Z">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="13" y="51" width="220" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Frame" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAk-F4-oJ6">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="242" y="51" width="150" height="21"/>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="# Attending" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omz-cY-MGx">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.40000000596046448" green="0.40000000596046448" blue="0.40000000596046448" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="widthClass=compact" fixedFrame="YES">
+                                                        <rect key="frame" x="281" y="8" width="89" height="22"/>
+                                                    </variation>
+                                                </label>
+                                            </subviews>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="Iki-C6-JKS"/>
+                                                    <exclude reference="lBl-7F-c8Z"/>
+                                                    <exclude reference="jAk-F4-oJ6"/>
+                                                    <exclude reference="omz-cY-MGx"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="Iki-C6-JKS"/>
+                                                    <include reference="lBl-7F-c8Z"/>
+                                                    <include reference="jAk-F4-oJ6"/>
+                                                    <include reference="omz-cY-MGx"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="eventAttendingLabel" destination="omz-cY-MGx" id="Jc8-VB-l4m"/>
+                                            <outlet property="eventLocationLabel" destination="lBl-7F-c8Z" id="gsZ-IF-JDH"/>
+                                            <outlet property="eventNameLabel" destination="Iki-C6-JKS" id="cOV-0i-Ex5"/>
+                                            <outlet property="eventTimeLabel" destination="jAk-F4-oJ6" id="HKT-kM-trD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="lFc-Sd-xSH"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="Mci-NN-voD"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="Mo4-fK-Lak"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d7Q-8T-7fh" secondAttribute="trailing" constant="-16" id="OLs-V7-o4b"/>
+                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="X5U-Z5-TeB"/>
+                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="bottom" secondItem="kh9-bI-dsS" secondAttribute="bottomMargin" id="cMD-9f-xbf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="d7Q-8T-7fh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Mo4-fK-Lak"/>
+                                <exclude reference="OLs-V7-o4b"/>
+                                <exclude reference="X5U-Z5-TeB"/>
+                                <exclude reference="cMD-9f-xbf"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="d7Q-8T-7fh"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Mo4-fK-Lak"/>
+                                <include reference="OLs-V7-o4b"/>
+                                <include reference="X5U-Z5-TeB"/>
+                                <include reference="cMD-9f-xbf"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="XMT-pX-k4X"/>
+                    <navigationItem key="navigationItem" title="Game Feed" id="XMT-pX-k4X">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="oun-2h-rYd">
+                            <connections>
+                                <segue destination="xfe-W1-Xqe" kind="show" identifier="NewEventSegue" id="ptk-be-C0o"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="d7Q-8T-7fh" id="5lP-mc-WMn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1426.5" y="1073"/>
         </scene>
-        <!--Search View Controller-->
+        <!--New Pick-up Game-->
+        <scene sceneID="Axy-cw-4OO">
+            <objects>
+                <viewController id="xfe-W1-Xqe" customClass="NewEventViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="k82-rn-DfQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="iNj-hc-FJh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SVU-DD-K4D">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHk-ZX-rdX">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="107" width="368" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Jy-YQA">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="145" width="368" height="30"/>
+                                </variation>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Etq-0F-g8t">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="445207503.56295598">
+                                    <!--2015-02-09 20:45:03 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="381" width="400" height="162"/>
+                                </variation>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzd-6j-0mC">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="211" width="400" height="162"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="xfe-W1-Xqe" id="yGh-Ng-wy7"/>
+                                    <outlet property="delegate" destination="xfe-W1-Xqe" id="U7X-Bb-AE6"/>
+                                </connections>
+                            </pickerView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport Chosen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DD-y6-btv">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="183" width="368" height="30"/>
+                                </variation>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="ZHk-ZX-rdX"/>
+                                <exclude reference="R8s-Jy-YQA"/>
+                                <exclude reference="Etq-0F-g8t"/>
+                                <exclude reference="Yzd-6j-0mC"/>
+                                <exclude reference="0DD-y6-btv"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="ZHk-ZX-rdX"/>
+                                <include reference="R8s-Jy-YQA"/>
+                                <include reference="Etq-0F-g8t"/>
+                                <include reference="Yzd-6j-0mC"/>
+                                <include reference="0DD-y6-btv"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Pick-up Game" id="aBi-pt-wVU">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="W6c-mm-Qms">
+                            <connections>
+                                <action selector="onPostButtonTapped:" destination="xfe-W1-Xqe" id="yEx-hz-saa"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="pickerView" destination="Yzd-6j-0mC" id="scv-Pu-bfS"/>
+                        <outlet property="sportLabel" destination="0DD-y6-btv" id="ynW-UJ-4nm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4le-mi-KBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1426.5" y="1775"/>
+        </scene>
+        <!--Search-->
         <scene sceneID="VRo-40-ZqE">
             <objects>
                 <viewController id="aU9-pL-MPc" customClass="SearchViewController" sceneMemberID="viewController">
@@ -36,13 +245,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="uu0-oK-7a6"/>
+                    <navigationItem key="navigationItem" title="Search" id="uu0-oK-7a6"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nf-TI-GzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-667.5" y="1081"/>
         </scene>
-        <!--Profile View Controller-->
+        <!--Player Bio-->
         <scene sceneID="NPu-3n-YlF">
             <objects>
                 <viewController id="nWv-mk-66D" customClass="ProfileViewController" sceneMemberID="viewController">
@@ -55,13 +264,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2mU-31-yty"/>
+                    <navigationItem key="navigationItem" title="Player Bio" id="2mU-31-yty"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPu-Z4-Hzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="94.5" y="1081"/>
         </scene>
-        <!--Activity Feed View Controller-->
+        <!--Game History-->
         <scene sceneID="ZAs-C4-IpT">
             <objects>
                 <viewController id="aYF-Dt-POk" customClass="ActivityFeedViewController" sceneMemberID="viewController">
@@ -74,7 +283,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="VkT-Y8-QrQ"/>
+                    <navigationItem key="navigationItem" title="Game History" id="VkT-Y8-QrQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F5-RU-1V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
