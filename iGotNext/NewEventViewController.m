@@ -7,6 +7,7 @@
 //
 
 #import "NewEventViewController.h"
+#import "Event.h"
 
 @interface NewEventViewController ()
 
@@ -20,7 +21,22 @@
 }
 
 - (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
-    
+    Event *event = [Event object];
+
+    event.eventCreator = [PFUser currentUser];
+//    event.eventTitle =
+//    event.eventDescription =
+//    event.eventLocation =
+//    event.eventDate =
+//    event.eventCategory =
+
+    [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            NSLog(@"things are working");
+        } else {
+            NSLog(@"new photo never saved");
+        }
+    }];
 }
 
 
