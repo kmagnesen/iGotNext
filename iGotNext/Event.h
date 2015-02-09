@@ -16,7 +16,7 @@
 @property NSString *eventDescription;
 @property NSString *eventLocation;
 @property PFUser *eventCreator;
-@property NSNumber *eventattendance;
+@property NSNumber *eventAttendance;
 @property NSString *eventCategory;
 @property NSDate *eventDate;
 

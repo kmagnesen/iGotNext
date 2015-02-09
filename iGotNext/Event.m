@@ -14,7 +14,7 @@
 @dynamic eventDescription;
 @dynamic eventCreator;
 @dynamic eventLocation;
-@dynamic eventattendance;
+@dynamic eventAttendance;
 @dynamic eventCategory;
 @dynamic eventDate;
 
