@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC5244D81A89456900F52859 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5244D71A89456900F52859 /* Event.m */; };
 		F9C2F54A1A8915BE00342CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5491A8915BE00342CE8 /* main.m */; };
 		F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */; };
 		F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */; };
@@ -48,6 +49,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC5244D61A89456900F52859 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
+		CC5244D71A89456900F52859 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		F9C2F5441A8915BE00342CE8 /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C2F5481A8915BE00342CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C2F5491A8915BE00342CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -123,6 +126,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC5244DC1A89458E00F52859 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				CC5244D61A89456900F52859 /* Event.h */,
+				CC5244D71A89456900F52859 /* Event.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		F9C2F53B1A8915BE00342CE8 = {
 			isa = PBXGroup;
 			children = (
@@ -163,6 +175,7 @@
 				F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */,
 				F9C2F5791A8920DE00342CE8 /* InterestsViewController.h */,
 				F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */,
+				CC5244DC1A89458E00F52859 /* Model */,
 				F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */,
 				F9C2F5541A8915BE00342CE8 /* Images.xcassets */,
 				F9C2F5561A8915BE00342CE8 /* LaunchScreen.xib */,
@@ -327,6 +340,7 @@
 				F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */,
 				F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */,
 				F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */,
+				CC5244D81A89456900F52859 /* Event.m in Sources */,
 				F9C2F54A1A8915BE00342CE8 /* main.m in Sources */,
 				F9C2F57B1A8920DE00342CE8 /* InterestsViewController.m in Sources */,
 				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
@@ -530,6 +544,7 @@
 				F9C2F5691A8915BF00342CE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F9C2F56A1A8915BF00342CE8 /* Build configuration list for PBXNativeTarget "iGotNextTests" */ = {
 			isa = XCConfigurationList;
@@ -538,6 +553,7 @@
 				F9C2F56C1A8915BF00342CE8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
