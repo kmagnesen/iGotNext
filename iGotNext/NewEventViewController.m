@@ -10,6 +10,9 @@
 #import "Event.h"
 
 @interface NewEventViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
+@property (strong, nonatomic) IBOutlet UITextField *locationTextField;
+@property (strong, nonatomic) IBOutlet UITextField *descriptionTextField;
 
 @end
 

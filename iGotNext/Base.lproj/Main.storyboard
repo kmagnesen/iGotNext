@@ -156,15 +156,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="107" width="368" height="30"/>
-                                </variation>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Jy-YQA">
-                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="16" y="145" width="368" height="30"/>
+                                    <rect key="frame" x="16" y="72" width="368" height="30"/>
                                 </variation>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Etq-0F-g8t">
@@ -195,24 +187,42 @@
                                     <rect key="frame" x="16" y="183" width="368" height="30"/>
                                 </variation>
                             </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Description" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cxU-if-0ON">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="148" width="368" height="30"/>
+                                </variation>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="R8s-Jy-YQA">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="16" y="110" width="368" height="30"/>
+                                </variation>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ZHk-ZX-rdX"/>
-                                <exclude reference="R8s-Jy-YQA"/>
                                 <exclude reference="Etq-0F-g8t"/>
                                 <exclude reference="Yzd-6j-0mC"/>
                                 <exclude reference="0DD-y6-btv"/>
+                                <exclude reference="cxU-if-0ON"/>
+                                <exclude reference="R8s-Jy-YQA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ZHk-ZX-rdX"/>
-                                <include reference="R8s-Jy-YQA"/>
                                 <include reference="Etq-0F-g8t"/>
                                 <include reference="Yzd-6j-0mC"/>
                                 <include reference="0DD-y6-btv"/>
+                                <include reference="cxU-if-0ON"/>
+                                <include reference="R8s-Jy-YQA"/>
                             </mask>
                         </variation>
                     </view>
@@ -224,6 +234,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="descriptionTextField" destination="cxU-if-0ON" id="KbJ-9Z-mSb"/>
+                        <outlet property="eventNameTextField" destination="ZHk-ZX-rdX" id="c0O-Ec-bSS"/>
+                        <outlet property="locationTextField" destination="R8s-Jy-YQA" id="2pT-HG-GVg"/>
                         <outlet property="pickerView" destination="Yzd-6j-0mC" id="scv-Pu-bfS"/>
                         <outlet property="sportLabel" destination="0DD-y6-btv" id="ynW-UJ-4nm"/>
                     </connections>
