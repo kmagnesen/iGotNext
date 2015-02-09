@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		F9C2F54A1A8915BE00342CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5491A8915BE00342CE8 /* main.m */; };
 		F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */; };
-		F9C2F5501A8915BE00342CE8 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54F1A8915BE00342CE8 /* ViewController.m */; };
+		F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */; };
 		F9C2F5531A8915BE00342CE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9C2F5511A8915BE00342CE8 /* Main.storyboard */; };
 		F9C2F5551A8915BE00342CE8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C2F5541A8915BE00342CE8 /* Images.xcassets */; };
 		F9C2F5581A8915BE00342CE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C2F5561A8915BE00342CE8 /* LaunchScreen.xib */; };
 		F9C2F5641A8915BE00342CE8 /* iGotNextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5631A8915BE00342CE8 /* iGotNextTests.m */; };
+		F9C2F56F1A891F2B00342CE8 /* HomeFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F56E1A891F2B00342CE8 /* HomeFeedViewController.m */; };
+		F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5711A891F3900342CE8 /* SearchViewController.m */; };
+		F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5741A891F4900342CE8 /* ProfileViewController.m */; };
+		F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5771A891F8100342CE8 /* ActivityFeedViewController.m */; };
+		F9C2F57B1A8920DE00342CE8 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +37,24 @@
 		F9C2F5491A8915BE00342CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		F9C2F54B1A8915BE00342CE8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		F9C2F54E1A8915BE00342CE8 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		F9C2F54F1A8915BE00342CE8 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		F9C2F54E1A8915BE00342CE8 /* LoginViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
+		F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		F9C2F5521A8915BE00342CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F9C2F5541A8915BE00342CE8 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F9C2F5571A8915BE00342CE8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		F9C2F55D1A8915BE00342CE8 /* iGotNextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iGotNextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C2F5621A8915BE00342CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C2F5631A8915BE00342CE8 /* iGotNextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iGotNextTests.m; sourceTree = "<group>"; };
+		F9C2F56D1A891F2B00342CE8 /* HomeFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeFeedViewController.h; sourceTree = "<group>"; };
+		F9C2F56E1A891F2B00342CE8 /* HomeFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFeedViewController.m; sourceTree = "<group>"; };
+		F9C2F5701A891F3900342CE8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F9C2F5711A891F3900342CE8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
+		F9C2F5731A891F4900342CE8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		F9C2F5741A891F4900342CE8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		F9C2F5761A891F8100342CE8 /* ActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityFeedViewController.h; sourceTree = "<group>"; };
+		F9C2F5771A891F8100342CE8 /* ActivityFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityFeedViewController.m; sourceTree = "<group>"; };
+		F9C2F5791A8920DE00342CE8 /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
+		F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,9 +98,12 @@
 			children = (
 				F9C2F54B1A8915BE00342CE8 /* AppDelegate.h */,
 				F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */,
-				F9C2F54E1A8915BE00342CE8 /* ViewController.h */,
-				F9C2F54F1A8915BE00342CE8 /* ViewController.m */,
 				F9C2F5511A8915BE00342CE8 /* Main.storyboard */,
+				F9C2F54E1A8915BE00342CE8 /* LoginViewController.h */,
+				F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */,
+				F9C2F5791A8920DE00342CE8 /* InterestsViewController.h */,
+				F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */,
+				F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */,
 				F9C2F5541A8915BE00342CE8 /* Images.xcassets */,
 				F9C2F5561A8915BE00342CE8 /* LaunchScreen.xib */,
 				F9C2F5471A8915BE00342CE8 /* Supporting Files */,
@@ -117,6 +135,21 @@
 				F9C2F5621A8915BE00342CE8 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F9C2F56D1A891F2B00342CE8 /* HomeFeedViewController.h */,
+				F9C2F56E1A891F2B00342CE8 /* HomeFeedViewController.m */,
+				F9C2F5701A891F3900342CE8 /* SearchViewController.h */,
+				F9C2F5711A891F3900342CE8 /* SearchViewController.m */,
+				F9C2F5731A891F4900342CE8 /* ProfileViewController.h */,
+				F9C2F5741A891F4900342CE8 /* ProfileViewController.m */,
+				F9C2F5761A891F8100342CE8 /* ActivityFeedViewController.h */,
+				F9C2F5771A891F8100342CE8 /* ActivityFeedViewController.m */,
+			);
+			name = "Tab Bar View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,9 +252,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9C2F5501A8915BE00342CE8 /* ViewController.m in Sources */,
+				F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */,
 				F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */,
+				F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */,
 				F9C2F54A1A8915BE00342CE8 /* main.m in Sources */,
+				F9C2F57B1A8920DE00342CE8 /* InterestsViewController.m in Sources */,
+				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
+				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
+				F9C2F56F1A891F2B00342CE8 /* HomeFeedViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
