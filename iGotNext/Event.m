@@ -13,6 +13,10 @@
 @dynamic eventTitle;
 @dynamic eventDescription;
 @dynamic eventCreator;
+@dynamic eventLocation;
+@dynamic eventattendance;
+@dynamic eventCategory;
+@dynamic eventDate;
 
 + (void)load {
     [self registerSubclass];
