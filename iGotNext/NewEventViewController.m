@@ -34,8 +34,8 @@
     event.eventDescription = self.descriptionTextField.text;
     event.eventLocation = self.descriptionTextField.text;
     event.eventCategory = self.sportLabel.text;
-    //event.eventStartTime
-    //event.eventEndTime
+    event.eventStartTime = self.startDatePicker.date;
+    event.eventEndTime = self.endDatePicker.date;
 
     [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -56,7 +56,6 @@
                                                             style:UIAlertActionStyleCancel
                                                           handler:nil];
 //TODO: include proper segue
-
     [newEventAlertController addAction:dismissAction];
     [self presentViewController:newEventAlertController animated:true completion:nil];
 }
@@ -78,7 +77,6 @@
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
-    NSLog(@"Selected Row %ld", (long)row);
     switch(row) {
         case 0:
             self.sportLabel.text = @"Basketball";
