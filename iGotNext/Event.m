@@ -16,7 +16,8 @@
 @dynamic eventLocation;
 @dynamic eventAttendance;
 @dynamic eventCategory;
-@dynamic eventDate;
+@dynamic eventStartTime;
+@dynamic eventEndTime;
 
 + (void)load {
     [self registerSubclass];

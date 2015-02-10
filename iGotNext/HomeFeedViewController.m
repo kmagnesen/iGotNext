@@ -21,6 +21,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
     [self loadEventsFeed];
 }
 
@@ -28,7 +31,6 @@
 -(void)loadEventsFeed {
     self.events = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    //[query includeKey:@"user"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {
