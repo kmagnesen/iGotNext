@@ -10,14 +10,12 @@
 
 @implementation HomeFeedTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+-(void)setEvent:(Event *)event {
+    _event = event;
+    self.eventNameLabel.text = event.eventTitle;
+    self.eventLocationLabel.text = event.eventLocation;
+    self.eventTimeLabel.text = [NSString stringWithFormat:@"When:%@", event.eventDate];
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
 }
 
 @end
