@@ -345,6 +345,7 @@
                         <viewControllerLayoutGuide type="bottom" id="tht-2x-eJ1"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ort-fd-mbp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -355,12 +356,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fI-6l-tJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292.5" y="-1139"/>
+            <point key="canvasLocation" x="-1342.5" y="-1139"/>
         </scene>
         <!--Login-->
         <scene sceneID="yrk-8W-ZaE">
             <objects>
-                <viewController id="kyK-iL-dOW" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kyK-iL-dOW" customClass="LoginViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tMR-2p-Ler"/>
                         <viewControllerLayoutGuide type="bottom" id="ftB-D8-74M"/>
@@ -413,7 +414,7 @@
                                 <connections>
                                     <action selector="onLoginButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="CVW-ZM-jcz"/>
                                     <action selector="onNewAccountButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="3ZI-bq-snz"/>
-                                    <segue destination="uLF-hS-1TX" kind="show" id="HUG-VN-Tbh"/>
+                                    <segue destination="uLF-hS-1TX" kind="show" identifier="SignupToInterestsSegue" id="HUG-VN-Tbh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet? No Sweat..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Db-wE-lLq">
@@ -454,7 +455,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1131" y="-1139"/>
+            <point key="canvasLocation" x="81" y="-1139"/>
         </scene>
         <!--Interests:-->
         <scene sceneID="Kg0-mP-IKF">
@@ -522,7 +523,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gl-kz-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1827" y="-1139"/>
+            <point key="canvasLocation" x="777" y="-1139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dsq-ac-AY5">
@@ -618,7 +619,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwP-tl-wAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="423" y="-1139"/>
+            <point key="canvasLocation" x="-627" y="-1139"/>
         </scene>
     </scenes>
     <resources>
@@ -629,6 +630,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dbv-zj-ajj"/>
-        <segue reference="vwk-x3-ekF"/>
+        <segue reference="HUG-VN-Tbh"/>
     </inferredMetricsTieBreakers>
 </document>

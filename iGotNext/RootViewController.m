@@ -16,6 +16,7 @@
 @implementation RootViewController
 
 - (void)viewDidAppear:(BOOL)animated {
+    
     [super viewDidAppear:animated];
     if ([PFUser currentUser] == nil) {
         [self performSegueWithIdentifier:@"LoginSegue" sender:self];

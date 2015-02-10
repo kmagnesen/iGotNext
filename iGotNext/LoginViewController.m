@@ -24,20 +24,20 @@
 
 }
 
-- (void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-
-
-}
+//- (void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:YES];
+//
+//
+//}
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
-        if  (error) {
-            [self errorAlert];
-        }
-        else if (!error)
-        {
+        if  (!error) {
             [self performSegueWithIdentifier:@"LoginToInterestsSegue" sender:self];
+        }
+        else
+        {
+            [self loginErrorAlert];
         }
     }];
 }
@@ -47,33 +47,48 @@
     user.username = self.usernameTextField.text;
     user.password = self.passwordTextField.text;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error)
-        {
-            [self errorAlert];
-        }
-        else if (!error)
+        if (!error)
         {
             [self successAlert];
-            [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
+        }
+        else
+        {
+            [self signupErrorAlert];
         }
     }];
+
 }
 
--(void)errorAlert {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"🚫 Error!!! 🚫" message:@"Credentials are incorrect or the username you've selected is taken. Correct above & try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+- (void)loginErrorAlert {
+    UIAlertView *loginErrorAlert = [[UIAlertView alloc] initWithTitle:@"🚫 Error!!! 🚫" message:@"Invalid Credentials. Correct above & try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    loginErrorAlert.tag = 1;
+    [loginErrorAlert show];
+}
 
-    [alert show];
+-(void)signupErrorAlert {
+    UIAlertView *signupErrorAlert = [[UIAlertView alloc] initWithTitle:@"🚫 We're Sorry! 🚫" message:@"This username is taken. Correct above & try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    signupErrorAlert.tag = 2;
+    [signupErrorAlert show];
 }
 
 -(void)successAlert {
-    UIAlertView *newAlert =[[UIAlertView alloc] initWithTitle:@"💥 Boom Shakalaka!!! 💥" message:@"You've Just Created A Profile For One Of The Most Badass Apps On the Planet!" delegate:self cancelButtonTitle:@"Enter!" otherButtonTitles: nil];
-
-    [newAlert show];
+    UIAlertView *successAlert =[[UIAlertView alloc] initWithTitle:@"💥 Boom Shakalaka!!! 💥" message:@"You've Just Created A Profile For One Of The Most Badass Apps On the Planet!" delegate:self cancelButtonTitle:@"Enter!" otherButtonTitles: nil];
+    successAlert.tag = 3;
+    [successAlert show];
 }
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-    if (buttonIndex == [alertView cancelButtonIndex]) {
+    if (alertView.tag == 1) {
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:YES];
         NSLog(@"Everything's Good!");
+    }
+    else if (alertView.tag == 2)
+    {
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:YES];
+    }
+    else if (alertView.tag == 3)
+    {
+        [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
     }
 }
 
