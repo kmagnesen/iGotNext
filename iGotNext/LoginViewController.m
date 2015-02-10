@@ -14,7 +14,6 @@
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
 
-
 @end
 
 @implementation LoginViewController
@@ -32,12 +31,13 @@
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
-        if  (!error) {
-            [self performSegueWithIdentifier:@"LoginToInterestsSegue" sender:self];
+        if  (error) {
+            [self loginErrorAlert];
         }
         else
         {
-            [self loginErrorAlert];
+            [self performSegueWithIdentifier:@"LoginToInterestsSegue" sender:self];
+
         }
     }];
 }
@@ -46,6 +46,7 @@
     PFUser* user = [PFUser user];
     user.username = self.usernameTextField.text;
     user.password = self.passwordTextField.text;
+
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error)
         {
@@ -79,12 +80,12 @@
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 1) {
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:YES];
-        NSLog(@"Everything's Good!");
+        [self parentViewController];
+//        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:NO];
     }
     else if (alertView.tag == 2)
     {
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:YES];
+        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:NO];
     }
     else if (alertView.tag == 3)
     {

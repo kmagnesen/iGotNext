@@ -243,7 +243,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Post" id="W6c-mm-Qms">
                             <connections>
                                 <action selector="onPostButtonTapped:" destination="xfe-W1-Xqe" id="yEx-hz-saa"/>
-                                <segue destination="kVd-Hc-9Xp" kind="unwind" unwindAction="prepareForUnwind:" id="lJV-Hc-nW6"/>
+                                <segue destination="kVd-Hc-9Xp" kind="unwind" identifier="BackToHomeFeed" unwindAction="prepareForUnwind:" id="lJV-Hc-nW6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -475,7 +475,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterestCell" id="nZI-ei-mkA">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterestCell" editingAccessoryType="checkmark" id="nZI-ei-mkA">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nZI-ei-mkA" id="6rC-Ix-yUg">
@@ -483,6 +483,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="uLF-hS-1TX" id="aGM-Ic-77B"/>
+                                    <outlet property="delegate" destination="uLF-hS-1TX" id="KEQ-5j-slu"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -632,6 +636,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dbv-zj-ajj"/>
-        <segue reference="HUG-VN-Tbh"/>
+        <segue reference="vwk-x3-ekF"/>
     </inferredMetricsTieBreakers>
 </document>
