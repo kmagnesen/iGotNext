@@ -14,6 +14,7 @@
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *events;
+@property NSArray *sortedEvents;
 
 @end
 
@@ -37,6 +38,7 @@
             for (Event *event in returnedEvents) {
                 [self.events addObject:event];
             }
+            [self sortEvents];
             [self.tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -45,17 +47,25 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.events.count;
+    return self.sortedEvents.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     HomeFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
-    cell.event = [self.events objectAtIndex:indexPath.row];
+    cell.event = [self.sortedEvents objectAtIndex:indexPath.row];
     return cell;
 }
 
 -(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
     
 }
+
+-(void)sortEvents{
+    self.sortedEvents = [NSMutableArray new];
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"eventStartTime" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    self.sortedEvents = [self.events sortedArrayUsingDescriptors:sortDescriptors];
+}
+
 
 @end
