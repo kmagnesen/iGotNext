@@ -13,6 +13,8 @@
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *locationTextField;
 @property (strong, nonatomic) IBOutlet UITextField *descriptionTextField;
+@property (strong, nonatomic) IBOutlet UIDatePicker *startDatePicker;
+@property (strong, nonatomic) IBOutlet UIDatePicker *endDatePicker;
 
 @end
 
@@ -59,6 +61,7 @@
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component {
     return [self.sportsArray objectAtIndex:row];
 }
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component {
     NSLog(@"Selected Row %ld", (long)row);
     switch(row)

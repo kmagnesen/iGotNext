@@ -10,6 +10,7 @@
 		CC5244D81A89456900F52859 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5244D71A89456900F52859 /* Event.m */; };
 		F92CEFB41A89509D005CD279 /* HomeFeedTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* HomeFeedTableViewCell.m */; };
 		F92CEFB71A8952B3005CD279 /* NewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB61A8952B3005CD279 /* NewEventViewController.m */; };
+		F953F0031A8A651F00667C19 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F953F0021A8A651F00667C19 /* RootViewController.m */; };
 		F9C2F54A1A8915BE00342CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5491A8915BE00342CE8 /* main.m */; };
 		F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */; };
 		F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */; };
@@ -57,6 +58,8 @@
 		F92CEFB31A89509D005CD279 /* HomeFeedTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeFeedTableViewCell.m; sourceTree = "<group>"; };
 		F92CEFB51A8952B3005CD279 /* NewEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEventViewController.h; sourceTree = "<group>"; };
 		F92CEFB61A8952B3005CD279 /* NewEventViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewEventViewController.m; sourceTree = "<group>"; };
+		F953F0011A8A651F00667C19 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		F953F0021A8A651F00667C19 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		F9C2F5441A8915BE00342CE8 /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C2F5481A8915BE00342CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C2F5491A8915BE00342CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -177,6 +180,8 @@
 				F9C2F54B1A8915BE00342CE8 /* AppDelegate.h */,
 				F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */,
 				F9C2F5511A8915BE00342CE8 /* Main.storyboard */,
+				F953F0011A8A651F00667C19 /* RootViewController.h */,
+				F953F0021A8A651F00667C19 /* RootViewController.m */,
 				F9C2F54E1A8915BE00342CE8 /* LoginViewController.h */,
 				F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */,
 				F9C2F5791A8920DE00342CE8 /* InterestsViewController.h */,
@@ -349,6 +354,7 @@
 			files = (
 				F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */,
 				F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */,
+				F953F0031A8A651F00667C19 /* RootViewController.m in Sources */,
 				F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */,
 				CC5244D81A89456900F52859 /* Event.m in Sources */,
 				F92CEFB71A8952B3005CD279 /* NewEventViewController.m in Sources */,

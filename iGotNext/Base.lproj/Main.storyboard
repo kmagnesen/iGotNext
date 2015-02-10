@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nld-Mb-46e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -149,6 +150,7 @@
                         <viewControllerLayoutGuide type="bottom" id="iNj-hc-FJh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SVU-DD-K4D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Event Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZHk-ZX-rdX">
@@ -159,25 +161,6 @@
                                     <rect key="frame" x="16" y="72" width="368" height="30"/>
                                 </variation>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Etq-0F-g8t">
-                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
-                                <date key="date" timeIntervalSinceReferenceDate="445207503.56295598">
-                                    <!--2015-02-09 20:45:03 +0000-->
-                                </date>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="381" width="400" height="162"/>
-                                </variation>
-                            </datePicker>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzd-6j-0mC">
-                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="211" width="400" height="162"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="xfe-W1-Xqe" id="yGh-Ng-wy7"/>
-                                    <outlet property="delegate" destination="xfe-W1-Xqe" id="U7X-Bb-AE6"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport Chosen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DD-y6-btv">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -203,26 +186,56 @@
                                     <rect key="frame" x="16" y="110" width="368" height="30"/>
                                 </variation>
                             </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Etq-0F-g8t">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="445207503.56295598">
+                                    <!--2015-02-09 20:45:03 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="443" width="400" height="50"/>
+                                </variation>
+                            </datePicker>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="JJd-4b-9n2">
+                                <rect key="frame" x="-160" y="-81" width="320" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="445281702.45244402">
+                                    <!--2015-02-10 17:21:42 +0000-->
+                                </date>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="501" width="400" height="50"/>
+                                </variation>
+                            </datePicker>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzd-6j-0mC">
+                                <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="221" width="400" height="150"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="xfe-W1-Xqe" id="yGh-Ng-wy7"/>
+                                    <outlet property="delegate" destination="xfe-W1-Xqe" id="U7X-Bb-AE6"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="ZHk-ZX-rdX"/>
-                                <exclude reference="Etq-0F-g8t"/>
-                                <exclude reference="Yzd-6j-0mC"/>
                                 <exclude reference="0DD-y6-btv"/>
                                 <exclude reference="cxU-if-0ON"/>
                                 <exclude reference="R8s-Jy-YQA"/>
+                                <exclude reference="Etq-0F-g8t"/>
+                                <exclude reference="JJd-4b-9n2"/>
+                                <exclude reference="Yzd-6j-0mC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="ZHk-ZX-rdX"/>
-                                <include reference="Etq-0F-g8t"/>
-                                <include reference="Yzd-6j-0mC"/>
                                 <include reference="0DD-y6-btv"/>
                                 <include reference="cxU-if-0ON"/>
                                 <include reference="R8s-Jy-YQA"/>
+                                <include reference="Etq-0F-g8t"/>
+                                <include reference="JJd-4b-9n2"/>
+                                <include reference="Yzd-6j-0mC"/>
                             </mask>
                         </variation>
                     </view>
@@ -235,15 +248,17 @@
                     </navigationItem>
                     <connections>
                         <outlet property="descriptionTextField" destination="cxU-if-0ON" id="KbJ-9Z-mSb"/>
+                        <outlet property="endDatePicker" destination="JJd-4b-9n2" id="1ly-ST-awt"/>
                         <outlet property="eventNameTextField" destination="ZHk-ZX-rdX" id="c0O-Ec-bSS"/>
                         <outlet property="locationTextField" destination="R8s-Jy-YQA" id="2pT-HG-GVg"/>
                         <outlet property="pickerView" destination="Yzd-6j-0mC" id="scv-Pu-bfS"/>
                         <outlet property="sportLabel" destination="0DD-y6-btv" id="ynW-UJ-4nm"/>
+                        <outlet property="startDatePicker" destination="Etq-0F-g8t" id="rnA-fw-j41"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4le-mi-KBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426.5" y="1775"/>
+            <point key="canvasLocation" x="-1426.5" y="1774"/>
         </scene>
         <!--Search-->
         <scene sceneID="VRo-40-ZqE">
@@ -321,7 +336,28 @@
             </objects>
             <point key="canvasLocation" x="-1426.5" y="361"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Root View Controller-->
+        <scene sceneID="IRM-ic-U7e">
+            <objects>
+                <viewController id="MPw-oj-wyo" customClass="RootViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bWa-cq-7Zm"/>
+                        <viewControllerLayoutGuide type="bottom" id="tht-2x-eJ1"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ort-fd-mbp">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="khA-Su-cia" kind="presentation" identifier="LoginSegue" id="1Ss-gs-Wzm"/>
+                        <segue destination="Nld-Mb-46e" kind="presentation" identifier="ByPassSegue" id="zZ8-fO-RjD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2fI-6l-tJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-292.5" y="-1139"/>
+        </scene>
+        <!--Login-->
         <scene sceneID="yrk-8W-ZaE">
             <objects>
                 <viewController id="kyK-iL-dOW" customClass="LoginViewController" sceneMemberID="viewController">
@@ -332,15 +368,95 @@
                     <view key="view" contentMode="scaleToFill" id="Ww5-hG-ECX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-wW-Gkt">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="85" y="190" width="230" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ET-g1-FmM">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Login">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="285" width="400" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onLoginButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="02W-Uh-Oku"/>
+                                    <segue destination="uLF-hS-1TX" kind="show" identifier="LoginToInterestsSegue" id="vwk-x3-ekF"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOY-SA-96c">
+                                <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="85" y="140" width="230" height="30"/>
+                                </variation>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHc-FQ-KU0">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <color key="backgroundColor" red="0.0" green="0.25098040700000002" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Create New Account">
+                                    <color key="titleColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="336" width="400" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onLoginButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="CVW-ZM-jcz"/>
+                                    <action selector="onNewAccountButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="3ZI-bq-snz"/>
+                                    <segue destination="uLF-hS-1TX" kind="show" id="HUG-VN-Tbh"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet? No Sweat..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Db-wE-lLq">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="315" width="400" height="21"/>
+                                </variation>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="5DN-wW-Gkt"/>
+                                <exclude reference="2ET-g1-FmM"/>
+                                <exclude reference="FOY-SA-96c"/>
+                                <exclude reference="eHc-FQ-KU0"/>
+                                <exclude reference="5Db-wE-lLq"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="5DN-wW-Gkt"/>
+                                <include reference="2ET-g1-FmM"/>
+                                <include reference="FOY-SA-96c"/>
+                                <include reference="eHc-FQ-KU0"/>
+                                <include reference="5Db-wE-lLq"/>
+                            </mask>
+                        </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="LO5-Na-0rt"/>
+                    <navigationItem key="navigationItem" title="Login" id="LO5-Na-0rt"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="5DN-wW-Gkt" id="CcM-t4-4pm"/>
+                        <outlet property="usernameTextField" destination="FOY-SA-96c" id="03J-Fs-erd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292.5" y="-1093"/>
+            <point key="canvasLocation" x="1131" y="-1139"/>
         </scene>
-        <!--Interests View Controller-->
+        <!--Interests:-->
         <scene sceneID="Kg0-mP-IKF">
             <objects>
                 <viewController id="uLF-hS-1TX" customClass="InterestsViewController" sceneMemberID="viewController">
@@ -351,12 +467,62 @@
                     <view key="view" contentMode="scaleToFill" id="itK-J8-HHp">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4nA-by-2mb">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InterestCell" id="nZI-ei-mkA">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nZI-ei-mkA" id="6rC-Ix-yUg">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="4nA-by-2mb" secondAttribute="trailing" constant="-16" id="Dgh-S3-kbj"/>
+                            <constraint firstItem="4nA-by-2mb" firstAttribute="top" secondItem="itK-J8-HHp" secondAttribute="topMargin" id="aGH-Kl-RFS"/>
+                            <constraint firstItem="4nA-by-2mb" firstAttribute="leading" secondItem="itK-J8-HHp" secondAttribute="leadingMargin" constant="-16" id="iUC-4X-JYt"/>
+                            <constraint firstItem="HIZ-J7-rMK" firstAttribute="top" secondItem="4nA-by-2mb" secondAttribute="bottom" id="xtR-yn-WPD"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="4nA-by-2mb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="xtR-yn-WPD"/>
+                                <exclude reference="Dgh-S3-kbj"/>
+                                <exclude reference="aGH-Kl-RFS"/>
+                                <exclude reference="iUC-4X-JYt"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="4nA-by-2mb"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="xtR-yn-WPD"/>
+                                <include reference="Dgh-S3-kbj"/>
+                                <include reference="aGH-Kl-RFS"/>
+                                <include reference="iUC-4X-JYt"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <navigationItem key="navigationItem" title="Interests:" id="Lsb-3m-dsy">
+                        <barButtonItem key="leftBarButtonItem" title="Save Sports" id="yAd-5y-HN0">
+                            <connections>
+                                <segue destination="Nld-Mb-46e" kind="presentation" id="dbv-zj-ajj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gl-kz-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="493.5" y="-1093"/>
+            <point key="canvasLocation" x="1827" y="-1139"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dsq-ac-AY5">
@@ -452,7 +618,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwP-tl-wAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1078.5" y="-1093"/>
+            <point key="canvasLocation" x="423" y="-1139"/>
         </scene>
     </scenes>
     <resources>
@@ -461,4 +627,8 @@
         <image name="playa1" width="35" height="36"/>
         <image name="searchGames" width="40" height="40"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="dbv-zj-ajj"/>
+        <segue reference="vwk-x3-ekF"/>
+    </inferredMetricsTieBreakers>
 </document>
