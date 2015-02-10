@@ -27,7 +27,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([[segue identifier] isEqualToString:@"backToHomeFeed"]) {
+    if([[segue identifier] isEqualToString:@"BackToHomeFeed"]) {
         Event *event = [Event object];
 
         event.eventCreator = [PFUser currentUser];
