@@ -375,7 +375,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-wW-Gkt">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="85" y="190" width="230" height="30"/>
                                 </variation>
@@ -392,13 +392,12 @@
                                 </variation>
                                 <connections>
                                     <action selector="onLoginButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="02W-Uh-Oku"/>
-                                    <segue destination="uLF-hS-1TX" kind="show" identifier="LoginToInterestsSegue" id="vwk-x3-ekF"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FOY-SA-96c">
                                 <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="85" y="140" width="230" height="30"/>
                                 </variation>
@@ -414,9 +413,7 @@
                                     <rect key="frame" x="0.0" y="336" width="400" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="onLoginButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="CVW-ZM-jcz"/>
                                     <action selector="onNewAccountButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="3ZI-bq-snz"/>
-                                    <segue destination="uLF-hS-1TX" kind="show" identifier="SignupToInterestsSegue" id="HUG-VN-Tbh"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account yet? No Sweat..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Db-wE-lLq">
@@ -453,13 +450,15 @@
                     <connections>
                         <outlet property="passwordTextField" destination="5DN-wW-Gkt" id="CcM-t4-4pm"/>
                         <outlet property="usernameTextField" destination="FOY-SA-96c" id="03J-Fs-erd"/>
+                        <segue destination="uLF-hS-1TX" kind="show" identifier="LoginToInterestsSegue" id="RGo-Qk-QaW"/>
+                        <segue destination="uLF-hS-1TX" kind="show" identifier="SignupToInterestsSegue" id="zco-7N-yRV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="81" y="-1139"/>
         </scene>
-        <!--Interests:-->
+        <!--Select Your Interests:-->
         <scene sceneID="Kg0-mP-IKF">
             <objects>
                 <viewController id="uLF-hS-1TX" customClass="InterestsViewController" sceneMemberID="viewController">
@@ -519,9 +518,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Interests:" id="Lsb-3m-dsy">
-                        <barButtonItem key="leftBarButtonItem" title="Save Sports" id="yAd-5y-HN0">
+                    <navigationItem key="navigationItem" title="Select Your Interests:" id="Lsb-3m-dsy">
+                        <barButtonItem key="leftBarButtonItem" title="Save" id="yAd-5y-HN0">
                             <connections>
+                                <action selector="onSaveButtonTapped:" destination="uLF-hS-1TX" id="agZ-2Q-xXi"/>
                                 <segue destination="Nld-Mb-46e" kind="presentation" id="dbv-zj-ajj"/>
                             </connections>
                         </barButtonItem>
@@ -636,6 +636,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dbv-zj-ajj"/>
-        <segue reference="vwk-x3-ekF"/>
+        <segue reference="RGo-Qk-QaW"/>
     </inferredMetricsTieBreakers>
 </document>

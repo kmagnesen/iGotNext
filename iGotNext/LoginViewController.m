@@ -48,26 +48,26 @@
     user.password = self.passwordTextField.text;
 
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error)
+        if (error)
         {
-            [self successAlert];
+            [self signupErrorAlert];
         }
         else
         {
-            [self signupErrorAlert];
+            [self successAlert];
         }
     }];
 
 }
 
 - (void)loginErrorAlert {
-    UIAlertView *loginErrorAlert = [[UIAlertView alloc] initWithTitle:@"🚫 Error!!! 🚫" message:@"Invalid Credentials. Correct above & try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *loginErrorAlert = [[UIAlertView alloc] initWithTitle:@"🚫 ERROR! 🚫" message:@"A Login Error Has Occured. Please Check Credentials & Retry Login." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     loginErrorAlert.tag = 1;
     [loginErrorAlert show];
 }
 
 -(void)signupErrorAlert {
-    UIAlertView *signupErrorAlert = [[UIAlertView alloc] initWithTitle:@"🚫 We're Sorry! 🚫" message:@"This username is taken. Correct above & try again." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    UIAlertView *signupErrorAlert = [[UIAlertView alloc] initWithTitle:@"😬 UH OH! 😬" message:@"This username has already been claimed. Try Another Username." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     signupErrorAlert.tag = 2;
     [signupErrorAlert show];
 }
@@ -80,12 +80,12 @@
 
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 1) {
-        [self parentViewController];
+        [self viewDidLoad];
 //        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:NO];
     }
     else if (alertView.tag == 2)
     {
-        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:NO];
+        [self viewDidLoad];
     }
     else if (alertView.tag == 3)
     {
