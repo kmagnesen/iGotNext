@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Event.h"
 
 @interface HomeFeedTableViewCell : UITableViewCell
 
@@ -14,5 +15,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *eventLocationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventAttendingLabel;
-
+@property (nonatomic) Event *event;
 @end

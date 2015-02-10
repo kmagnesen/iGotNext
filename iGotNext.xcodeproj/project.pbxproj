@@ -138,6 +138,8 @@
 		CC5244DC1A89458E00F52859 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F92CEFB21A89509D005CD279 /* HomeFeedTableViewCell.h */,
+				F92CEFB31A89509D005CD279 /* HomeFeedTableViewCell.m */,
 				CC5244D61A89456900F52859 /* Event.h */,
 				CC5244D71A89456900F52859 /* Event.m */,
 			);
@@ -228,8 +230,6 @@
 			children = (
 				F9C2F56D1A891F2B00342CE8 /* HomeFeedViewController.h */,
 				F9C2F56E1A891F2B00342CE8 /* HomeFeedViewController.m */,
-				F92CEFB21A89509D005CD279 /* HomeFeedTableViewCell.h */,
-				F92CEFB31A89509D005CD279 /* HomeFeedTableViewCell.m */,
 				F9C2F5701A891F3900342CE8 /* SearchViewController.h */,
 				F9C2F5711A891F3900342CE8 /* SearchViewController.m */,
 				F9C2F5731A891F4900342CE8 /* ProfileViewController.h */,

@@ -22,26 +22,43 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sportsArray  = [[NSArray alloc] initWithObjects:@"Basketball",@"Soccer",@"Football",@"Volleyball",@"Baseball",@"Ultimate Frisbee" , nil];
+    self.sportsArray  = [[NSArray alloc] initWithObjects:@"Basketball",@"Soccer",@"Football",@"Volleyball",@"Baseball",@"Ultimate Frisbee", nil];
 }
 
+//Creates and saves new event created by user
 - (IBAction)onPostButtonTapped:(UIBarButtonItem *)sender {
     Event *event = [Event object];
 
     event.eventCreator = [PFUser currentUser];
-//    event.eventTitle =
-//    event.eventDescription =
-//    event.eventLocation =
-//    event.eventDate =
-//    event.eventCategory =
+    event.eventTitle = self.eventNameTextField.text;
+    event.eventDescription = self.descriptionTextField.text;
+    event.eventLocation = self.descriptionTextField.text;
+    event.eventCategory = self.sportLabel.text;
+    //event.eventStartTime
+    //event.eventEndTime
 
     [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
-            NSLog(@"things are working");
+            [self newEventCreatedAlert];
         } else {
-            NSLog(@"new photo never saved");
+            NSLog(@"new event never saved");
         }
     }];
+}
+
+//Alert View Controller that notifies the user that a new event has been created
+-(void)newEventCreatedAlert {
+    UIAlertController *newEventAlertController = [UIAlertController alertControllerWithTitle:@"Great, you've created a new event!"
+                                                                                   message:nil
+                                                                            preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Dismiss"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:nil];
+//TODO: include proper segue
+
+    [newEventAlertController addAction:dismissAction];
+    [self presentViewController:newEventAlertController animated:true completion:nil];
 }
 
 
@@ -49,24 +66,20 @@
 // returns the number of 'columns' to display.
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
     return 1;
-
 }
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component {
     return 6;
-    
 }
 
--(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row   forComponent:(NSInteger)component {
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
     return [self.sportsArray objectAtIndex:row];
 }
 
-- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row   inComponent:(NSInteger)component {
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     NSLog(@"Selected Row %ld", (long)row);
-    switch(row)
-    {
-
+    switch(row) {
         case 0:
             self.sportLabel.text = @"Basketball";
             break;
@@ -86,7 +99,6 @@
             self.sportLabel.text = @"Ultimate Frisbee";
             break;
     }
-
 }
 
 @end

@@ -18,6 +18,7 @@
 @property PFUser *eventCreator;
 @property NSNumber *eventAttendance;
 @property NSString *eventCategory;
-@property NSDate *eventDate;
+@property NSDate *eventStartTime;
+@property NSDate *eventEndTime;
 
 @end
