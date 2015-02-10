@@ -40,27 +40,12 @@
 
         [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
-                [self newEventCreatedAlert];
             } else {
                 NSLog(@"new event never saved");
             }
         }];
     }
 }
-
-//Alert View Controller that notifies the user that a new event has been created
--(void)newEventCreatedAlert {
-    UIAlertController *newEventAlertController = [UIAlertController alertControllerWithTitle:@"Great, you've created a new event!"
-                                                                                   message:nil
-                                                                            preferredStyle:UIAlertControllerStyleAlert];
-
-    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Dismiss"
-                                                            style:UIAlertActionStyleCancel
-                                                          handler:nil];
-    [newEventAlertController addAction:dismissAction];
-    [self presentViewController:newEventAlertController animated:true completion:nil];
-}
-
 
 #pragma mark -------------- UIPickerView Delegate & Data Source --------------
 // returns the number of 'columns' to display.
