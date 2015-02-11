@@ -27,4 +27,21 @@
     return @"Event";
 }
 
+-(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(UITextField *)location Category:(UILabel *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime {
+
+    self = [super init];
+
+    if (self) {
+        self.eventCreator = currentUser;
+        self.eventTitle = title.text;
+        self.eventDescription = description.text;
+        self.eventLocation = description.text;
+        self.eventCategory = category.text;
+        self.eventStartTime = startTime.date;
+        self.eventEndTime = endTime.date;
+    }
+
+    return self;
+}
+
 @end
