@@ -74,4 +74,20 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+
+    if (cell.selected == NO) {
+
+        [cell setSelected:NO animated:YES];
+        [cell setAccessoryType:UITableViewCellAccessoryNone];
+
+        [self.selectedInterests addObject:cell.textLabel.text];
+        [self saveInterests];
+    } else {
+        [cell setSelected:YES animated:NO];
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
+}
+
 @end
