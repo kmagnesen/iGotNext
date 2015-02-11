@@ -638,6 +638,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="64" width="400" height="487"/>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="wl2-eX-EWm" id="Wmk-ab-poT"/>
+                                </connections>
+                            </mapView>
                             <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bsr-1m-y9Q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <constraints>
@@ -655,15 +664,6 @@
                                     </mask>
                                 </variation>
                             </searchBar>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="64" width="400" height="487"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="delegate" destination="wl2-eX-EWm" id="Wmk-ab-poT"/>
-                                </connections>
-                            </mapView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -679,6 +679,9 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="108" width="400" height="443"/>
+                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="wl2-eX-EWm" id="7TB-z1-jFO"/>
                                     <outlet property="delegate" destination="wl2-eX-EWm" id="MOV-dt-6u8"/>
@@ -697,8 +700,8 @@
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="bsr-1m-y9Q"/>
                                 <exclude reference="Dj3-QW-Py0"/>
+                                <exclude reference="bsr-1m-y9Q"/>
                                 <exclude reference="pBi-tV-OJZ"/>
                             </mask>
                             <mask key="constraints">
@@ -713,8 +716,8 @@
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
-                                <include reference="bsr-1m-y9Q"/>
                                 <include reference="Dj3-QW-Py0"/>
+                                <include reference="bsr-1m-y9Q"/>
                                 <include reference="pBi-tV-OJZ"/>
                             </mask>
                             <mask key="constraints">
@@ -730,6 +733,7 @@
                     </view>
                     <connections>
                         <outlet property="mapView" destination="Dj3-QW-Py0" id="uE7-2u-itb"/>
+                        <outlet property="searchBar" destination="bsr-1m-y9Q" id="p2S-6K-2xx"/>
                         <outlet property="tableView" destination="pBi-tV-OJZ" id="pgG-cQ-zow"/>
                     </connections>
                 </viewController>
