@@ -30,8 +30,12 @@
 
 //Loads events and adds them to an array
 -(void)loadEventsFeed {
+    PFUser *currentUser = [PFUser currentUser];
+    NSArray *currentUserInterests = [currentUser objectForKey:@"interests"];
+
     self.events = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query whereKey:@"eventCategory" containedIn:currentUserInterests];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {

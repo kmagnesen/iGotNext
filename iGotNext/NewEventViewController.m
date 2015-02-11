@@ -23,29 +23,32 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.sportsArray  = [[NSArray alloc] initWithObjects:@"Basketball",@"Soccer",@"Football",@"Volleyball",@"Baseball",@"Ultimate Frisbee", nil];
 }
 
+//On Post button pressed, segue back saves newly created event
+//TODO: segue needs to be changed to appropriate VC
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier] isEqualToString:@"BackToHomeFeed"]) {
-        Event *event = [Event object];
+        PFUser *currentUser = [PFUser currentUser];
 
-        event.eventCreator = [PFUser currentUser];
-        event.eventTitle = self.eventNameTextField.text;
-        event.eventDescription = self.descriptionTextField.text;
-        event.eventLocation = self.descriptionTextField.text;
-        event.eventCategory = self.sportLabel.text;
-        event.eventStartTime = self.startDatePicker.date;
-        event.eventEndTime = self.endDatePicker.date;
+        Event *event = [[Event alloc] initWithUser:currentUser
+                                             Title:self.eventNameTextField
+                                       Description:self.descriptionTextField
+                                          Location:self.descriptionTextField
+                                          Category:self.sportLabel
+                                         StartTime:self.startDatePicker
+                                           EndTime:self.endDatePicker];
 
         [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
+                NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
             } else {
-                NSLog(@"new event never saved");
+                NSLog(@"New event never saved, work on notification that makes sense for user");
             }
         }];
     }
 }
+
 
 #pragma mark -------------- UIPickerView Delegate & Data Source --------------
 // returns the number of 'columns' to display.

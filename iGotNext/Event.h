@@ -10,8 +10,6 @@
 
 @interface Event : PFObject <PFSubclassing>
 
-+ (NSString *)parseClassName;
-
 @property NSString *eventTitle;
 @property NSString *eventDescription;
 @property NSString *eventLocation;
@@ -20,5 +18,9 @@
 @property NSString *eventCategory;
 @property NSDate *eventStartTime;
 @property NSDate *eventEndTime;
+
+-(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(UITextField *)location Category:(UILabel *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime;
+
++ (NSString *)parseClassName;
 
 @end
