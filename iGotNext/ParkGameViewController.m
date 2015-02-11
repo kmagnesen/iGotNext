@@ -6,11 +6,11 @@
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
-#import "HomeFeedViewController.h"
-#import "HomeFeedTableViewCell.h"
+#import "ParkGameViewController.h"
+#import "ParkGameTableViewCell.h"
 #import "Event.h"
 
-@interface HomeFeedViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface ParkGameViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property NSMutableArray *events;
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation HomeFeedViewController
+@implementation ParkGameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -55,7 +55,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HomeFeedTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
+    ParkGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
     cell.event = [self.sortedEvents objectAtIndex:indexPath.row];
     return cell;
 }

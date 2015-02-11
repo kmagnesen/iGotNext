@@ -5,9 +5,9 @@
 //  Created by Kyle Magnesen on 2/9/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
-#import "HomeFeedTableViewCell.h"
+#import "ParkGameTableViewCell.h"
 
-@implementation HomeFeedTableViewCell
+@implementation ParkGameTableViewCell
 
 -(void)setEvent:(Event *)event {
     _event = event;

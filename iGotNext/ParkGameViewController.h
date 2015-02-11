@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
 
-@interface HomeFeedViewController : UIViewController
+@interface ParkGameViewController : UIViewController
 
 @end

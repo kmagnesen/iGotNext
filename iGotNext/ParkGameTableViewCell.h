@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Event.h"
 
-@interface HomeFeedTableViewCell : UITableViewCell
+@interface ParkGameTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *eventNameLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventLocationLabel;

@@ -7,7 +7,7 @@
 //
 
 #import "NewEventViewController.h"
-#import "HomeFeedViewController.h"
+#import "ParkGameViewController.h"
 #import "Event.h"
 
 @interface NewEventViewController ()
