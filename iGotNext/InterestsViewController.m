@@ -82,7 +82,7 @@
         [cell setSelected:NO animated:YES];
         [cell setAccessoryType:UITableViewCellAccessoryNone];
 
-        [self.selectedInterests addObject:cell.textLabel.text];
+        [self.selectedInterests removeObject:cell.textLabel.text];
         [self saveInterests];
     } else {
         [cell setSelected:YES animated:NO];
