@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -129,7 +129,7 @@
                     <navigationItem key="navigationItem" title="Game Feed" id="XMT-pX-k4X">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="oun-2h-rYd">
                             <connections>
-                                <segue destination="xfe-W1-Xqe" kind="show" id="kZP-St-2fM"/>
+                                <segue destination="xfe-W1-Xqe" kind="show" identifier="NewGameSegue" id="kZP-St-2fM"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -139,7 +139,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2133" y="1053"/>
+            <point key="canvasLocation" x="-2157" y="1801"/>
         </scene>
         <!--New Pick-up Game-->
         <scene sceneID="Axy-cw-4OO">
@@ -207,7 +207,7 @@
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzd-6j-0mC">
                                 <rect key="frame" x="0.0" y="-162" width="320" height="162"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="221" width="400" height="150"/>
+                                    <rect key="frame" x="0.0" y="219" width="400" height="162"/>
                                 </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="xfe-W1-Xqe" id="yGh-Ng-wy7"/>
@@ -242,7 +242,6 @@
                     <navigationItem key="navigationItem" title="New Pick-up Game" id="aBi-pt-wVU">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="W6c-mm-Qms">
                             <connections>
-                                <action selector="onPostButtonTapped:" destination="xfe-W1-Xqe" id="yEx-hz-saa"/>
                                 <segue destination="kVd-Hc-9Xp" kind="unwind" identifier="BackToHomeFeed" unwindAction="prepareForUnwind:" id="lJV-Hc-nW6"/>
                             </connections>
                         </barButtonItem>
@@ -260,7 +259,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4le-mi-KBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="kVd-Hc-9Xp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-2133" y="1746"/>
+            <point key="canvasLocation" x="-1426.5" y="1801"/>
         </scene>
         <!--Search-->
         <scene sceneID="VRo-40-ZqE">
@@ -364,7 +363,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="wl2-eX-EWm" kind="show" id="drC-wY-g68"/>
+                        <segue destination="wl2-eX-EWm" kind="relationship" relationship="rootViewController" id="9T4-7B-I4g"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIK-kv-NLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -543,7 +542,6 @@
                         <outlet property="usernameTextField" destination="FOY-SA-96c" id="03J-Fs-erd"/>
                         <segue destination="uLF-hS-1TX" kind="show" identifier="LoginToInterestsSegue" id="RGo-Qk-QaW"/>
                         <segue destination="uLF-hS-1TX" kind="show" identifier="SignupToInterestsSegue" id="zco-7N-yRV"/>
-                        <segue destination="Nld-Mb-46e" kind="presentation" identifier="ByPassInterestsSegue" id="sG1-Sy-z4L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -562,7 +560,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4nA-by-2mb">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4nA-by-2mb">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" red="0.37647058823529411" green="0.26666666666666666" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.37647058823529411" green="0.26666666666666666" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
@@ -617,7 +615,7 @@
                         <barButtonItem key="leftBarButtonItem" title="Save" id="yAd-5y-HN0">
                             <connections>
                                 <action selector="onSaveButtonTapped:" destination="uLF-hS-1TX" id="agZ-2Q-xXi"/>
-                                <segue destination="Nld-Mb-46e" kind="presentation" id="dbv-zj-ajj"/>
+                                <segue destination="Nld-Mb-46e" kind="presentation" identifier="InterestToTabBarSegue" id="dbv-zj-ajj"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -679,9 +677,6 @@
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="108" width="400" height="443"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="wl2-eX-EWm" id="7TB-z1-jFO"/>
                                     <outlet property="delegate" destination="wl2-eX-EWm" id="MOV-dt-6u8"/>
@@ -731,6 +726,7 @@
                             </mask>
                         </variation>
                     </view>
+                    <navigationItem key="navigationItem" id="40x-RU-Tt1"/>
                     <connections>
                         <outlet property="mapView" destination="Dj3-QW-Py0" id="uE7-2u-itb"/>
                         <outlet property="searchBar" destination="bsr-1m-y9Q" id="p2S-6K-2xx"/>
@@ -847,6 +843,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="dbv-zj-ajj"/>
-        <segue reference="RGo-Qk-QaW"/>
+        <segue reference="zco-7N-yRV"/>
     </inferredMetricsTieBreakers>
 </document>

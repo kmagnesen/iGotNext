@@ -58,7 +58,7 @@
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component {
-    return 6;
+    return 10;
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
@@ -68,22 +68,34 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     switch(row) {
         case 0:
-            self.sportLabel.text = @"Basketball";
+            self.sportLabel.text = @"Hockey (Street/Ice)";
             break;
         case 1:
-            self.sportLabel.text = @"Soccer";
-            break;
-        case 2:
             self.sportLabel.text = @"Football";
             break;
+        case 2:
+            self.sportLabel.text = @"Soccer";
+            break;
         case 3:
-            self.sportLabel.text = @"Volleyball";
+            self.sportLabel.text = @"VolleyBall (Beach/Bar)";
             break;
         case 4:
-            self.sportLabel.text = @"Baseball";
+            self.sportLabel.text = @"Basketball";
             break;
         case 5:
+            self.sportLabel.text = @"Dodgeball";
+            break;
+        case 6:
             self.sportLabel.text = @"Ultimate Frisbee";
+            break;
+        case 7:
+            self.sportLabel.text = @"Disc Golf";
+            break;
+        case 8:
+            self.sportLabel.text = @"Yugigassen (Snowball Fighting)";
+            break;
+        case 9:
+            self.sportLabel.text = @"All Other Sports";
             break;
     }
 }

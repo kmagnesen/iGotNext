@@ -58,25 +58,11 @@
     return cell;
 }
 
-//- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
-//    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-//
-//    if (cell.selected == YES) {
-//        [cell setSelected:NO animated:YES];
-//        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-//
-//        [self.selectedInterests removeObject:cell.textLabel.text];
-//        [self saveInterests];
-//    } else {
-//        [cell setSelected:NO animated:NO];
-//        [cell setAccessoryType:UITableViewCellAccessoryNone];
-//    }
-//}
-
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 
     if (cell.selected == YES) {
+
         [cell setSelected:YES animated:YES];
         [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
 
@@ -86,10 +72,6 @@
         [cell setSelected:NO animated:NO];
         [cell setAccessoryType:UITableViewCellAccessoryNone];
     }
-}
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-
 }
 
 @end
