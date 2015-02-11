@@ -44,6 +44,12 @@
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
     }];
+    [self findCurrentUsersInterests];
+}
+
+-(void)findCurrentUsersInterests {
+    PFUser *currentUser = [PFUser currentUser];
+    NSArray *currentUserInterests = [currentUser objectForKey:@"interests"];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
