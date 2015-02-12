@@ -10,6 +10,7 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "ParkGameViewController.h"
+#import "HomeParksTableViewCell.h"
 
 @interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UISearchBarDelegate>
 
@@ -20,8 +21,6 @@
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property NSArray *mapItems;
 @property MKMapItem *selectedPark;
-
-
 
 @end
 
@@ -35,6 +34,8 @@
     [self.locationManager requestAlwaysAuthorization];
 
     [self.locationManager startUpdatingLocation];
+
+    self.selectedPark = [MKMapItem new];
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
@@ -80,9 +81,9 @@
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CellID"];
+    HomeParksTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CellID"];
     MKMapItem *park = [self.mapItems objectAtIndex:indexPath.row];
-    cell.textLabel.text = park.name;
+    cell.park = park;
 
     NSLog(@"Hey it's me ben: %@", self.mapItems);
     return cell;
@@ -104,6 +105,7 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    self.selectedPark = [self.mapItems objectAtIndex:self.tableView.indexPathForSelectedRow.row];
     ParkGameViewController *parkGameVC = segue.destinationViewController;
     parkGameVC.park = self.selectedPark;
 }

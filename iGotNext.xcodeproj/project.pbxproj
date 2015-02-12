@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		CC5244D81A89456900F52859 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5244D71A89456900F52859 /* Event.m */; };
 		CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */; };
+		CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* ParkGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* ParkGameTableViewCell.m */; };
 		F92CEFB71A8952B3005CD279 /* NewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB61A8952B3005CD279 /* NewEventViewController.m */; };
 		F953F0031A8A651F00667C19 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F953F0021A8A651F00667C19 /* RootViewController.m */; };
@@ -57,6 +58,8 @@
 		CC5244D71A89456900F52859 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksViewController.h; sourceTree = "<group>"; };
 		CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksViewController.m; sourceTree = "<group>"; };
+		CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksTableViewCell.h; sourceTree = "<group>"; };
+		CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksTableViewCell.m; sourceTree = "<group>"; };
 		F92CEFB21A89509D005CD279 /* ParkGameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkGameTableViewCell.h; sourceTree = "<group>"; };
 		F92CEFB31A89509D005CD279 /* ParkGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkGameTableViewCell.m; sourceTree = "<group>"; };
 		F92CEFB51A8952B3005CD279 /* NewEventViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewEventViewController.h; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 			children = (
 				F92CEFB21A89509D005CD279 /* ParkGameTableViewCell.h */,
 				F92CEFB31A89509D005CD279 /* ParkGameTableViewCell.m */,
+				CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */,
+				CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */,
 				CC5244D61A89456900F52859 /* Event.h */,
 				CC5244D71A89456900F52859 /* Event.m */,
 			);
@@ -369,6 +374,7 @@
 				F92CEFB41A89509D005CD279 /* ParkGameTableViewCell.m in Sources */,
 				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
+				CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */,
 				F9C2F56F1A891F2B00342CE8 /* ParkGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
