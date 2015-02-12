@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
+#import "ParkGameViewController.h"
 
 @interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UISearchBarDelegate>
 
@@ -18,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property NSArray *mapItems;
+@property MKMapItem *selectedPark;
 
 
 
@@ -99,6 +101,11 @@
         [self.tableView setHidden:YES];
         [self.mapView setHidden:NO];
     }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ParkGameViewController *parkGameVC = segue.destinationViewController;
+    parkGameVC.park = self.selectedPark;
 }
 
 

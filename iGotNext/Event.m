@@ -27,7 +27,7 @@
     return @"Event";
 }
 
--(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextView *)description Location:(UINavigationController *)location Category:(UILabel *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime {
+-(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextView *)description Location:(UINavigationItem *)location Category:(UILabel *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime {
 
     self = [super init];
 

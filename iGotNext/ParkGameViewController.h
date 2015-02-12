@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <Parse/Parse.h>
+#import <MapKit/MapKit.h>
 
 @interface ParkGameViewController : UIViewController
+@property MKMapItem *park;
 
 @end
