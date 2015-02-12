@@ -20,11 +20,18 @@
 }
 
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
-//    [PFUser logOut];
-//    PFUser *currentUser = [PFUser currentUser];
-//    NSLog(@"%@", currentUser);
+
 }
 
-//LogOutSegue
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"LogOutSegue"]) {
+
+        [PFUser logOut];
+        PFUser *currentUser = [PFUser currentUser];
+        NSLog(@"%@", currentUser);
+    }
+}
+
+
 
 @end

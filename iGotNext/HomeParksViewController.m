@@ -71,7 +71,7 @@
 #pragma mark - Table View Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"%li", self.mapItems.count);
+//    NSLog(@"%li", self.mapItems.count);
     return self.mapItems.count;
 //    return 3;
 
