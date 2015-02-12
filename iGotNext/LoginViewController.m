@@ -9,7 +9,7 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 
-@interface LoginViewController () <UIAlertViewDelegate>
+@interface LoginViewController () <UIAlertViewDelegate, UITextFieldDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -20,9 +20,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.usernameTextField.returnKeyType = UIReturnKeyDone;
     self.passwordTextField.returnKeyType = UIReturnKeyDone;
-
 
 }
 
@@ -31,6 +31,7 @@
     // Tell the keyboard where to go on next / go button.
     if(textField == self.usernameTextField || textField == self.passwordTextField)
     {
+        [self viewDidLoad];
         [self resignFirstResponder];
     }
 
