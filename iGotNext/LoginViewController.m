@@ -36,11 +36,11 @@
         }
         else
         {
-//            if (user[@"interests"] == Nil) {
+            if (user[@"interests"] == Nil) {
             [self performSegueWithIdentifier:@"LoginToInterestsSegue" sender:self];
-//            } else {
-//                [self performSegueWithIdentifier:@"ByPassInterestsSegue" sender:self];
-//            }
+            } else {
+                [self performSegueWithIdentifier:@"ByPassInterestsSegue" sender:self];
+            }
 
         }
     }];
