@@ -78,7 +78,6 @@
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 1) {
         [self viewDidLoad];
-//        [self.navigationController pushViewController:[self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"] animated:NO];
     }
     else if (alertView.tag == 2)
     {
