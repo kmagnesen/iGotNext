@@ -18,11 +18,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="61" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d7Q-8T-7fh">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d7Q-8T-7fh">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeFeedCell" rowHeight="61" id="pyu-Qu-XWF" customClass="ParkGameTableViewCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeFeedCell" rowHeight="55" id="pyu-Qu-XWF" customClass="ParkGameTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="pyu-Qu-XWF" id="dze-A1-ty5">
@@ -86,20 +86,20 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="Ei3-Wu-SMe"/>
-                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="bottom" secondItem="kh9-bI-dsS" secondAttribute="bottomMargin" id="cd6-eA-vli"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="d7Q-8T-7fh" secondAttribute="trailing" constant="-16" id="k2F-ql-7u6"/>
-                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="top" secondItem="kh9-bI-dsS" secondAttribute="topMargin" id="lag-8K-UuX"/>
+                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="bottom" secondItem="kh9-bI-dsS" secondAttribute="bottomMargin" id="4Y1-Du-TCP"/>
+                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="bIe-6L-RVL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d7Q-8T-7fh" secondAttribute="trailing" constant="-16" id="hMF-Sf-RiA"/>
+                            <constraint firstItem="d7Q-8T-7fh" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="rkA-cj-mMk"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="d7Q-8T-7fh"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Ei3-Wu-SMe"/>
-                                <exclude reference="cd6-eA-vli"/>
-                                <exclude reference="k2F-ql-7u6"/>
-                                <exclude reference="lag-8K-UuX"/>
+                                <exclude reference="4Y1-Du-TCP"/>
+                                <exclude reference="bIe-6L-RVL"/>
+                                <exclude reference="hMF-Sf-RiA"/>
+                                <exclude reference="rkA-cj-mMk"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -107,10 +107,10 @@
                                 <include reference="d7Q-8T-7fh"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Ei3-Wu-SMe"/>
-                                <include reference="cd6-eA-vli"/>
-                                <include reference="k2F-ql-7u6"/>
-                                <include reference="lag-8K-UuX"/>
+                                <include reference="4Y1-Du-TCP"/>
+                                <include reference="bIe-6L-RVL"/>
+                                <include reference="hMF-Sf-RiA"/>
+                                <include reference="rkA-cj-mMk"/>
                             </mask>
                         </variation>
                     </view>
