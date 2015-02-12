@@ -20,9 +20,9 @@
 }
 
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
-    [PFUser logOut];
-    PFUser *currentUser = [PFUser currentUser];
-    NSLog(@"%@", currentUser);
+//    [PFUser logOut];
+//    PFUser *currentUser = [PFUser currentUser];
+//    NSLog(@"%@", currentUser);
 }
 
 //LogOutSegue
