@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentController;
+@property NSArray *mapItems;
+
 
 
 @end
@@ -54,25 +56,33 @@
 
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-        NSArray *mapItems = response.mapItems;
+        self.mapItems = response.mapItems;
 
-        for (MKMapItem *mapItem in mapItems) {
+        for (MKMapItem *mapItem in self.mapItems) {
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
             annotation.coordinate = mapItem.placemark.location.coordinate;
             [self.mapView addAnnotation:annotation];
         }
         [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+        [self.tableView reloadData];
     }];
 }
 
 #pragma mark - Table View Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 5;
+    NSLog(@"%li", self.mapItems.count);
+    return self.mapItems.count;
+//    return 3;
+
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CellID"];
+    MKMapItem *park = [self.mapItems objectAtIndex:indexPath.row];
+    cell.textLabel.text = park.name;
+
+    NSLog(@"Hey it's me ben: %@", self.mapItems);
     return cell;
 }
 
