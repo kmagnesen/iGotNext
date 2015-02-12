@@ -86,6 +86,20 @@
     return cell;
 }
 - (IBAction)segementedControlSwitched:(UISegmentedControl *)sender {
+    UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
+    NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
+
+    if (selectedSegment == 0) {
+        //toggle the correct view to be visible
+        [self.tableView setHidden:NO];
+        [self.mapView setHidden:YES];
+    }
+    else{
+        //toggle the correct view to be visible
+        [self.tableView setHidden:YES];
+        [self.mapView setHidden:NO];
+    }
 }
+
 
 @end
