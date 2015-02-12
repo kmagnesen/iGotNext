@@ -465,6 +465,9 @@
                                     <segment title="List"/>
                                     <segment title="Map"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segementedControlSwitched:" destination="wl2-eX-EWm" eventType="valueChanged" id="Kee-yo-6Mn"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
                                 <rect key="frame" x="0.0" y="136" width="600" height="464"/>

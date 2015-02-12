@@ -85,5 +85,7 @@
     NSLog(@"Hey it's me ben: %@", self.mapItems);
     return cell;
 }
+- (IBAction)segementedControlSwitched:(UISegmentedControl *)sender {
+}
 
 @end

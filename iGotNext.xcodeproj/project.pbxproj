@@ -182,10 +182,10 @@
 		F9C2F5461A8915BE00342CE8 /* iGotNext */ = {
 			isa = PBXGroup;
 			children = (
-				F953F0011A8A651F00667C19 /* RootViewController.h */,
 				F9C2F54B1A8915BE00342CE8 /* AppDelegate.h */,
 				F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */,
 				F9C2F5511A8915BE00342CE8 /* Main.storyboard */,
+				F953F0011A8A651F00667C19 /* RootViewController.h */,
 				F953F0021A8A651F00667C19 /* RootViewController.m */,
 				F9C2F54E1A8915BE00342CE8 /* LoginViewController.h */,
 				F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */,

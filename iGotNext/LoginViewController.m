@@ -55,7 +55,6 @@
             [self successAlert];
         }
     }];
-
 }
 
 - (void)loginErrorAlert {
