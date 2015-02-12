@@ -12,10 +12,9 @@
 
 @interface NewEventViewController ()
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
-@property (strong, nonatomic) IBOutlet UITextField *locationTextField;
-@property (strong, nonatomic) IBOutlet UITextField *descriptionTextField;
-@property (strong, nonatomic) IBOutlet UIDatePicker *startDatePicker;
-@property (strong, nonatomic) IBOutlet UIDatePicker *endDatePicker;
+@property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
+//@property (strong, nonatomic) IBOutlet UIDatePicker *startDatePicker;
+//@property (strong, nonatomic) IBOutlet UIDatePicker *endDatePicker;
 
 @end
 

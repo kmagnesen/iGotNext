@@ -35,7 +35,6 @@
         self.eventCreator = currentUser;
         self.eventTitle = title.text;
         self.eventDescription = description.text;
-        self.eventLocation = description.text;
         self.eventCategory = category.text;
         self.eventStartTime = startTime.date;
         self.eventEndTime = endTime.date;
