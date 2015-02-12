@@ -9,6 +9,7 @@
 #import "ParkGameViewController.h"
 #import "ParkGameTableViewCell.h"
 #import "Event.h"
+#import "NewEventViewController.h"
 
 @interface ParkGameViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -37,6 +38,7 @@
 
     self.events = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query whereKey:@"eventLocation" containsString:self.navigationItem.title];
     [query whereKey:@"eventCategory" containedIn:currentUserInterests];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
@@ -71,6 +73,13 @@
     NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"eventStartTime" ascending:YES];
     NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
     self.sortedEvents = [self.events sortedArrayUsingDescriptors:sortDescriptors];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"NewGameSegue"]) {
+        NewEventViewController *newEventVC = segue.destinationViewController;
+        newEventVC.park = self.park;
+    }
 }
 
 

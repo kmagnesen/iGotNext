@@ -22,6 +22,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.navigationItem.title = self.park.name;
 }
 
 //On Post button pressed, segue back saves newly created event
