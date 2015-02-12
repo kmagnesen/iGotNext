@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -381,7 +381,14 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" title="Player Bio" id="2mU-31-yty"/>
+                    <navigationItem key="navigationItem" title="Player Bio" id="2mU-31-yty">
+                        <barButtonItem key="rightBarButtonItem" title="Log Out" id="nFt-E1-W1u">
+                            <connections>
+                                <action selector="onLogOutButtonTapped:" destination="nWv-mk-66D" id="E72-ui-R1Y"/>
+                                <segue destination="kyK-iL-dOW" kind="presentation" identifier="LogOutSegue" id="NQ3-gn-57N"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sPu-Z4-Hzo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -404,7 +411,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F5-RU-1V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="1053"/>
+            <point key="canvasLocation" x="759" y="1045"/>
         </scene>
         <!--Games-->
         <scene sceneID="d5H-4Z-NK9">
@@ -463,7 +470,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fI-6l-tJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1714.5" y="-1139"/>
+            <point key="canvasLocation" x="-676.5" y="-1135"/>
         </scene>
         <!--Login-->
         <scene sceneID="yrk-8W-ZaE">
@@ -602,7 +609,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292.5" y="-1139"/>
+            <point key="canvasLocation" x="745.5" y="-1135"/>
         </scene>
         <!--Update Interests:-->
         <scene sceneID="Kg0-mP-IKF">
@@ -678,7 +685,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gl-kz-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="405" y="-1139"/>
+            <point key="canvasLocation" x="1443" y="-1135"/>
         </scene>
         <!--I Got Next-->
         <scene sceneID="kpe-1x-R9y">
@@ -910,7 +917,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Us-qG-PnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="651" y="361"/>
+            <point key="canvasLocation" x="759" y="353"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EsQ-oT-syG">
@@ -928,7 +935,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwP-tl-wAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-999" y="-1139"/>
+            <point key="canvasLocation" x="39" y="-1135"/>
         </scene>
     </scenes>
     <resources>
@@ -939,7 +946,8 @@
         <image name="searchGames" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="dbv-zj-ajj"/>
         <segue reference="zco-7N-yRV"/>
+        <segue reference="NQ3-gn-57N"/>
+        <segue reference="dbv-zj-ajj"/>
     </inferredMetricsTieBreakers>
 </document>

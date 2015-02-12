@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import <Parse/Parse.h>
 
 @interface ProfileViewController ()
 
@@ -17,5 +18,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 }
+
+- (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser];
+    NSLog(@"%@", currentUser);
+}
+
+//LogOutSegue
 
 @end
