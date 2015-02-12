@@ -33,7 +33,7 @@
         Event *event = [[Event alloc] initWithUser:currentUser
                                              Title:self.eventNameTextField
                                        Description:self.descriptionTextView
-                                          Location:self.navigationController
+                                          Location:self.navigationItem
                                           Category:self.sportLabel
                                          StartTime:nil
                                            EndTime:nil];
