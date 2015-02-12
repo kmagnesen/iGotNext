@@ -26,27 +26,27 @@
 
 //On Post button pressed, segue back saves newly created event
 //TODO: segue needs to be changed to appropriate VC
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([[segue identifier] isEqualToString:@"BackToHomeFeed"]) {
-        PFUser *currentUser = [PFUser currentUser];
-
-        Event *event = [[Event alloc] initWithUser:currentUser
-                                             Title:self.eventNameTextField
-                                       Description:self.descriptionTextField
-                                          Location:self.descriptionTextField
-                                          Category:self.sportLabel
-                                         StartTime:self.startDatePicker
-                                           EndTime:self.endDatePicker];
-
-        [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
-            } else {
-                NSLog(@"New event never saved, work on notification that makes sense for user");
-            }
-        }];
-    }
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    if([[segue identifier] isEqualToString:@"BackToHomeFeed"]) {
+//        PFUser *currentUser = [PFUser currentUser];
+//
+//        Event *event = [[Event alloc] initWithUser:currentUser
+//                                             Title:self.eventNameTextField
+//                                       Description:self.descriptionTextField
+//                                          Location:self.descriptionTextField
+//                                          Category:self.sportLabel
+//                                         StartTime:self.startDatePicker
+//                                           EndTime:self.endDatePicker];
+//
+//        [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//            if (succeeded) {
+//                NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
+//            } else {
+//                NSLog(@"New event never saved, work on notification that makes sense for user");
+//            }
+//        }];
+//    }
+//}
 
 
 #pragma mark -------------- UIPickerView Delegate & Data Source --------------
