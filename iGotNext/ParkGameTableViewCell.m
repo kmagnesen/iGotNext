@@ -12,7 +12,6 @@
 -(void)setEvent:(Event *)event {
     _event = event;
     self.eventNameLabel.text = event.eventTitle;
-    self.eventLocationLabel.text = event.eventLocation;
 
     NSString *eventStartTime = [NSDateFormatter localizedStringFromDate:event.eventStartTime
                                                               dateStyle:NSDateFormatterShortStyle
