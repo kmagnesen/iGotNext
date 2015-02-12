@@ -21,17 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [PFUser logOut];
-    PFUser *currentUser = [PFUser currentUser];
-    NSLog(@"%@", currentUser);
-
 }
-
-//- (void)viewWillAppear:(BOOL)animated {
-//    [super viewWillAppear:YES];
-//
-//
-//}
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
