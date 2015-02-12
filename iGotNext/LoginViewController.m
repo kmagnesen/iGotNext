@@ -21,6 +21,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    [PFUser logOut];
+    PFUser *currentUser = [PFUser currentUser];
+    NSLog(@"%@", currentUser);
+
 }
 
 //- (void)viewWillAppear:(BOOL)animated {
