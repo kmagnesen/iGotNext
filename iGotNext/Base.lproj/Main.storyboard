@@ -1,11 +1,128 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Event Detail View Controller-->
+        <scene sceneID="MxA-Ku-d04">
+            <objects>
+                <viewController id="OeW-G6-eWA" customClass="EventDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="YSc-NH-NSe"/>
+                        <viewControllerLayoutGuide type="bottom" id="byH-qS-VzB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fB5-w6-F2D">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thA-Qe-zhJ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="37" y="100" width="81" height="21"/>
+                                </variation>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WTm-aR-COe">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Attend">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="313" y="96" width="46" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onAttendButtonTapped:" destination="OeW-G6-eWA" eventType="touchUpInside" id="T2a-43-1LT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-Ei-stW">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="37" y="181" width="56" height="15"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTm-bg-sGJ">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="38" y="127" width="83" height="21"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-4T-AGo">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="37" y="204" width="51" height="15"/>
+                                </variation>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nvk-aO-LaT">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="37" y="236" width="322" height="216.5"/>
+                                </variation>
+                            </textView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XoF-pU-jFz">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <items>
+                                    <navigationItem title="Park Name" id="DxD-Hr-5zq"/>
+                                </items>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="0.0" y="15" width="400" height="44"/>
+                                </variation>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="thA-Qe-zhJ"/>
+                                <exclude reference="WTm-aR-COe"/>
+                                <exclude reference="XHu-Ei-stW"/>
+                                <exclude reference="qTm-bg-sGJ"/>
+                                <exclude reference="uOQ-4T-AGo"/>
+                                <exclude reference="Nvk-aO-LaT"/>
+                                <exclude reference="XoF-pU-jFz"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="thA-Qe-zhJ"/>
+                                <include reference="WTm-aR-COe"/>
+                                <include reference="XHu-Ei-stW"/>
+                                <include reference="qTm-bg-sGJ"/>
+                                <include reference="uOQ-4T-AGo"/>
+                                <include reference="Nvk-aO-LaT"/>
+                                <include reference="XoF-pU-jFz"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="attendButton" destination="WTm-aR-COe" id="kKC-LD-isu"/>
+                        <outlet property="endTimeLabel" destination="uOQ-4T-AGo" id="bpX-6e-dFT"/>
+                        <outlet property="eventCategoryLabel" destination="qTm-bg-sGJ" id="biU-fa-pnZ"/>
+                        <outlet property="eventDescriptionTextView" destination="Nvk-aO-LaT" id="2cQ-uO-hCI"/>
+                        <outlet property="eventTitleLabel" destination="thA-Qe-zhJ" id="OHG-Bd-qYS"/>
+                        <outlet property="startTimeLabel" destination="XHu-Ei-stW" id="1Ay-qP-g3E"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DRe-iR-h8G" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2805" y="1801"/>
+        </scene>
         <!--Game Feed-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -69,6 +186,7 @@
                                             <outlet property="eventAttendingLabel" destination="omz-cY-MGx" id="Jc8-VB-l4m"/>
                                             <outlet property="eventNameLabel" destination="Iki-C6-JKS" id="cOV-0i-Ex5"/>
                                             <outlet property="eventTimeLabel" destination="jAk-F4-oJ6" id="HKT-kM-trD"/>
+                                            <segue destination="OeW-G6-eWA" kind="show" identifier="EventDetailSegue" id="TT8-74-y2u"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -396,13 +514,13 @@
                                 <exclude reference="dg6-Ft-kWB"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="Guf-z6-EaU"/>
                                 <exclude reference="Iew-LZ-Z07"/>
                                 <exclude reference="TWa-ot-l6d"/>
                                 <exclude reference="twr-Ao-elR"/>
                                 <exclude reference="6uk-SA-75G"/>
                                 <exclude reference="Ru6-US-KhB"/>
                                 <exclude reference="wT8-qD-llg"/>
-                                <exclude reference="Guf-z6-EaU"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -411,13 +529,13 @@
                                 <include reference="dg6-Ft-kWB"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="Guf-z6-EaU"/>
                                 <include reference="Iew-LZ-Z07"/>
                                 <include reference="TWa-ot-l6d"/>
                                 <include reference="twr-Ao-elR"/>
                                 <include reference="6uk-SA-75G"/>
                                 <include reference="Ru6-US-KhB"/>
                                 <include reference="wT8-qD-llg"/>
-                                <include reference="Guf-z6-EaU"/>
                             </mask>
                         </variation>
                     </view>

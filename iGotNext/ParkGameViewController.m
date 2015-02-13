@@ -10,6 +10,7 @@
 #import "ParkGameTableViewCell.h"
 #import "Event.h"
 #import "NewEventViewController.h"
+#import "EventDetailViewController.h"
 
 @interface ParkGameViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -79,6 +80,10 @@
     if ([segue.identifier isEqualToString:@"NewGameSegue"]) {
         NewEventViewController *newEventVC = segue.destinationViewController;
         newEventVC.park = self.park;
+    } else if ([segue.identifier isEqualToString:@"EventDetailSegue"]) {
+        EventDetailViewController *eventDetailVC = segue.destinationViewController;
+        Event *event = [self.sortedEvents objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        eventDetailVC.event = event;
     }
 }
 
