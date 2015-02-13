@@ -24,9 +24,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
     self.searchBar.delegate = self;
+}
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+
+    self.searchBar.text = @"";
     [self loadUsers];
 }
 
