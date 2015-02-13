@@ -400,13 +400,98 @@
                     <view key="view" contentMode="scaleToFill" id="0RK-0h-ZYA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-kx-nE2">
+                                <rect key="frame" x="-61" y="-14" width="123" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="364-pF-bys"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="364-pF-bys"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="364-pF-bys"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="onSegmentedControllerTapped:" destination="aYF-Dt-POk" eventType="valueChanged" id="XQD-bz-v0H"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-U7-lkq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HistoryCell" id="691-iJ-PeO">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="691-iJ-PeO" id="Ey8-ah-v6n">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aYF-Dt-POk" id="vVT-U7-ASd"/>
+                                    <outlet property="delegate" destination="aYF-Dt-POk" id="Kif-aF-a9M"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wvw-kx-nE2" firstAttribute="top" secondItem="MV3-6l-vdS" secondAttribute="bottom" id="1qk-Ba-ZhD"/>
+                            <constraint firstItem="xKY-U7-lkq" firstAttribute="top" secondItem="Wvw-kx-nE2" secondAttribute="bottom" constant="1" id="Xsc-8q-HL1"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="xKY-U7-lkq" secondAttribute="bottom" constant="47" id="p2f-wo-foW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xKY-U7-lkq" secondAttribute="trailing" constant="-16" id="rgi-Ex-mJp"/>
+                            <constraint firstItem="xKY-U7-lkq" firstAttribute="leading" secondItem="0RK-0h-ZYA" secondAttribute="leadingMargin" constant="-16" id="unG-zg-9lu"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wvw-kx-nE2" secondAttribute="trailing" constant="-16" id="vcK-et-z4F"/>
+                            <constraint firstItem="Wvw-kx-nE2" firstAttribute="leading" secondItem="0RK-0h-ZYA" secondAttribute="leadingMargin" constant="-16" id="xSq-Pr-c6q"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="Wvw-kx-nE2"/>
+                                <exclude reference="xKY-U7-lkq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="1qk-Ba-ZhD"/>
+                                <exclude reference="vcK-et-z4F"/>
+                                <exclude reference="xSq-Pr-c6q"/>
+                                <exclude reference="Xsc-8q-HL1"/>
+                                <exclude reference="p2f-wo-foW"/>
+                                <exclude reference="rgi-Ex-mJp"/>
+                                <exclude reference="unG-zg-9lu"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="Wvw-kx-nE2"/>
+                                <include reference="xKY-U7-lkq"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="1qk-Ba-ZhD"/>
+                                <include reference="vcK-et-z4F"/>
+                                <include reference="xSq-Pr-c6q"/>
+                                <include reference="Xsc-8q-HL1"/>
+                                <include reference="p2f-wo-foW"/>
+                                <include reference="rgi-Ex-mJp"/>
+                                <include reference="unG-zg-9lu"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Game History" id="VkT-Y8-QrQ"/>
+                    <connections>
+                        <outlet property="segmentedController" destination="Wvw-kx-nE2" id="tzB-pB-SBO"/>
+                        <outlet property="tableView" destination="xKY-U7-lkq" id="jRn-kI-Cea"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F5-RU-1V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="1045"/>
+            <point key="canvasLocation" x="759" y="1053"/>
         </scene>
         <!--Games-->
         <scene sceneID="d5H-4Z-NK9">
@@ -452,7 +537,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fI-6l-tJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-676.5" y="-1135"/>
+            <point key="canvasLocation" x="-18" y="-1131"/>
         </scene>
         <!--Login-->
         <scene sceneID="yrk-8W-ZaE">
@@ -581,7 +666,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="745.5" y="-1135"/>
+            <point key="canvasLocation" x="1404" y="-1131"/>
         </scene>
         <!--Update Interests:-->
         <scene sceneID="Kg0-mP-IKF">
@@ -635,7 +720,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gl-kz-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1443" y="-1135"/>
+            <point key="canvasLocation" x="2101.5" y="-1131"/>
         </scene>
         <!--I Got Next-->
         <scene sceneID="kpe-1x-R9y">
@@ -747,7 +832,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yE-j1-ZIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-292.5" y="-387"/>
+            <point key="canvasLocation" x="-18" y="-387"/>
         </scene>
         <!--Search-->
         <scene sceneID="Ep7-Pe-XXo">
@@ -804,7 +889,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Us-qG-PnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="353"/>
+            <point key="canvasLocation" x="759" y="361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EsQ-oT-syG">
@@ -822,7 +907,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwP-tl-wAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="39" y="-1135"/>
+            <point key="canvasLocation" x="733.5" y="-1131"/>
         </scene>
     </scenes>
     <resources>
@@ -830,12 +915,12 @@
         <image name="gamesPlayed" width="35" height="35"/>
         <image name="iGotNext1" width="375" height="667"/>
         <image name="playa1" width="35" height="36"/>
-        <image name="searchGames" width="40" height="40"/>
+        <image name="searchGames" width="50" height="50"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="zZ8-fO-RjD"/>
-        <segue reference="WXt-8n-mb2"/>
+        <segue reference="dbv-zj-ajj"/>
         <segue reference="zco-7N-yRV"/>
+        <segue reference="1Ss-gs-Wzm"/>
         <segue reference="8dI-57-EC4"/>
     </inferredMetricsTieBreakers>
 </document>
