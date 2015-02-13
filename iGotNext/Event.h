@@ -5,6 +5,7 @@
 //  Created by Katelyn Schneider on 2/9/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
+#import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 #import <Foundation/Foundation.h>
 
@@ -19,7 +20,7 @@
 @property NSDate *eventStartTime;
 @property NSDate *eventEndTime;
 
--(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextView *)description Location:(UINavigationController *)location Category:(UILabel *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime;
+-(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextView *)description Location:(MKMapItem *)location Category:(NSString *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime ;
 
 + (NSString *)parseClassName;
 

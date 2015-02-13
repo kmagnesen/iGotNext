@@ -10,11 +10,16 @@
 #import "ParkGameViewController.h"
 #import "Event.h"
 
-@interface NewEventViewController ()
+@interface NewEventViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
-//@property (strong, nonatomic) IBOutlet UIDatePicker *startDatePicker;
+//@property (strong, nonatomic) IBOutlet UIDatePicker *datePicker;
 //@property (strong, nonatomic) IBOutlet UIDatePicker *endDatePicker;
+@property (strong, nonatomic) IBOutlet UIPickerView *sportPicker;
+@property (strong, nonatomic) IBOutlet UILabel *sportLabel;
+@property (strong, nonatomic) IBOutlet UIVisualEffectView *blurredView;
+@property (strong, nonatomic) NSArray *sportsArray;
+@property NSString *category;
 
 @end
 
@@ -24,6 +29,8 @@
     [super viewDidLoad];
 
     self.navigationItem.title = self.park.name;
+
+    self.sportsArray = @[@"Basketball", @"Disc Golf", @"Dodgeball", @"Football", @"Hockey (Street/Ice)", @"Soccer", @"Ultimate Frisbee", @"VolleyBall (Beach/Bar)", @"Yugigassen (Snowball Fighting)", @"All Other Sports"];
 }
 
 //On Post button pressed, segue back saves newly created event
@@ -35,8 +42,8 @@
         Event *event = [[Event alloc] initWithUser:currentUser
                                              Title:self.eventNameTextField
                                        Description:self.descriptionTextView
-                                          Location:self.navigationItem
-                                          Category:self.sportLabel
+                                          Location:self.park
+                                          Category:self.category
                                          StartTime:nil
                                            EndTime:nil];
 
@@ -59,46 +66,57 @@
 
 // returns the # of rows in each component..
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent: (NSInteger)component {
-    return 10;
+    return self.sportsArray.count;
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    return [self.sportsArray objectAtIndex:row];
+    self.category = [NSString new];
+    self.category = self.sportsArray[row];
+    return self.sportsArray[row];
 }
 
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+
     switch(row) {
         case 0:
-            self.sportLabel.text = @"Hockey (Street/Ice)";
+            self.sportLabel.text = @"Sport Chosen: Basketball";
             break;
         case 1:
-            self.sportLabel.text = @"Football";
+            self.sportLabel.text = @"Sport Chosen: Disc Golf";
             break;
         case 2:
-            self.sportLabel.text = @"Soccer";
+            self.sportLabel.text = @"Sport Chosen: Dodgeball";
             break;
         case 3:
-            self.sportLabel.text = @"VolleyBall (Beach/Bar)";
+            self.sportLabel.text = @"Sport Chosen: Football";
             break;
         case 4:
-            self.sportLabel.text = @"Basketball";
+            self.sportLabel.text = @"Sport Chosen: Hockey (Street/Ice)";
             break;
         case 5:
-            self.sportLabel.text = @"Dodgeball";
+            self.sportLabel.text = @"Sport Chosen: Soccer";
             break;
         case 6:
-            self.sportLabel.text = @"Ultimate Frisbee";
+            self.sportLabel.text = @"Sport Chosen: Ultimate Frisbee";
             break;
         case 7:
-            self.sportLabel.text = @"Disc Golf";
+            self.sportLabel.text = @"Sport Chosen: VolleyBall (Beach/Bar)";
             break;
         case 8:
-            self.sportLabel.text = @"Yugigassen (Snowball Fighting)";
+            self.sportLabel.text = @"Sport Chosen: Yugigassen (Snowball Fighting)";
             break;
         case 9:
-            self.sportLabel.text = @"All Other Sports";
+            self.sportLabel.text = @"Sport Chosen: All Other Sports";
             break;
     }
 }
+
+//SetStartTimeSegue
+//SetEndTimeSegue
+-(IBAction)prepareForUnwind:(UIStoryboardSegue *)segue {
+
+}
+
+
 
 @end

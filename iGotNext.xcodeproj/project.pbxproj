@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC451A961A8E3963009AD5D3 /* SetTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC451A951A8E3963009AD5D3 /* SetTimeViewController.m */; };
 		CC5244D81A89456900F52859 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5244D71A89456900F52859 /* Event.m */; };
 		CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */; };
 		CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC451A941A8E3963009AD5D3 /* SetTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetTimeViewController.h; path = ../SetTimeViewController.h; sourceTree = "<group>"; };
+		CC451A951A8E3963009AD5D3 /* SetTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetTimeViewController.m; path = ../SetTimeViewController.m; sourceTree = "<group>"; };
 		CC5244D61A89456900F52859 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
 		CC5244D71A89456900F52859 /* Event.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Event.m; sourceTree = "<group>"; };
 		CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksViewController.h; sourceTree = "<group>"; };
@@ -198,6 +201,8 @@
 				F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */,
 				F92CEFB51A8952B3005CD279 /* NewEventViewController.h */,
 				F92CEFB61A8952B3005CD279 /* NewEventViewController.m */,
+				CC451A941A8E3963009AD5D3 /* SetTimeViewController.h */,
+				CC451A951A8E3963009AD5D3 /* SetTimeViewController.m */,
 				CC5244DC1A89458E00F52859 /* Model */,
 				F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */,
 				F9C2F5541A8915BE00342CE8 /* Images.xcassets */,
@@ -376,6 +381,7 @@
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
 				CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */,
 				F9C2F56F1A891F2B00342CE8 /* ParkGameViewController.m in Sources */,
+				CC451A961A8E3963009AD5D3 /* SetTimeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
