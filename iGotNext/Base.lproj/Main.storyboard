@@ -344,9 +344,88 @@
                     <view key="view" contentMode="scaleToFill" id="ZRp-29-wqA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" placeholder="Search for Players" translatesAutoresizingMaskIntoConstraints="NO" id="MfX-YD-F4G">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="W1D-0m-nV8"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="W1D-0m-nV8"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="W1D-0m-nV8"/>
+                                    </mask>
+                                </variation>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="dg6-Ft-kWB">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SearchCell" id="GGx-E9-sCY">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GGx-E9-sCY" id="Ppn-RN-xhL">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="aU9-pL-MPc" id="wa5-SR-GBO"/>
+                                    <outlet property="delegate" destination="aU9-pL-MPc" id="b3z-HT-PPy"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dg6-Ft-kWB" firstAttribute="leading" secondItem="ZRp-29-wqA" secondAttribute="leadingMargin" constant="-16" id="6uk-SA-75G"/>
+                            <constraint firstItem="Idk-bt-6LJ" firstAttribute="top" secondItem="dg6-Ft-kWB" secondAttribute="bottom" id="Guf-z6-EaU"/>
+                            <constraint firstItem="MfX-YD-F4G" firstAttribute="leading" secondItem="ZRp-29-wqA" secondAttribute="leadingMargin" constant="-16" id="Iew-LZ-Z07"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="dg6-Ft-kWB" secondAttribute="trailing" constant="-16" id="Ru6-US-KhB"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MfX-YD-F4G" secondAttribute="trailing" constant="-16" id="TWa-ot-l6d"/>
+                            <constraint firstItem="MfX-YD-F4G" firstAttribute="top" secondItem="IFD-EW-D6w" secondAttribute="bottom" id="twr-Ao-elR"/>
+                            <constraint firstItem="dg6-Ft-kWB" firstAttribute="top" secondItem="MfX-YD-F4G" secondAttribute="bottom" id="wT8-qD-llg"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="MfX-YD-F4G"/>
+                                <exclude reference="dg6-Ft-kWB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="Iew-LZ-Z07"/>
+                                <exclude reference="TWa-ot-l6d"/>
+                                <exclude reference="twr-Ao-elR"/>
+                                <exclude reference="6uk-SA-75G"/>
+                                <exclude reference="Ru6-US-KhB"/>
+                                <exclude reference="wT8-qD-llg"/>
+                                <exclude reference="Guf-z6-EaU"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="MfX-YD-F4G"/>
+                                <include reference="dg6-Ft-kWB"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Iew-LZ-Z07"/>
+                                <include reference="TWa-ot-l6d"/>
+                                <include reference="twr-Ao-elR"/>
+                                <include reference="6uk-SA-75G"/>
+                                <include reference="Ru6-US-KhB"/>
+                                <include reference="wT8-qD-llg"/>
+                                <include reference="Guf-z6-EaU"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Search" id="uu0-oK-7a6"/>
+                    <connections>
+                        <outlet property="searchBar" destination="MfX-YD-F4G" id="rSo-JT-sSm"/>
+                        <outlet property="tableView" destination="dg6-Ft-kWB" id="iz4-2R-g1Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6nf-TI-GzT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -491,7 +570,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F5-RU-1V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="1053"/>
+            <point key="canvasLocation" x="669" y="1053"/>
         </scene>
         <!--Games-->
         <scene sceneID="d5H-4Z-NK9">
@@ -510,7 +589,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIK-kv-NLk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426.5" y="361"/>
+            <point key="canvasLocation" x="-1354.5" y="361"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="IRM-ic-U7e">
@@ -734,12 +813,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bsr-1m-y9Q">
+                            <searchBar contentMode="redraw" misplaced="YES" text="" translatesAutoresizingMaskIntoConstraints="NO" id="bsr-1m-y9Q">
                                 <rect key="frame" x="0.0" y="20" width="600" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="PbJ-zv-JDV"/>
                                 </constraints>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="yes" returnKeyType="search" enablesReturnKeyAutomatically="YES"/>
                             </searchBar>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
                                 <rect key="frame" x="0.0" y="92" width="600" height="508"/>
@@ -747,7 +826,7 @@
                                     <outlet property="delegate" destination="wl2-eX-EWm" id="Wmk-ab-poT"/>
                                 </connections>
                             </mapView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
                                 <rect key="frame" x="0.0" y="92" width="600" height="508"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -811,7 +890,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LCh-Ct-Zt7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1426.5" y="1053"/>
+            <point key="canvasLocation" x="-1354.5" y="1053"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="dsq-ac-AY5">
@@ -889,7 +968,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Us-qG-PnU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="759" y="361"/>
+            <point key="canvasLocation" x="669" y="361"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="EsQ-oT-syG">
