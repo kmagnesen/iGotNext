@@ -27,6 +27,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.category = [NSString new];
 
     self.navigationItem.title = self.park.name;
 
@@ -70,8 +71,6 @@
 }
 
 -(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
-    self.category = [NSString new];
-    self.category = self.sportsArray[row];
     return self.sportsArray[row];
 }
 
@@ -80,33 +79,43 @@
     switch(row) {
         case 0:
             self.sportLabel.text = @"Sport Chosen: Basketball";
+            self.category = @"Basketball";
             break;
         case 1:
             self.sportLabel.text = @"Sport Chosen: Disc Golf";
+            self.category = @"Disc Golf";
             break;
         case 2:
             self.sportLabel.text = @"Sport Chosen: Dodgeball";
+            self.category = @"Dodgeball";
             break;
         case 3:
             self.sportLabel.text = @"Sport Chosen: Football";
+            self.category = @"Football";
             break;
         case 4:
             self.sportLabel.text = @"Sport Chosen: Hockey (Street/Ice)";
+            self.category = @"Hockey (Street/Ice)";
             break;
         case 5:
             self.sportLabel.text = @"Sport Chosen: Soccer";
+            self.category = @"Soccer";
             break;
         case 6:
             self.sportLabel.text = @"Sport Chosen: Ultimate Frisbee";
+            self.category = @"Ultimate Frisbee";
             break;
         case 7:
             self.sportLabel.text = @"Sport Chosen: VolleyBall (Beach/Bar)";
+            self.category = @"VolleyBall (Beach/Bar)";
             break;
         case 8:
             self.sportLabel.text = @"Sport Chosen: Yugigassen (Snowball Fighting)";
+            self.category = @"Yugigassen (Snowball Fighting)";
             break;
         case 9:
             self.sportLabel.text = @"Sport Chosen: All Other Sports";
+            self.category = @"All Other Sports";
             break;
     }
 }
