@@ -19,6 +19,7 @@
 @property NSString *eventCategory;
 @property NSDate *eventStartTime;
 @property NSDate *eventEndTime;
+@property NSArray *attendees;
 
 -(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextView *)description Location:(MKMapItem *)location Category:(NSString *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime ;
 

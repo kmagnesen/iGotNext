@@ -13,8 +13,10 @@
 
 @property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
 @property (nonatomic) NSMutableArray *allUsers;
+@property (nonatomic)  NSMutableArray *allFilteredUsers;
+@property BOOL isFiltered;
+
 
 @end
 
@@ -23,6 +25,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.searchBar.delegate = self;
+
+    [self loadUsers];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -35,29 +40,25 @@
     [self.tableView reloadData];
 }
 
-- (void) loadUsers {
+#pragma mark ----------- Loading Users -----------
 
+- (void) loadUsers {
+    self.allFilteredUsers = [NSMutableArray new];
     self.allUsers = [NSMutableArray new];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"_User"];
-    [query orderByDescending:@"updatedAt"];
-    dispatch_queue_t feedQueue = dispatch_queue_create("feedQueue", NULL);
-
-    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-
+    //TODO: Make it so it only shows users in your area?
+    PFQuery *query = [PFUser query];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedUsers, NSError *error) {
         if (!error) {
-//            NSLog(@"Successfully retrieved %lu scores.", (unsigned long)objects.count);
-            dispatch_async(feedQueue, ^{
-
-                for (PFObject *object in objects) {
-                    [self.allUsers addObject:[object objectForKey:@"username"]];
-                    NSLog(@"%@", [object objectForKey:@"username"]);
-//                NSLog(@"%lu", (unsigned long)eventNames.count);
-                }
-            dispatch_async(dispatch_get_main_queue(), ^{
-                [self.tableView reloadData];
-                });
-            });
+            for (PFUser *user in returnedUsers) {
+                [self.allUsers addObject:user];
+            }
+            self.allFilteredUsers = self.allUsers;
+            [self.tableView reloadData];
+            if (self.allUsers.count == 0) {
+                ;
+                //Create an alert view that said no one is currently in your area?
+            }
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -67,14 +68,39 @@
 #pragma mark ----------- UITableView Delegate & Data Source -----------
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.allUsers.count;
+    return self.allFilteredUsers.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SearchCell"];
-    cell.textLabel.text = [self.allUsers objectAtIndex:indexPath.row];
-
+    PFUser *user = [self.allFilteredUsers objectAtIndex:indexPath.row];
+    cell.textLabel.text = user.username;
     return cell;
 }
+
+#pragma mark ----------- UISearchBar -----------
+
+-(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text {
+    if(text.length == 0) {
+        self.isFiltered = NO;
+        self.allFilteredUsers = self.allUsers;
+    } else {
+        self.isFiltered = YES;
+        self.allFilteredUsers = [[NSMutableArray alloc] init];
+
+        for (PFUser *user in self.allUsers) {
+            NSRange userRange = [user.username rangeOfString:text options:NSCaseInsensitiveSearch];
+            if(userRange.location != NSNotFound) {
+                [self.allFilteredUsers addObject:user];
+            }
+        }
+    }
+    [self.tableView reloadData];
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
+}
+
 
 @end
