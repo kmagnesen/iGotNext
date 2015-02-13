@@ -38,12 +38,16 @@
 
     self.selectedPark = [MKMapItem new];
     self.parksAnnotation = [MKPointAnnotation new];
+    self.searchBar.delegate = self;
+}
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+    [searchBar resignFirstResponder];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     self.mapView.showsUserLocation = YES;
-
 }
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
