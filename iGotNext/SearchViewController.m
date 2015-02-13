@@ -17,6 +17,7 @@
 @property (nonatomic)  NSMutableArray *allFilteredUsers;
 @property BOOL isFiltered;
 
+
 @end
 
 @implementation SearchViewController
@@ -27,6 +28,16 @@
     self.searchBar.delegate = self;
 
     [self loadUsers];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    [self loadUsers];
+}
+
+- (void) setAllUsers:(NSMutableArray *)allUsers {
+    _allUsers = allUsers;
+    [self.tableView reloadData];
 }
 
 #pragma mark ----------- Loading Users -----------
@@ -79,8 +90,7 @@
 
         for (PFUser *user in self.allUsers) {
             NSRange userRange = [user.username rangeOfString:text options:NSCaseInsensitiveSearch];
-            if(userRange.location != NSNotFound)
-            {
+            if(userRange.location != NSNotFound) {
                 [self.allFilteredUsers addObject:user];
             }
         }
