@@ -30,16 +30,6 @@
     [self loadUsers];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-    [self loadUsers];
-}
-
-- (void) setAllUsers:(NSMutableArray *)allUsers {
-    _allUsers = allUsers;
-    [self.tableView reloadData];
-}
-
 #pragma mark ----------- Loading Users -----------
 
 - (void) loadUsers {
@@ -83,6 +73,7 @@
 -(void)searchBar:(UISearchBar*)searchBar textDidChange:(NSString*)text {
     if(text.length == 0) {
         self.isFiltered = NO;
+        self.allFilteredUsers = [NSMutableArray new];
         self.allFilteredUsers = self.allUsers;
     } else {
         self.isFiltered = YES;
