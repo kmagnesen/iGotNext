@@ -166,7 +166,9 @@
                         <constraints>
                             <constraint firstItem="WTm-aR-COe" firstAttribute="top" secondItem="YSc-NH-NSe" secondAttribute="bottom" constant="30" id="3lG-aQ-UPJ"/>
                             <constraint firstItem="XHu-Ei-stW" firstAttribute="leading" secondItem="fB5-w6-F2D" secondAttribute="leadingMargin" id="ICA-ze-S5u"/>
-                            <constraint firstAttribute="centerX" secondItem="WTm-aR-COe" secondAttribute="centerX" constant="-40" id="UvB-lH-lo0"/>
+                            <constraint firstAttribute="centerX" secondItem="WTm-aR-COe" secondAttribute="centerX" constant="-40" id="UvB-lH-lo0">
+                                <variation key="widthClass=compact" constant="-110"/>
+                            </constraint>
                             <constraint firstItem="qTm-bg-sGJ" firstAttribute="leading" secondItem="fB5-w6-F2D" secondAttribute="leadingMargin" id="XED-bN-Dmf"/>
                             <constraint firstItem="XHu-Ei-stW" firstAttribute="top" secondItem="qTm-bg-sGJ" secondAttribute="bottom" constant="8" id="bEz-Qb-OmA"/>
                             <constraint firstItem="Nvk-aO-LaT" firstAttribute="top" secondItem="uOQ-4T-AGo" secondAttribute="bottom" constant="8" id="cfF-Wd-Hha"/>
