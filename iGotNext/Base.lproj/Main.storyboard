@@ -42,11 +42,13 @@
                                     <action selector="onAttendButtonTapped:" destination="OeW-G6-eWA" eventType="touchUpInside" id="T2a-43-1LT"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-Ei-stW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Start Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XHu-Ei-stW">
                                 <rect key="frame" x="37" y="181" width="56" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="Hkn-ws-aZv"/>
-                                    <constraint firstAttribute="width" constant="56" id="Lq2-Va-sbF"/>
+                                    <constraint firstAttribute="width" constant="56" id="Lq2-Va-sbF">
+                                        <variation key="widthClass=compact" constant="172"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -64,11 +66,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qTm-bg-sGJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Category" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qTm-bg-sGJ">
                                 <rect key="frame" x="38" y="127" width="83" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="1u2-In-Yb6"/>
-                                    <constraint firstAttribute="width" constant="83" id="ZJF-93-8q0"/>
+                                    <constraint firstAttribute="width" constant="83" id="ZJF-93-8q0">
+                                        <variation key="widthClass=compact" constant="172"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -86,11 +90,13 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-4T-AGo">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="End Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uOQ-4T-AGo">
                                 <rect key="frame" x="37" y="204" width="51" height="15"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="15" id="IG6-KZ-4TH"/>
-                                    <constraint firstAttribute="width" constant="51" id="hi0-wC-swL"/>
+                                    <constraint firstAttribute="width" constant="51" id="hi0-wC-swL">
+                                        <variation key="widthClass=compact" constant="172"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Italic" family="Helvetica Neue" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
