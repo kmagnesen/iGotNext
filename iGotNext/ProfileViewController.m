@@ -40,15 +40,16 @@
 
             if (!error) {
 
+                self.usernameLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
+                self.navigationItem.title = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
+                self.interestsTextView.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser]valueForKey:@"interests"]];
+
                 PFFile *currentProfilePic = (PFFile *)[object objectForKey:@"profilePic"];
 
                 [currentProfilePic getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
 
                     UIImage *image = [UIImage imageWithData:data];
                     self.profileImageView.image = image;
-                    self.usernameLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
-                    self.navigationItem.title = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
-
                     //                            [self.profilePic reloadInputViews];
                     [self.usernameLabel reloadInputViews];
                 }];
