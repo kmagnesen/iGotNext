@@ -137,10 +137,12 @@
                                     <navigationItem title="Park Name" id="DxD-Hr-5zq"/>
                                 </items>
                             </navigationBar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="thA-Qe-zhJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="thA-Qe-zhJ">
                                 <rect key="frame" x="37" y="100" width="81" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="81" id="EWH-oi-qaf"/>
+                                    <constraint firstAttribute="width" constant="81" id="EWH-oi-qaf">
+                                        <variation key="widthClass=compact" constant="170"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="21" id="wiI-yv-a10"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
