@@ -41,7 +41,8 @@
             if (!error) {
 
                 self.usernameLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
-                self.navigationItem.title = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
+                self.navigationItem.title = [NSString stringWithFormat:@"Player Bio: %@",[[PFUser currentUser]valueForKey:@"username"]];
+
                 self.interestsTextView.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser]valueForKey:@"interests"]];
 
                 PFFile *currentProfilePic = (PFFile *)[object objectForKey:@"profilePic"];
