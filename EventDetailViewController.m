@@ -22,6 +22,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.navigationItem.title = self.event.eventLocation;
+    self.eventTitleLabel.text = self.event.eventTitle;
+    self.eventCategoryLabel.text = self.event.eventCategory;
+    self.startTimeLabel.text = [NSString stringWithFormat:@"Start Time: %@", self.event.eventStartTime];
+    self.endTimeLabel.text = [NSString stringWithFormat:@"End Time: %@", self.event.eventEndTime];
+    self.eventDescriptionTextView.text = self.event.eventDescription;
 }
 
 - (IBAction)onAttendButtonTapped:(UIButton *)sender {
