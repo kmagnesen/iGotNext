@@ -10,6 +10,10 @@
 #import <Parse/Parse.h>
 
 @interface ProfileViewController ()
+@property (strong, nonatomic) IBOutlet UITextView *interestsTextView;
+@property (strong, nonatomic) IBOutlet UITextView *statsAndReviewTextView;
+@property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
 
 @end
 
@@ -17,6 +21,46 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+
+    [self loadProfile];
+}
+
+- (void)loadProfile {
+
+    PFUser *currentUser = [PFUser currentUser];
+
+    if (currentUser) {
+        PFQuery *userQuery = [PFUser query];
+
+        [userQuery getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *object, NSError *error) {
+
+            if (!error) {
+
+                PFFile *currentProfilePic = (PFFile *)[object objectForKey:@"profilePic"];
+
+                [currentProfilePic getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+
+                    UIImage *image = [UIImage imageWithData:data];
+                    self.profileImageView.image = image;
+                    self.usernameLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
+                    self.navigationItem.title = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
+
+                    //                            [self.profilePic reloadInputViews];
+                    [self.usernameLabel reloadInputViews];
+                }];
+            } else {
+
+                NSString *errorString = [[error userInfo] objectForKey:@"error"];
+                UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
+                [errorAlertView show];
+                
+            }
+        }];
+    }
 }
 
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
