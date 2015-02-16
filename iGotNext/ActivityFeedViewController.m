@@ -32,12 +32,20 @@
     [self.segmentedController setTitle:@"Events Attending" forSegmentAtIndex:1];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+    [self segmentedControllerLogic];
+}
+
 - (IBAction)onSegmentedControllerTapped:(UISegmentedControl *)sender {
+    [self segmentedControllerLogic];
+}
+
+-(void)segmentedControllerLogic {
     //Segmentedcontroller dictates what shows in the tableview when it is tapped
-    if (sender.selectedSegmentIndex == 0) {
+    if (self.segmentedController.selectedSegmentIndex == 0) {
         [self loadEventsCurrentUserCreated];
         [self.tableView reloadData];
-    } else if (sender.selectedSegmentIndex == 1) {
+    } else if (self.segmentedController.selectedSegmentIndex == 1) {
         [self loadEventsCurrentUserIsAttending];
         [self.tableView reloadData];
     }
@@ -67,12 +75,15 @@
     self.gamesDisplayed = [NSMutableArray new];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    //[query whereKey:@"eventCreator" containsString:@""];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {
             for (Event *event in returnedEvents) {
-                [self.gamesDisplayed addObject:event];
+                if([event.attendees containsObject:self.currentUser]) {
+                    [self.gamesDisplayed addObject:event];
+                } else {
+                    ;
+                }
             }
             [self.tableView reloadData];
         } else {
