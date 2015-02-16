@@ -19,6 +19,7 @@
 @dynamic eventCategory;
 @dynamic eventStartTime;
 @dynamic eventEndTime;
+@dynamic attendees;
 
 + (void)load {
     [self registerSubclass];

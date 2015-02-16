@@ -16,7 +16,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *eventDescriptionTextView;
 @property (strong, nonatomic) IBOutlet UIButton *attendButton;
 @property NSMutableArray *currentAttendees;
-@property BOOL attending;
 
 @end
 
@@ -25,6 +24,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.currentAttendees = [NSMutableArray new];
+
     self.navigationItem.title = self.event.eventLocation;
     self.eventTitleLabel.text = self.event.eventTitle;
     self.eventCategoryLabel.text = self.event.eventCategory;
@@ -32,32 +33,32 @@
     self.endTimeLabel.text = [NSString stringWithFormat:@"End Time: %@", self.event.eventEndTime];
     self.eventDescriptionTextView.text = self.event.eventDescription;
 
-    self.currentAttendees = [NSMutableArray arrayWithArray:self.event.attendees];
+    [self.attendButton setTitle:[NSString stringWithFormat:@"%i people attending", self.event.attendees.count] forState:UIControlStateNormal];
 }
 
--(void)findUsersAttendingEvent {
-    
+-(void)saveUpdatedEvent {
+    //Method that updates the event parse object being referred to
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+
+    [query getObjectInBackgroundWithId:self.event.objectId block:^(PFObject *event, NSError *error) {
+        event[@"attendees"] = self.currentAttendees;
+        [event saveInBackground];
+    }];
 }
 
 - (IBAction)onAttendButtonTapped:(UIButton *)sender {
-    PFUser *currentUser = [PFUser object];
-    NSMutableArray *currentAttendees = [NSMutableArray arrayWithArray:self.event.attendees];
+    PFUser *currentUser = [PFUser currentUser];
 
-    if ([self.currentAttendees containsObject:currentUser]) {
+    //Changes the number of people attending on the button and saves the changes to the parse object
+    if ([self.event.attendees containsObject:currentUser]) {
         [self.currentAttendees removeObject:currentUser];
+        [self.attendButton setTitle:[NSString stringWithFormat:@"%i people attending", self.currentAttendees.count] forState:UIControlStateNormal];
+        [self saveUpdatedEvent];
     } else {
         [self.currentAttendees addObject:currentUser];
+        [self.attendButton setTitle:[NSString stringWithFormat:@"%i people attending", self.currentAttendees.count] forState:UIControlStateNormal];
+        [self saveUpdatedEvent];
     }
-
-    self.event.attendees = [NSArray arrayWithArray:currentAttendees];
-
-    [self.event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (succeeded) {
-            NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
-        } else {
-            NSLog(@"Updated event never saved, work on notification that makes sense for user");
-        }
-    }];
 }
 
 @end
