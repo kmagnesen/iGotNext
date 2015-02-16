@@ -25,6 +25,7 @@
     [super viewDidLoad];
 
     self.currentAttendees = [NSMutableArray new];
+    self.currentAttendees = [NSMutableArray arrayWithArray:self.event.attendees];
 
     self.navigationItem.title = self.event.eventLocation;
     self.eventTitleLabel.text = self.event.eventTitle;
