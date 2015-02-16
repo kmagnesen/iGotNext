@@ -22,6 +22,7 @@
 @property NSArray *mapItems;
 @property MKMapItem *selectedPark;
 @property MKPointAnnotation *parksAnnotation;
+@property (nonatomic)NSMutableArray *geofences;
 
 @end
 
@@ -152,6 +153,42 @@
     ParkGameViewController *parkGameVC = segue.destinationViewController;
     parkGameVC.park = self.selectedPark;
 }
+-(void)startMonitoringForRegions{
+    for (CLCircularRegion *geofence in self.geofences) {
+        [self.locationManager startMonitoringForRegion:geofence];
+    }
+}
 
+#pragma MapView Delegate
+
+-(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
+    if ([overlay isKindOfClass:[MKCircle class]]) {
+        MKCircleRenderer *renderer = [[MKCircleRenderer alloc]initWithCircle:(MKCircle *)overlay];
+        renderer.fillColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
+        renderer.strokeColor = [[UIColor redColor] colorWithAlphaComponent:0.7];
+        renderer.lineWidth = 3.0;
+        return renderer;
+    }
+    return nil;
+}
+
+#pragma LocationManager Delegate
+
+
+-(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
+    NSLog(@"Entered region %@", region.identifier);
+
+}
+
+-(void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region{
+    NSLog(@"Exited region %@", region.identifier);
+
+}
+-(NSMutableArray *)geofences {
+    if (!_geofences){
+        _geofences = [NSMutableArray array];
+    }
+    return _geofences;
+}
 
 @end
