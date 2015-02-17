@@ -26,13 +26,14 @@
     self.currentUser = [PFUser currentUser];
 
     //View opens with "Events Created" higlighted
-    [self loadEventsCurrentUserCreated];
+//    [self loadEventsCurrentUserCreated];
 
     [self.segmentedController setTitle:@"Events Created" forSegmentAtIndex:0];
     [self.segmentedController setTitle:@"Events Attending" forSegmentAtIndex:1];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    //View opens with "Events Created" higlighted
     [self segmentedControllerLogic];
 }
 
