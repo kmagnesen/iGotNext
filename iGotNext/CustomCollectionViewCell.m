@@ -10,4 +10,8 @@
 
 @implementation CustomCollectionViewCell
 
+- (void)setSportNameLabel:(UILabel *)sportNameLabel {
+    self.sportNameLabel.text = self.interest.sportName;
+}
+
 @end

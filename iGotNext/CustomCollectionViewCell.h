@@ -8,9 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "InterestsCollectionViewController.h"
+#import "Interest.h"
 
 @interface CustomCollectionViewCell : UICollectionViewCell
 
+@property Interest *interest;
+
 @property (strong, nonatomic) IBOutlet UIImageView *sportImageView;
+@property (strong, nonatomic) IBOutlet UILabel *sportNameLabel;
 
 @end

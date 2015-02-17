@@ -21,6 +21,7 @@
 		F92CEFB71A8952B3005CD279 /* NewEventViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB61A8952B3005CD279 /* NewEventViewController.m */; };
 		F93463821A93B73300600BED /* InterestsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93463811A93B73300600BED /* InterestsCollectionViewController.m */; };
 		F93463851A93BBC100600BED /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F93463841A93BBC100600BED /* CustomCollectionViewCell.m */; };
+		F93463881A93DA6100600BED /* Interest.m in Sources */ = {isa = PBXBuildFile; fileRef = F93463871A93DA6100600BED /* Interest.m */; };
 		F953F0031A8A651F00667C19 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F953F0021A8A651F00667C19 /* RootViewController.m */; };
 		F9C2F54A1A8915BE00342CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5491A8915BE00342CE8 /* main.m */; };
 		F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */; };
@@ -90,6 +91,8 @@
 		F93463811A93B73300600BED /* InterestsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsCollectionViewController.m; sourceTree = "<group>"; };
 		F93463831A93BBC100600BED /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		F93463841A93BBC100600BED /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		F93463861A93DA6100600BED /* Interest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Interest.h; path = ../Interest.h; sourceTree = "<group>"; };
+		F93463871A93DA6100600BED /* Interest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Interest.m; path = ../Interest.m; sourceTree = "<group>"; };
 		F953F0011A8A651F00667C19 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		F953F0021A8A651F00667C19 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
 		F9C2F5441A8915BE00342CE8 /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,6 +210,8 @@
 		CC5244DC1A89458E00F52859 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F93463861A93DA6100600BED /* Interest.h */,
+				F93463871A93DA6100600BED /* Interest.m */,
 				F92CEFB21A89509D005CD279 /* ParkGameTableViewCell.h */,
 				F92CEFB31A89509D005CD279 /* ParkGameTableViewCell.m */,
 				CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */,
@@ -467,6 +472,7 @@
 				CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */,
 				CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */,
 				F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */,
+				F93463881A93DA6100600BED /* Interest.m in Sources */,
 				CC5244D81A89456900F52859 /* Event.m in Sources */,
 				F92CEFB71A8952B3005CD279 /* NewEventViewController.m in Sources */,
 				F93463821A93B73300600BED /* InterestsCollectionViewController.m in Sources */,

@@ -8,6 +8,7 @@
 
 #import "InterestsCollectionViewController.h"
 #import "CustomCollectionViewCell.h"
+#import "Interest.h"
 
 #import <Parse/Parse.h>
 
@@ -22,18 +23,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    Interest *hockey = [[Interest alloc] initWithImage:nil andSportName:@"Hockey"];
+    Interest *football = [[Interest alloc] initWithImage:nil andSportName:@"Football"];
+    Interest *soccer = [[Interest alloc] initWithImage:nil andSportName:@"Soccer"];
+    Interest *volleyball = [[Interest alloc] initWithImage:nil andSportName:@"Volleyball"];
+    Interest *basketball = [[Interest alloc] initWithImage:nil andSportName:@"Basketball"];
+    Interest *dodgeball = [[Interest alloc] initWithImage:nil andSportName:@"Dodgeball"];
+    Interest *ultimateFrisbee = [[Interest alloc] initWithImage:nil andSportName:@"Ultimate Frisbee"];
+    Interest *discGolf = [[Interest alloc] initWithImage:nil andSportName:@"Disc Golf"];
+    Interest *other = [[Interest alloc] initWithImage:nil andSportName:@"Other"];
 
-    self.sportsInterests = [[NSMutableArray alloc]initWithObjects:
-                            [UIImage imageNamed:@"hockey"],
-                            [UIImage imageNamed:@"football"],
-                            [UIImage imageNamed:@"soccer"],
-                            [UIImage imageNamed:@"volleyball"],
-                            [UIImage imageNamed:@"basketball"],
-                            [UIImage imageNamed:@"dodgeball"],
-                            [UIImage imageNamed:@"ultimateFrisbee"],
-                            [UIImage imageNamed:@"discGolf"],
-                            [UIImage imageNamed:@"other"],
-                            nil];
+    self.sportsInterests = [[NSMutableArray alloc]initWithObjects:hockey, football, soccer, volleyball, basketball, dodgeball, ultimateFrisbee, discGolf, other, nil];
+
 //Hockey (Street/Ice)", @"Football", @"Soccer", @"VolleyBall (Beach/Bar)", @"Basketball", @"Dodgeball", @"Ultimate Frisbee", @"Disc Golf", @"Yugigassen (Snowball Fighting)", @"All Other Sports"
     self.selectedInterests = [NSMutableArray new];
 
@@ -56,14 +57,16 @@
 - (CustomCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-    cell.sportImageView.image = [self.sportsInterests objectAtIndex:indexPath.row];
+    cell.interest = [self.sportsInterests objectAtIndex:indexPath.row];
 
     if (cell.selected == YES) {
         [cell setSelected:YES];
-        [cell setTintColor:[UIColor blueColor]];
+        [cell setHighlighted:YES];
+//        [cell setTintColor:[UIColor blueColor]];
     } else {
         [cell setSelected:NO];
-        [cell setTintColor:[UIColor clearColor]];
+        [cell setHighlighted:NO];
+//        [cell setTintColor:[UIColor clearColor]];
     }
     return cell;
 }
@@ -78,7 +81,7 @@
         [cell setHighlighted:YES];
 //        [cell setTintColor:[UIColor blueColor]];
 
-        [self.selectedInterests addObject:cell.sportImageView.image];
+        [self.selectedInterests addObject:cell.interest.sportName];
         [self saveInterests];
     } else {
         [cell setSelected:NO];
@@ -96,7 +99,7 @@
         [cell setHighlighted:NO];
 //        [cell setTintColor:[UIColor clearColor]];
 
-        [self.selectedInterests removeObject:cell.sportImageView.image];
+        [self.selectedInterests removeObject:cell.interest.sportName];
         [self saveInterests];
     } else {
         [cell setSelected:YES];
