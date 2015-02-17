@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -251,16 +250,6 @@
                                         <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="12"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport Chosen: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0DD-y6-btv">
-                                        <rect key="frame" x="16" y="212" width="90" height="15"/>
-                                        <color key="backgroundColor" red="0.2156862745" green="0.1647058824" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="15" id="7ig-MU-5L2"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="12"/>
-                                        <color key="textColor" red="0.4549019608" green="0.36078431370000003" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Description" translatesAutoresizingMaskIntoConstraints="NO" id="RTT-4d-a8k">
                                         <rect key="frame" x="16" y="123" width="568" height="81"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.1647058824" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -271,17 +260,6 @@
                                         <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="12"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzd-6j-0mC">
-                                        <rect key="frame" x="0.0" y="235" width="600" height="162"/>
-                                        <color key="backgroundColor" red="0.4549019608" green="0.36078431370000003" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="162" id="2fH-no-fTF"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="xfe-W1-Xqe" id="yGh-Ng-wy7"/>
-                                            <outlet property="delegate" destination="xfe-W1-Xqe" id="U7X-Bb-AE6"/>
-                                        </connections>
-                                    </pickerView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3g3-EO-ZWQ">
                                         <rect key="frame" x="253" y="435" width="92" height="30"/>
                                         <color key="backgroundColor" red="0.2156862745" green="0.1647058824" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -308,7 +286,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suG-15-pwF">
-                                        <rect key="frame" x="68.5" y="420" width="461.5" height="14"/>
+                                        <rect key="frame" x="68" y="420" width="462" height="14"/>
                                         <color key="backgroundColor" red="0.4549019608" green="0.36078431370000003" blue="0.68235294120000001" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="14" id="KuV-du-bzy"/>
@@ -316,6 +294,9 @@
                                         <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="12"/>
                                         <color key="textColor" red="0.2156862745" green="0.1647058824" blue="0.33333333329999998" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
+                                            <rect key="frame" x="268" y="420" width="62" height="14"/>
+                                        </variation>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dHL-jw-YYI">
                                         <rect key="frame" x="55" y="435" width="98" height="30"/>
@@ -332,12 +313,23 @@
                                             <segue destination="emV-9S-RK1" kind="presentation" identifier="SetStartTimeSegue" id="05q-92-9KL"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SqU-i1-gFE">
+                                        <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <state key="normal" title="Set Sport">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <variation key="widthClass=compact" fixedFrame="YES">
+                                            <rect key="frame" x="16" y="212" width="65" height="30"/>
+                                        </variation>
+                                        <connections>
+                                            <action selector="onSetCategoryTapped:" destination="xfe-W1-Xqe" eventType="touchUpInside" id="WwH-sp-cse"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.10588235294117647" green="0.52941176470588236" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="dHL-jw-YYI" firstAttribute="top" secondItem="qB0-sm-zik" secondAttribute="bottom" constant="1" id="794-ku-Mdp"/>
                                     <constraint firstItem="dHL-jw-YYI" firstAttribute="leading" secondItem="kfy-5M-4Db" secondAttribute="leading" constant="55" id="7Aj-R8-cSN"/>
-                                    <constraint firstAttribute="trailing" secondItem="Yzd-6j-0mC" secondAttribute="trailing" id="9z9-8U-5gE"/>
                                     <constraint firstItem="RTT-4d-a8k" firstAttribute="top" secondItem="ZHk-ZX-rdX" secondAttribute="bottom" constant="8" id="BzP-9k-NGG"/>
                                     <constraint firstAttribute="trailing" secondItem="ZHk-ZX-rdX" secondAttribute="trailing" constant="16" id="Gk5-ka-FfA"/>
                                     <constraint firstAttribute="trailing" secondItem="RTT-4d-a8k" secondAttribute="trailing" constant="16" id="IOH-js-dFR"/>
@@ -346,17 +338,21 @@
                                     <constraint firstItem="3g3-EO-ZWQ" firstAttribute="leading" secondItem="dHL-jw-YYI" secondAttribute="trailing" constant="100" id="W33-a6-1HW"/>
                                     <constraint firstAttribute="trailing" secondItem="suG-15-pwF" secondAttribute="trailing" constant="70" id="WK0-3V-g4i"/>
                                     <constraint firstItem="3g3-EO-ZWQ" firstAttribute="top" secondItem="suG-15-pwF" secondAttribute="bottom" constant="1" id="caf-UX-Nfh"/>
-                                    <constraint firstItem="0DD-y6-btv" firstAttribute="leading" secondItem="kfy-5M-4Db" secondAttribute="leading" constant="16" id="dax-cF-d9O"/>
-                                    <constraint firstItem="suG-15-pwF" firstAttribute="top" secondItem="Yzd-6j-0mC" secondAttribute="bottom" constant="23" id="e5V-Zc-CrT"/>
-                                    <constraint firstItem="Yzd-6j-0mC" firstAttribute="leading" secondItem="kfy-5M-4Db" secondAttribute="leading" id="fQu-Z5-9qa"/>
-                                    <constraint firstItem="qB0-sm-zik" firstAttribute="top" secondItem="Yzd-6j-0mC" secondAttribute="bottom" constant="23" id="g09-U3-5fh"/>
-                                    <constraint firstItem="0DD-y6-btv" firstAttribute="top" secondItem="RTT-4d-a8k" secondAttribute="bottom" constant="8" id="mgp-2O-fSm"/>
                                     <constraint firstItem="ZHk-ZX-rdX" firstAttribute="top" secondItem="kfy-5M-4Db" secondAttribute="top" constant="85" id="nye-wj-IHl"/>
                                     <constraint firstItem="RTT-4d-a8k" firstAttribute="leading" secondItem="kfy-5M-4Db" secondAttribute="leading" constant="16" id="otf-Kc-cgL"/>
                                     <constraint firstItem="3g3-EO-ZWQ" firstAttribute="leading" secondItem="dHL-jw-YYI" secondAttribute="trailing" constant="100" id="ve6-cm-whW"/>
-                                    <constraint firstItem="Yzd-6j-0mC" firstAttribute="top" secondItem="0DD-y6-btv" secondAttribute="bottom" constant="8" id="xUA-s2-7EC"/>
                                     <constraint firstItem="suG-15-pwF" firstAttribute="centerX" secondItem="3g3-EO-ZWQ" secondAttribute="centerX" id="yUX-Gp-srt"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="subviews">
+                                        <exclude reference="SqU-i1-gFE"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="subviews">
+                                        <include reference="SqU-i1-gFE"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <constraints>
@@ -377,8 +373,6 @@
                     <connections>
                         <outlet property="descriptionTextView" destination="RTT-4d-a8k" id="EuP-Ya-xv2"/>
                         <outlet property="eventNameTextField" destination="ZHk-ZX-rdX" id="c0O-Ec-bSS"/>
-                        <outlet property="sportLabel" destination="0DD-y6-btv" id="ynW-UJ-4nm"/>
-                        <outlet property="sportPicker" destination="Yzd-6j-0mC" id="95v-aO-U5r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4le-mi-KBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -408,7 +402,7 @@
                                 </date>
                             </datePicker>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J18-Lg-ZWI">
-                                <rect key="frame" x="269.5" y="342" width="61" height="30"/>
+                                <rect key="frame" x="269" y="342" width="61" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Imw-5f-1qC"/>
                                     <constraint firstAttribute="width" constant="61" id="OvC-oF-fbd"/>
@@ -543,7 +537,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="S5R-i5-0gx">
-                                <rect key="frame" x="142.5" y="241" width="315" height="207"/>
+                                <rect key="frame" x="142" y="241" width="315" height="207"/>
                                 <color key="backgroundColor" red="0.98431372549019602" green="0.0" blue="0.023529411764705882" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="315" id="SCP-7f-E5a"/>
@@ -554,7 +548,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" text="Player Stats / Reviews" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9FB-kE-v3u">
-                                <rect key="frame" x="150.5" y="249" width="299" height="191"/>
+                                <rect key="frame" x="150" y="249" width="299" height="191"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="191" id="YGG-kX-Pkd"/>
