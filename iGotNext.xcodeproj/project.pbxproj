@@ -14,6 +14,7 @@
 		CC558DBF1A93B31C00AE0566 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DBE1A93B31C00AE0566 /* Accounts.framework */; };
 		CC558DC11A93B33500AE0566 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DC01A93B33500AE0566 /* Social.framework */; };
 		CC558DCA1A93B82A00AE0566 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DC91A93B82A00AE0566 /* libstdc++.6.dylib */; };
+		CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */; };
 		CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */; };
 		CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* ParkGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* ParkGameTableViewCell.m */; };
@@ -74,6 +75,8 @@
 		CC558DC41A93B35400AE0566 /* libc++.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++.dylib"; path = "usr/lib/libc++.dylib"; sourceTree = SDKROOT; };
 		CC558DC61A93B57400AE0566 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CC558DC91A93B82A00AE0566 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
+		CC558DCB1A93C93900AE0566 /* CategoryModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModalViewController.h; sourceTree = "<group>"; };
+		CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModalViewController.m; sourceTree = "<group>"; };
 		CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksViewController.h; sourceTree = "<group>"; };
 		CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksViewController.m; sourceTree = "<group>"; };
 		CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksTableViewCell.h; sourceTree = "<group>"; };
@@ -251,6 +254,8 @@
 				CC451A951A8E3963009AD5D3 /* SetTimeViewController.m */,
 				CC451A971A8E5B5D009AD5D3 /* EventDetailViewController.h */,
 				CC451A981A8E5B5D009AD5D3 /* EventDetailViewController.m */,
+				CC558DCB1A93C93900AE0566 /* CategoryModalViewController.h */,
+				CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */,
 				CC5244DC1A89458E00F52859 /* Model */,
 				F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */,
 				F9C2F5541A8915BE00342CE8 /* Images.xcassets */,
@@ -454,6 +459,7 @@
 				CC451A991A8E5B5D009AD5D3 /* EventDetailViewController.m in Sources */,
 				F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */,
 				F953F0031A8A651F00667C19 /* RootViewController.m in Sources */,
+				CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */,
 				CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */,
 				F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */,
 				CC5244D81A89456900F52859 /* Event.m in Sources */,
