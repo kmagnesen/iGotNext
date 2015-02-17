@@ -24,14 +24,17 @@
     [super viewDidLoad];
 
     self.sportsInterests = [[NSMutableArray alloc]initWithObjects:
-                            [UIImage imageNamed:@"tiger_1"],
-                            [UIImage imageNamed:@"tiger_2"],
-                            [UIImage imageNamed:@"tiger_3"],
-                            [UIImage imageNamed:@"tiger_4"],
-                            [UIImage imageNamed:@"tiger_5"],
-                            [UIImage imageNamed:@"tiger_6"],
+                            [UIImage imageNamed:@"hockey"],
+                            [UIImage imageNamed:@"football"],
+                            [UIImage imageNamed:@"soccer"],
+                            [UIImage imageNamed:@"volleyball"],
+                            [UIImage imageNamed:@"basketball"],
+                            [UIImage imageNamed:@"dodgeball"],
+                            [UIImage imageNamed:@"ultimateFrisbee"],
+                            [UIImage imageNamed:@"discGolf"],
+                            [UIImage imageNamed:@"other"],
                             nil];
-
+//Hockey (Street/Ice)", @"Football", @"Soccer", @"VolleyBall (Beach/Bar)", @"Basketball", @"Dodgeball", @"Ultimate Frisbee", @"Disc Golf", @"Yugigassen (Snowball Fighting)", @"All Other Sports"
     self.selectedInterests = [NSMutableArray new];
 
 }
@@ -67,34 +70,38 @@
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
-    CustomCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CustomCollectionViewCell *cell = (CustomCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
 
     if (cell.selected == YES) {
 
         [cell setSelected:YES];
-        [cell setTintColor:[UIColor blueColor]];
+        [cell setHighlighted:YES];
+//        [cell setTintColor:[UIColor blueColor]];
 
         [self.selectedInterests addObject:cell.sportImageView.image];
         [self saveInterests];
     } else {
         [cell setSelected:NO];
-        [cell setTintColor:[UIColor clearColor]];
+        [cell setHighlighted:NO];
+//        [cell setTintColor:[UIColor clearColor]];
     }
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
-    CustomCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+    CustomCollectionViewCell *cell = (CustomCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
 
     if (cell.selected == NO) {
 
         [cell setSelected:NO];
-        [cell setTintColor:[UIColor clearColor]];
+        [cell setHighlighted:NO];
+//        [cell setTintColor:[UIColor clearColor]];
 
         [self.selectedInterests removeObject:cell.sportImageView.image];
         [self saveInterests];
     } else {
         [cell setSelected:YES];
-        [cell setTintColor:[UIColor blueColor]];
+        [cell setHighlighted:YES];
+//        [cell setTintColor:[UIColor blueColor]];
     }
 }
 
