@@ -7,9 +7,11 @@
 //
 
 #import "InterestsCollectionViewController.h"
+#import "CustomCollectionViewCell.h"
+
 #import <Parse/Parse.h>
 
-@interface InterestsCollectionViewController ()
+@interface InterestsCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property NSMutableArray *sportsInterests;
 @property NSMutableArray *selectedInterests;
@@ -18,27 +20,29 @@
 
 @implementation InterestsCollectionViewController
 
-static NSString * const reuseIdentifier = @"Cell";
-
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Register cell classes
-    [self.collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:reuseIdentifier];
-    
-    // Do any additional setup after loading the view.
+
+    self.sportsInterests = [[NSMutableArray alloc]initWithObjects:
+                            [UIImage imageNamed:@"tiger_1"],
+                            [UIImage imageNamed:@"tiger_2"],
+                            [UIImage imageNamed:@"tiger_3"],
+                            [UIImage imageNamed:@"tiger_4"],
+                            [UIImage imageNamed:@"tiger_5"],
+                            [UIImage imageNamed:@"tiger_6"],
+                            nil];
+
+    self.selectedInterests = [NSMutableArray new];
+
+}
+
+- (void) saveInterests {
+    PFUser *currentUser = [PFUser currentUser];
+    currentUser[@"interests"] = self.selectedInterests;
+    [currentUser saveInBackground];
 }
 
 #pragma mark <UICollectionViewDataSource>
-
-//- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
-////#warning Incomplete method implementation -- Return the number of sections
-//    return 0;
-//}
-
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
 //#warning Incomplete method implementation -- Return the number of items in the section
@@ -46,50 +50,54 @@ static NSString * const reuseIdentifier = @"Cell";
 
 }
 
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:reuseIdentifier forIndexPath:indexPath];
+- (CustomCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
-//    cell.imageView.image = [self.sportsInterests objectAtIndex:indexPath.row];
-//
-//    if (cell.selected == YES) {
-//        [cell setSelected:YES animated:YES];
-//        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
-//    } else {
-//        [cell setSelected:NO animated:NO];
-//        [cell setAccessoryType:UITableViewCellAccessoryNone];
-//    }
+    cell.sportImageView.image = [self.sportsInterests objectAtIndex:indexPath.row];
+
+    if (cell.selected == YES) {
+        [cell setSelected:YES];
+        [cell setTintColor:[UIColor blueColor]];
+    } else {
+        [cell setSelected:NO];
+        [cell setTintColor:[UIColor clearColor]];
+    }
     return cell;
 }
 
-#pragma mark <UICollectionViewDelegate>
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
 
-/*
-// Uncomment this method to specify if the specified item should be highlighted during tracking
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldHighlightItemAtIndexPath:(NSIndexPath *)indexPath {
-	return YES;
-}
-*/
+    CustomCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
 
-/*
-// Uncomment this method to specify if the specified item should be selected
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    return YES;
-}
-*/
+    if (cell.selected == YES) {
 
-/*
-// Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-- (BOOL)collectionView:(UICollectionView *)collectionView shouldShowMenuForItemAtIndexPath:(NSIndexPath *)indexPath {
-	return NO;
+        [cell setSelected:YES];
+        [cell setTintColor:[UIColor blueColor]];
+
+        [self.selectedInterests addObject:cell.sportImageView.image];
+        [self saveInterests];
+    } else {
+        [cell setSelected:NO];
+        [cell setTintColor:[UIColor clearColor]];
+    }
 }
 
-- (BOOL)collectionView:(UICollectionView *)collectionView canPerformAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	return NO;
+- (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
+    CustomCollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
+
+    if (cell.selected == NO) {
+
+        [cell setSelected:NO];
+        [cell setTintColor:[UIColor clearColor]];
+
+        [self.selectedInterests removeObject:cell.sportImageView.image];
+        [self saveInterests];
+    } else {
+        [cell setSelected:YES];
+        [cell setTintColor:[UIColor blueColor]];
+    }
 }
 
-- (void)collectionView:(UICollectionView *)collectionView performAction:(SEL)action forItemAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender {
-	
-}
-*/
+
 
 @end
