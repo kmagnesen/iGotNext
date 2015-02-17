@@ -74,10 +74,16 @@
     [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
         self.mapItems = response.mapItems;
 
-        for (MKMapItem *mapItem in self.mapItems) {
+        for (MKMapItem *parkMapItem in self.mapItems) {
+            CLLocationCoordinate2D coordinate = parkMapItem.placemark.location.coordinate;
+
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-            annotation.coordinate = mapItem.placemark.location.coordinate;
+            annotation.coordinate = coordinate;
             [self.mapView addAnnotation:annotation];
+
+            MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius:500];
+            [self.mapView addOverlay:circle];
+
         }
         [self.mapView showAnnotations:self.mapView.annotations animated:YES];
         [self.tableView reloadData];
