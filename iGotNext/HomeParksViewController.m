@@ -138,26 +138,26 @@
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
 
     pin.canShowCallout = YES;
-    //else if (annotation != mapView.userLocation) {
-    //pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    //}
+//    else if (annotation != mapView.userLocation) {
+//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+//    }
     return pin;
 
 }
 
-//- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-//    CLLocationCoordinate2D centerCoordinate = view.annotation.coordinate;
-//
-//    MKCoordinateSpan span;
-//    span.latitudeDelta = 0.01;
-//    span.longitudeDelta = 0.01;
-//
-//    MKCoordinateRegion region;
-//    region.center = centerCoordinate;
-//    region.span = span;
-//
-//    [self.mapView setRegion:region animated:YES];
-//}
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
+    CLLocationCoordinate2D centerCoordinate = view.annotation.coordinate;
+
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.01;
+    span.longitudeDelta = 0.01;
+
+    MKCoordinateRegion region;
+    region.center = centerCoordinate;
+    region.span = span;
+
+    [self.mapView setRegion:region animated:YES];
+}
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     self.selectedPark = [self.mapItems objectAtIndex:self.tableView.indexPathForSelectedRow.row];
