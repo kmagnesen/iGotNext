@@ -25,9 +25,7 @@
     [super viewDidLoad];
 
     [self createSportsInterestsArray];
-
     self.selectedInterests = [NSMutableArray new];
-
 }
 
 -(void)createSportsInterestsArray {
@@ -45,6 +43,7 @@
 }
 
 - (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
+    
     [self saveInterests];
 }
 
@@ -57,66 +56,48 @@
 #pragma mark <UICollectionViewDataSource>
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-//#warning Incomplete method implementation -- Return the number of items in the section
     return self.sportsInterests.count;
-
 }
 
 - (CustomCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    
     CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"Cell" forIndexPath:indexPath];
     
     cell.interest = [self.sportsInterests objectAtIndex:indexPath.row];
-
-    if (cell.selected == YES) {
-        [cell setSelected:YES];
-//        [cell setHighlighted:YES];
-        [cell setTintColor:[UIColor blueColor]];
-    } else {
-        [cell setSelected:NO];
-//        [cell setHighlighted:NO];
-        [cell setTintColor:[UIColor clearColor]];
-    }
 
     return cell;
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-
     CustomCollectionViewCell *cell = (CustomCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-
     if (cell.selected == YES) {
-
         [cell setSelected:YES];
-//        [cell setHighlighted:YES];
-        [cell setTintColor:[UIColor blueColor]];
+        cell.backgroundColor = [UIColor blueColor];
 
         [self.selectedInterests addObject:cell.interest.sportName];
         [self saveInterests];
     } else {
         [cell setSelected:NO];
-//        [cell setHighlighted:NO];
-        [cell setTintColor:[UIColor clearColor]];
+        cell.backgroundColor = [UIColor blackColor];
     }
+    [collectionView deselectItemAtIndexPath:indexPath animated:NO];
+
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didDeselectItemAtIndexPath:(NSIndexPath *)indexPath {
     CustomCollectionViewCell *cell = (CustomCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
-
-    if (cell.selected == NO) {
-
+//
+//    if (cell.selected == YES) {
         [cell setSelected:NO];
-//        [cell setHighlighted:NO];
-        [cell setTintColor:[UIColor clearColor]];
+        cell.backgroundColor = [UIColor blackColor];
+
 
         [self.selectedInterests removeObject:cell.interest.sportName];
         [self saveInterests];
-    } else {
-        [cell setSelected:YES];
-//        [cell setHighlighted:YES];
-        [cell setTintColor:[UIColor blueColor]];
-    }
+//    } else {
+//        [cell setSelected:NO];
+//        cell.backgroundColor = [UIColor blueColor];
+//    }
 }
-
-
 
 @end
