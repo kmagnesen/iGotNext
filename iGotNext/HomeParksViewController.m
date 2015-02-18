@@ -24,6 +24,7 @@
 @property MKPointAnnotation *parksAnnotation;
 @property (nonatomic)NSMutableArray *geofences;
 
+
 @end
 
 @implementation HomeParksViewController
@@ -79,6 +80,10 @@
 
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
             annotation.coordinate = coordinate;
+            NSLog(@"%@", parkMapItem.placemark.name);
+            annotation.title = parkMapItem.placemark.name;
+            annotation.subtitle = parkMapItem.placemark.title;
+
             [self.mapView addAnnotation:annotation];
 
             MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius:500];
@@ -133,9 +138,9 @@
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
 
     pin.canShowCallout = YES;
-//    else if (annotation != mapView.userLocation) {
-//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    }
+    //else if (annotation != mapView.userLocation) {
+    //pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    //}
     return pin;
 
 }
@@ -196,5 +201,6 @@
     }
     return _geofences;
 }
+
 
 @end
