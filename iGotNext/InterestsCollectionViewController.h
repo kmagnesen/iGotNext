@@ -10,6 +10,4 @@
 
 @interface InterestsCollectionViewController : UICollectionViewController
 
-@property (strong, nonatomic) IBOutlet UICollectionView *collectionView;
-
 @end

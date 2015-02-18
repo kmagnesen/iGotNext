@@ -12,7 +12,7 @@
 
 @interface CustomCollectionViewCell : UICollectionViewCell
 
-@property Interest *interest;
+@property (strong, nonatomic) Interest *interest;
 
 @property (strong, nonatomic) IBOutlet UIImageView *sportImageView;
 @property (strong, nonatomic) IBOutlet UILabel *sportNameLabel;

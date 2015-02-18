@@ -23,6 +23,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [self createSportsInterestsArray];
+
+    self.selectedInterests = [NSMutableArray new];
+
+}
+
+-(void)createSportsInterestsArray {
     Interest *hockey = [[Interest alloc] initWithImage:[UIImage imageNamed:@"hockey"] andSportName:@"Hockey"];
     Interest *football = [[Interest alloc] initWithImage:[UIImage imageNamed:@"football"] andSportName:@"Football"];
     Interest *soccer = [[Interest alloc] initWithImage:[UIImage imageNamed:@"soccer"] andSportName:@"Soccer"];
@@ -34,10 +42,10 @@
     Interest *other = [[Interest alloc] initWithImage:[UIImage imageNamed:@"other"] andSportName:@"Other"];
 
     self.sportsInterests = [[NSMutableArray alloc]initWithObjects:hockey, football, soccer, volleyball, basketball, dodgeball, ultimateFrisbee, discGolf, other, nil];
+}
 
-//Hockey (Street/Ice)", @"Football", @"Soccer", @"VolleyBall (Beach/Bar)", @"Basketball", @"Dodgeball", @"Ultimate Frisbee", @"Disc Golf", @"Yugigassen (Snowball Fighting)", @"All Other Sports"
-    self.selectedInterests = [NSMutableArray new];
-
+- (IBAction)onSaveButtonTapped:(UIBarButtonItem *)sender {
+    [self saveInterests];
 }
 
 - (void) saveInterests {
@@ -68,6 +76,7 @@
         [cell setHighlighted:NO];
 //        [cell setTintColor:[UIColor clearColor]];
     }
+
     return cell;
 }
 
