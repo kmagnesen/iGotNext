@@ -83,17 +83,15 @@
                                                          multiplier:1.f
                                                            constant:0.f]];
 
-    [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:|-[categoryPickerView(>=100)]-|"
-                               options:NSLayoutFormatDirectionLeadingToTrailing
-                               metrics:nil
-                               views:NSDictionaryOfVariableBindings(categoryPickerView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryPickerView(50)]"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(categoryPickerView)]];
 
-    [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"H:[categoryPickerView(==50)]"
-                               options:NSLayoutFormatDirectionLeadingToTrailing
-                               metrics:nil
-                               views:NSDictionaryOfVariableBindings(categoryPickerView)]];
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[categoryPickerView]-8-|"
+                                                                      options:0
+                                                                      metrics:nil
+                                                                        views:NSDictionaryOfVariableBindings(categoryPickerView)]];
 }
 
 // returns the number of 'columns' to display.

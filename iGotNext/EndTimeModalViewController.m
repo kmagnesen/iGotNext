@@ -25,6 +25,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
 
     [self addEndTimeButton];
+    [self datePickerView];
 }
 
 
@@ -61,7 +62,8 @@
 #pragma mark -------------- DatePicker --------------
 
 -(void)datePickerView {
-    UIDatePicker *datePicker = [UIDatePicker new];
+    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 210, 320, 216)];
+    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
 
     [self.view addSubview:datePicker];
 

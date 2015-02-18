@@ -25,6 +25,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
 
     [self addStartTimeButton];
+    [self datePickerView];
 }
 
 
@@ -62,6 +63,7 @@
 
 -(void)datePickerView {
     UIDatePicker *datePicker = [UIDatePicker new];
+    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
 
     [self.view addSubview:datePicker];
 
@@ -74,14 +76,14 @@
                                                            constant:0.f]];
 
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:|-[datePicker(>=100)]-|"
-                               options:NSLayoutFormatDirectionLeadingToTrailing
+                               constraintsWithVisualFormat:@"V:[datePicker(25)]"
+                               options:0
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(datePicker)]];
 
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"H:[datePicker(==50)]"
-                               options:NSLayoutFormatDirectionLeadingToTrailing
+                               constraintsWithVisualFormat:@"H:[datePicker(50)]"
+                               options:0
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(datePicker)]];
 }
