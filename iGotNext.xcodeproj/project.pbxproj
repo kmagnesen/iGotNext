@@ -8,13 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		1C66C74C48E6EEECCAAF706F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ED19D657E6759774FC3E94 /* libPods.a */; };
-		CC451A961A8E3963009AD5D3 /* SetTimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC451A951A8E3963009AD5D3 /* SetTimeViewController.m */; };
 		CC451A991A8E5B5D009AD5D3 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC451A981A8E5B5D009AD5D3 /* EventDetailViewController.m */; };
 		CC5244D81A89456900F52859 /* Event.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5244D71A89456900F52859 /* Event.m */; };
 		CC558DBF1A93B31C00AE0566 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DBE1A93B31C00AE0566 /* Accounts.framework */; };
 		CC558DC11A93B33500AE0566 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DC01A93B33500AE0566 /* Social.framework */; };
 		CC558DCA1A93B82A00AE0566 /* libstdc++.6.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DC91A93B82A00AE0566 /* libstdc++.6.dylib */; };
 		CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */; };
+		CC558DD01A9436EF00AE0566 /* PresentingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DCF1A9436EF00AE0566 /* PresentingAnimation.m */; };
+		CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DD31A94C06000AE0566 /* DismissingAnimation.m */; };
+		CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */; };
+		CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */; };
 		CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */; };
 		CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* ParkGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* ParkGameTableViewCell.m */; };
@@ -66,8 +69,6 @@
 		09ED19D657E6759774FC3E94 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1346EB1778F84773608B9199 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4761D9714831A8CF23D6AD10 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CC451A941A8E3963009AD5D3 /* SetTimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SetTimeViewController.h; path = ../SetTimeViewController.h; sourceTree = "<group>"; };
-		CC451A951A8E3963009AD5D3 /* SetTimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SetTimeViewController.m; path = ../SetTimeViewController.m; sourceTree = "<group>"; };
 		CC451A971A8E5B5D009AD5D3 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailViewController.h; path = ../EventDetailViewController.h; sourceTree = "<group>"; };
 		CC451A981A8E5B5D009AD5D3 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailViewController.m; path = ../EventDetailViewController.m; sourceTree = "<group>"; };
 		CC5244D61A89456900F52859 /* Event.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Event.h; sourceTree = "<group>"; };
@@ -79,6 +80,14 @@
 		CC558DC91A93B82A00AE0566 /* libstdc++.6.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.dylib"; path = "usr/lib/libstdc++.6.dylib"; sourceTree = SDKROOT; };
 		CC558DCB1A93C93900AE0566 /* CategoryModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryModalViewController.h; sourceTree = "<group>"; };
 		CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryModalViewController.m; sourceTree = "<group>"; };
+		CC558DCE1A9436EF00AE0566 /* PresentingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PresentingAnimation.h; sourceTree = "<group>"; };
+		CC558DCF1A9436EF00AE0566 /* PresentingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimation.m; sourceTree = "<group>"; };
+		CC558DD21A94C06000AE0566 /* DismissingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimation.h; sourceTree = "<group>"; };
+		CC558DD31A94C06000AE0566 /* DismissingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimation.m; sourceTree = "<group>"; };
+		CC558DD51A94CA5B00AE0566 /* StartTimeModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTimeModalViewController.h; sourceTree = "<group>"; };
+		CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTimeModalViewController.m; sourceTree = "<group>"; };
+		CC558DD91A94CAB500AE0566 /* EndTimeModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndTimeModalViewController.h; sourceTree = "<group>"; };
+		CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndTimeModalViewController.m; sourceTree = "<group>"; };
 		CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksViewController.h; sourceTree = "<group>"; };
 		CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksViewController.m; sourceTree = "<group>"; };
 		CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksTableViewCell.h; sourceTree = "<group>"; };
@@ -222,6 +231,30 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		CC558DD11A94C03B00AE0566 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				CC558DCE1A9436EF00AE0566 /* PresentingAnimation.h */,
+				CC558DCF1A9436EF00AE0566 /* PresentingAnimation.m */,
+				CC558DD21A94C06000AE0566 /* DismissingAnimation.h */,
+				CC558DD31A94C06000AE0566 /* DismissingAnimation.m */,
+			);
+			name = Animation;
+			sourceTree = "<group>";
+		};
+		CC558DD81A94CA6000AE0566 /* Modal Views */ = {
+			isa = PBXGroup;
+			children = (
+				CC558DCB1A93C93900AE0566 /* CategoryModalViewController.h */,
+				CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */,
+				CC558DD51A94CA5B00AE0566 /* StartTimeModalViewController.h */,
+				CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */,
+				CC558DD91A94CAB500AE0566 /* EndTimeModalViewController.h */,
+				CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */,
+			);
+			name = "Modal Views";
+			sourceTree = "<group>";
+		};
 		F9C2F53B1A8915BE00342CE8 = {
 			isa = PBXGroup;
 			children = (
@@ -260,12 +293,10 @@
 				F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */,
 				F92CEFB51A8952B3005CD279 /* NewEventViewController.h */,
 				F92CEFB61A8952B3005CD279 /* NewEventViewController.m */,
-				CC451A941A8E3963009AD5D3 /* SetTimeViewController.h */,
-				CC451A951A8E3963009AD5D3 /* SetTimeViewController.m */,
+				CC558DD81A94CA6000AE0566 /* Modal Views */,
 				CC451A971A8E5B5D009AD5D3 /* EventDetailViewController.h */,
 				CC451A981A8E5B5D009AD5D3 /* EventDetailViewController.m */,
-				CC558DCB1A93C93900AE0566 /* CategoryModalViewController.h */,
-				CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */,
+				CC558DD11A94C03B00AE0566 /* Animation */,
 				CC5244DC1A89458E00F52859 /* Model */,
 				F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */,
 				F9C2F5541A8915BE00342CE8 /* Images.xcassets */,
@@ -468,6 +499,7 @@
 				F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */,
 				CC451A991A8E5B5D009AD5D3 /* EventDetailViewController.m in Sources */,
 				F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */,
+				CC558DD01A9436EF00AE0566 /* PresentingAnimation.m in Sources */,
 				F953F0031A8A651F00667C19 /* RootViewController.m in Sources */,
 				CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */,
 				CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */,
@@ -475,16 +507,18 @@
 				F93463881A93DA6100600BED /* Interest.m in Sources */,
 				CC5244D81A89456900F52859 /* Event.m in Sources */,
 				F92CEFB71A8952B3005CD279 /* NewEventViewController.m in Sources */,
+				CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */,
 				F93463821A93B73300600BED /* InterestsCollectionViewController.m in Sources */,
 				F9C2F54A1A8915BE00342CE8 /* main.m in Sources */,
 				F9C2F57B1A8920DE00342CE8 /* InterestsViewController.m in Sources */,
 				F92CEFB41A89509D005CD279 /* ParkGameTableViewCell.m in Sources */,
 				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
+				CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */,
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
 				CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */,
 				F93463851A93BBC100600BED /* CustomCollectionViewCell.m in Sources */,
+				CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */,
 				F9C2F56F1A891F2B00342CE8 /* ParkGameViewController.m in Sources */,
-				CC451A961A8E3963009AD5D3 /* SetTimeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
