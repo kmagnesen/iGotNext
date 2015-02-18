@@ -8,6 +8,7 @@
 
 #import "CategoryModalViewController.h"
 
+
 @interface CategoryModalViewController () <UIPickerViewDelegate, UIPickerViewDataSource>
 - (void)addSetSportButton;
 - (void)setSport:(id)sender ;
@@ -23,14 +24,16 @@
     [super viewDidLoad];
 
     self.view.layer.cornerRadius = 8.f;
-    self.view.backgroundColor = [UIColor blueColor];
+    self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
     [self addSetSportButton];
 
-    self.sportsArray = @[@"Basketball", @"Disc Golf", @"Dodgeball", @"Football", @"Hockey (Street/Ice)", @"Soccer", @"Ultimate Frisbee", @"VolleyBall (Beach/Bar)", @"Yugigassen (Snowball Fighting)", @"All Other Sports"];
+    self.sportsArray = @[@"Basketball", @"Disc Golf", @"Dodgeball", @"Football", @"Hockey (Street/Ice)", @"Soccer", @"Ultimate Frisbee", @"VolleyBall (Beach/Bar)", @"All Other Sports"];
 
     [self categoryPickerView];
-}
 
+    //Default setting without moving picker is "Basketball"
+    self.category = @"Basketball";
+}
 
 #pragma mark -------------- Set Sport Button --------------
 
@@ -39,7 +42,7 @@
     setSportButton.translatesAutoresizingMaskIntoConstraints = NO;
     setSportButton.tintColor = [UIColor whiteColor];
     setSportButton.titleLabel.font = [UIFont fontWithName:@"Avenir" size:20];
-    [setSportButton setTitle:@"Dismiss" forState:UIControlStateNormal];
+    [setSportButton setTitle:@"Set Sport" forState:UIControlStateNormal];
     [setSportButton addTarget:self action:@selector(setSport:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:setSportButton];
 
@@ -59,16 +62,38 @@
 }
 
 - (void)setSport:(id)sender {
+    [self categoryPicked];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark -------------- CategoryPickerView --------------
 
 -(void)categoryPickerView {
-    UIPickerView *categoryPickerView = [[UIPickerView alloc] initWithFrame:CGRectMake(0, 200, 320, 200)];
+    UIPickerView *categoryPickerView = [UIPickerView new];
     categoryPickerView.delegate = self;
     categoryPickerView.showsSelectionIndicator = YES;
+
     [self.view addSubview:categoryPickerView];
+
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:categoryPickerView
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.f
+                                                           constant:0.f]];
+
+    [self.view addConstraints:[NSLayoutConstraint
+                               constraintsWithVisualFormat:@"V:|-[categoryPickerView(>=100)]-|"
+                               options:NSLayoutFormatDirectionLeadingToTrailing
+                               metrics:nil
+                               views:NSDictionaryOfVariableBindings(categoryPickerView)]];
+
+    [self.view addConstraints:[NSLayoutConstraint
+                               constraintsWithVisualFormat:@"H:[categoryPickerView(==50)]"
+                               options:NSLayoutFormatDirectionLeadingToTrailing
+                               metrics:nil
+                               views:NSDictionaryOfVariableBindings(categoryPickerView)]];
 }
 
 // returns the number of 'columns' to display.
@@ -113,9 +138,6 @@
             self.category = @"VolleyBall (Beach/Bar)";
             break;
         case 8:
-            self.category = @"Yugigassen (Snowball Fighting)";
-            break;
-        case 9:
             self.category = @"All Other Sports";
             break;
     }
@@ -125,6 +147,13 @@
 - (CGFloat)pickerView:(UIPickerView *)pickerView widthForComponent:(NSInteger)component {
     return 300;
 }
+
+#pragma mark -------------- Delegate --------------
+
+-(void)categoryPicked {
+    [self.delegate categorySetWith:self.category];
+}
+
 
 
 @end
