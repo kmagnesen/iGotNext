@@ -23,8 +23,6 @@
 @property MKMapItem *selectedPark;
 @property MKPointAnnotation *parksAnnotation;
 @property (nonatomic)NSMutableArray *geofences;
-//@property NSString *title;
-//@property NSString *subtitle;
 
 
 @end
@@ -82,8 +80,9 @@
 
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
             annotation.coordinate = coordinate;
-            annotation.title = parkMapItem.placemark.title;
-            //annotation.subtitle = parkMapItem.placemark.subtitle;
+            NSLog(@"%@", parkMapItem.placemark.name);
+            annotation.title = parkMapItem.placemark.name;
+            annotation.subtitle = parkMapItem.placemark.title;
 
             [self.mapView addAnnotation:annotation];
 
