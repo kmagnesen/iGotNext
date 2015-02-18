@@ -23,15 +23,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    Interest *hockey = [[Interest alloc] initWithImage:nil andSportName:@"Hockey"];
-    Interest *football = [[Interest alloc] initWithImage:nil andSportName:@"Football"];
-    Interest *soccer = [[Interest alloc] initWithImage:nil andSportName:@"Soccer"];
-    Interest *volleyball = [[Interest alloc] initWithImage:nil andSportName:@"Volleyball"];
-    Interest *basketball = [[Interest alloc] initWithImage:nil andSportName:@"Basketball"];
-    Interest *dodgeball = [[Interest alloc] initWithImage:nil andSportName:@"Dodgeball"];
-    Interest *ultimateFrisbee = [[Interest alloc] initWithImage:nil andSportName:@"Ultimate Frisbee"];
-    Interest *discGolf = [[Interest alloc] initWithImage:nil andSportName:@"Disc Golf"];
-    Interest *other = [[Interest alloc] initWithImage:nil andSportName:@"Other"];
+    Interest *hockey = [[Interest alloc] initWithImage:[UIImage imageNamed:@"hockey"] andSportName:@"Hockey"];
+    Interest *football = [[Interest alloc] initWithImage:[UIImage imageNamed:@"football"] andSportName:@"Football"];
+    Interest *soccer = [[Interest alloc] initWithImage:[UIImage imageNamed:@"soccer"] andSportName:@"Soccer"];
+    Interest *volleyball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"volleyball"] andSportName:@"Volleyball"];
+    Interest *basketball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"basketball"] andSportName:@"Basketball"];
+    Interest *dodgeball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"dodgeball"] andSportName:@"Dodgeball"];
+    Interest *ultimateFrisbee = [[Interest alloc] initWithImage:[UIImage imageNamed:@"ultimateFrisbee"] andSportName:@"Ultimate Frisbee"];
+    Interest *discGolf = [[Interest alloc] initWithImage:[UIImage imageNamed:@"discGolf"] andSportName:@"Disc Golf"];
+    Interest *other = [[Interest alloc] initWithImage:[UIImage imageNamed:@"other"] andSportName:@"Other"];
 
     self.sportsInterests = [[NSMutableArray alloc]initWithObjects:hockey, football, soccer, volleyball, basketball, dodgeball, ultimateFrisbee, discGolf, other, nil];
 
