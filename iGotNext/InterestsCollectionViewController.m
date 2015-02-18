@@ -69,12 +69,12 @@
 
     if (cell.selected == YES) {
         [cell setSelected:YES];
-        [cell setHighlighted:YES];
-//        [cell setTintColor:[UIColor blueColor]];
+//        [cell setHighlighted:YES];
+        [cell setTintColor:[UIColor blueColor]];
     } else {
         [cell setSelected:NO];
-        [cell setHighlighted:NO];
-//        [cell setTintColor:[UIColor clearColor]];
+//        [cell setHighlighted:NO];
+        [cell setTintColor:[UIColor clearColor]];
     }
 
     return cell;
@@ -87,15 +87,15 @@
     if (cell.selected == YES) {
 
         [cell setSelected:YES];
-        [cell setHighlighted:YES];
-//        [cell setTintColor:[UIColor blueColor]];
+//        [cell setHighlighted:YES];
+        [cell setTintColor:[UIColor blueColor]];
 
         [self.selectedInterests addObject:cell.interest.sportName];
         [self saveInterests];
     } else {
         [cell setSelected:NO];
-        [cell setHighlighted:NO];
-//        [cell setTintColor:[UIColor clearColor]];
+//        [cell setHighlighted:NO];
+        [cell setTintColor:[UIColor clearColor]];
     }
 }
 
@@ -105,15 +105,15 @@
     if (cell.selected == NO) {
 
         [cell setSelected:NO];
-        [cell setHighlighted:NO];
-//        [cell setTintColor:[UIColor clearColor]];
+//        [cell setHighlighted:NO];
+        [cell setTintColor:[UIColor clearColor]];
 
         [self.selectedInterests removeObject:cell.interest.sportName];
         [self saveInterests];
     } else {
         [cell setSelected:YES];
-        [cell setHighlighted:YES];
-//        [cell setTintColor:[UIColor blueColor]];
+//        [cell setHighlighted:YES];
+        [cell setTintColor:[UIColor blueColor]];
     }
 }
 
