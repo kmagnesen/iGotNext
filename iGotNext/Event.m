@@ -29,7 +29,7 @@
     return @"Event";
 }
 
--(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextView *)description Location:(MKMapItem *)location Category:(NSString *)category StartTime:(UIDatePicker *)startTime EndTime:(UIDatePicker *)endTime {
+-(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(MKMapItem *)location Category:(NSString *)category StartTime:(NSDate *)startTime EndTime:(NSDate *)endTime {
 
     self = [super init];
 
@@ -39,8 +39,8 @@
         self.eventDescription = description.text;
         self.eventLocation = location.name;
         self.eventCategory = category;
-        self.eventStartTime = startTime.date;
-        self.eventEndTime = endTime.date;
+        self.eventStartTime = startTime;
+        self.eventEndTime = endTime;
     }
 
     return self;

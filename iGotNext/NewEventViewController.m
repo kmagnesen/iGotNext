@@ -19,12 +19,14 @@
 
 @interface NewEventViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartTimeVCDelegate, EndTimeVCDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
-@property (strong, nonatomic) IBOutlet UITextView *descriptionTextView;
-@property (strong, nonatomic) IBOutlet UILabel *sportLabel;
+@property (strong, nonatomic) IBOutlet UITextField *evenDescriptionTextField;
+@property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
+@property (strong, nonatomic) IBOutlet UILabel *startTimeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *endTimeLabel;
 @property (strong, nonatomic) NSArray *sportsArray;
 @property NSString *category;
-@property NSString *startTime;
-@property NSString *endTime;
+@property NSDate *startTime;
+@property NSDate *endTime;
 
 @end
 
@@ -38,9 +40,15 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated {
-    //categoryLabel.text = category;
-    //startTimeLabel.text = startTime;
-    //endTimeLabel.text = endTime;
+    self.categoryLabel.text = self.category;
+
+    self.startTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.startTime
+                                                              dateStyle:NSDateFormatterShortStyle
+                                                              timeStyle:NSDateFormatterFullStyle];
+
+    self.endTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.endTime
+                                                            dateStyle:NSDateFormatterShortStyle
+                                                            timeStyle:NSDateFormatterFullStyle];
 }
 
 //On Post button pressed, segue back saves newly created event
@@ -51,11 +59,11 @@
 
         Event *event = [[Event alloc] initWithUser:currentUser
                                              Title:self.eventNameTextField
-                                       Description:self.descriptionTextView
+                                       Description:self.evenDescriptionTextField
                                           Location:self.park
                                           Category:self.category
-                                         StartTime:nil
-                                           EndTime:nil];
+                                         StartTime:self.startTime
+                                           EndTime:self.endTime];
 
         [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
@@ -116,19 +124,16 @@
 -(void)categorySetWith:(NSString *)sportCategory {
     self.category = [NSString new];
     self.category = sportCategory;
-    NSLog(@"This is the selected category %@", self.category);
 }
 
 -(void)startTimeSetWith:(NSDate *)eventStartDate {
-    self.startTime = [NSDateFormatter localizedStringFromDate:eventStartDate
-                                                    dateStyle:NSDateFormatterShortStyle
-                                                    timeStyle:NSDateFormatterFullStyle];
+    self.startTime = [NSDate new];
+    self.startTime = eventStartDate;
 }
 
 -(void)endTimeSetWith:(NSDate *)eventEndDate {
-    self.endTime = [NSDateFormatter localizedStringFromDate:eventEndDate
-                                                    dateStyle:NSDateFormatterShortStyle
-                                                    timeStyle:NSDateFormatterFullStyle];
+    self.endTime = [NSDate new];
+    self.endTime = eventEndDate;
 }
 
 @end
