@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -451,24 +452,24 @@
                                         <exclude reference="Dh9-a6-8C2"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <exclude reference="7CG-YS-Ytr"/>
-                                        <exclude reference="BrN-Uz-x1g"/>
-                                        <exclude reference="qhF-XR-m3q"/>
                                         <exclude reference="aNq-TC-f1T"/>
                                         <exclude reference="fT7-8n-11o"/>
                                         <exclude reference="yTc-MS-LpT"/>
-                                        <exclude reference="Q2r-R0-MQL"/>
-                                        <exclude reference="SnQ-Bk-sHZ"/>
-                                        <exclude reference="VdL-kS-vNO"/>
-                                        <exclude reference="xKj-m2-5ng"/>
-                                        <exclude reference="Jna-3O-che"/>
-                                        <exclude reference="zSs-0I-hJA"/>
                                         <exclude reference="r2W-7F-vBf"/>
                                         <exclude reference="zU0-8y-iBV"/>
                                         <exclude reference="VhH-Xo-6tN"/>
                                         <exclude reference="q6q-uO-PUk"/>
                                         <exclude reference="pDG-Kn-xpZ"/>
                                         <exclude reference="xTo-fR-1f8"/>
+                                        <exclude reference="7CG-YS-Ytr"/>
+                                        <exclude reference="BrN-Uz-x1g"/>
+                                        <exclude reference="qhF-XR-m3q"/>
+                                        <exclude reference="Q2r-R0-MQL"/>
+                                        <exclude reference="SnQ-Bk-sHZ"/>
+                                        <exclude reference="VdL-kS-vNO"/>
+                                        <exclude reference="xKj-m2-5ng"/>
+                                        <exclude reference="Jna-3O-che"/>
+                                        <exclude reference="zSs-0I-hJA"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -483,24 +484,24 @@
                                         <include reference="Dh9-a6-8C2"/>
                                     </mask>
                                     <mask key="constraints">
-                                        <include reference="7CG-YS-Ytr"/>
-                                        <include reference="BrN-Uz-x1g"/>
-                                        <include reference="qhF-XR-m3q"/>
                                         <include reference="aNq-TC-f1T"/>
                                         <include reference="fT7-8n-11o"/>
                                         <include reference="yTc-MS-LpT"/>
-                                        <include reference="Q2r-R0-MQL"/>
-                                        <include reference="SnQ-Bk-sHZ"/>
-                                        <include reference="VdL-kS-vNO"/>
-                                        <include reference="xKj-m2-5ng"/>
-                                        <include reference="Jna-3O-che"/>
-                                        <include reference="zSs-0I-hJA"/>
                                         <include reference="r2W-7F-vBf"/>
                                         <include reference="zU0-8y-iBV"/>
                                         <include reference="VhH-Xo-6tN"/>
                                         <include reference="q6q-uO-PUk"/>
                                         <include reference="pDG-Kn-xpZ"/>
                                         <include reference="xTo-fR-1f8"/>
+                                        <include reference="7CG-YS-Ytr"/>
+                                        <include reference="BrN-Uz-x1g"/>
+                                        <include reference="qhF-XR-m3q"/>
+                                        <include reference="Q2r-R0-MQL"/>
+                                        <include reference="SnQ-Bk-sHZ"/>
+                                        <include reference="VdL-kS-vNO"/>
+                                        <include reference="xKj-m2-5ng"/>
+                                        <include reference="Jna-3O-che"/>
+                                        <include reference="zSs-0I-hJA"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -517,10 +518,10 @@
                                 <exclude reference="Eys-ac-4Cd"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="7hU-ay-fSq"/>
                                 <exclude reference="EtP-yf-zEp"/>
                                 <exclude reference="MKD-W7-I4e"/>
                                 <exclude reference="mZe-tk-toU"/>
-                                <exclude reference="7hU-ay-fSq"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -528,10 +529,10 @@
                                 <include reference="Eys-ac-4Cd"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="7hU-ay-fSq"/>
                                 <include reference="EtP-yf-zEp"/>
                                 <include reference="MKD-W7-I4e"/>
                                 <include reference="mZe-tk-toU"/>
-                                <include reference="7hU-ay-fSq"/>
                             </mask>
                         </variation>
                     </view>
@@ -743,7 +744,7 @@
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="nFt-E1-W1u">
                             <connections>
                                 <action selector="onLogOutButtonTapped:" destination="nWv-mk-66D" id="E72-ui-R1Y"/>
-                                <segue destination="khA-Su-cia" kind="presentation" identifier="LogOutSegue" id="WXt-8n-mb2"/>
+                                <segue destination="MPw-oj-wyo" kind="presentation" identifier="LogOutSegue" id="8WL-g2-471"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -876,7 +877,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2fI-6l-tJX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-18" y="-1139"/>
+            <point key="canvasLocation" x="780" y="-1871"/>
         </scene>
         <!--Login-->
         <scene sceneID="yrk-8W-ZaE">
@@ -1005,7 +1006,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1431" y="-1139"/>
+            <point key="canvasLocation" x="1809" y="-1131"/>
         </scene>
         <!--Update Interests:-->
         <scene sceneID="Kg0-mP-IKF">
@@ -1058,7 +1059,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gl-kz-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3066" y="-1139"/>
+            <point key="canvasLocation" x="2874" y="-2071"/>
         </scene>
         <!--Select Interests:-->
         <scene sceneID="Qbu-Tl-b0P">
@@ -1194,7 +1195,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Il8-94-VdY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2145" y="-1139"/>
+            <point key="canvasLocation" x="2523" y="-1131"/>
         </scene>
         <!--I Got Next-->
         <scene sceneID="kpe-1x-R9y">
@@ -1383,7 +1384,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UwP-tl-wAt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="744" y="-1139"/>
+            <point key="canvasLocation" x="1086" y="-1131"/>
         </scene>
     </scenes>
     <resources>
@@ -1396,8 +1397,7 @@
         <image name="searchGames" width="45" height="45"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pLd-TZ-CEy"/>
-        <segue reference="1Ss-gs-Wzm"/>
+        <segue reference="Dv6-gN-Wbj"/>
         <segue reference="Lly-gz-zVb"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
