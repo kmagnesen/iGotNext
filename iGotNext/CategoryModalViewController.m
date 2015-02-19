@@ -70,6 +70,8 @@
 
 -(void)categoryPickerView {
     UIPickerView *categoryPickerView = [UIPickerView new];
+    categoryPickerView.translatesAutoresizingMaskIntoConstraints = NO;
+
     categoryPickerView.delegate = self;
     categoryPickerView.showsSelectionIndicator = YES;
     categoryPickerView.transform = CGAffineTransformMakeScale(0.7, 0.7);
@@ -84,15 +86,11 @@
                                                          multiplier:1.f
                                                            constant:0.f]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryPickerView(50)]"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[categoryPickerView]"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:NSDictionaryOfVariableBindings(categoryPickerView)]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-8-[categoryPickerView]-8-|"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(categoryPickerView)]];
 }
 
 // returns the number of 'columns' to display.

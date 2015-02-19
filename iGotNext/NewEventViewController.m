@@ -101,7 +101,7 @@
     EndTimeModalViewController *endTimeVC = [EndTimeModalViewController new];
     endTimeVC.delegate = self;
     endTimeVC.transitioningDelegate = self;
-    endTimeVC.modalPresentationStyle = UIModalPresentationPageSheet;
+    endTimeVC.modalPresentationStyle = UIModalPresentationCustom;
 
     [self.navigationController presentViewController:endTimeVC
                                             animated:YES
