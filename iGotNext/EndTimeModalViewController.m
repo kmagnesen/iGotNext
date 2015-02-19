@@ -64,6 +64,7 @@
 -(void)datePickerView {
     UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 210, 320, 216)];
     [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
+    datePicker.transform = CGAffineTransformMakeScale(0.7, 0.7);
 
     [self.view addSubview:datePicker];
 

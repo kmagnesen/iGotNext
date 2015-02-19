@@ -79,7 +79,7 @@
     CategoryModalViewController *categoryViewController = [CategoryModalViewController new];
     categoryViewController.delegate = self;
     categoryViewController.transitioningDelegate = self;
-    categoryViewController.modalPresentationStyle = UIModalPresentationPageSheet;
+    categoryViewController.modalPresentationStyle = UIModalPresentationCustom;
 
     [self.navigationController presentViewController:categoryViewController
                                             animated:YES
@@ -90,7 +90,7 @@
     StartTimeModalViewController *startTimeVC = [StartTimeModalViewController new];
     startTimeVC.delegate = self;
     startTimeVC.transitioningDelegate = self;
-    startTimeVC.modalPresentationStyle = UIModalPresentationPageSheet;
+    startTimeVC.modalPresentationStyle = UIModalPresentationCustom;
 
     [self.navigationController presentViewController:startTimeVC
                                             animated:YES

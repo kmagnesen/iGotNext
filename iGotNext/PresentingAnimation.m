@@ -6,8 +6,9 @@
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 #import <UIKit/UIKit.h>
-#import "PresentingAnimation.h"
 #import <POP/POP.h>
+
+#import "PresentingAnimation.h"
 
 @implementation PresentingAnimation
 
@@ -22,14 +23,14 @@
 
     UIView *dimmingView = [[UIView alloc] initWithFrame:fromView.bounds];
     //TODO: change this dimmingview's color
-    dimmingView.backgroundColor = [UIColor blackColor];
+    dimmingView.backgroundColor = [UIColor whiteColor];
     dimmingView.layer.opacity = 0.0;
 
     UIView *toView = [transitionContext viewControllerForKey:UITransitionContextToViewControllerKey].view;
     toView.frame = CGRectMake(0,
                               0,
                               CGRectGetWidth(transitionContext.containerView.bounds) - 104.f,
-                              CGRectGetHeight(transitionContext.containerView.bounds) - 350.f);
+                              CGRectGetHeight(transitionContext.containerView.bounds) - 250.f);
     toView.center = CGPointMake(transitionContext.containerView.center.x, -transitionContext.containerView.center.y);
 
     [transitionContext.containerView addSubview:dimmingView];
@@ -55,3 +56,4 @@
 }
 
 @end
+
