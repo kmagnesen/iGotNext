@@ -21,13 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.endDate = [NSDate new];
+
     self.view.layer.cornerRadius = 8.f;
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
 
     [self addEndTimeButton];
     [self datePickerView];
 }
-
 
 #pragma mark -------------- Set End Time Button --------------
 
@@ -56,41 +57,41 @@
 }
 
 - (void)setEndTime:(id)sender {
+    [self endTimePicked];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
 #pragma mark -------------- DatePicker --------------
 
 -(void)datePickerView {
-    UIDatePicker *datePicker = [[UIDatePicker alloc] initWithFrame:CGRectMake(0, 210, 320, 216)];
+    UIDatePicker *datePicker = [UIDatePicker new];
+    datePicker.translatesAutoresizingMaskIntoConstraints = NO;
     [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
+    datePicker.minimumDate = [NSDate date];
     datePicker.transform = CGAffineTransformMakeScale(0.7, 0.7);
 
     [self.view addSubview:datePicker];
 
+    //This in theory should be centering the datePicker to horizontal center of the view
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:datePicker
                                                           attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
                                                           attribute:NSLayoutAttributeCenterX
-                                                         multiplier:1.f
-                                                           constant:0.f]];
+                                                         multiplier:1.0
+                                                           constant:0.0]];
 
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:|-[datePicker(>=100)]-|"
-                               options:NSLayoutFormatDirectionLeadingToTrailing
+                               constraintsWithVisualFormat:@"V:|-50-[datePicker]"
+                               options:0
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(datePicker)]];
 
-    [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"H:[datePicker(==50)]"
-                               options:NSLayoutFormatDirectionLeadingToTrailing
-                               metrics:nil
-                               views:NSDictionaryOfVariableBindings(datePicker)]];
+    self.endDate = [datePicker date];
 }
 
-
 #pragma mark -------------- Delegate --------------
+
 
 -(void)endTimePicked {
     [self.delegate endTimeSetWith:self.endDate];
