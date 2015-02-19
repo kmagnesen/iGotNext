@@ -9,11 +9,12 @@
 
 #import "ProfileViewController.h"
 #import "Interest.h"
+#import "EditInterestsModalViewController.h"
 
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
 
-@interface ProfileViewController () <UITableViewDataSource, UITabBarDelegate>
+@interface ProfileViewController () <UIViewControllerTransitioningDelegate, UITableViewDataSource, UITabBarDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *interestsTextView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -57,7 +58,6 @@
                 [self.usernameLabel reloadInputViews];
                 [self.profileTableView reloadData];
 //                NSLog(@"%@", self.interests);
-
             } else {
                 NSString *errorString = [[error userInfo] objectForKey:@"error"];
                 UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
@@ -71,6 +71,14 @@
 // can delete
 }
 - (IBAction)onEditInterestsButtonTapped:(UIButton *)sender {
+    EditInterestsModalViewController *interestViewController = [EditInterestsModalViewController new];
+//    interestViewController.delegate = self;
+    interestViewController.transitioningDelegate = self;
+    interestViewController.modalPresentationStyle = UIModalPresentationCustom;
+
+    [self.navigationController presentViewController:interestViewController
+                                            animated:YES
+                                          completion:NULL];
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -82,6 +90,18 @@
     }
 }
 
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source {
+    return [PresentingAnimation new];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [DismissingAnimation new];
+}
+
 #pragma mark ----------- UITableView Delegate & Data Source -----------
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -90,8 +110,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileCell"];
-//    Interest *interest = [self.interests objectAtIndex:indexPath.row];
     cell.textLabel.text = [self.interests objectAtIndex:indexPath.row];
+
     return cell;
 }
 
