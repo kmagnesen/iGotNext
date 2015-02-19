@@ -5,10 +5,13 @@
 //  Created by Kyle Magnesen on 2/9/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
+#import <Parse/Parse.h>
 
 #import "ProfileViewController.h"
-#import "Event.h"
-#import <Parse/Parse.h>
+#import "Interest.h"
+
+#import "PresentingAnimation.h"
+#import "DismissingAnimation.h"
 
 @interface ProfileViewController () <UITableViewDataSource, UITabBarDelegate>
 
@@ -26,18 +29,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentUser = [PFUser new];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
 
+    self.currentUser = [PFUser new];
     [self loadProfile];
 }
 
 - (void)loadProfile {
 
     PFUser *currentUser = [PFUser currentUser];
+    self.interests = [NSMutableArray new];
 
     if (currentUser) {
         PFQuery *userQuery = [PFUser query];
@@ -45,16 +49,16 @@
         [userQuery getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *object, NSError *error) {
 
             if (!error) {
+                self.navigationItem.title = [NSString stringWithFormat:@"Profile"];
 
                 self.usernameLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
-                self.navigationItem.title = [NSString stringWithFormat:@"My Profile"];
+                self.interests = [NSMutableArray arrayWithArray:[[PFUser currentUser]valueForKey:@"interests"]];
 
-                self.interestsTextView.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser]valueForKey:@"interests"]];
-
-                    [self.usernameLabel reloadInputViews];
+                [self.usernameLabel reloadInputViews];
+                [self.profileTableView reloadData];
+//                NSLog(@"%@", self.interests);
 
             } else {
-
                 NSString *errorString = [[error userInfo] objectForKey:@"error"];
                 UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                 [errorAlertView show];
@@ -64,7 +68,9 @@
 }
 
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
-
+// can delete
+}
+- (IBAction)onEditInterestsButtonTapped:(UIButton *)sender {
 }
 
 - (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -76,27 +82,6 @@
     }
 }
 
--(void)loadEventsCurrentUserIsAttending {
-    self.interests = [NSMutableArray new];
-
-    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
-
-        if (!error) {
-            for (Event *event in returnedEvents) {
-                if([event.attendees containsObject:self.currentUser]) {
-                    [self.interests addObject:event];
-                } else {
-                    ;
-                }
-            }
-            [self.profileTableView reloadData];
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
-}
-
 #pragma mark ----------- UITableView Delegate & Data Source -----------
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -104,9 +89,9 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
-    Event *event = [self.interests objectAtIndex:indexPath.row];
-    cell.textLabel.text = event.eventTitle;
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileCell"];
+//    Interest *interest = [self.interests objectAtIndex:indexPath.row];
+    cell.textLabel.text = [self.interests objectAtIndex:indexPath.row];
     return cell;
 }
 
