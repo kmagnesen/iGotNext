@@ -7,13 +7,17 @@
 //
 
 #import "ProfileViewController.h"
+#import "Event.h"
 #import <Parse/Parse.h>
 
-@interface ProfileViewController ()
+@interface ProfileViewController () <UITableViewDataSource, UITabBarDelegate>
+
 @property (strong, nonatomic) IBOutlet UITextView *interestsTextView;
-@property (strong, nonatomic) IBOutlet UITextView *statsAndReviewTextView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
-@property (strong, nonatomic) IBOutlet UIImageView *profileImageView;
+@property (strong, nonatomic) IBOutlet UITableView *profileTableView;
+
+@property NSMutableArray *interests;
+@property PFUser *currentUser;
 
 @end
 
@@ -21,6 +25,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.currentUser = [PFUser new];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -41,25 +47,17 @@
             if (!error) {
 
                 self.usernameLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
-                self.navigationItem.title = [NSString stringWithFormat:@"Player Bio: %@",[[PFUser currentUser]valueForKey:@"username"]];
+                self.navigationItem.title = [NSString stringWithFormat:@"My Profile"];
 
                 self.interestsTextView.text = [NSString stringWithFormat:@"%@", [[PFUser currentUser]valueForKey:@"interests"]];
 
-                PFFile *currentProfilePic = (PFFile *)[object objectForKey:@"profilePic"];
-
-                [currentProfilePic getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
-
-                    UIImage *image = [UIImage imageWithData:data];
-                    self.profileImageView.image = image;
-                    //                            [self.profilePic reloadInputViews];
                     [self.usernameLabel reloadInputViews];
-                }];
+
             } else {
 
                 NSString *errorString = [[error userInfo] objectForKey:@"error"];
                 UIAlertView *errorAlertView = [[UIAlertView alloc] initWithTitle:@"Error" message:errorString delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil, nil];
                 [errorAlertView show];
-                
             }
         }];
     }
@@ -78,6 +76,38 @@
     }
 }
 
+-(void)loadEventsCurrentUserIsAttending {
+    self.interests = [NSMutableArray new];
 
+    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
+
+        if (!error) {
+            for (Event *event in returnedEvents) {
+                if([event.attendees containsObject:self.currentUser]) {
+                    [self.interests addObject:event];
+                } else {
+                    ;
+                }
+            }
+            [self.profileTableView reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+#pragma mark ----------- UITableView Delegate & Data Source -----------
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.interests.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
+    Event *event = [self.interests objectAtIndex:indexPath.row];
+    cell.textLabel.text = event.eventTitle;
+    return cell;
+}
 
 @end
