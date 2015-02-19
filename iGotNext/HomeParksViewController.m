@@ -23,6 +23,7 @@
 @property MKMapItem *selectedPark;
 @property MKPointAnnotation *parksAnnotation;
 @property (nonatomic)NSMutableArray *geofences;
+@property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 
 
 @end
@@ -41,11 +42,34 @@
     self.selectedPark = [MKMapItem new];
     self.parksAnnotation = [MKPointAnnotation new];
     self.searchBar.delegate = self;
+
+    [self setUpLongTouchGesture];
+
 }
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-    [searchBar resignFirstResponder];
+-(void)setUpLongTouchGesture {
+    UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
+                                          initWithTarget:self action:@selector(handleLongPress:)];
+    lpgr.minimumPressDuration = 2.0; //user needs to press for 2 seconds
+    [self.mapView addGestureRecognizer:lpgr];
 }
+
+- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer
+{
+    if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
+        return;
+
+    CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
+    CLLocationCoordinate2D touchMapCoordinate =
+    [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+
+    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+    annot.coordinate = touchMapCoordinate;
+    [self.mapView addAnnotation:annot];
+}
+//-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
+//    [searchBar resignFirstResponder];
+//}
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
@@ -95,6 +119,7 @@
     }];
 }
 
+
 #pragma mark - Table View Methods
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -141,7 +166,12 @@
 //    else if (annotation != mapView.userLocation) {
 //    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //    }
+
     return pin;
+
+
+
+
 
 }
 
