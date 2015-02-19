@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.view.layer.cornerRadius = 8.f;
+    self.view.layer.cornerRadius = 5.f;
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
     [self addSetSportButton];
 
@@ -72,6 +72,7 @@
     UIPickerView *categoryPickerView = [UIPickerView new];
     categoryPickerView.delegate = self;
     categoryPickerView.showsSelectionIndicator = YES;
+    categoryPickerView.transform = CGAffineTransformMakeScale(0.7, 0.7);
 
     [self.view addSubview:categoryPickerView];
 
