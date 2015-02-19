@@ -56,6 +56,7 @@
 }
 
 - (void)setStartTime:(id)sender {
+    [self startTimePicked];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -84,6 +85,8 @@
                                options:0
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(datePicker)]];
+
+    self.startDate = [datePicker date];
 }
 
 #pragma mark -------------- Delegate --------------

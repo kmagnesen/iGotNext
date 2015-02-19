@@ -21,13 +21,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.endDate = [NSDate new];
+
     self.view.layer.cornerRadius = 8.f;
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
 
     [self addEndTimeButton];
     [self datePickerView];
 }
-
 
 #pragma mark -------------- Set End Time Button --------------
 
@@ -56,6 +57,7 @@
 }
 
 - (void)setEndTime:(id)sender {
+    [self endTimePicked];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -84,10 +86,12 @@
                                options:0
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(datePicker)]];
+
+    self.endDate = [datePicker date];
 }
 
-
 #pragma mark -------------- Delegate --------------
+
 
 -(void)endTimePicked {
     [self.delegate endTimeSetWith:self.endDate];
