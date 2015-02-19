@@ -30,7 +30,7 @@
     toView.frame = CGRectMake(0,
                               0,
                               CGRectGetWidth(transitionContext.containerView.bounds) - 104.f,
-                              CGRectGetHeight(transitionContext.containerView.bounds) - 250.f);
+                              CGRectGetHeight(transitionContext.containerView.bounds) - 230.f);
     toView.center = CGPointMake(transitionContext.containerView.center.x, -transitionContext.containerView.center.y);
 
     [transitionContext.containerView addSubview:dimmingView];

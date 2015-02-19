@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface EditInterestsModalViewController : UIViewController
+@interface EditInterestsModalViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
-//@property id<EditInterestsVCDelegate> delegate;
+{
+UICollectionView *_collectionView;
+}
 
 @end
