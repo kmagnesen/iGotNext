@@ -14,7 +14,7 @@
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
 
-@interface ProfileViewController () <UIViewControllerTransitioningDelegate, UITableViewDataSource, UITabBarDelegate>
+@interface ProfileViewController () <UIViewControllerTransitioningDelegate, UITableViewDataSource, UITabBarDelegate, UpdateInterestTVCDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextView *interestsTextView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
@@ -30,12 +30,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    self.currentUser = [PFUser new];
+    [self loadProfile];
 }
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-
-    self.currentUser = [PFUser new];
+- (void)updateInterests{
     [self loadProfile];
 }
 
@@ -72,7 +71,7 @@
 }
 - (IBAction)onEditInterestsButtonTapped:(UIButton *)sender {
     EditInterestsModalViewController *interestViewController = [EditInterestsModalViewController new];
-//    interestViewController.delegate = self;
+    interestViewController.delegate = self;
     interestViewController.transitioningDelegate = self;
     interestViewController.modalPresentationStyle = UIModalPresentationCustom;
 

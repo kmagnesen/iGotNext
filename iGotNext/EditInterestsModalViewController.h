@@ -8,10 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol UpdateInterestTVCDelegate
+
+-(void)updateInterests;
+
+@end
+
 @interface EditInterestsModalViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegateFlowLayout>
 
 {
 UICollectionView *_collectionView;
 }
 
+@property id<UpdateInterestTVCDelegate> delegate;
+
 @end
+
+
+
+
