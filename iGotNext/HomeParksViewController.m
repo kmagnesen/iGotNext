@@ -132,7 +132,7 @@
 
 -(void)findParkNear:(CLLocation *)location {
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
-    request.naturalLanguageQuery = @"Recreation";
+    request.naturalLanguageQuery = @"Sports";
     request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
 
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
