@@ -69,6 +69,7 @@
 //    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
     self.droppedAnnotation.coordinate = touchMapCoordinate;
     [self.mapView addAnnotation:self.droppedAnnotation];
+    [self confirmLocationAlert];
 
     
 }
