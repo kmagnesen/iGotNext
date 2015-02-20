@@ -19,6 +19,7 @@
 		CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */; };
 		CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */; };
 		CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */; };
+		CCBC36E51A9789A400B99BD7 /* KatieFile.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBC36E41A9789A400B99BD7 /* KatieFile.m */; };
 		CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */; };
 		F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */; };
 		F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BBC1A969C1C0002AD85 /* EditCollectionViewCell.m */; };
@@ -92,6 +93,8 @@
 		CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndTimeModalViewController.m; sourceTree = "<group>"; };
 		CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksViewController.h; sourceTree = "<group>"; };
 		CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksViewController.m; sourceTree = "<group>"; };
+		CCBC36E31A9789A400B99BD7 /* KatieFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KatieFile.h; sourceTree = "<group>"; };
+		CCBC36E41A9789A400B99BD7 /* KatieFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KatieFile.m; sourceTree = "<group>"; };
 		CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksTableViewCell.h; sourceTree = "<group>"; };
 		CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksTableViewCell.m; sourceTree = "<group>"; };
 		F9110BB81A96516F0002AD85 /* EditInterestsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInterestsModalViewController.h; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 			children = (
 				CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */,
 				CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */,
+				CCBC36E31A9789A400B99BD7 /* KatieFile.h */,
+				CCBC36E41A9789A400B99BD7 /* KatieFile.m */,
 				F9C2F56D1A891F2B00342CE8 /* ParkGameViewController.h */,
 				F9C2F56E1A891F2B00342CE8 /* ParkGameViewController.m */,
 				F9C2F5701A891F3900342CE8 /* SearchViewController.h */,
@@ -514,6 +519,7 @@
 				F953F0031A8A651F00667C19 /* RootViewController.m in Sources */,
 				CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */,
 				CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */,
+				CCBC36E51A9789A400B99BD7 /* KatieFile.m in Sources */,
 				F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */,
 				F93463881A93DA6100600BED /* Interest.m in Sources */,
 				CC5244D81A89456900F52859 /* Event.m in Sources */,

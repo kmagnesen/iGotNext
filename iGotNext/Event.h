@@ -13,7 +13,7 @@
 
 @property NSString *eventTitle;
 @property NSString *eventDescription;
-@property NSString *eventLocation;
+@property PFGeoPoint *location;
 @property PFUser *eventCreator;
 @property NSNumber *eventAttendance;
 @property NSString *eventCategory;
@@ -21,7 +21,8 @@
 @property NSDate *eventEndTime;
 @property NSArray *attendees;
 
--(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(MKMapItem *)location Category:(NSString *)category StartTime:(NSDate *)startTime EndTime:(NSDate *)endTime ;
+-(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(PFGeoPoint *)location Category:(NSString *)category StartTime:(NSDate *)startTime EndTime:(NSDate *)endTime ;
+-(instancetype)initWithUser:(PFUser *)currentUser andLocation:(MKPointAnnotation *)location;
 
 + (NSString *)parseClassName;
 

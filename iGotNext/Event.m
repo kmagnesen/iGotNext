@@ -14,7 +14,7 @@
 @dynamic eventTitle;
 @dynamic eventDescription;
 @dynamic eventCreator;
-@dynamic eventLocation;
+@dynamic location;
 @dynamic eventAttendance;
 @dynamic eventCategory;
 @dynamic eventStartTime;
@@ -29,7 +29,7 @@
     return @"Event";
 }
 
--(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(MKMapItem *)location Category:(NSString *)category StartTime:(NSDate *)startTime EndTime:(NSDate *)endTime {
+-(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(PFGeoPoint *)location Category:(NSString *)category StartTime:(NSDate *)startTime EndTime:(NSDate *)endTime {
 
     self = [super init];
 
@@ -37,7 +37,7 @@
         self.eventCreator = currentUser;
         self.eventTitle = title.text;
         self.eventDescription = description.text;
-        self.eventLocation = location.name;
+        self.location = location;
         self.eventCategory = category;
         self.eventStartTime = startTime;
         self.eventEndTime = endTime;
@@ -46,4 +46,17 @@
     return self;
 }
 
+-(instancetype)initWithUser:(PFUser *)currentUser andLocation:(MKPointAnnotation *)location {
+    self = [super init];
+
+    PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.coordinate.latitude
+                                               longitude:location.coordinate.longitude];
+
+    if (self) {
+        self.eventCreator = currentUser;
+        self.location = point;
+    }
+
+    return self;
+}
 @end
