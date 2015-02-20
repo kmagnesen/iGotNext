@@ -27,7 +27,7 @@
     self.currentAttendees = [NSMutableArray new];
     self.currentAttendees = [NSMutableArray arrayWithArray:self.event.attendees];
 
-    self.navigationItem.title = self.event.eventLocation;
+ //   self.navigationItem.title = self.event.eventLocation;
     self.eventTitleLabel.text = self.event.eventTitle;
     self.eventCategoryLabel.text = self.event.eventCategory;
     self.startTimeLabel.text = [NSString stringWithFormat:@"Start Time: %@", self.event.eventStartTime];
