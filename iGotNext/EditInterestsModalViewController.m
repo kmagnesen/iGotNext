@@ -9,6 +9,7 @@
 #import <Parse/Parse.h>
 
 #import "EditInterestsModalViewController.h"
+#import "EditCollectionViewCell.h"
 #import "Interest.h"
 
 @interface EditInterestsModalViewController ()
@@ -116,7 +117,7 @@
     [_collectionView setBounces:YES];
     [_collectionView setUserInteractionEnabled:YES];
 
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
+    [_collectionView registerClass:[EditCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
     [_collectionView setBackgroundColor:[UIColor clearColor]];
 
     [self.view addSubview:_collectionView];
@@ -146,13 +147,25 @@
 }
 
 // The cell that is returned must be retrieved from a call to -dequeueReusableCellWithReuseIdentifier:forIndexPath:
-- (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
+- (EditCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
+    EditCollectionViewCell *cell= [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
 
-    cell.backgroundColor = [UIColor blueColor];
+    cell.interest = [self.interests objectAtIndex:indexPath.row];
     return cell;
 }
 
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    EditCollectionViewCell *cell = (EditCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
+    if ([self.selections containsObject:cell.interest.sportName]) {
+        [self.selections removeObject:cell.interest.sportName];
+        cell.backgroundColor = [UIColor clearColor];
+        [self saveInterests];
+    } else {
+        [self.selections addObject:cell.interest.sportName];
+        cell.backgroundColor = [UIColor blueColor];
+        [self saveInterests];
+    }
+}
 
 @end
