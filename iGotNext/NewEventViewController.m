@@ -34,21 +34,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.category = [NSString new];
 
     self.navigationItem.title = self.park.name;
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    self.categoryLabel.text = self.category;
-
-    self.startTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.startTime
-                                                              dateStyle:NSDateFormatterShortStyle
-                                                              timeStyle:NSDateFormatterFullStyle];
-
-    self.endTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.endTime
-                                                            dateStyle:NSDateFormatterShortStyle
-                                                            timeStyle:NSDateFormatterFullStyle];
 }
 
 //On Post button pressed, segue back saves newly created event
@@ -124,16 +111,26 @@
 -(void)categorySetWith:(NSString *)sportCategory {
     self.category = [NSString new];
     self.category = sportCategory;
+
+    self.categoryLabel.text = self.category;
 }
 
 -(void)startTimeSetWith:(NSDate *)eventStartDate {
     self.startTime = [NSDate new];
     self.startTime = eventStartDate;
+
+    self.startTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.startTime
+                                                              dateStyle:NSDateFormatterShortStyle
+                                                              timeStyle:NSDateFormatterFullStyle];
 }
 
 -(void)endTimeSetWith:(NSDate *)eventEndDate {
     self.endTime = [NSDate new];
     self.endTime = eventEndDate;
+
+    self.endTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.endTime
+                                                            dateStyle:NSDateFormatterShortStyle
+                                                            timeStyle:NSDateFormatterFullStyle];
 }
 
 @end
