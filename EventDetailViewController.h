@@ -7,10 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "Event.h"
+#import "Game.h"
 
 @interface EventDetailViewController : UIViewController
 
-@property Event *event;
+@property Game *event;
 
 @end

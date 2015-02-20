@@ -11,7 +11,7 @@
 #import "CategoryModalViewController.h"
 #import "StartTimeModalViewController.h"
 #import "EndTimeModalViewController.h"
-#import "Event.h"
+#import "Game.h"
 
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
@@ -23,7 +23,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (strong, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *endTimeLabel;
+
 @property (strong, nonatomic) NSArray *sportsArray;
+
 @property NSString *category;
 @property NSDate *startTime;
 @property NSDate *endTime;
@@ -38,28 +40,12 @@
     self.navigationItem.title = self.park.name;
 }
 
-//On Post button pressed, segue back saves newly created event
-//TODO: segue needs to be changed to appropriate VC
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([[segue identifier] isEqualToString:@"BackToHomeFeed"]) {
-        PFUser *currentUser = [PFUser currentUser];
-
-        Event *event = [[Event alloc] initWithUser:currentUser
-                                             Title:self.eventNameTextField
-                                       Description:self.evenDescriptionTextField
-                                          Location:self.park
-                                          Category:self.category
-                                         StartTime:self.startTime
-                                           EndTime:self.endTime];
-
-        [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
-            } else {
-                NSLog(@"New event never saved, work on notification that makes sense for user");
-            }
-        }];
-    }
+-(void)saveUpdatedEvent {
+    self.event[@"eventTitle"] = self.eventNameTextField.text;
+    self.event[@"eventDescription"] = self.evenDescriptionTextField.text;
+    self.event[@"eventStartTime"] = self.startTime;
+    self.event[@"endTime"] = self.endTime;
+    [self.event saveInBackground];
 }
 
 - (IBAction)onSetCategoryTapped:(id)sender {

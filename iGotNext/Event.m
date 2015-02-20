@@ -29,23 +29,6 @@
     return @"Event";
 }
 
--(instancetype)initWithUser:(PFUser *)currentUser Title:(UITextField *)title Description:(UITextField *)description Location:(PFGeoPoint *)location Category:(NSString *)category StartTime:(NSDate *)startTime EndTime:(NSDate *)endTime {
-
-    self = [super init];
-
-    if (self) {
-        self.eventCreator = currentUser;
-        self.eventTitle = title.text;
-        self.eventDescription = description.text;
-        self.location = location;
-        self.eventCategory = category;
-        self.eventStartTime = startTime;
-        self.eventEndTime = endTime;
-    }
-
-    return self;
-}
-
 -(instancetype)initWithUser:(PFUser *)currentUser andLocation:(MKPointAnnotation *)location {
     self = [super init];
 

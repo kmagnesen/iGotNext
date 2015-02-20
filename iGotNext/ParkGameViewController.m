@@ -7,7 +7,7 @@
 //
 
 #import "ParkGameViewController.h"
-#import "ParkGameTableViewCell.h"
+#import "PickUpGameTableViewCell.h"
 #import "Event.h"
 #import "NewEventViewController.h"
 #import "EventDetailViewController.h"
@@ -60,7 +60,7 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ParkGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
+    PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
     cell.event = [self.sortedEvents objectAtIndex:indexPath.row];
     return cell;
 }
