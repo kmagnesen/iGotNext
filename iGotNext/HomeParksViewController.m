@@ -93,8 +93,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier] isEqualToString:@"CreateNewPickUpGame"]) {
         PFUser *currentUser = [PFUser currentUser];
-        Event *event = [[Event alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
-        [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        Game *game = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
+        [game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
             } else {
@@ -103,7 +103,7 @@
         }];
 
         NewEventViewController *newEventVC = segue.destinationViewController;
-        newEventVC.event = event;
+        newEventVC.game = game;
         
     }
 }

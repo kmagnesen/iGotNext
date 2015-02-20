@@ -7,7 +7,7 @@
 //
 #import <Parse/Parse.h>
 #import "ActivityFeedViewController.h"
-#import "Event.h"
+#import "Game.h"
 
 @interface ActivityFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -57,13 +57,13 @@
     self.gamesDisplayed = [NSMutableArray new];
 
     //Pulls events based on their eventCreator property
-    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query whereKey:@"eventCreator" equalTo:self.currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {
-            for (Event *event in returnedEvents) {
-                [self.gamesDisplayed addObject:event];
+            for (Game *game in returnedEvents) {
+                [self.gamesDisplayed addObject:game];
             }
             [self.tableView reloadData];
         } else {
@@ -75,13 +75,13 @@
 -(void)loadEventsCurrentUserIsAttending {
     self.gamesDisplayed = [NSMutableArray new];
 
-    PFQuery *query = [PFQuery queryWithClassName:@"Event"];
+    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {
-            for (Event *event in returnedEvents) {
-                if([event.attendees containsObject:self.currentUser]) {
-                    [self.gamesDisplayed addObject:event];
+            for (Game *game in returnedEvents) {
+                if([game.attendees containsObject:self.currentUser]) {
+                    [self.gamesDisplayed addObject:game];
                 } else {
                     ;
                 }
@@ -101,8 +101,8 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
-    Event *event = [self.gamesDisplayed objectAtIndex:indexPath.row];
-    cell.textLabel.text = event.eventTitle;
+    Game *game = [self.gamesDisplayed objectAtIndex:indexPath.row];
+    cell.textLabel.text = game.title;
     return cell;
 }
 

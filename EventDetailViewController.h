@@ -11,6 +11,6 @@
 
 @interface EventDetailViewController : UIViewController
 
-@property Game *event;
+@property Game *game;
 
 @end

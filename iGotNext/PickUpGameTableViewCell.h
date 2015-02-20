@@ -15,5 +15,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *eventLocationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventAttendingLabel;
-@property (nonatomic) Game *event;
+@property (nonatomic) Game *game;
 @end

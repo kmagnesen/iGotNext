@@ -9,16 +9,16 @@
 #import <Parse/Parse.h>
 #import <Foundation/Foundation.h>
 
-@interface Event : PFObject <PFSubclassing>
+@interface Game : PFObject <PFSubclassing>
 
-@property NSString *eventTitle;
-@property NSString *eventDescription;
+@property NSString *title;
+@property NSString *description;
 @property PFGeoPoint *location;
-@property PFUser *eventCreator;
-@property NSNumber *eventAttendance;
-@property NSString *eventCategory;
-@property NSDate *eventStartTime;
-@property NSDate *eventEndTime;
+@property PFUser *creator;
+@property NSNumber *attendance;
+@property NSString *category;
+@property NSDate *startTime;
+@property NSDate *endTime;
 @property NSArray *attendees;
 
 -(instancetype)initWithUser:(PFUser *)currentUser andLocation:(MKPointAnnotation *)location;

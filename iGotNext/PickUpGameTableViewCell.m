@@ -9,19 +9,20 @@
 
 @implementation PickUpGameTableViewCell
 
--(void)setEvent:(Event *)event {
-    _event = event;
-    self.eventNameLabel.text = event.eventTitle;
 
-    NSString *eventStartTime = [NSDateFormatter localizedStringFromDate:event.eventStartTime
+-(void)setGame:(Game *)game {
+    _game = game;
+    self.eventNameLabel.text = game.title;
+
+    NSString *gameStartTime = [NSDateFormatter localizedStringFromDate:game.startTime
                                                               dateStyle:NSDateFormatterShortStyle
                                                               timeStyle:NSDateFormatterShortStyle];
 
-    NSString *eventEndTime = [NSDateFormatter localizedStringFromDate:event.eventEndTime
+    NSString *gameEndTime = [NSDateFormatter localizedStringFromDate:game.endTime
                                                               dateStyle:NSDateFormatterShortStyle
                                                               timeStyle:NSDateFormatterShortStyle];
 
-    self.eventTimeLabel.text = [NSString stringWithFormat:@"Starts: %@ Ends: %@", eventStartTime, eventEndTime];
+    self.eventTimeLabel.text = [NSString stringWithFormat:@"Starts: %@ Ends: %@", gameStartTime, gameEndTime];
 }
 
 

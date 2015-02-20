@@ -41,11 +41,11 @@
 }
 
 -(void)saveUpdatedEvent {
-    self.event[@"eventTitle"] = self.eventNameTextField.text;
-    self.event[@"eventDescription"] = self.evenDescriptionTextField.text;
-    self.event[@"eventStartTime"] = self.startTime;
-    self.event[@"endTime"] = self.endTime;
-    [self.event saveInBackground];
+    self.game[@"title"] = self.eventNameTextField.text;
+    self.game[@"description"] = self.evenDescriptionTextField.text;
+    self.game[@"startTime"] = self.startTime;
+    self.game[@"endTime"] = self.endTime;
+    [self.game saveInBackground];
 }
 
 - (IBAction)onSetCategoryTapped:(id)sender {

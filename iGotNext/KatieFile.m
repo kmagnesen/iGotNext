@@ -9,7 +9,7 @@
 #import "KatieFile.h"
 
 //remember to import these frameworks
-#import "Event.h"
+#import "Game.h"
 #import <Parse/Parse.h>
 #import "NewEventViewController.h"
 
@@ -39,8 +39,8 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier] isEqualToString:@"CreateNewPickUpGame"]) {
         PFUser *currentUser = [PFUser currentUser];
-        Event *event = [[Event alloc] initWithUser:currentUser andLocation:self.dummyLocation];
-        [event saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        Game *game = [[Game alloc] initWithUser:currentUser andLocation:self.dummyLocation];
+        [game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (succeeded) {
                 NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
             } else {
@@ -49,8 +49,7 @@
         }];
 
         NewEventViewController *newEventVC = segue.destinationViewController;
-        newEventVC.event = event;
-
+        newEventVC.game = game;
     }
 }
 

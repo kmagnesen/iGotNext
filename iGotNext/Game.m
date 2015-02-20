@@ -7,18 +7,18 @@
 //
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
-#import "Event.h"
+#import "Game.h"
 
-@implementation Event
+@implementation Game
 
-@dynamic eventTitle;
-@dynamic eventDescription;
-@dynamic eventCreator;
+@dynamic title;
+@dynamic description;
+@dynamic creator;
 @dynamic location;
-@dynamic eventAttendance;
-@dynamic eventCategory;
-@dynamic eventStartTime;
-@dynamic eventEndTime;
+@dynamic attendance;
+@dynamic category;
+@dynamic startTime;
+@dynamic endTime;
 @dynamic attendees;
 
 + (void)load {
@@ -26,7 +26,7 @@
 }
 
 + (NSString *)parseClassName {
-    return @"Event";
+    return @"Game";
 }
 
 -(instancetype)initWithUser:(PFUser *)currentUser andLocation:(MKPointAnnotation *)location {
@@ -36,7 +36,7 @@
                                                longitude:location.coordinate.longitude];
 
     if (self) {
-        self.eventCreator = currentUser;
+        self.creator = currentUser;
         self.location = point;
     }
 
