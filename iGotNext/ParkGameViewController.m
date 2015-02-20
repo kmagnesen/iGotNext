@@ -7,8 +7,8 @@
 //
 
 #import "ParkGameViewController.h"
-#import "ParkGameTableViewCell.h"
-#import "Event.h"
+#import "PickUpGameTableViewCell.h"
+#import "Game.h"
 #import "NewEventViewController.h"
 #import "EventDetailViewController.h"
 
@@ -44,7 +44,7 @@
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {
-            for (Event *event in returnedEvents) {
+            for (Game *event in returnedEvents) {
                 [self.events addObject:event];
             }
             [self sortEvents];
@@ -60,8 +60,8 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    ParkGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
-    cell.event = [self.sortedEvents objectAtIndex:indexPath.row];
+    PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HomeFeedCell"];
+    cell.game = [self.sortedEvents objectAtIndex:indexPath.row];
     return cell;
 }
 
@@ -82,8 +82,8 @@
         newEventVC.park = self.park;
     } else if ([segue.identifier isEqualToString:@"EventDetailSegue"]) {
         EventDetailViewController *eventDetailVC = segue.destinationViewController;
-        Event *event = [self.sortedEvents objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        eventDetailVC.event = event;
+        Game *game = [self.sortedEvents objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        eventDetailVC.game = game;
     }
 }
 

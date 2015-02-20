@@ -25,25 +25,24 @@
     [super viewDidLoad];
 
     self.currentAttendees = [NSMutableArray new];
-    self.currentAttendees = [NSMutableArray arrayWithArray:self.event.attendees];
+    self.currentAttendees = [NSMutableArray arrayWithArray:self.game.attendees];
 
-    self.navigationItem.title = self.event.eventLocation;
-    self.eventTitleLabel.text = self.event.eventTitle;
-    self.eventCategoryLabel.text = self.event.eventCategory;
-    self.startTimeLabel.text = [NSString stringWithFormat:@"Start Time: %@", self.event.eventStartTime];
-    self.endTimeLabel.text = [NSString stringWithFormat:@"End Time: %@", self.event.eventEndTime];
-    self.eventDescriptionTextView.text = self.event.eventDescription;
+    self.eventTitleLabel.text = self.game.title;
+    self.eventCategoryLabel.text = self.game.category;
+    self.startTimeLabel.text = [NSString stringWithFormat:@"Start Time: %@", self.game.startTime];
+    self.endTimeLabel.text = [NSString stringWithFormat:@"End Time: %@", self.game.endTime];
+    self.eventDescriptionTextView.text = self.game.description;
 
-    [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", self.event.attendees.count] forState:UIControlStateNormal];
+    [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", self.game.attendees.count] forState:UIControlStateNormal];
 }
 
 -(void)saveUpdatedEvent {
     //Method that updates the event parse object being referred to
     PFQuery *query = [PFQuery queryWithClassName:@"Event"];
 
-    [query getObjectInBackgroundWithId:self.event.objectId block:^(PFObject *event, NSError *error) {
-        event[@"attendees"] = self.currentAttendees;
-        [event saveInBackground];
+    [query getObjectInBackgroundWithId:self.game.objectId block:^(PFObject *game, NSError *error) {
+        game[@"attendees"] = self.currentAttendees;
+        [game saveInBackground];
     }];
 }
 
@@ -51,7 +50,7 @@
     PFUser *currentUser = [PFUser currentUser];
 
     //Changes the number of people attending on the button and saves the changes to the parse object
-    if ([self.event.attendees containsObject:currentUser]) {
+    if ([self.game.attendees containsObject:currentUser]) {
         [self.currentAttendees removeObject:currentUser];
         [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", self.currentAttendees.count] forState:UIControlStateNormal];
         [self saveUpdatedEvent];

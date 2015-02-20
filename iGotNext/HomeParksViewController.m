@@ -11,8 +11,9 @@
 #import <CoreLocation/CoreLocation.h>
 #import "ParkGameViewController.h"
 #import "HomeParksTableViewCell.h"
+#import "NewEventViewController.h"
 
-@interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UISearchBarDelegate>
+@interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UISearchBarDelegate, UIAlertViewDelegate>
 
 @property CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -22,6 +23,7 @@
 @property NSArray *mapItems;
 @property MKMapItem *selectedPark;
 @property MKPointAnnotation *parksAnnotation;
+@property MKPointAnnotation *droppedAnnotation;
 @property (nonatomic)NSMutableArray *geofences;
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 
@@ -41,6 +43,7 @@
 
     self.selectedPark = [MKMapItem new];
     self.parksAnnotation = [MKPointAnnotation new];
+    self.droppedAnnotation = [MKPointAnnotation new];
     self.searchBar.delegate = self;
 
     [self setUpLongTouchGesture];
@@ -50,7 +53,7 @@
 -(void)setUpLongTouchGesture {
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 2.0; //user needs to press for 2 seconds
+    lpgr.minimumPressDuration = 1.0; //user needs to press for 2 seconds
     [self.mapView addGestureRecognizer:lpgr];
 }
 
@@ -63,9 +66,46 @@
     CLLocationCoordinate2D touchMapCoordinate =
     [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
 
-    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
-    annot.coordinate = touchMapCoordinate;
-    [self.mapView addAnnotation:annot];
+//    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
+    self.droppedAnnotation.coordinate = touchMapCoordinate;
+    [self.mapView addAnnotation:self.droppedAnnotation];
+    [self confirmLocationAlert];
+
+    
+}
+-(void) confirmLocationAlert {
+    UIAlertView *confirmationAlert = [[UIAlertView alloc] initWithTitle: @"Title"
+                                                                message:@"Are you sure you want to create a new pick-up game here?"
+                                                               delegate:self
+                                                      cancelButtonTitle:@"Nah, I fucked up"
+                                                      otherButtonTitles:@"Let's Boogie", nil];
+    [confirmationAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    if (buttonIndex == [alertView cancelButtonIndex]){
+        ;
+    }else{
+        //       [self prepareForSegue:@"CreateNewPickUpGame" sender:nil];
+    }
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if([[segue identifier] isEqualToString:@"CreateNewPickUpGame"]) {
+        PFUser *currentUser = [PFUser currentUser];
+        Game *game = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
+        [game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+            if (succeeded) {
+                NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
+            } else {
+                NSLog(@"New event never saved, work on notification that makes sense for user");
+            }
+        }];
+
+        NewEventViewController *newEventVC = segue.destinationViewController;
+        newEventVC.game = game;
+        
+    }
 }
 //-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
 //    [searchBar resignFirstResponder];
@@ -92,7 +132,7 @@
 
 -(void)findParkNear:(CLLocation *)location {
     MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
-    request.naturalLanguageQuery = @"Recreation";
+    request.naturalLanguageQuery = @"Sports";
     request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
 
     MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
@@ -166,7 +206,6 @@
 //    else if (annotation != mapView.userLocation) {
 //    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //    }
-
     return pin;
 
 
@@ -189,11 +228,11 @@
     [self.mapView setRegion:region animated:YES];
 }
 
--(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    self.selectedPark = [self.mapItems objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-    ParkGameViewController *parkGameVC = segue.destinationViewController;
-    parkGameVC.park = self.selectedPark;
-}
+//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//    self.selectedPark = [self.mapItems objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+//    ParkGameViewController *parkGameVC = segue.destinationViewController;
+//    parkGameVC.park = self.selectedPark;
+//}
 -(void)startMonitoringForRegions{
     for (CLCircularRegion *geofence in self.geofences) {
         [self.locationManager startMonitoringForRegion:geofence];

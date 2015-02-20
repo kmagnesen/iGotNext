@@ -7,9 +7,12 @@
 //
 #import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
+#import "Game.h"
 
 @interface NewEventViewController : UIViewController 
 
 @property MKMapItem *park;
+
+@property Game *game;
 
 @end
