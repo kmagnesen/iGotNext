@@ -9,9 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Game.h"
 
-@interface NewEventViewController : UIViewController 
-
-@property MKMapItem *park;
+@interface NewGameViewController : UIViewController 
 
 @property Game *game;
 

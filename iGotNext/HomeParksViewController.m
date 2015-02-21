@@ -10,7 +10,8 @@
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import "PickUpGameTableViewCell.h"
-#import "NewEventViewController.h"
+#import "NewGameViewController.h"
+
 
 @interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -27,7 +28,6 @@
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 @property NSMutableArray *games;
 @property NSArray *sortedGames;
-
 
 @end
 
@@ -93,9 +93,12 @@
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
     if (buttonIndex == [alertView cancelButtonIndex]){
+        //TODO: get so pin does not stay on map
         ;
     }else{
-        //       [self prepareForSegue:@"CreateNewPickUpGame" sender:nil];
+        NewGameViewController *newGameVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGameVC"];
+        //newGameVC.game = recently created Event object with loction of dropped pin
+        [self presentViewController:newGameVC animated:YES completion:nil];
     }
 }
 
@@ -103,20 +106,13 @@
 #pragma mark ----- Segue -----
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([[segue identifier] isEqualToString:@"CreateNewPickUpGame"]) {
-        PFUser *currentUser = [PFUser currentUser];
-        Game *game = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
-        [game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-            if (succeeded) {
-                NSLog(@"New event saved, but this is a reminder to work on the event that the event does not save");
-            } else {
-                NSLog(@"New event never saved, work on notification that makes sense for user");
-            }
-        }];
-
-        NewEventViewController *newEventVC = segue.destinationViewController;
-        newEventVC.game = game;
+    if([[segue identifier] isEqualToString:@"GameDetailSegue"]) {
+        //TODO: impliment steps for if users taps on annotation or a game in the tableview
     }
+}
+
+- (IBAction)unwindToGameFeed:(UIStoryboardSegue *)unwindSegue {
+    //TODO: reload the mapview with the new game that was just officially created
 }
 
 

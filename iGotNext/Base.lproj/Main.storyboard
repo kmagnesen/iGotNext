@@ -128,7 +128,7 @@
         <!--New Pick-up Game-->
         <scene sceneID="Axy-cw-4OO">
             <objects>
-                <viewController id="xfe-W1-Xqe" customClass="NewEventViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NewGameVC" id="xfe-W1-Xqe" customClass="NewGameViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="k82-rn-DfQ"/>
                         <viewControllerLayoutGuide type="bottom" id="iNj-hc-FJh"/>
@@ -304,6 +304,19 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R75-dD-9Ii">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Post">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="338" y="62" width="32" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="onPostTapped:" destination="xfe-W1-Xqe" eventType="touchUpInside" id="t4C-N4-ZiG"/>
+                                    <segue destination="kVd-Hc-9Xp" kind="unwind" unwindAction="unwindToGameFeed:" id="4IA-aT-xZG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.10196078431372549" green="0.59999999999999998" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -312,6 +325,16 @@
                             <constraint firstAttribute="trailingMargin" secondItem="Eys-ac-4Cd" secondAttribute="trailing" constant="-16" id="MKD-W7-I4e"/>
                             <constraint firstItem="Eys-ac-4Cd" firstAttribute="top" secondItem="k82-rn-DfQ" secondAttribute="bottom" constant="80" id="mZe-tk-toU"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="R75-dD-9Ii"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="R75-dD-9Ii"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="New Pick-up Game" id="aBi-pt-wVU">
                         <barButtonItem key="rightBarButtonItem" title="Post" id="W6c-mm-Qms">
@@ -825,7 +848,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uBj-eI-a84">
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uBj-eI-a84">
                                 <rect key="frame" x="0.0" y="64" width="600" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="75H-fN-0o1"/>
@@ -838,7 +861,7 @@
                                     <action selector="segementedControlSwitched:" destination="wl2-eX-EWm" eventType="valueChanged" id="Kee-yo-6Mn"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
                                 <rect key="frame" x="0.0" y="92" width="600" height="459"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -853,7 +876,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
-                                            <segue destination="OeW-G6-eWA" kind="show" id="7Ep-iD-FQR"/>
+                                            <segue destination="OeW-G6-eWA" kind="show" identifier="GameDetailSegue" id="7Ep-iD-FQR"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -862,7 +885,7 @@
                                     <outlet property="delegate" destination="wl2-eX-EWm" id="MOV-dt-6u8"/>
                                 </connections>
                             </tableView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
                                 <rect key="frame" x="0.0" y="92" width="600" height="459"/>
                                 <gestureRecognizers/>
                                 <connections>

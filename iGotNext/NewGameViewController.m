@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
-#import "NewEventViewController.h"
+#import "NewGameViewController.h"
 #import "CategoryModalViewController.h"
 #import "StartTimeModalViewController.h"
 #import "EndTimeModalViewController.h"
@@ -16,7 +16,7 @@
 #import "DismissingAnimation.h"
 
 
-@interface NewEventViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartTimeVCDelegate, EndTimeVCDelegate>
+@interface NewGameViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartTimeVCDelegate, EndTimeVCDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *evenDescriptionTextField;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
@@ -31,12 +31,10 @@
 
 @end
 
-@implementation NewEventViewController
+@implementation NewGameViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.navigationItem.title = self.park.name;
 }
 
 -(void)saveUpdatedEvent {
@@ -116,6 +114,9 @@
     self.endTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.endTime
                                                             dateStyle:NSDateFormatterShortStyle
                                                             timeStyle:NSDateFormatterFullStyle];
+}
+
+- (IBAction)onPostTapped:(UIButton *)sender {
 }
 
 @end

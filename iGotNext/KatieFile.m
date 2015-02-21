@@ -11,7 +11,7 @@
 //remember to import these frameworks
 #import "Game.h"
 #import <Parse/Parse.h>
-#import "NewEventViewController.h"
+#import "NewGameViewController.h"
 #import "GameDetailViewController.h"
 #import "PickUpGameTableViewCell.h"
 
@@ -50,7 +50,7 @@
             }
         }];
 
-        NewEventViewController *newEventVC = segue.destinationViewController;
+        NewGameViewController *newEventVC = segue.destinationViewController;
         newEventVC.game = game;
     } if ([segue.identifier isEqualToString:@"EventDetailSegue"]) {
         GameDetailViewController *eventDetailVC = segue.destinationViewController;
