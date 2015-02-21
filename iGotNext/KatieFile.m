@@ -12,6 +12,8 @@
 #import "Game.h"
 #import <Parse/Parse.h>
 #import "NewEventViewController.h"
+#import "GameDetailViewController.h"
+#import "PickUpGameTableViewCell.h"
 
 
 @implementation KatieFile
@@ -50,9 +52,54 @@
 
         NewEventViewController *newEventVC = segue.destinationViewController;
         newEventVC.game = game;
+    } if ([segue.identifier isEqualToString:@"EventDetailSegue"]) {
+        GameDetailViewController *eventDetailVC = segue.destinationViewController;
+        Game *game = [self.sortedGames objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        eventDetailVC.game = game;
     }
 }
 
-#pragma ----- TableView Methods ------
+#pragma ----- TableView of Games Methods ------
+
+//Call this method in viewDidLoad
+-(void)loadGamesFeed {
+    PFUser *currentUser = [PFUser currentUser];
+    NSArray *currentUserInterests = [currentUser objectForKey:@"interests"];
+
+    //Make sure to include "games" a global variable
+    self.games = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    [query whereKey:@"eventCategory" containedIn:currentUserInterests];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
+
+        if (!error) {
+            for (Game *game in returnedGames) {
+                [self.games addObject:game];
+            }
+            [self sortEvents];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
+}
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.sortedGames.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Make sure you set the CellID in storyboard
+    PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GameFeedCell"];
+    cell.game = [self.sortedGames objectAtIndex:indexPath.row];
+    return cell;
+}
+
+-(void)sortEvents{
+    self.sortedGames = [NSArray new];
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"eventStartTime" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    self.sortedGames = [self.games sortedArrayUsingDescriptors:sortDescriptors];
+}
 
 @end

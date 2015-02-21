@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C66C74C48E6EEECCAAF706F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ED19D657E6759774FC3E94 /* libPods.a */; };
-		CC451A991A8E5B5D009AD5D3 /* EventDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC451A981A8E5B5D009AD5D3 /* EventDetailViewController.m */; };
+		CC451A991A8E5B5D009AD5D3 /* GameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC451A981A8E5B5D009AD5D3 /* GameDetailViewController.m */; };
 		CC5244D81A89456900F52859 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5244D71A89456900F52859 /* Game.m */; };
 		CC558DBF1A93B31C00AE0566 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DBE1A93B31C00AE0566 /* Accounts.framework */; };
 		CC558DC11A93B33500AE0566 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DC01A93B33500AE0566 /* Social.framework */; };
@@ -36,7 +36,6 @@
 		F9C2F5551A8915BE00342CE8 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9C2F5541A8915BE00342CE8 /* Images.xcassets */; };
 		F9C2F5581A8915BE00342CE8 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F9C2F5561A8915BE00342CE8 /* LaunchScreen.xib */; };
 		F9C2F5641A8915BE00342CE8 /* iGotNextTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5631A8915BE00342CE8 /* iGotNextTests.m */; };
-		F9C2F56F1A891F2B00342CE8 /* ParkGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F56E1A891F2B00342CE8 /* ParkGameViewController.m */; };
 		F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5711A891F3900342CE8 /* SearchViewController.m */; };
 		F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5741A891F4900342CE8 /* ProfileViewController.m */; };
 		F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5771A891F8100342CE8 /* ActivityFeedViewController.m */; };
@@ -72,8 +71,8 @@
 		09ED19D657E6759774FC3E94 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1346EB1778F84773608B9199 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4761D9714831A8CF23D6AD10 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		CC451A971A8E5B5D009AD5D3 /* EventDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EventDetailViewController.h; path = ../EventDetailViewController.h; sourceTree = "<group>"; };
-		CC451A981A8E5B5D009AD5D3 /* EventDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = EventDetailViewController.m; path = ../EventDetailViewController.m; sourceTree = "<group>"; };
+		CC451A971A8E5B5D009AD5D3 /* GameDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDetailViewController.h; path = ../GameDetailViewController.h; sourceTree = "<group>"; };
+		CC451A981A8E5B5D009AD5D3 /* GameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDetailViewController.m; path = ../GameDetailViewController.m; sourceTree = "<group>"; };
 		CC5244D61A89456900F52859 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		CC5244D71A89456900F52859 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 		CC558DBE1A93B31C00AE0566 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
@@ -126,8 +125,6 @@
 		F9C2F55D1A8915BE00342CE8 /* iGotNextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iGotNextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C2F5621A8915BE00342CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C2F5631A8915BE00342CE8 /* iGotNextTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = iGotNextTests.m; sourceTree = "<group>"; };
-		F9C2F56D1A891F2B00342CE8 /* ParkGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ParkGameViewController.h; sourceTree = "<group>"; };
-		F9C2F56E1A891F2B00342CE8 /* ParkGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ParkGameViewController.m; sourceTree = "<group>"; };
 		F9C2F5701A891F3900342CE8 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
 		F9C2F5711A891F3900342CE8 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		F9C2F5731A891F4900342CE8 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
@@ -315,8 +312,8 @@
 				F92CEFB51A8952B3005CD279 /* NewEventViewController.h */,
 				F92CEFB61A8952B3005CD279 /* NewEventViewController.m */,
 				CC558DD81A94CA6000AE0566 /* Modal Views */,
-				CC451A971A8E5B5D009AD5D3 /* EventDetailViewController.h */,
-				CC451A981A8E5B5D009AD5D3 /* EventDetailViewController.m */,
+				CC451A971A8E5B5D009AD5D3 /* GameDetailViewController.h */,
+				CC451A981A8E5B5D009AD5D3 /* GameDetailViewController.m */,
 				CC558DD11A94C03B00AE0566 /* Animation */,
 				CC5244DC1A89458E00F52859 /* Model */,
 				F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */,
@@ -360,8 +357,6 @@
 				CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */,
 				CCBC36E31A9789A400B99BD7 /* KatieFile.h */,
 				CCBC36E41A9789A400B99BD7 /* KatieFile.m */,
-				F9C2F56D1A891F2B00342CE8 /* ParkGameViewController.h */,
-				F9C2F56E1A891F2B00342CE8 /* ParkGameViewController.m */,
 				F9C2F5701A891F3900342CE8 /* SearchViewController.h */,
 				F9C2F5711A891F3900342CE8 /* SearchViewController.m */,
 				F9C2F5731A891F4900342CE8 /* ProfileViewController.h */,
@@ -521,7 +516,7 @@
 			files = (
 				F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */,
 				F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */,
-				CC451A991A8E5B5D009AD5D3 /* EventDetailViewController.m in Sources */,
+				CC451A991A8E5B5D009AD5D3 /* GameDetailViewController.m in Sources */,
 				F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */,
 				CC558DD01A9436EF00AE0566 /* PresentingAnimation.m in Sources */,
 				F953F0031A8A651F00667C19 /* RootViewController.m in Sources */,
@@ -544,7 +539,6 @@
 				CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */,
 				F93463851A93BBC100600BED /* CustomCollectionViewCell.m in Sources */,
 				CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */,
-				F9C2F56F1A891F2B00342CE8 /* ParkGameViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

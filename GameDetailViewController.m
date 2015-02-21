@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
-#import "EventDetailViewController.h"
+#import "GameDetailViewController.h"
 
-@interface EventDetailViewController ()
+@interface GameDetailViewController ()
 @property (strong, nonatomic) IBOutlet UILabel *eventTitleLabel;
 @property (strong, nonatomic) IBOutlet UILabel *eventCategoryLabel;
 @property (strong, nonatomic) IBOutlet UILabel *startTimeLabel;
@@ -19,7 +19,7 @@
 
 @end
 
-@implementation EventDetailViewController
+@implementation GameDetailViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

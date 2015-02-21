@@ -13,5 +13,7 @@
 //This represents the point annotation you make right before you add it to the map
 @property MKPointAnnotation *dummyLocation;
 @property UITableView *tableView;
+@property NSMutableArray *games;
+@property NSArray *sortedGames;
 
 @end

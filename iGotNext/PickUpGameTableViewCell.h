@@ -11,9 +11,9 @@
 
 @interface PickUpGameTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) IBOutlet UILabel *eventNameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *eventLocationLabel;
-@property (strong, nonatomic) IBOutlet UILabel *eventTimeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *eventAttendingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *nameLabel;
+@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *attendingLabel;
 @property (nonatomic) Game *game;
 @end

@@ -12,7 +12,7 @@
 
 -(void)setGame:(Game *)game {
     _game = game;
-    self.eventNameLabel.text = game.title;
+    self.nameLabel.text = game.title;
 
     NSString *gameStartTime = [NSDateFormatter localizedStringFromDate:game.startTime
                                                               dateStyle:NSDateFormatterShortStyle
@@ -22,7 +22,7 @@
                                                               dateStyle:NSDateFormatterShortStyle
                                                               timeStyle:NSDateFormatterShortStyle];
 
-    self.eventTimeLabel.text = [NSString stringWithFormat:@"Starts: %@ Ends: %@", gameStartTime, gameEndTime];
+    self.timeLabel.text = [NSString stringWithFormat:@"Starts: %@ Ends: %@", gameStartTime, gameEndTime];
 }
 
 

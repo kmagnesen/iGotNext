@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Game.h"
 
-@interface EventDetailViewController : UIViewController
+@interface GameDetailViewController : UIViewController
 
 @property Game *game;
 
