@@ -1,1 +1,1 @@
-../../../GRMustache/src/classes/Compiling/GRMustacheCompiler_private.h
+../../../GRMustache/src/classes/GRMustacheCompiler_private.h

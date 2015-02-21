@@ -1,1 +1,1 @@
-../../../GRMustache/src/classes/Shared/GRMustacheError.h
+../../../GRMustache/src/classes/GRMustacheError.h

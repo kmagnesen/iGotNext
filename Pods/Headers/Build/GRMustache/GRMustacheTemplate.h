@@ -1,1 +1,1 @@
-../../../GRMustache/src/classes/Templates/GRMustacheTemplate.h
+../../../GRMustache/src/classes/GRMustacheTemplate.h
