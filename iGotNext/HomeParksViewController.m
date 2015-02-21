@@ -9,11 +9,10 @@
 #import <UIKit/UIKit.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
-#import "ParkGameViewController.h"
-#import "HomeParksTableViewCell.h"
+#import "PickUpGameTableViewCell.h"
 #import "NewEventViewController.h"
 
-@interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UISearchBarDelegate, UIAlertViewDelegate>
+@interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
 
 @property CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -26,6 +25,8 @@
 @property MKPointAnnotation *droppedAnnotation;
 @property (nonatomic)NSMutableArray *geofences;
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
+@property NSMutableArray *games;
+@property NSArray *sortedGames;
 
 
 @end
@@ -44,11 +45,18 @@
     self.selectedPark = [MKMapItem new];
     self.parksAnnotation = [MKPointAnnotation new];
     self.droppedAnnotation = [MKPointAnnotation new];
-    self.searchBar.delegate = self;
 
     [self setUpLongTouchGesture];
 
 }
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:YES];
+    self.mapView.showsUserLocation = YES;
+}
+
+
+#pragma mark ----- New Pin Methods -----
 
 -(void)setUpLongTouchGesture {
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
@@ -57,8 +65,7 @@
     [self.mapView addGestureRecognizer:lpgr];
 }
 
-- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer
-{
+- (void)handleLongPress:(UIGestureRecognizer *)gestureRecognizer {
     if (gestureRecognizer.state != UIGestureRecognizerStateBegan)
         return;
 
@@ -70,9 +77,11 @@
     self.droppedAnnotation.coordinate = touchMapCoordinate;
     [self.mapView addAnnotation:self.droppedAnnotation];
     [self confirmLocationAlert];
-
-    
 }
+
+
+#pragma mark ----- New Pin AlertView -----
+
 -(void) confirmLocationAlert {
     UIAlertView *confirmationAlert = [[UIAlertView alloc] initWithTitle: @"Title"
                                                                 message:@"Are you sure you want to create a new pick-up game here?"
@@ -90,6 +99,9 @@
     }
 }
 
+
+#pragma mark ----- Segue -----
+
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier] isEqualToString:@"CreateNewPickUpGame"]) {
         PFUser *currentUser = [PFUser currentUser];
@@ -104,17 +116,11 @@
 
         NewEventViewController *newEventVC = segue.destinationViewController;
         newEventVC.game = game;
-        
     }
 }
-//-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar {
-//    [searchBar resignFirstResponder];
-//}
 
-- (void) viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:YES];
-    self.mapView.showsUserLocation = YES;
-}
+
+#pragma mark ----- CLLocation -----
 
 - (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
     NSLog(@"%@", error);
@@ -144,7 +150,7 @@
 
             MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
             annotation.coordinate = coordinate;
-            NSLog(@"%@", parkMapItem.placemark.name);
+            //NSLog(@"%@", parkMapItem.placemark.name);
             annotation.title = parkMapItem.placemark.name;
             annotation.subtitle = parkMapItem.placemark.title;
 
@@ -160,39 +166,71 @@
 }
 
 
-#pragma mark - Table View Methods
+#pragma mark ----- Load Games -----
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-//    NSLog(@"%li", self.mapItems.count);
-    return self.mapItems.count;
-//    return 3;
+-(void)loadGamesFeed {
+    PFUser *currentUser = [PFUser currentUser];
+    NSArray *currentUserInterests = [currentUser objectForKey:@"interests"];
 
+    //Make sure to include "games" a global variable
+    self.games = [NSMutableArray new];
+    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    [query whereKey:@"eventCategory" containedIn:currentUserInterests];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
+
+        if (!error) {
+            for (Game *game in returnedGames) {
+                [self.games addObject:game];
+            }
+            [self sortGames];
+            [self.tableView reloadData];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
 
--(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    HomeParksTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:@"CellID"];
-    MKMapItem *park = [self.mapItems objectAtIndex:indexPath.row];
-    cell.park = park;
+-(void)sortGames{
+    self.sortedGames = [NSArray new];
+    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"eventStartTime" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+    self.sortedGames = [self.games sortedArrayUsingDescriptors:sortDescriptors];
+}
 
+
+#pragma mark ----- TableView Methods -----
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.sortedGames.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //Make sure you set the CellID in storyboard
+    PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GameFeedCell"];
+    cell.game = [self.sortedGames objectAtIndex:indexPath.row];
     return cell;
 }
+
+
+#pragma mark ----- Segmented Controller -----
+
 - (IBAction)segementedControlSwitched:(UISegmentedControl *)sender {
     UISegmentedControl *segmentedControl = (UISegmentedControl *) sender;
     NSInteger selectedSegment = segmentedControl.selectedSegmentIndex;
 
     if (selectedSegment == 0) {
         //toggle the correct view to be visible
+        [self.tableView setHidden:YES];
+        [self.mapView setHidden:NO];
+    } else {
+        //toggle the correct view to be visible
         [self.tableView setHidden:NO];
         [self.mapView setHidden:YES];
     }
-    else{
-        //toggle the correct view to be visible
-        [self.tableView setHidden:YES];
-        [self.mapView setHidden:NO];
-    }
 }
 
-#pragma mark - MK Map View Methods
+
+#pragma mark ----- MKMapView Methods -----
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
 
@@ -207,11 +245,6 @@
 //    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
 //    }
     return pin;
-
-
-
-
-
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
@@ -239,7 +272,8 @@
     }
 }
 
-#pragma MapView Delegate
+
+#pragma mark ----- MapView Delegate -----
 
 -(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
     if ([overlay isKindOfClass:[MKCircle class]]) {
@@ -252,8 +286,8 @@
     return nil;
 }
 
-#pragma LocationManager Delegate
 
+#pragma mark ----- LocationManager Delegate -----
 
 -(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
     NSLog(@"Entered region %@", region.identifier);
@@ -264,6 +298,7 @@
     NSLog(@"Exited region %@", region.identifier);
 
 }
+
 -(NSMutableArray *)geofences {
     if (!_geofences){
         _geofences = [NSMutableArray array];
