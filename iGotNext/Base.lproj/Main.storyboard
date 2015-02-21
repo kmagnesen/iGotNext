@@ -711,59 +711,6 @@
             </objects>
             <point key="canvasLocation" x="1803" y="-1123"/>
         </scene>
-        <!--Update Interests:-->
-        <scene sceneID="Kg0-mP-IKF">
-            <objects>
-                <viewController id="uLF-hS-1TX" customClass="InterestsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="IJO-qi-CAY"/>
-                        <viewControllerLayoutGuide type="bottom" id="HIZ-J7-rMK"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="itK-J8-HHp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" keyboardDismissMode="interactive" dataMode="prototypes" style="plain" separatorStyle="default" allowsMultipleSelection="YES" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="4nA-by-2mb">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="InterestCell" editingAccessoryType="checkmark" id="nZI-ei-mkA">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="nZI-ei-mkA" id="6rC-Ix-yUg">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <color key="tintColor" red="0.086274509803921567" green="0.66666666666666663" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="uLF-hS-1TX" id="aGM-Ic-77B"/>
-                                    <outlet property="delegate" destination="uLF-hS-1TX" id="KEQ-5j-slu"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="4nA-by-2mb" secondAttribute="trailing" constant="-16" id="Dgh-S3-kbj"/>
-                            <constraint firstItem="4nA-by-2mb" firstAttribute="top" secondItem="itK-J8-HHp" secondAttribute="topMargin" id="aGH-Kl-RFS"/>
-                            <constraint firstItem="4nA-by-2mb" firstAttribute="leading" secondItem="itK-J8-HHp" secondAttribute="leadingMargin" constant="-16" id="iUC-4X-JYt"/>
-                            <constraint firstItem="HIZ-J7-rMK" firstAttribute="top" secondItem="4nA-by-2mb" secondAttribute="bottom" id="xtR-yn-WPD"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Update Interests:" id="Lsb-3m-dsy">
-                        <barButtonItem key="leftBarButtonItem" title="Save" id="yAd-5y-HN0">
-                            <connections>
-                                <action selector="onSaveButtonTapped:" destination="uLF-hS-1TX" id="agZ-2Q-xXi"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gl-kz-vpc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2874" y="-2071"/>
-        </scene>
         <!--Select Interests:-->
         <scene sceneID="Qbu-Tl-b0P">
             <objects>
