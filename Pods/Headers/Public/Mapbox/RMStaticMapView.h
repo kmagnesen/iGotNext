@@ -1,1 +1,0 @@
-../../../Mapbox/MapView/Map/RMStaticMapView.h
