@@ -85,7 +85,7 @@
     UIAlertView *confirmationAlert = [[UIAlertView alloc] initWithTitle: @"Title"
                                                                 message:@"Are you sure you want to create a new pick-up game here?"
                                                                delegate:self
-                                                      cancelButtonTitle:@"Nah, I fucked up"
+                                                      cancelButtonTitle:@"Oops, wrong spot"
                                                       otherButtonTitles:@"Let's Boogie", nil];
     [confirmationAlert show];
 }
@@ -136,13 +136,13 @@
 }
 
 -(void)findParkNear:(CLLocation *)location {
-    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
-    request.naturalLanguageQuery = @"Sports";
-    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
-
-    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-        self.mapItems = response.mapItems;
+//    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
+//    request.naturalLanguageQuery = @"Sports";
+//    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
+//
+//    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+//    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+//        self.mapItems = response.mapItems;
 
         for (MKMapItem *parkMapItem in self.mapItems) {
             CLLocationCoordinate2D coordinate = parkMapItem.placemark.location.coordinate;
@@ -259,51 +259,4 @@
 
     [self.mapView setRegion:region animated:YES];
 }
-
-//-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//    self.selectedPark = [self.mapItems objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-//    ParkGameViewController *parkGameVC = segue.destinationViewController;
-//    parkGameVC.park = self.selectedPark;
-//}
--(void)startMonitoringForRegions{
-    for (CLCircularRegion *geofence in self.geofences) {
-        [self.locationManager startMonitoringForRegion:geofence];
-    }
-}
-
-
-#pragma mark ----- MapView Delegate -----
-
--(MKOverlayRenderer *)mapView:(MKMapView *)mapView rendererForOverlay:(id<MKOverlay>)overlay{
-    if ([overlay isKindOfClass:[MKCircle class]]) {
-        MKCircleRenderer *renderer = [[MKCircleRenderer alloc]initWithCircle:(MKCircle *)overlay];
-        renderer.fillColor = [[UIColor blueColor] colorWithAlphaComponent:0.2];
-        renderer.strokeColor = [[UIColor redColor] colorWithAlphaComponent:0.7];
-        renderer.lineWidth = 3.0;
-        return renderer;
-    }
-    return nil;
-}
-
-
-#pragma mark ----- LocationManager Delegate -----
-
--(void)locationManager:(CLLocationManager *)manager didEnterRegion:(CLRegion *)region{
-    NSLog(@"Entered region %@", region.identifier);
-
-}
-
--(void)locationManager:(CLLocationManager *)manager didExitRegion:(CLRegion *)region{
-    NSLog(@"Exited region %@", region.identifier);
-
-}
-
--(NSMutableArray *)geofences {
-    if (!_geofences){
-        _geofences = [NSMutableArray array];
-    }
-    return _geofences;
-}
-
-
 @end
