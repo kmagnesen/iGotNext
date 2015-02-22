@@ -125,48 +125,48 @@
 
 #pragma mark ----- CLLocation -----
 
-- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-    NSLog(@"%@", error);
-}
-
--(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-    for (CLLocation *location in locations) {
-        if (location.horizontalAccuracy < 1000 && location.verticalAccuracy < 1000) {
-            [self.locationManager stopUpdatingLocation];
-            [self findParkNear:location];
-            break;
-        }
-    }
-}
-
--(void)findParkNear:(CLLocation *)location {
-//    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
-//    request.naturalLanguageQuery = @"Sports";
-//    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
+//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
+//    NSLog(@"%@", error);
+//}
 //
-//    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-//    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-//        self.mapItems = response.mapItems;
-
-        for (MKMapItem *parkMapItem in self.mapItems) {
-            CLLocationCoordinate2D coordinate = parkMapItem.placemark.location.coordinate;
-
-            MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-            annotation.coordinate = coordinate;
-            //NSLog(@"%@", parkMapItem.placemark.name);
-            annotation.title = parkMapItem.placemark.name;
-            annotation.subtitle = parkMapItem.placemark.title;
-
-            [self.mapView addAnnotation:annotation];
-
-            MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius:500];
-            [self.mapView addOverlay:circle];
-
-        }
-        [self.mapView showAnnotations:self.mapView.annotations animated:YES];
-        [self.tableView reloadData];
-//    }];
-}
+//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
+//    for (CLLocation *location in locations) {
+//        if (location.horizontalAccuracy < 1000 && location.verticalAccuracy < 1000) {
+//            [self.locationManager stopUpdatingLocation];
+//            [self findParkNear:location];
+//            break;
+//        }
+//    }
+//}
+//
+//-(void)findParkNear:(CLLocation *)location {
+////    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
+////    request.naturalLanguageQuery = @"Sports";
+////    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
+////
+////    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
+////    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
+////        self.mapItems = response.mapItems;
+//
+//        for (MKMapItem *parkMapItem in self.mapItems) {
+//            CLLocationCoordinate2D coordinate = parkMapItem.placemark.location.coordinate;
+//
+//            MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
+//            annotation.coordinate = coordinate;
+//            //NSLog(@"%@", parkMapItem.placemark.name);
+//            annotation.title = parkMapItem.placemark.name;
+//            annotation.subtitle = parkMapItem.placemark.title;
+//
+//            [self.mapView addAnnotation:annotation];
+//
+//            MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius:500];
+//            [self.mapView addOverlay:circle];
+//
+//        }
+//        [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+//        [self.tableView reloadData];
+////    }];
+//}
 
 
 #pragma mark ----- Load Games -----
@@ -236,7 +236,6 @@
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
 
-
     if (annotation == mapView.userLocation) {
         return nil;
     }
@@ -250,16 +249,31 @@
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-    CLLocationCoordinate2D centerCoordinate = view.annotation.coordinate;
-
-    MKCoordinateSpan span;
-    span.latitudeDelta = 0.01;
-    span.longitudeDelta = 0.01;
-
-    MKCoordinateRegion region;
-    region.center = centerCoordinate;
-    region.span = span;
-
-    [self.mapView setRegion:region animated:YES];
+//    CLLocationCoordinate2D centerCoordinate = view.annotation.coordinate;
+//
+//    MKCoordinateSpan span;
+//    span.latitudeDelta = 0.001;
+//    span.longitudeDelta = 0.001;
+//
+//    MKCoordinateRegion region;
+//    region.center = centerCoordinate;
+//    region.span = span;
+//
+//    [self.mapView setRegion:region animated:YES];
 }
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    MKCoordinateRegion region;
+    MKCoordinateSpan span;
+    span.latitudeDelta = 0.069;
+    span.longitudeDelta = 0.069;
+    CLLocationCoordinate2D location;
+    location.latitude = userLocation.coordinate.latitude;
+    location.longitude = userLocation.coordinate.longitude;
+    region.span = span;
+    region.center = location;
+    [mapView setRegion:region animated:YES];
+}
+
+
 @end
