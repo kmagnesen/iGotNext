@@ -47,11 +47,11 @@
     Interest *soccer = [[Interest alloc] initWithImage:[UIImage imageNamed:@"soccer"]
                                           andSportName:@"Soccer"];
 
-    Interest *volleyball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"volleyball"]
-                                              andSportName:@"Volleyball"];
-
     Interest *basketball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"basketball"]
                                               andSportName:@"Basketball"];
+
+    Interest *volleyball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"volleyball"]
+                                              andSportName:@"Volleyball"];
 
     Interest *dodgeball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"dodgeball"]
                                              andSportName:@"Dodgeball"];
@@ -65,7 +65,7 @@
     Interest *other = [[Interest alloc] initWithImage:[UIImage imageNamed:@"other"]
                                          andSportName:@"Other"];
 
-    self.interests = [[NSMutableArray alloc]initWithObjects:hockey, football, soccer, volleyball, basketball, dodgeball, ultimateFrisbee, discGolf, other, nil];
+    self.interests = [[NSMutableArray alloc]initWithObjects:hockey, football, soccer, basketball, volleyball, dodgeball, ultimateFrisbee, other, discGolf, nil];
 }
 
 - (void)setInterest:(id)sender{
