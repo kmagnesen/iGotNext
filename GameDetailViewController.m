@@ -33,7 +33,7 @@
     self.endTimeLabel.text = [NSString stringWithFormat:@"End Time: %@", self.game.endTime];
     self.eventDescriptionTextView.text = self.game.description;
 
-    [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", self.game.attendees.count] forState:UIControlStateNormal];
+    [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", (unsigned long)self.game.attendees.count] forState:UIControlStateNormal];
 }
 
 -(void)saveUpdatedEvent {
@@ -52,11 +52,11 @@
     //Changes the number of people attending on the button and saves the changes to the parse object
     if ([self.game.attendees containsObject:currentUser]) {
         [self.currentAttendees removeObject:currentUser];
-        [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", self.currentAttendees.count] forState:UIControlStateNormal];
+        [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", (unsigned long)self.currentAttendees.count] forState:UIControlStateNormal];
         [self saveUpdatedEvent];
     } else {
         [self.currentAttendees addObject:currentUser];
-        [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", self.currentAttendees.count] forState:UIControlStateNormal];
+        [self.attendButton setTitle:[NSString stringWithFormat:@"%lu people attending", (unsigned long)self.currentAttendees.count] forState:UIControlStateNormal];
         [self saveUpdatedEvent];
     }
 }
