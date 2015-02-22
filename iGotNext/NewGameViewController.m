@@ -35,6 +35,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    self.eventNameTextField.text = @"";
+    self.evenDescriptionTextField.text = @"";
+    self.category = @"";
+    self.startTime = [NSDate new];
+    self.endTime = [NSDate new];
 }
 
 -(void)saveUpdatedEvent {
@@ -42,6 +48,7 @@
     self.game[@"description"] = self.evenDescriptionTextField.text;
     self.game[@"startTime"] = self.startTime;
     self.game[@"endTime"] = self.endTime;
+    self.game[@"category"] = self.endTime;
     [self.game saveInBackground];
 }
 
@@ -117,6 +124,7 @@
 }
 
 - (IBAction)onPostTapped:(UIButton *)sender {
+    [self saveUpdatedEvent];
 }
 
 @end

@@ -11,14 +11,14 @@
 #import <CoreLocation/CoreLocation.h>
 #import "PickUpGameTableViewCell.h"
 #import "NewGameViewController.h"
+#import "HomeGamesViewController.h"
+#import "Game.h"
 
-
-@interface HomeParksViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
+@interface HomeGamesViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
 
 @property CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-@property (strong, nonatomic) IBOutlet UISearchBar *searchBar;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property NSArray *mapItems;
 @property MKMapItem *selectedPark;
@@ -31,7 +31,7 @@
 
 @end
 
-@implementation HomeParksViewController
+@implementation HomeGamesViewController
 
 -(void)viewDidLoad {
     [super viewDidLoad];
@@ -47,7 +47,6 @@
     self.droppedAnnotation = [MKPointAnnotation new];
 
     [self setUpLongTouchGesture];
-
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -97,7 +96,11 @@
         ;
     }else{
         NewGameViewController *newGameVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGameVC"];
-        //newGameVC.game = recently created Event object with loction of dropped pin
+        PFUser *currentUser = [PFUser currentUser];
+
+        //Creates a new game object that is passed using the recently dropped pin
+        Game *newGame = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
+        newGameVC.game = newGame;
         [self presentViewController:newGameVC animated:YES completion:nil];
     }
 }

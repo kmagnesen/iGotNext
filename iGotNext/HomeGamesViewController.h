@@ -7,6 +7,6 @@
 //
 #import <UIKit/UIKit.h>
 
-@interface HomeParksViewController : UIViewController
+@interface HomeGamesViewController : UIViewController
 
 @end

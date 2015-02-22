@@ -18,8 +18,7 @@
 		CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DD31A94C06000AE0566 /* DismissingAnimation.m */; };
 		CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */; };
 		CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */; };
-		CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */; };
-		CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */; };
+		CCBA1B081A8BF3E200018FC7 /* HomeGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */; };
 		F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */; };
 		F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BBC1A969C1C0002AD85 /* EditCollectionViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* PickUpGameTableViewCell.m */; };
@@ -89,10 +88,8 @@
 		CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTimeModalViewController.m; sourceTree = "<group>"; };
 		CC558DD91A94CAB500AE0566 /* EndTimeModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndTimeModalViewController.h; sourceTree = "<group>"; };
 		CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndTimeModalViewController.m; sourceTree = "<group>"; };
-		CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksViewController.h; sourceTree = "<group>"; };
-		CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksViewController.m; sourceTree = "<group>"; };
-		CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeParksTableViewCell.h; sourceTree = "<group>"; };
-		CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeParksTableViewCell.m; sourceTree = "<group>"; };
+		CCBA1B061A8BF3E200018FC7 /* HomeGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeGamesViewController.h; sourceTree = "<group>"; };
+		CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeGamesViewController.m; sourceTree = "<group>"; };
 		F9110BB81A96516F0002AD85 /* EditInterestsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInterestsModalViewController.h; sourceTree = "<group>"; };
 		F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInterestsModalViewController.m; sourceTree = "<group>"; };
 		F9110BBB1A969C1C0002AD85 /* EditCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCollectionViewCell.h; sourceTree = "<group>"; };
@@ -224,8 +221,6 @@
 			children = (
 				F93463861A93DA6100600BED /* Interest.h */,
 				F93463871A93DA6100600BED /* Interest.m */,
-				CCC5228F1A8D47370075DC24 /* HomeParksTableViewCell.h */,
-				CCC522901A8D47370075DC24 /* HomeParksTableViewCell.m */,
 				CC5244D61A89456900F52859 /* Game.h */,
 				CC5244D71A89456900F52859 /* Game.m */,
 			);
@@ -350,8 +345,8 @@
 		F9C2F57C1A89219400342CE8 /* Tab Bar View Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCBA1B061A8BF3E200018FC7 /* HomeParksViewController.h */,
-				CCBA1B071A8BF3E200018FC7 /* HomeParksViewController.m */,
+				CCBA1B061A8BF3E200018FC7 /* HomeGamesViewController.h */,
+				CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */,
 				F9C2F5701A891F3900342CE8 /* SearchViewController.h */,
 				F9C2F5711A891F3900342CE8 /* SearchViewController.m */,
 				F9C2F5731A891F4900342CE8 /* ProfileViewController.h */,
@@ -516,7 +511,7 @@
 				CC558DD01A9436EF00AE0566 /* PresentingAnimation.m in Sources */,
 				F953F0031A8A651F00667C19 /* RootViewController.m in Sources */,
 				CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */,
-				CCBA1B081A8BF3E200018FC7 /* HomeParksViewController.m in Sources */,
+				CCBA1B081A8BF3E200018FC7 /* HomeGamesViewController.m in Sources */,
 				F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */,
 				F93463881A93DA6100600BED /* Interest.m in Sources */,
 				CC5244D81A89456900F52859 /* Game.m in Sources */,
@@ -530,7 +525,6 @@
 				CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */,
 				F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */,
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
-				CCC522911A8D47370075DC24 /* HomeParksTableViewCell.m in Sources */,
 				F93463851A93BBC100600BED /* CustomCollectionViewCell.m in Sources */,
 				CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */,
 			);
