@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="MPw-oj-wyo">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -306,11 +306,24 @@
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R75-dD-9Ii">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="32" id="K1S-Bx-e7D"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ny3-eI-YKD"/>
+                                </constraints>
                                 <state key="normal" title="Post">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="338" y="62" width="32" height="30"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="K1S-Bx-e7D"/>
+                                        <exclude reference="Ny3-eI-YKD"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="K1S-Bx-e7D"/>
+                                        <include reference="Ny3-eI-YKD"/>
+                                    </mask>
                                 </variation>
                                 <connections>
                                     <action selector="onPostTapped:" destination="xfe-W1-Xqe" eventType="touchUpInside" id="t4C-N4-ZiG"/>
@@ -321,18 +334,28 @@
                         <color key="backgroundColor" red="0.10196078431372549" green="0.59999999999999998" blue="0.77254901960784317" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="iNj-hc-FJh" firstAttribute="top" secondItem="Eys-ac-4Cd" secondAttribute="bottom" id="7hU-ay-fSq"/>
+                            <constraint firstItem="R75-dD-9Ii" firstAttribute="top" secondItem="k82-rn-DfQ" secondAttribute="bottom" constant="42" id="80d-gy-H2r"/>
                             <constraint firstItem="Eys-ac-4Cd" firstAttribute="leading" secondItem="SVU-DD-K4D" secondAttribute="leadingMargin" constant="-16" id="EtP-yf-zEp"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Eys-ac-4Cd" secondAttribute="trailing" constant="-16" id="MKD-W7-I4e"/>
                             <constraint firstItem="Eys-ac-4Cd" firstAttribute="top" secondItem="k82-rn-DfQ" secondAttribute="bottom" constant="80" id="mZe-tk-toU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="R75-dD-9Ii" secondAttribute="trailing" constant="14" id="wHp-q6-2fN"/>
                         </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="R75-dD-9Ii"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="80d-gy-H2r"/>
+                                <exclude reference="wHp-q6-2fN"/>
+                            </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="R75-dD-9Ii"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="80d-gy-H2r"/>
+                                <include reference="wHp-q6-2fN"/>
                             </mask>
                         </variation>
                     </view>
