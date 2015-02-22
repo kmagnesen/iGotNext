@@ -36,6 +36,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+//    //Had to programatically add a nav bar because there is no storyboard segue
+//    UINavigationBar *navbar = [[UINavigationBar alloc]init];
+//    [self.view addSubview:navbar];
+
     self.eventNameTextField.text = @"";
     self.evenDescriptionTextField.text = @"";
     self.category = @"";
@@ -43,22 +47,29 @@
     self.endTime = [NSDate new];
 }
 
--(void)saveUpdatedEvent {
+
+#pragma mark ----- Game Parse Object Management -----
+
+-(void)saveUpdatedGame {
     self.game[@"title"] = self.eventNameTextField.text;
     self.game[@"description"] = self.evenDescriptionTextField.text;
     self.game[@"startTime"] = self.startTime;
     self.game[@"endTime"] = self.endTime;
-    self.game[@"category"] = self.endTime;
+    self.game[@"category"] = self.category;
     [self.game saveInBackground];
 }
 
+
+#pragma mark ----- UIButton Action -----
+
+//Before called nav bar to present modal vcs but there isn't one now
 - (IBAction)onSetCategoryTapped:(id)sender {
     CategoryModalViewController *categoryViewController = [CategoryModalViewController new];
     categoryViewController.delegate = self;
     categoryViewController.transitioningDelegate = self;
     categoryViewController.modalPresentationStyle = UIModalPresentationCustom;
 
-    [self.navigationController presentViewController:categoryViewController
+    [self presentViewController:categoryViewController
                                             animated:YES
                                           completion:NULL];
 }
@@ -69,7 +80,7 @@
     startTimeVC.transitioningDelegate = self;
     startTimeVC.modalPresentationStyle = UIModalPresentationCustom;
 
-    [self.navigationController presentViewController:startTimeVC
+    [self presentViewController:startTimeVC
                                             animated:YES
                                           completion:NULL];
 }
@@ -80,12 +91,13 @@
     endTimeVC.transitioningDelegate = self;
     endTimeVC.modalPresentationStyle = UIModalPresentationCustom;
 
-    [self.navigationController presentViewController:endTimeVC
+    [self presentViewController:endTimeVC
                                             animated:YES
                                           completion:NULL];
 }
 
-#pragma mark - UIViewControllerTransitioningDelegate
+
+#pragma mark ----- UIViewControllerTransitioningDelegate -----
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
@@ -97,7 +109,9 @@
     return [DismissingAnimation new];
 }
 
-#pragma mark -------------- Modal VC Delegate Methods --------------
+
+#pragma mark ----- Modal VC Delegate Methods -----
+
 -(void)categorySetWith:(NSString *)sportCategory {
     self.category = [NSString new];
     self.category = sportCategory;
@@ -123,8 +137,11 @@
                                                             timeStyle:NSDateFormatterFullStyle];
 }
 
+
+#pragma mark ----- Pre-Unwind action -----
+
 - (IBAction)onPostTapped:(UIButton *)sender {
-    [self saveUpdatedEvent];
+    [self saveUpdatedGame];
 }
 
 @end
