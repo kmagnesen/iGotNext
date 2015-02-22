@@ -27,7 +27,7 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
     [self addSetSportButton];
 
-    self.sportsArray = @[@"Basketball", @"Disc Golf", @"Dodgeball", @"Football", @"Hockey (Street/Ice)", @"Soccer", @"Ultimate Frisbee", @"VolleyBall (Beach/Bar)", @"All Other Sports"];
+    self.sportsArray = @[@"Basketball", @"Disc Golf", @"Dodgeball", @"Football", @"Hockey", @"Soccer", @"Ultimate Frisbee", @"VolleyBall", @"Other"];
 
     [self categoryPickerView];
 
