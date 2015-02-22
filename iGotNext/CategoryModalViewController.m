@@ -123,7 +123,7 @@
             self.category = @"Football";
             break;
         case 4:
-            self.category = @"Hockey (Street/Ice)";
+            self.category = @"Hockey";
             break;
         case 5:
             self.category = @"Soccer";
@@ -132,10 +132,10 @@
             self.category = @"Ultimate Frisbee";
             break;
         case 7:
-            self.category = @"VolleyBall (Beach/Bar)";
+            self.category = @"VolleyBall";
             break;
         case 8:
-            self.category = @"All Other Sports";
+            self.category = @"Other";
             break;
     }
 }
