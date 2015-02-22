@@ -13,6 +13,7 @@
 #import "NewGameViewController.h"
 #import "HomeGamesViewController.h"
 #import "Game.h"
+#import "GameDetailViewController.h"
 
 @interface HomeGamesViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -111,6 +112,8 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier] isEqualToString:@"GameDetailSegue"]) {
+        GameDetailViewController *gameDetailVC = segue.destinationViewController;
+        gameDetailVC.game = [self.games objectAtIndex:self.tableView.indexPathForSelectedRow.row];
         //TODO: impliment steps for if users taps on annotation or a game in the tableview
     }
 }
