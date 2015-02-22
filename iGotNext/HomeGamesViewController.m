@@ -161,7 +161,7 @@
         }
         [self.mapView showAnnotations:self.mapView.annotations animated:YES];
         [self.tableView reloadData];
-    }];
+//    }];
 }
 
 
