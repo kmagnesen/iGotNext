@@ -47,6 +47,7 @@
     self.droppedAnnotation = [MKPointAnnotation new];
 
     [self setUpLongTouchGesture];
+    [self loadGamesFeed];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -169,19 +170,18 @@
 
 -(void)loadGamesFeed {
     PFUser *currentUser = [PFUser currentUser];
-    NSArray *currentUserInterests = [currentUser objectForKey:@"interests"];
 
     //Make sure to include "games" a global variable
     self.games = [NSMutableArray new];
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
-    [query whereKey:@"eventCategory" containedIn:currentUserInterests];
+    [query whereKey:@"category" containedIn:currentUser[@"interests"]];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
 
         if (!error) {
             for (Game *game in returnedGames) {
                 [self.games addObject:game];
             }
-            [self sortGames];
+//            [self sortGames];
             [self.tableView reloadData];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
@@ -189,24 +189,24 @@
     }];
 }
 
--(void)sortGames{
-    self.sortedGames = [NSArray new];
-    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"eventStartTime" ascending:YES];
-    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
-    self.sortedGames = [self.games sortedArrayUsingDescriptors:sortDescriptors];
-}
+//-(void)sortGames{
+//    self.sortedGames = [NSArray new];
+//    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"eventStartTime" ascending:YES];
+//    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
+//    self.sortedGames = [self.games sortedArrayUsingDescriptors:sortDescriptors];
+//}
 
 
 #pragma mark ----- TableView Methods -----
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.sortedGames.count;
+    return self.games.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     //Make sure you set the CellID in storyboard
-    PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GameFeedCell"];
-    cell.game = [self.sortedGames objectAtIndex:indexPath.row];
+    PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
+    cell.game = [self.games objectAtIndex:indexPath.row];
     return cell;
 }
 
