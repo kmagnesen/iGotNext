@@ -275,8 +275,8 @@
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
     MKCoordinateRegion region;
     MKCoordinateSpan span;
-    span.latitudeDelta = 0.069;
-    span.longitudeDelta = 0.069;
+    span.latitudeDelta = 0.017;
+    span.longitudeDelta = 0.017;
     CLLocationCoordinate2D location;
     location.latitude = userLocation.coordinate.latitude;
     location.longitude = userLocation.coordinate.longitude;

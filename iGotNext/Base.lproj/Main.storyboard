@@ -5,6 +5,11 @@
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Lato-Regular.ttf">
+            <string>Lato-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Game Detail View Controller-->
         <scene sceneID="MxA-Ku-d04">
@@ -230,15 +235,23 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ryh-dm-hwk">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <color key="backgroundColor" red="0.1019607843" green="0.59999999999999998" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="120" id="bht-Yk-8yh"/>
                                             <constraint firstAttribute="height" constant="29" id="fNq-Wb-f6N"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                         <state key="normal" title="Set Sport Category">
-                                            <color key="titleColor" red="0.1019607843" green="0.59999999999999998" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="10" y="85" width="161" height="29"/>
+                                        </variation>
                                         <connections>
                                             <action selector="onSetCategoryTapped:" destination="xfe-W1-Xqe" eventType="touchUpInside" id="7Ev-dV-seo"/>
                                         </connections>
@@ -878,7 +891,7 @@
                                     <outlet property="delegate" destination="wl2-eX-EWm" id="MOV-dt-6u8"/>
                                 </connections>
                             </tableView>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
                                 <rect key="frame" x="0.0" y="92" width="600" height="459"/>
                                 <gestureRecognizers/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
