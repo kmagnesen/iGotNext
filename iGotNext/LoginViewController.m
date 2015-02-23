@@ -6,10 +6,15 @@
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
-#import "LoginViewController.h"
 #import <Parse/Parse.h>
 
-@interface LoginViewController () <UIAlertViewDelegate, UITextFieldDelegate>
+#import "LoginViewController.h"
+#import "SignUpModalViewController.h"
+
+#import "PresentingAnimation.h"
+#import "DismissingAnimation.h"
+
+@interface LoginViewController () <UIAlertViewDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, SignUpMVCDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
@@ -23,7 +28,10 @@
 
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
+}
 
+- (void)signUp {
+    [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -50,20 +58,30 @@
 }
 
 - (IBAction)onNewAccountButtonTapped:(UIButton *)sender {
-    PFUser* user = [PFUser user];
-    user.username = self.usernameTextField.text;
-    user.password = self.passwordTextField.text;
+    SignUpModalViewController *signUpMVC = [SignUpModalViewController new];
 
-    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error)
-        {
-            [self signupErrorAlert];
-        }
-        else
-        {
-            [self successAlert];
-        }
-    }];
+    signUpMVC.delegate = self;
+    signUpMVC.transitioningDelegate = self;
+    signUpMVC.modalPresentationStyle = UIModalPresentationCustom;
+
+    [self.navigationController presentViewController:signUpMVC
+                                            animated:YES
+                                          completion:NULL];
+    
+//    PFUser* user = [PFUser user];
+//    user.username = self.usernameTextField.text;
+//    user.password = self.passwordTextField.text;
+//
+//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+//        if (error)
+//        {
+//            [self signupErrorAlert];
+//        }
+//        else
+//        {
+//            [self successAlert];
+//        }
+//    }];
 }
 
 - (void)loginErrorAlert {
@@ -96,6 +114,18 @@
     {
         [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
     }
+}
+
+#pragma mark - UIViewControllerTransitioningDelegate
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
+                                                                  presentingController:(UIViewController *)presenting
+                                                                      sourceController:(UIViewController *)source {
+    return [PresentingAnimation new];
+}
+
+- (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {
+    return [DismissingAnimation new];
 }
 
 @end

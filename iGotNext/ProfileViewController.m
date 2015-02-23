@@ -69,6 +69,7 @@
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
 // can delete
 }
+
 - (IBAction)onEditInterestsButtonTapped:(UIButton *)sender {
     EditInterestsModalViewController *interestViewController = [EditInterestsModalViewController new];
     interestViewController.delegate = self;
