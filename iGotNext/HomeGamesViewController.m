@@ -259,27 +259,8 @@
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:gameAnnotation reuseIdentifier:nil];
     pin.canShowCallout = YES;
     //TODO: refactor to enum
-    pin.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Pin", gameAnnotation.game.category]];
+    pin.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Pin", [gameAnnotation.game.category stringByReplacingOccurrencesOfString:@" " withString:@""]]];
 
-    if ([gameAnnotation.game.category isEqualToString:@"Hockey"]) {
-        pin.image = [UIImage imageNamed:@"hockeyPin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"Football"]){
-        pin.image = [UIImage imageNamed:@"footballPin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"Soccer"]){
-        pin.image = [UIImage imageNamed:@"soccerPin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"Volleyball"]){
-        pin.image = [UIImage imageNamed:@"volleyballPin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"Basketball"]){
-        pin.image = [UIImage imageNamed:@"basketballPin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"Dodgeball"]){
-        pin.image = [UIImage imageNamed:@"dodgeballPin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"UltimateFrisbee"]){
-        pin.image = [UIImage imageNamed:@"ultimateFrisbeePin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"DiscGolf"]){
-        pin.image = [UIImage imageNamed:@"discGolfPin"];
-    }else if ([gameAnnotation.game.category isEqualToString:@"Other"]){
-        pin.image = [UIImage imageNamed:@"otherPin"];
-    }
 
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
   //  pin.image = [UIImage imageNamed:@""];
