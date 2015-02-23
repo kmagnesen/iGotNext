@@ -16,6 +16,11 @@
 
 @interface SignUpModalViewController : UIViewController
 
+{
+    UITextField *usernameTF;
+    UITextField *passwordTF;
+}
+
 @property id<SignUpMVCDelegate> delegate;
 
 @end
