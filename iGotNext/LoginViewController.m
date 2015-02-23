@@ -26,8 +26,17 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+    [tapBackground setNumberOfTapsRequired:1];
+    [self.view addGestureRecognizer:tapBackground];
+
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
+}
+
+-(void) dismissKeyboard:(id)sender
+{
+    [self.view endEditing:YES];
 }
 
 - (void)signUp {
@@ -67,21 +76,6 @@
     [self.navigationController presentViewController:signUpMVC
                                             animated:YES
                                           completion:NULL];
-    
-//    PFUser* user = [PFUser user];
-//    user.username = self.usernameTextField.text;
-//    user.password = self.passwordTextField.text;
-//
-//    [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-//        if (error)
-//        {
-//            [self signupErrorAlert];
-//        }
-//        else
-//        {
-//            [self successAlert];
-//        }
-//    }];
 }
 
 - (void)loginErrorAlert {

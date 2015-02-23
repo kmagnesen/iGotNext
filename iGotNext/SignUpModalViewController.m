@@ -16,6 +16,7 @@
 - (void)addSignUpButtons;
 - (void)setCredentials:(id)sender;
 - (void)cancelSignup:(id)sender;
+- (void)dismissKeyboard:(id)sender;
 
 @property NSString *user;
 @property NSString *password;
@@ -26,6 +27,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+    [tapBackground setNumberOfTapsRequired:1];
+    [self.view addGestureRecognizer:tapBackground];
+
     self.user = [NSString new];
     self.password = [NSString new];
 
@@ -36,12 +42,17 @@
     [self addTextFields];
 }
 
+- (void)dismissKeyboard:(id)sender
+{
+    [self.view endEditing:YES];
+}
+
 - (void)addSignUpButtons {
     UIButton *signUpButton = [UIButton buttonWithType:UIButtonTypeCustom];
     signUpButton.translatesAutoresizingMaskIntoConstraints = NO;
     signUpButton.tintColor = [UIColor whiteColor];
     signUpButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Bold" size:30];
-    [signUpButton setTitle:@"Sign Up" forState:UIControlStateNormal];
+    [signUpButton setTitle:@"Create New Account" forState:UIControlStateNormal];
     [signUpButton addTarget:self action:@selector(setCredentials:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:signUpButton];
 
@@ -67,14 +78,6 @@
                                                           attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.f
                                                            constant:0.f]];
-//
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:signUpButton
-//                                                          attribute:NSLayoutAttributeCenterY
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:self.view
-//                                                          attribute:NSLayoutAttributeCenterY
-//                                                         multiplier:1.f
-//                                                           constant:0.f]];
 
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:cancelButton
                                                           attribute:NSLayoutAttributeCenterX
@@ -84,7 +87,7 @@
                                                          multiplier:1.f
                                                            constant:0.f]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[signUpButton(20)]-[cancelButton]-65-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[signUpButton(20)]-10-[cancelButton]-65-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:viewz]];
@@ -96,29 +99,6 @@
 }
 
 - (void)addTextFields{
-//
-//    UILabel *userLabel = [UILabel new];
-//    UILabel *passLabel = [UILabel new];
-//
-//    userLabel.translatesAutoresizingMaskIntoConstraints = NO;
-//    userLabel.backgroundColor = [UIColor darkGrayColor];
-//    userLabel.font = [UIFont fontWithName:@"Avenir" size:10];
-//    userLabel.text = @"Enter New Username:";
-//    userLabel.textAlignment = NSTextAlignmentCenter;
-//    userLabel.adjustsFontSizeToFitWidth = YES;
-//    [userLabel setMinimumScaleFactor:.7f];
-//    [userLabel setUserInteractionEnabled:NO];
-//    [self.view addSubview:userLabel];
-//
-//    passLabel.translatesAutoresizingMaskIntoConstraints = NO;
-//    passLabel.backgroundColor = [UIColor darkGrayColor];
-//    passLabel.font = [UIFont fontWithName:@"Avenir" size:10];
-//    passLabel.text = @"Enter Password:";
-//    passLabel.textAlignment = NSTextAlignmentCenter;
-//    passLabel.adjustsFontSizeToFitWidth = YES;
-//    [passLabel setMinimumScaleFactor:.7f];
-//    [passLabel setUserInteractionEnabled:NO];
-//    [self.view addSubview:passLabel];
 
     usernameTF = [UITextField new];
     passwordTF = [UITextField new];
@@ -128,6 +108,7 @@
     usernameTF.font = [UIFont fontWithName:@"Avenir" size:12];
     usernameTF.borderStyle = UITextBorderStyleRoundedRect;
     usernameTF.userInteractionEnabled = YES;
+    usernameTF.placeholder = @"Enter Desired Username";
     [self.view addSubview:usernameTF];
 
     passwordTF.translatesAutoresizingMaskIntoConstraints = NO;
@@ -136,20 +117,10 @@
     passwordTF.font = [UIFont fontWithName:@"Avenir" size:12];
     passwordTF.borderStyle = UITextBorderStyleRoundedRect;
     passwordTF.userInteractionEnabled = YES;
+    passwordTF.placeholder = @"Enter A Password";
     [self.view addSubview:passwordTF];
 
-//    NSDictionary *views = NSDictionaryOfVariableBindings(userLabel, passLabel, usernameTF, passwordTF);
     NSDictionary *views = NSDictionaryOfVariableBindings(usernameTF, passwordTF);
-
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[userLabel]-|"
-//                                                                      options:0
-//                                                                      metrics:nil
-//                                                                        views:views]];
-//
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-0-[userLabel(20)]-0-[usernameTF]|"
-//                                                                      options:0
-//                                                                      metrics:nil
-//                                                                        views:views]];
 
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:usernameTF
                                                           attribute:NSLayoutAttributeCenterX
@@ -158,14 +129,6 @@
                                                           attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.f
                                                            constant:0.f]];
-
-//    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:usernameTF
-//                                                          attribute:NSLayoutAttributeCenterY
-//                                                          relatedBy:NSLayoutRelationEqual
-//                                                             toItem:self.view
-//                                                          attribute:NSLayoutAttributeCenterY
-//                                                         multiplier:1.f
-//                                                           constant:0.f]];
 
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:passwordTF
                                                           attribute:NSLayoutAttributeCenterX
@@ -185,17 +148,6 @@
                                                                       metrics:nil
                                                                         views:views]];
 
-
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[passLabel]-|"
-//                                                                      options:0
-//                                                                      metrics:nil
-//                                                                        views:views]];
-//
-//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[usernameTF]-[passLabel(20)]"
-//                                                                      options:0
-//                                                                      metrics:nil
-//                                                                        views:views]];
-//
     [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|-[passwordTF]-|"
                                                                       options:0
                                                                       metrics:nil
@@ -210,7 +162,6 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     [self nextResponder];
-
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField{
