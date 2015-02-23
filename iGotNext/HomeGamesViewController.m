@@ -14,6 +14,7 @@
 #import "HomeGamesViewController.h"
 #import "Game.h"
 #import "GameDetailViewController.h"
+#import "GameAnnotation.h"
 
 @interface HomeGamesViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -29,6 +30,8 @@
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 @property NSMutableArray *games;
 @property NSArray *sortedGames;
+@property GameAnnotation *gameAnnotation;
+@property Game *selectedGame;
 
 @end
 
@@ -49,6 +52,8 @@
 
     [self setUpLongTouchGesture];
     [self loadGamesFeed];
+
+    self.tableView.hidden = YES;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
@@ -113,8 +118,12 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([[segue identifier] isEqualToString:@"GameDetailSegue"]) {
         GameDetailViewController *gameDetailVC = segue.destinationViewController;
-        gameDetailVC.game = [self.games objectAtIndex:self.tableView.indexPathForSelectedRow.row];
-        //TODO: impliment steps for if users taps on annotation or a game in the tableview
+        if (self.tableView.hidden == NO) {
+            self.selectedGame = [self.games objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+        }else{
+            ;
+        }
+        gameDetailVC.game = self.selectedGame;
     }
 }
 
@@ -122,8 +131,6 @@
     //TODO: reload the mapview with the new game that was just officially created
 }
 
-
-#pragma mark ----- CLLocation -----
 
 //- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
 //    NSLog(@"%@", error);
@@ -186,6 +193,7 @@
             }
 //            [self sortGames];
             [self.tableView reloadData];
+            [self loadMap];
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -207,10 +215,14 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //Make sure you set the CellID in storyboard
     PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     cell.game = [self.games objectAtIndex:indexPath.row];
     return cell;
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+
 }
 
 
@@ -234,32 +246,30 @@
 
 #pragma mark ----- MKMapView Methods -----
 
--(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
+-(void)loadMap {
+    for (Game *game in self.games) {
+        GameAnnotation *gameAnnotation = [[GameAnnotation alloc]initWithGame:game];
+        [self.mapView addAnnotation:gameAnnotation];
+    }
+    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+}
 
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
     if (annotation == mapView.userLocation) {
         return nil;
     }
-    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
 
+    MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
     pin.canShowCallout = YES;
-//    else if (annotation != mapView.userLocation) {
-//    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-//    }
+
+    pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     return pin;
 }
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control {
-//    CLLocationCoordinate2D centerCoordinate = view.annotation.coordinate;
-//
-//    MKCoordinateSpan span;
-//    span.latitudeDelta = 0.001;
-//    span.longitudeDelta = 0.001;
-//
-//    MKCoordinateRegion region;
-//    region.center = centerCoordinate;
-//    region.span = span;
-//
-//    [self.mapView setRegion:region animated:YES];
+    self.gameAnnotation = view.annotation;
+    self.selectedGame = self.gameAnnotation.game;
+    [self performSegueWithIdentifier:@"GameDetailSegue" sender:view];
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {

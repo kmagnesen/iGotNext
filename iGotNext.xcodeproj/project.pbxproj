@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1C66C74C48E6EEECCAAF706F /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 09ED19D657E6759774FC3E94 /* libPods.a */; };
+		50BA68531A9AA1F0000F6469 /* GameAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = 50BA68521A9AA1F0000F6469 /* GameAnnotation.m */; };
 		CC451A991A8E5B5D009AD5D3 /* GameDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC451A981A8E5B5D009AD5D3 /* GameDetailViewController.m */; };
 		CC5244D81A89456900F52859 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = CC5244D71A89456900F52859 /* Game.m */; };
 		CC558DBF1A93B31C00AE0566 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC558DBE1A93B31C00AE0566 /* Accounts.framework */; };
@@ -69,6 +70,8 @@
 		09ED19D657E6759774FC3E94 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		1346EB1778F84773608B9199 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		4761D9714831A8CF23D6AD10 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		50BA68511A9AA1F0000F6469 /* GameAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameAnnotation.h; sourceTree = "<group>"; };
+		50BA68521A9AA1F0000F6469 /* GameAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameAnnotation.m; sourceTree = "<group>"; };
 		CC451A971A8E5B5D009AD5D3 /* GameDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameDetailViewController.h; path = ../GameDetailViewController.h; sourceTree = "<group>"; };
 		CC451A981A8E5B5D009AD5D3 /* GameDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = GameDetailViewController.m; path = ../GameDetailViewController.m; sourceTree = "<group>"; };
 		CC5244D61A89456900F52859 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
@@ -347,6 +350,8 @@
 			children = (
 				CCBA1B061A8BF3E200018FC7 /* HomeGamesViewController.h */,
 				CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */,
+				50BA68511A9AA1F0000F6469 /* GameAnnotation.h */,
+				50BA68521A9AA1F0000F6469 /* GameAnnotation.m */,
 				F9C2F5701A891F3900342CE8 /* SearchViewController.h */,
 				F9C2F5711A891F3900342CE8 /* SearchViewController.m */,
 				F9C2F5731A891F4900342CE8 /* ProfileViewController.h */,
@@ -520,6 +525,7 @@
 				F93463821A93B73300600BED /* InterestsCollectionViewController.m in Sources */,
 				F9C2F54A1A8915BE00342CE8 /* main.m in Sources */,
 				F9C2F57B1A8920DE00342CE8 /* InterestsViewController.m in Sources */,
+				50BA68531A9AA1F0000F6469 /* GameAnnotation.m in Sources */,
 				F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */,
 				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
 				CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */,
