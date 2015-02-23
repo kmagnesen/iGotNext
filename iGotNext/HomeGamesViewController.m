@@ -1,4 +1,4 @@
-//
+ //
 //  HomeParksViewController.m
 //  iGotNext
 //
@@ -23,9 +23,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
 @property (strong, nonatomic) IBOutlet UISegmentedControl *segmentController;
 @property NSArray *mapItems;
-@property MKMapItem *selectedPark;
-@property MKPointAnnotation *parksAnnotation;
-@property MKPointAnnotation *droppedAnnotation;
+@property GameAnnotation *droppedAnnotation;
 @property (nonatomic)NSMutableArray *geofences;
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 @property NSMutableArray *games;
@@ -46,9 +44,7 @@
 
     [self.locationManager startUpdatingLocation];
 
-    self.selectedPark = [MKMapItem new];
-    self.parksAnnotation = [MKPointAnnotation new];
-    self.droppedAnnotation = [MKPointAnnotation new];
+    self.droppedAnnotation = [GameAnnotation new];
 
     [self setUpLongTouchGesture];
     [self loadGamesFeed];
@@ -59,6 +55,8 @@
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
     self.mapView.showsUserLocation = YES;
+    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+    
 }
 
 
@@ -76,10 +74,8 @@
         return;
 
     CGPoint touchPoint = [gestureRecognizer locationInView:self.mapView];
-    CLLocationCoordinate2D touchMapCoordinate =
-    [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
+    CLLocationCoordinate2D touchMapCoordinate = [self.mapView convertPoint:touchPoint toCoordinateFromView:self.mapView];
 
-//    MKPointAnnotation *annot = [[MKPointAnnotation alloc] init];
     self.droppedAnnotation.coordinate = touchMapCoordinate;
     [self.mapView addAnnotation:self.droppedAnnotation];
     [self confirmLocationAlert];
@@ -263,6 +259,8 @@
     MKPinAnnotationView *pin = [[MKPinAnnotationView alloc] initWithAnnotation:gameAnnotation reuseIdentifier:nil];
     pin.canShowCallout = YES;
     //TODO: refactor to enum
+    pin.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Pin", gameAnnotation.game.category]];
+
     if ([gameAnnotation.game.category isEqualToString:@"Hockey"]) {
         pin.image = [UIImage imageNamed:@"hockeyPin"];
     }else if ([gameAnnotation.game.category isEqualToString:@"Football"]){
