@@ -109,6 +109,8 @@
     usernameTF.borderStyle = UITextBorderStyleRoundedRect;
     usernameTF.userInteractionEnabled = YES;
     usernameTF.placeholder = @"Enter Desired Username";
+    usernameTF.autocorrectionType = UITextAutocorrectionTypeNo;
+    usernameTF.returnKeyType = UIReturnKeyDone;
     [self.view addSubview:usernameTF];
 
     passwordTF.translatesAutoresizingMaskIntoConstraints = NO;
@@ -118,6 +120,8 @@
     passwordTF.borderStyle = UITextBorderStyleRoundedRect;
     passwordTF.userInteractionEnabled = YES;
     passwordTF.placeholder = @"Enter A Password";
+    passwordTF.autocorrectionType = UITextAutocorrectionTypeNo;
+    passwordTF.returnKeyType = UIReturnKeyDone;
     [self.view addSubview:passwordTF];
 
     NSDictionary *views = NSDictionaryOfVariableBindings(usernameTF, passwordTF);
