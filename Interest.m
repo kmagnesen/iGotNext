@@ -10,6 +10,7 @@
 
 @implementation Interest
 
+
 -(instancetype)initWithImage:(UIImage *)image andSportName:(NSString *)name {
     self = [super init];
     self.sportImage = image;

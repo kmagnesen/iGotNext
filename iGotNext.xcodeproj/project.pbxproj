@@ -57,7 +57,6 @@
 		F9C2F5721A891F3900342CE8 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5711A891F3900342CE8 /* SearchViewController.m */; };
 		F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5741A891F4900342CE8 /* ProfileViewController.m */; };
 		F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5771A891F8100342CE8 /* ActivityFeedViewController.m */; };
-		F9C2F57B1A8920DE00342CE8 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */; };
 		F9C2F57E1A89242600342CE8 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C2F57D1A89242600342CE8 /* SystemConfiguration.framework */; };
 		F9C2F5801A89242D00342CE8 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C2F57F1A89242D00342CE8 /* StoreKit.framework */; };
 		F9C2F5821A89243300342CE8 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9C2F5811A89243300342CE8 /* Security.framework */; };
@@ -167,8 +166,6 @@
 		F9C2F5741A891F4900342CE8 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		F9C2F5761A891F8100342CE8 /* ActivityFeedViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityFeedViewController.h; sourceTree = "<group>"; };
 		F9C2F5771A891F8100342CE8 /* ActivityFeedViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityFeedViewController.m; sourceTree = "<group>"; };
-		F9C2F5791A8920DE00342CE8 /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
-		F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsViewController.m; sourceTree = "<group>"; };
 		F9C2F57D1A89242600342CE8 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		F9C2F57F1A89242D00342CE8 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		F9C2F5811A89243300342CE8 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -343,8 +340,6 @@
 				F953F0021A8A651F00667C19 /* RootViewController.m */,
 				F9C2F54E1A8915BE00342CE8 /* LoginViewController.h */,
 				F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */,
-				F9C2F5791A8920DE00342CE8 /* InterestsViewController.h */,
-				F9C2F57A1A8920DE00342CE8 /* InterestsViewController.m */,
 				F92CEFB51A8952B3005CD279 /* NewGameViewController.h */,
 				F92CEFB61A8952B3005CD279 /* NewGameViewController.m */,
 				CC451A971A8E5B5D009AD5D3 /* GameDetailViewController.h */,
@@ -602,7 +597,6 @@
 				F93463821A93B73300600BED /* InterestsCollectionViewController.m in Sources */,
 				F991EC591A9A9AD8003F826D /* SignUpModalViewController.m in Sources */,
 				F9C2F54A1A8915BE00342CE8 /* main.m in Sources */,
-				F9C2F57B1A8920DE00342CE8 /* InterestsViewController.m in Sources */,
 				50BA68531A9AA1F0000F6469 /* GameAnnotation.m in Sources */,
 				F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */,
 				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
