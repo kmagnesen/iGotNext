@@ -26,6 +26,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    if ([PFUser currentUser] != nil) {
+        [self performSegueWithIdentifier:@"ByPassSegue" sender:self];
+    }
+
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
     [tapBackground setNumberOfTapsRequired:1];
     [self.view addGestureRecognizer:tapBackground];
@@ -73,9 +77,9 @@
     signUpMVC.transitioningDelegate = self;
     signUpMVC.modalPresentationStyle = UIModalPresentationCustom;
 
-    [self.navigationController presentViewController:signUpMVC
-                                            animated:YES
-                                          completion:NULL];
+    [self presentViewController:signUpMVC
+                       animated:YES
+                     completion:NULL];
 }
 
 - (void)loginErrorAlert {
