@@ -2,7 +2,7 @@
 //  HomeParksViewController.m
 //  iGotNext
 //
-//  Created by Katelyn Schneider on 2/11/15.
+//  Created by JP Skowron on 2/11/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
@@ -57,7 +57,7 @@
     [self loadGamesFeed];
 
     self.mapView.showsUserLocation = YES;
-    //[self.mapView showAnnotations:self.mapView.annotations animated:YES];
+   // [self.mapView showAnnotations:self.mapView.annotations animated:NO];
     
 }
 
