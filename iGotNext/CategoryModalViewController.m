@@ -27,12 +27,12 @@
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
     [self addSetSportButton];
 
-    self.sportsArray = @[@"Basketball", @"Disc Golf", @"Dodgeball", @"Football", @"Hockey", @"Soccer", @"Ultimate Frisbee", @"VolleyBall", @"Other"];
+    self.sportsArray = @[@"Baseball", @"Basketball", @"Dodgeball", @"Football", @"Hockey", @"Soccer", @"Tennis", @"VolleyBall", @"Other"];
 
     [self categoryPickerView];
 
     //Default setting without moving picker is "Basketball"
-    self.category = @"Basketball";
+    self.category = @"Baseball";
 }
 
 #pragma mark -------------- Set Sport Button --------------
@@ -111,10 +111,10 @@
 
     switch(row) {
         case 0:
-            self.category = @"Basketball";
+            self.category = @"Baseball";
             break;
         case 1:
-            self.category = @"Disc Golf";
+            self.category = @"Basketball";
             break;
         case 2:
             self.category = @"Dodgeball";
@@ -129,7 +129,7 @@
             self.category = @"Soccer";
             break;
         case 6:
-            self.category = @"Ultimate Frisbee";
+            self.category = @"Tennis";
             break;
         case 7:
             self.category = @"VolleyBall";
