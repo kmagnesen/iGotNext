@@ -48,13 +48,14 @@
     self.droppedAnnotation = [GameAnnotation new];
 
     [self setUpLongTouchGesture];
-    [self loadGamesFeed];
 
     self.tableView.hidden = YES;
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
+    [self loadGamesFeed];
+
     self.mapView.showsUserLocation = YES;
     [self.mapView showAnnotations:self.mapView.annotations animated:YES];
     

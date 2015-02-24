@@ -18,14 +18,6 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:YES];
-
-    if (![PFUser currentUser]) {
-        [self performSegueWithIdentifier:@"LoginSegue" sender:self];
-    }
-}
-
 //- (void)viewWillAppear:(BOOL)animated {
 //    [super viewWillAppear:YES];
 //    //if no current user exists go back to login page
