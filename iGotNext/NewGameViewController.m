@@ -53,7 +53,13 @@
     self.game[@"startTime"] = self.startTime;
     self.game[@"endTime"] = self.endTime;
     self.game[@"category"] = self.category;
-    [self.game saveInBackground];
+    [self.game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+        if (succeeded) {
+            [self.delegate updateGames];
+        } else {
+            // There was a problem, check error.description
+        }
+    }];
 }
 
 
