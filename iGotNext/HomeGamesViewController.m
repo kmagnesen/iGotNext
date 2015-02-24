@@ -255,6 +255,8 @@
     //TODO: refactor to enum
     pin.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Pin", [gameAnnotation.game.category stringByReplacingOccurrencesOfString:@" " withString:@""]]];
 
+    [self.mapView addAnnotation:annotation];
+
 
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
   //  pin.image = [UIImage imageNamed:@""];
