@@ -8,9 +8,16 @@
 #import <MapKit/MapKit.h>
 #import <UIKit/UIKit.h>
 #import "Game.h"
+@protocol NewGameDelegate
+
+-(void)updateGames;
+
+@end
 
 @interface NewGameViewController : UIViewController 
 
 @property Game *game;
+
+@property id<NewGameDelegate> delegate;
 
 @end

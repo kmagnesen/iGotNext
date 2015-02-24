@@ -7,7 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Game.h"
 
 @interface ActivityTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UIImageView *gameImageView;
+@property (strong, nonatomic) IBOutlet UILabel *gameTitle;
+@property (strong, nonatomic) IBOutlet UILabel *gameAttendance;
+
+@property (nonatomic) Game *game;
 @end
