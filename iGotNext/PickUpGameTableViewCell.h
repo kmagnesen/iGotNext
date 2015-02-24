@@ -12,8 +12,7 @@
 @interface PickUpGameTableViewCell : UITableViewCell
 
 @property (strong, nonatomic) IBOutlet UILabel *nameLabel;
-@property (strong, nonatomic) IBOutlet UILabel *locationLabel;
-@property (strong, nonatomic) IBOutlet UILabel *timeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *attendingLabel;
+@property (strong, nonatomic) IBOutlet UILabel *distanceLabel;
+@property (strong, nonatomic) IBOutlet UIImageView *gameImage;
 @property (nonatomic) Game *game;
 @end

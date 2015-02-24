@@ -29,6 +29,8 @@
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
             <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
+            <string>Lato-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -197,7 +199,7 @@
                                         <exclude reference="oyl-b5-rla"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
+                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
                                     <rect key="frame" x="0.0" y="64" width="400" height="120"/>
                                     <mask key="subviews">
                                         <include reference="BFi-jC-ePt"/>
@@ -615,9 +617,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BlankSlate" translatesAutoresizingMaskIntoConstraints="NO" id="VTu-xR-eGh">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="400" height="551"/>
-                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iGotNextTextLabel" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-3K-pOH">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -1098,52 +1097,6 @@
                                     <action selector="segementedControlSwitched:" destination="wl2-eX-EWm" eventType="valueChanged" id="Kee-yo-6Mn"/>
                                 </connections>
                             </segmentedControl>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
-                                <rect key="frame" x="0.0" y="92" width="600" height="459"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellID" id="V9a-Y9-tBN" customClass="PickUpGameTableViewCell">
-                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V9a-Y9-tBN" id="AAd-d1-f3w">
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMw-Rz-t3d">
-                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                    <variation key="widthClass=compact" fixedFrame="YES">
-                                                        <rect key="frame" x="8" y="8" width="42" height="21"/>
-                                                    </variation>
-                                                </label>
-                                            </subviews>
-                                            <variation key="default">
-                                                <mask key="subviews">
-                                                    <exclude reference="nMw-Rz-t3d"/>
-                                                </mask>
-                                            </variation>
-                                            <variation key="widthClass=compact">
-                                                <mask key="subviews">
-                                                    <include reference="nMw-Rz-t3d"/>
-                                                </mask>
-                                            </variation>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <connections>
-                                            <outlet property="nameLabel" destination="nMw-Rz-t3d" id="AQs-zu-dnJ"/>
-                                            <segue destination="OeW-G6-eWA" kind="show" identifier="GameDetailSegue" id="7Ep-iD-FQR"/>
-                                        </connections>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="wl2-eX-EWm" id="7TB-z1-jFO"/>
-                                    <outlet property="delegate" destination="wl2-eX-EWm" id="MOV-dt-6u8"/>
-                                </connections>
-                            </tableView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Dj3-QW-Py0">
                                 <rect key="frame" x="0.0" y="92" width="600" height="459"/>
                                 <gestureRecognizers/>
@@ -1155,6 +1108,136 @@
                                     <outletCollection property="gestureRecognizers" destination="ogq-LM-yQX" appends="YES" id="jeJ-Mi-dUW"/>
                                 </connections>
                             </mapView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="57" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="pBi-tV-OJZ">
+                                <rect key="frame" x="0.0" y="92" width="600" height="459"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CellID" rowHeight="57" id="V9a-Y9-tBN" customClass="PickUpGameTableViewCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="V9a-Y9-tBN" id="AAd-d1-f3w">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMw-Rz-t3d">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="21" id="WXK-Ck-dDw"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="WXK-Ck-dDw"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="WXK-Ck-dDw"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Distance Away" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dhi-ng-Nm9">
+                                                    <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="dt0-Zs-ykJ"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="10"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="dt0-Zs-ykJ"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="dt0-Zs-ykJ"/>
+                                                        </mask>
+                                                    </variation>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="BNm-DX-73X">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="40" id="2rw-U8-IwN"/>
+                                                        <constraint firstAttribute="width" constant="40" id="jNh-Nb-1Ix"/>
+                                                    </constraints>
+                                                    <variation key="default">
+                                                        <mask key="constraints">
+                                                            <exclude reference="2rw-U8-IwN"/>
+                                                            <exclude reference="jNh-Nb-1Ix"/>
+                                                        </mask>
+                                                    </variation>
+                                                    <variation key="widthClass=compact">
+                                                        <mask key="constraints">
+                                                            <include reference="2rw-U8-IwN"/>
+                                                            <include reference="jNh-Nb-1Ix"/>
+                                                        </mask>
+                                                    </variation>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="nMw-Rz-t3d" firstAttribute="trailing" secondItem="AAd-d1-f3w" secondAttribute="trailingMargin" id="0tb-46-M7b"/>
+                                                <constraint firstItem="Dhi-ng-Nm9" firstAttribute="top" secondItem="nMw-Rz-t3d" secondAttribute="bottom" constant="4" id="Dw6-DL-vgc"/>
+                                                <constraint firstItem="nMw-Rz-t3d" firstAttribute="leading" secondItem="BNm-DX-73X" secondAttribute="trailing" constant="8" id="Eli-hL-DNh"/>
+                                                <constraint firstItem="Dhi-ng-Nm9" firstAttribute="trailing" secondItem="AAd-d1-f3w" secondAttribute="trailingMargin" id="Lv0-KE-hJQ"/>
+                                                <constraint firstItem="BNm-DX-73X" firstAttribute="top" secondItem="AAd-d1-f3w" secondAttribute="topMargin" id="YqC-OM-dqy"/>
+                                                <constraint firstItem="nMw-Rz-t3d" firstAttribute="top" secondItem="AAd-d1-f3w" secondAttribute="topMargin" id="dkM-1f-5a4"/>
+                                                <constraint firstItem="BNm-DX-73X" firstAttribute="leading" secondItem="AAd-d1-f3w" secondAttribute="leadingMargin" id="eYY-c9-Ehv"/>
+                                                <constraint firstItem="Dhi-ng-Nm9" firstAttribute="leading" secondItem="BNm-DX-73X" secondAttribute="trailing" constant="8" id="gl8-3g-kUM"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="nMw-Rz-t3d"/>
+                                                    <exclude reference="Dhi-ng-Nm9"/>
+                                                    <exclude reference="BNm-DX-73X"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="YqC-OM-dqy"/>
+                                                    <exclude reference="eYY-c9-Ehv"/>
+                                                    <exclude reference="0tb-46-M7b"/>
+                                                    <exclude reference="Eli-hL-DNh"/>
+                                                    <exclude reference="dkM-1f-5a4"/>
+                                                    <exclude reference="Dw6-DL-vgc"/>
+                                                    <exclude reference="Lv0-KE-hJQ"/>
+                                                    <exclude reference="gl8-3g-kUM"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="widthClass=compact">
+                                                <mask key="subviews">
+                                                    <include reference="nMw-Rz-t3d"/>
+                                                    <include reference="Dhi-ng-Nm9"/>
+                                                    <include reference="BNm-DX-73X"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="YqC-OM-dqy"/>
+                                                    <include reference="eYY-c9-Ehv"/>
+                                                    <include reference="0tb-46-M7b"/>
+                                                    <include reference="Eli-hL-DNh"/>
+                                                    <include reference="dkM-1f-5a4"/>
+                                                    <include reference="Dw6-DL-vgc"/>
+                                                    <include reference="Lv0-KE-hJQ"/>
+                                                    <include reference="gl8-3g-kUM"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="distanceLabel" destination="Dhi-ng-Nm9" id="fR7-7p-TPq"/>
+                                            <outlet property="gameImage" destination="BNm-DX-73X" id="GSw-YM-akS"/>
+                                            <outlet property="nameLabel" destination="nMw-Rz-t3d" id="AQs-zu-dnJ"/>
+                                            <segue destination="OeW-G6-eWA" kind="show" identifier="GameDetailSegue" id="7Ep-iD-FQR"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="wl2-eX-EWm" id="7TB-z1-jFO"/>
+                                    <outlet property="delegate" destination="wl2-eX-EWm" id="MOV-dt-6u8"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1277,7 +1360,7 @@
         <image name="sneaker" width="245" height="245"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U9f-xm-lMi"/>
+        <segue reference="VXv-GB-zAg"/>
         <segue reference="UTy-BQ-NcK"/>
         <segue reference="7Ep-iD-FQR"/>
     </inferredMetricsTieBreakers>
