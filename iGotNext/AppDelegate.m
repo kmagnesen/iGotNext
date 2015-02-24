@@ -27,6 +27,22 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
+    if (![PFUser currentUser]) {
+
+        //BIG HACKS FOLLOW
+        // abstract: prevent flicker to tabBarController by forcing
+        // login VC to appear in window view heirarchy first
+
+        id vc = [self.window.rootViewController.storyboard instantiateViewControllerWithIdentifier:@"LoginID"];
+        [vc view].frame = self.window.bounds;
+        [self.window.rootViewController.view addSubview:[vc view]];
+        [self.window makeKeyAndVisible];
+
+        //BIG HACKS END
+
+        [self.window.rootViewController presentViewController:vc animated:NO completion:nil];
+    }
+
     return YES;
 }
 
