@@ -21,7 +21,7 @@
 		CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */; };
 		CCBA1B081A8BF3E200018FC7 /* HomeGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */; };
 		CCC8C4B71A9BFC96003DB079 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */; };
-		CCC8C4CE1A9C30D3003DB079 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4CD1A9C30D3003DB079 /* RootViewController.m */; };
+		CCC8C4CE1A9C30D3003DB079 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */; };
 		F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */; };
 		F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BBC1A969C1C0002AD85 /* EditCollectionViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* PickUpGameTableViewCell.m */; };
@@ -32,6 +32,7 @@
 		F991EC591A9A9AD8003F826D /* SignUpModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC581A9A9AD8003F826D /* SignUpModalViewController.m */; };
 		F991EC5C1A9CC120003F826D /* ProfilePicModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC5B1A9CC120003F826D /* ProfilePicModalViewController.m */; };
 		F991EC5F1A9CC406003F826D /* EditPicCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC5E1A9CC406003F826D /* EditPicCollectionViewCell.m */; };
+		F991EC621A9CCE3B003F826D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC611A9CCE3B003F826D /* User.m */; };
 		F9C2F54A1A8915BE00342CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5491A8915BE00342CE8 /* main.m */; };
 		F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */; };
 		F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */; };
@@ -103,8 +104,8 @@
 		CCBB41DF1A9B9C36003F63FD /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		CCC8C4B51A9BFC96003DB079 /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
 		CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsViewController.m; sourceTree = "<group>"; };
-		CCC8C4CC1A9C30D3003DB079 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
-		CCC8C4CD1A9C30D3003DB079 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		CCC8C4CC1A9C30D3003DB079 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
+		CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		F9110BB81A96516F0002AD85 /* EditInterestsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInterestsModalViewController.h; sourceTree = "<group>"; };
 		F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInterestsModalViewController.m; sourceTree = "<group>"; };
 		F9110BBB1A969C1C0002AD85 /* EditCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCollectionViewCell.h; sourceTree = "<group>"; };
@@ -125,6 +126,8 @@
 		F991EC5B1A9CC120003F826D /* ProfilePicModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePicModalViewController.m; sourceTree = "<group>"; };
 		F991EC5D1A9CC406003F826D /* EditPicCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditPicCollectionViewCell.h; sourceTree = "<group>"; };
 		F991EC5E1A9CC406003F826D /* EditPicCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPicCollectionViewCell.m; sourceTree = "<group>"; };
+		F991EC601A9CCE3B003F826D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		F991EC611A9CCE3B003F826D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F9C2F5441A8915BE00342CE8 /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C2F5481A8915BE00342CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C2F5491A8915BE00342CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -290,6 +293,8 @@
 				F93463871A93DA6100600BED /* Interest.m */,
 				CC5244D61A89456900F52859 /* Game.h */,
 				CC5244D71A89456900F52859 /* Game.m */,
+				F991EC601A9CCE3B003F826D /* User.h */,
+				F991EC611A9CCE3B003F826D /* User.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -385,8 +390,8 @@
 		CCC8C4CB1A9C309D003DB079 /* Root */ = {
 			isa = PBXGroup;
 			children = (
-				CCC8C4CC1A9C30D3003DB079 /* RootViewController.h */,
-				CCC8C4CD1A9C30D3003DB079 /* RootViewController.m */,
+				CCC8C4CC1A9C30D3003DB079 /* MainTabBarController.h */,
+				CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */,
 			);
 			name = Root;
 			sourceTree = "<group>";
@@ -613,7 +618,8 @@
 			files = (
 				F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */,
 				F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */,
-				CCC8C4CE1A9C30D3003DB079 /* RootViewController.m in Sources */,
+				F991EC621A9CCE3B003F826D /* User.m in Sources */,
+				CCC8C4CE1A9C30D3003DB079 /* MainTabBarController.m in Sources */,
 				CC451A991A8E5B5D009AD5D3 /* GameDetailViewController.m in Sources */,
 				F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */,
 				CC558DD01A9436EF00AE0566 /* PresentingAnimation.m in Sources */,
