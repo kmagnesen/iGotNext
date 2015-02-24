@@ -57,7 +57,7 @@
     [self loadGamesFeed];
 
     self.mapView.showsUserLocation = YES;
-   // [self.mapView showAnnotations:self.mapView.annotations animated:NO];
+    [self.mapView showAnnotations:self.mapView.annotations animated:NO];
     
 }
 

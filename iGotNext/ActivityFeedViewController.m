@@ -8,6 +8,7 @@
 #import <Parse/Parse.h>
 #import "ActivityFeedViewController.h"
 #import "Game.h"
+#import "ActivityTableViewCell.h"
 
 @interface ActivityFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -100,10 +101,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"HistoryCell"];
+    ActivityTableViewCell *activityCell = [tableView dequeueReusableCellWithIdentifier:@"ActivityCell"];
     Game *game = [self.gamesDisplayed objectAtIndex:indexPath.row];
-    cell.textLabel.text = game.title;
-    return cell;
+    activityCell.game = game;
+    return activityCell;
 }
 
 @end
