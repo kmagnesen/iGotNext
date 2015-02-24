@@ -22,7 +22,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *profileTableView;
 
 @property NSMutableArray *interests;
-@property PFUser *currentUser;
+//@property PFUser *currentUser;
 
 @end
 
@@ -31,7 +31,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    self.currentUser = [PFUser new];
+//    self.currentUser = [PFUser new];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:YES];
     [self loadProfile];
 }
 

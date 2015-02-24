@@ -53,23 +53,13 @@
 }
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
-//    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
-//        if (!error) {
-//            [self performSegueWithIdentifier:@"EntrySegue" sender:self];
-//        } else {
-//            [self loginErrorAlert];
-//        }
-//    }];
-
-    User *user = [[User alloc]initWithInterests:@[] completed:^(BOOL result, NSError *error) {
+    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
         if (!error) {
             [self performSegueWithIdentifier:@"EntrySegue" sender:self];
         } else {
             [self loginErrorAlert];
-            NSLog(@"%@", user);
         }
     }];
-
 }
 
 - (IBAction)onNewAccountButtonTapped:(UIButton *)sender {
@@ -90,32 +80,11 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]) {
-        [self viewDidLoad];
+        self.usernameTextField.text = @"";
+        self.passwordTextField.text = @"";
         NSLog(@"Everything is working");
     }
 }
-
-//-(void)signupErrorAlert {
-//    UIAlertView *signupErrorAlert = [[UIAlertView alloc] initWithTitle:@"😬 UH OH! 😬" message:@"This username has already been claimed. Try Another Username." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
-//    signupErrorAlert.tag = 2;
-//    [signupErrorAlert show];
-//}
-
-//-(void)successAlert {
-//    UIAlertView *successAlert =[[UIAlertView alloc] initWithTitle:@"💥 Boom Shakalaka!!! 💥" message:@"You've Just Created A Profile For One Of The Most Badass Apps On the Planet!" delegate:self cancelButtonTitle:@"Enter!" otherButtonTitles: nil];
-//    successAlert.tag = 3;
-//    [successAlert show];
-//}
-
-//-(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
-//    if (alertView.tag == 1) {
-//        [self viewDidLoad];
-//    } else if (alertView.tag == 2) {
-//        [self viewDidLoad];
-//    } else if (alertView.tag == 3) {
-//        [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
-//    }
-//}
 
 #pragma mark - UIViewControllerTransitioningDelegate
 
