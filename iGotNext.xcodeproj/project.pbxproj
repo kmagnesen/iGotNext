@@ -22,6 +22,7 @@
 		CCBA1B081A8BF3E200018FC7 /* HomeGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */; };
 		CCC8C4B71A9BFC96003DB079 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */; };
 		CCC8C4CE1A9C30D3003DB079 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */; };
+		CCE3D8071A9CF1F800020BE6 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3D8061A9CF1F800020BE6 /* ActivityTableViewCell.m */; };
 		F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */; };
 		F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BBC1A969C1C0002AD85 /* EditCollectionViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* PickUpGameTableViewCell.m */; };
@@ -106,6 +107,8 @@
 		CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsViewController.m; sourceTree = "<group>"; };
 		CCC8C4CC1A9C30D3003DB079 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
 		CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
+		CCE3D8051A9CF1F800020BE6 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
+		CCE3D8061A9CF1F800020BE6 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
 		F9110BB81A96516F0002AD85 /* EditInterestsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInterestsModalViewController.h; sourceTree = "<group>"; };
 		F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInterestsModalViewController.m; sourceTree = "<group>"; };
 		F9110BBB1A969C1C0002AD85 /* EditCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCollectionViewCell.h; sourceTree = "<group>"; };
@@ -341,6 +344,7 @@
 			children = (
 				F9C2F5761A891F8100342CE8 /* ActivityFeedViewController.h */,
 				F9C2F5771A891F8100342CE8 /* ActivityFeedViewController.m */,
+				CCE3D8081A9CF21300020BE6 /* Cell */,
 			);
 			name = Activity;
 			sourceTree = "<group>";
@@ -394,6 +398,15 @@
 				CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */,
 			);
 			name = Root;
+			sourceTree = "<group>";
+		};
+		CCE3D8081A9CF21300020BE6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3D8051A9CF1F800020BE6 /* ActivityTableViewCell.h */,
+				CCE3D8061A9CF1F800020BE6 /* ActivityTableViewCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 		F9C2F53B1A8915BE00342CE8 = {
@@ -642,6 +655,7 @@
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
 				F991EC5F1A9CC406003F826D /* EditPicCollectionViewCell.m in Sources */,
 				F93463851A93BBC100600BED /* InteretsCollectionViewCell.m in Sources */,
+				CCE3D8071A9CF1F800020BE6 /* ActivityTableViewCell.m in Sources */,
 				CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

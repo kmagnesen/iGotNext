@@ -57,7 +57,7 @@
     [self loadGamesFeed];
 
     self.mapView.showsUserLocation = YES;
-    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+    //[self.mapView showAnnotations:self.mapView.annotations animated:YES];
     
 }
 
@@ -100,13 +100,7 @@
         //TODO: get so pin does not stay on map
         ;
     }else{
-        NewGameViewController *newGameVC = [self.storyboard instantiateViewControllerWithIdentifier:@"NewGameVC"];
-        PFUser *currentUser = [PFUser currentUser];
-
-        //Creates a new game object that is passed using the recently dropped pin
-        Game *newGame = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
-        newGameVC.game = newGame;
-        [self presentViewController:newGameVC animated:YES completion:nil];
+        [self performSegueWithIdentifier:@"NewGameSegue" sender:self];
     }
 }
 
@@ -122,7 +116,15 @@
             ;
         }
         gameDetailVC.game = self.selectedGame;
+    } if([[segue identifier] isEqualToString:@"NewGameSegue"]) {
+        NewGameViewController *newGameVC = segue.destinationViewController;
+        PFUser *currentUser = [PFUser currentUser];
+
+        //Creates a new game object that is passed using the recently dropped pin
+        Game *newGame = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
+        newGameVC.game = newGame;
     }
+
 }
 
 - (IBAction)unwindToGameFeed:(UIStoryboardSegue *)unwindSegue {
@@ -130,19 +132,6 @@
 }
 
 
-//- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error {
-//    NSLog(@"%@", error);
-//}
-//
-//-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
-//    for (CLLocation *location in locations) {
-//        if (location.horizontalAccuracy < 1000 && location.verticalAccuracy < 1000) {
-//            [self.locationManager stopUpdatingLocation];
-//            [self findParkNear:location];
-//            break;
-//        }
-//    }
-//}
 //
 //-(void)findParkNear:(CLLocation *)location {
 ////    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
