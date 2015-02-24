@@ -10,14 +10,12 @@
 
 @implementation ActivityTableViewCell
 
-- (void)awakeFromNib {
-    // Initialization code
-}
+-(void)setGame:(Game *)game {
+    _game = game;
 
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
+    self.gameTitle.text = game.title;
+    self.gameAttendance.text = [NSString stringWithFormat:@"Attendance: %@ people", self.game.attendance];
+    
 }
 
 @end
