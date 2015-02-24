@@ -2,7 +2,7 @@
 //  HomeParksViewController.m
 //  iGotNext
 //
-//  Created by Katelyn Schneider on 2/11/15.
+//  Created by JP Skowron on 2/11/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
@@ -17,7 +17,7 @@
 #import "GameAnnotation.h"
 #import "User.h"
 
-@interface HomeGamesViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
+@interface HomeGamesViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate, NewGameDelegate>
 
 @property CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
@@ -31,6 +31,7 @@
 @property NSArray *sortedGames;
 @property GameAnnotation *gameAnnotation;
 @property Game *selectedGame;
+//@property MKUserLocation *userLocation;
 
 @end
 
@@ -38,6 +39,8 @@
 
 -(void)viewDidLoad {
     [super viewDidLoad];
+
+    //self.userLocation = [MKUserLocation new];
 
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -50,15 +53,14 @@
     [self setUpLongTouchGesture];
 
     self.tableView.hidden = YES;
+
+    [self loadGamesFeed];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    [self loadGamesFeed];
 
     self.mapView.showsUserLocation = YES;
-    //[self.mapView showAnnotations:self.mapView.annotations animated:YES];
-    
 }
 
 
@@ -123,12 +125,13 @@
         //Creates a new game object that is passed using the recently dropped pin
         Game *newGame = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
         newGameVC.game = newGame;
-    }
 
+        newGameVC.delegate = self;
+    }
 }
 
 - (IBAction)unwindToGameFeed:(UIStoryboardSegue *)unwindSegue {
-    //TODO: reload the mapview with the new game that was just officially created
+    [self loadGamesFeed];
 }
 
 
@@ -197,6 +200,11 @@
 //    self.sortedGames = [self.games sortedArrayUsingDescriptors:sortDescriptors];
 //}
 
+#pragma mark ----- Delegate -----
+
+-(void)updateGames {
+    [self loadGamesFeed];
+}
 
 #pragma mark ----- TableView Methods -----
 
@@ -241,7 +249,7 @@
         GameAnnotation *gameAnnotation = [[GameAnnotation alloc]initWithGame:game];
         [self.mapView addAnnotation:gameAnnotation];
     }
-    [self.mapView showAnnotations:self.mapView.annotations animated:YES];
+    //[self.mapView showAnnotations:self.mapView.annotations animated:YES];
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -280,6 +288,7 @@
     region.span = span;
     region.center = location;
     [mapView setRegion:region animated:YES];
+    //self.userLocation = userLocation;
 }
 
 
