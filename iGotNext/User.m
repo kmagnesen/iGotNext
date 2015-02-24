@@ -11,7 +11,7 @@
 
 @implementation User
 
-@synthesize interests;
+@dynamic interests;
 
 +(void)load {
     [self registerSubclass];
