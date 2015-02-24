@@ -14,15 +14,7 @@
     _game = game;
     self.nameLabel.text = game.title;
 
-    NSString *gameStartTime = [NSDateFormatter localizedStringFromDate:game.startTime
-                                                              dateStyle:NSDateFormatterShortStyle
-                                                              timeStyle:NSDateFormatterShortStyle];
-
-    NSString *gameEndTime = [NSDateFormatter localizedStringFromDate:game.endTime
-                                                              dateStyle:NSDateFormatterShortStyle
-                                                              timeStyle:NSDateFormatterShortStyle];
-
-    self.timeLabel.text = [NSString stringWithFormat:@"Starts: %@ Ends: %@", gameStartTime, gameEndTime];
+    self.gameImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Pin", [self.game.category stringByReplacingOccurrencesOfString:@" " withString:@""]]];
 }
 
 

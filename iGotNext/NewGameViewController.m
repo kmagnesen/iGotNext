@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (strong, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *endTimeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 
 @property (strong, nonatomic) NSArray *sportsArray;
 
@@ -35,10 +36,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-//    //Had to programatically add a nav bar because there is no storyboard segue
-//    UINavigationBar *navbar = [[UINavigationBar alloc]init];
-//    [self.view addSubview:navbar];
 
     self.eventNameTextField.text = @"";
     self.evenDescriptionTextField.text = @"";
@@ -62,7 +59,6 @@
 
 #pragma mark ----- UIButton Action -----
 
-//Before called nav bar to present modal vcs but there isn't one now
 - (IBAction)onSetCategoryTapped:(id)sender {
     CategoryModalViewController *categoryViewController = [CategoryModalViewController new];
     categoryViewController.delegate = self;
@@ -72,6 +68,9 @@
     [self presentViewController:categoryViewController
                                             animated:YES
                                           completion:NULL];
+}
+
+- (IBAction)onDateTapped:(UIButton *)sender {
 }
 
 - (IBAction)onSetStartTimeTapped:(id)sender {
@@ -140,7 +139,7 @@
 
 #pragma mark ----- Pre-Unwind action -----
 
-- (IBAction)onPostTapped:(UIButton *)sender {
+- (IBAction)onCreateTapped:(UIButton *)sender {
     [self saveUpdatedGame];
 }
 
