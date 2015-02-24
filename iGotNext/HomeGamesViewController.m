@@ -61,13 +61,6 @@
     [super viewWillAppear:YES];
 
     self.mapView.showsUserLocation = YES;
-<<<<<<< HEAD
-
- //   [self.mapView showAnnotations:self.mapView.annotations animated:YES];
-=======
-   // [self.mapView showAnnotations:self.mapView.annotations animated:NO];
-    
->>>>>>> 90131fdb69217de0587b034f7225a4bc81b10596
 }
 
 
