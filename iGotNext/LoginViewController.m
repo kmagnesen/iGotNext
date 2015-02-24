@@ -10,7 +10,7 @@
 
 #import "LoginViewController.h"
 #import "SignUpModalViewController.h"
-
+#import "InterestsViewController.h"
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
 
@@ -26,10 +26,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    if ([PFUser currentUser] != nil) {
-        [self performSegueWithIdentifier:@"ByPassSegue" sender:self];
-    }
-
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
     [tapBackground setNumberOfTapsRequired:1];
     [self.view addGestureRecognizer:tapBackground];
@@ -38,34 +34,33 @@
     self.passwordTextField.delegate = self;
 }
 
--(void) dismissKeyboard:(id)sender
-{
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    if ([PFUser currentUser] != nil) {
+        [self performSegueWithIdentifier:@"ByPassSegue" sender:self];
+    }
+}
+
+-(void) dismissKeyboard:(id)sender {
     [self.view endEditing:YES];
 }
 
 - (void)signUp {
-    [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
+    InterestsViewController *interestsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InterestsVC"];
+    [self presentViewController:interestsVC animated:YES completion:nil];
 }
 
-- (BOOL)textFieldShouldReturn:(UITextField *)textField
-{
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
     [textField resignFirstResponder];
     return YES;
 }
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
     [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
-        if  (error) {
+        if (!error) {
+            [self performSegueWithIdentifier:@"ByPassSegue" sender:self];
+        } else {
             [self loginErrorAlert];
-        }
-        else
-        {
-            if (user[@"interests"] == nil) {
-                [self performSegueWithIdentifier:@"LoginToInterestsSegue" sender:self];
-            } else {
-                [self performSegueWithIdentifier:@"ByPassInterestsSegue" sender:self];
-            }
-
         }
     }];
 }
@@ -103,13 +98,9 @@
 -(void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 1) {
         [self viewDidLoad];
-    }
-    else if (alertView.tag == 2)
-    {
+    } else if (alertView.tag == 2) {
         [self viewDidLoad];
-    }
-    else if (alertView.tag == 3)
-    {
+    } else if (alertView.tag == 3) {
         [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
     }
 }

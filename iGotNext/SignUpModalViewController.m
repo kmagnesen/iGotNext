@@ -186,7 +186,7 @@
     }
     else if (alertView.tag == 2)
     {
-        [self performSegueWithIdentifier:@"SignupToInterestsSegue" sender:self];
+        [self.delegate signUp];
     }
 }
 

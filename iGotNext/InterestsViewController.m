@@ -1,25 +1,24 @@
 //
-//  InterestsCollectionViewController.m
+//  InterestsViewController.m
 //  iGotNext
 //
-//  Created by Kyle Magnesen on 2/17/15.
+//  Created by Katelyn Schneider on 2/23/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
+#import <Parse/Parse.h>
 
-#import "InterestsCollectionViewController.h"
+#import "InterestsViewController.h"
 #import "InteretsCollectionViewCell.h"
 #import "Interest.h"
 
-#import <Parse/Parse.h>
-
-@interface InterestsCollectionViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface InterestsViewController () <UICollectionViewDataSource, UICollectionViewDelegate>
 
 @property NSMutableArray *sportsInterests;
 @property NSMutableArray *selectedInterests;
 
 @end
 
-@implementation InterestsCollectionViewController
+@implementation InterestsViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

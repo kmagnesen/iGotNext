@@ -13,6 +13,7 @@
 
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
+#import "LoginViewController.h"
 
 @interface ProfileViewController () <UIViewControllerTransitioningDelegate, UITableViewDataSource, UITabBarDelegate, UpdateInterestTVCDelegate>
 
@@ -67,7 +68,9 @@
 }
 
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
-// can delete
+    [PFUser logOut];
+    LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"];
+    [self presentViewController:loginVC animated:YES completion:nil];
 }
 
 - (IBAction)onEditInterestsButtonTapped:(UIButton *)sender {
@@ -79,15 +82,6 @@
     [self.navigationController presentViewController:interestViewController
                                             animated:YES
                                           completion:NULL];
-}
-
-- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"LogOutSegue"]) {
-
-        [PFUser logOut];
-        PFUser *currentUser = [PFUser currentUser];
-        NSLog(@"%@", currentUser);
-    }
 }
 
 #pragma mark - UIViewControllerTransitioningDelegate

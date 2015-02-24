@@ -6,9 +6,9 @@
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
-#import "CustomCollectionViewCell.h"
+#import "InteretsCollectionViewCell.h"
 
-@implementation CustomCollectionViewCell
+@implementation InteretsCollectionViewCell
 
 - (void)setInterest:(Interest *)interest {
     _interest = interest;

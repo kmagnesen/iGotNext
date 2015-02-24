@@ -10,7 +10,7 @@
 #import "InterestsCollectionViewController.h"
 #import "Interest.h"
 
-@interface CustomCollectionViewCell : UICollectionViewCell
+@interface InteretsCollectionViewCell : UICollectionViewCell
 
 @property (strong, nonatomic) Interest *interest;
 
