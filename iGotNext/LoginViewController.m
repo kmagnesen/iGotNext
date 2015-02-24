@@ -13,6 +13,7 @@
 #import "InterestsViewController.h"
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
+#import "User.h"
 
 @interface LoginViewController () <UIAlertViewDelegate, UITextFieldDelegate, UIViewControllerTransitioningDelegate, SignUpMVCDelegate>
 
@@ -39,8 +40,11 @@
     [self.view endEditing:YES];
 }
 
-- (void)signUp {
-    [self performSegueWithIdentifier:@"InterestSegue" sender:self];
+- (void)signUp:(SignUpModalViewController *)vc {
+    [vc dismissViewControllerAnimated:true completion:^{
+        [self performSegueWithIdentifier:@"InterestSegue" sender:self];
+    }];
+
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -49,13 +53,23 @@
 }
 
 - (IBAction)onLoginButtonTapped:(UIButton *)sender {
-    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
+//    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password: self.passwordTextField.text block:^(PFUser *user, NSError *error) {
+//        if (!error) {
+//            [self performSegueWithIdentifier:@"EntrySegue" sender:self];
+//        } else {
+//            [self loginErrorAlert];
+//        }
+//    }];
+
+    User *user = [[User alloc]initWithInterests:@[] completed:^(BOOL result, NSError *error) {
         if (!error) {
-            [self performSegueWithIdentifier:@"LoginSegue" sender:self];
+            [self performSegueWithIdentifier:@"EntrySegue" sender:self];
         } else {
             [self loginErrorAlert];
+            NSLog(@"%@", user);
         }
     }];
+
 }
 
 - (IBAction)onNewAccountButtonTapped:(UIButton *)sender {
@@ -72,6 +86,13 @@
     UIAlertView *loginErrorAlert = [[UIAlertView alloc] initWithTitle:@"🚫 ERROR! 🚫" message:@"A Login Error Has Occured. Please Check Credentials & Retry Login." delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
 //    loginErrorAlert.tag = 1;
     [loginErrorAlert show];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
+    if (buttonIndex == [alertView cancelButtonIndex]) {
+        [self viewDidLoad];
+        NSLog(@"Everything is working");
+    }
 }
 
 //-(void)signupErrorAlert {

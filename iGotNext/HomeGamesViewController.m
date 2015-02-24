@@ -15,6 +15,7 @@
 #import "Game.h"
 #import "GameDetailViewController.h"
 #import "GameAnnotation.h"
+#import "User.h"
 
 @interface HomeGamesViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate>
 
@@ -175,25 +176,28 @@
 #pragma mark ----- Load Games -----
 
 -(void)loadGamesFeed {
-    PFUser *currentUser = [PFUser currentUser];
+    User *currentUser = [User currentUser];
 
     //Make sure to include "games" a global variable
     self.games = [NSMutableArray new];
-    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
-    [query whereKey:@"category" containedIn:currentUser[@"interests"]];
-    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
 
-        if (!error) {
-            for (Game *game in returnedGames) {
-                [self.games addObject:game];
+    if ([PFUser currentUser]) {
+        PFQuery *query = [Game query];
+        [query whereKey:@"category" containedIn:currentUser.interests];
+        [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
+
+                if (!error) {
+                for (Game *game in returnedGames) {
+                    [self.games addObject:game];
+                }
+    //            [self sortGames];
+                [self.tableView reloadData];
+                [self loadMap];
+            } else {
+                NSLog(@"Error: %@ %@", error, [error userInfo]);
             }
-//            [self sortGames];
-            [self.tableView reloadData];
-            [self loadMap];
-        } else {
-            NSLog(@"Error: %@ %@", error, [error userInfo]);
-        }
-    }];
+        }];
+    }
 }
 
 //-(void)sortGames{

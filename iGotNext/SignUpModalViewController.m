@@ -186,7 +186,7 @@
     if (alertView.tag == 1) {
         ;
     } else if (alertView.tag == 2) {
-        [self.delegate signUp];
+        [self.delegate signUp:self];
     }
 }
 
@@ -201,8 +201,7 @@
             [self signupErrorAlert];
         } else {
             [self successAlert];
-            [self.delegate signUp];
-            [self dismissViewControllerAnimated:YES completion:NULL];
+            [self.delegate signUp:self];
         }
     }];
 }

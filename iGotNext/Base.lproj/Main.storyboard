@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nld-Mb-46e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nld-Mb-46e">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -652,6 +652,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="BlankSlate" translatesAutoresizingMaskIntoConstraints="NO" id="VTu-xR-eGh">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="551"/>
+                                </variation>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iGotNextTextLabel" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-3K-pOH">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -939,11 +942,12 @@
                         <outlet property="passwordTextField" destination="5DN-wW-Gkt" id="CcM-t4-4pm"/>
                         <outlet property="usernameTextField" destination="FOY-SA-96c" id="03J-Fs-erd"/>
                         <segue destination="HAw-u6-A5O" kind="presentation" identifier="InterestSegue" id="hXk-4y-axa"/>
+                        <segue destination="Nld-Mb-46e" kind="presentation" identifier="EntrySegue" id="VXv-GB-zAg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q43-KK-VXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-355.5" y="-1155"/>
+            <point key="canvasLocation" x="750" y="-1155"/>
         </scene>
         <!--Interests View Controller-->
         <scene sceneID="gOW-Iy-IzN">
@@ -1104,7 +1108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dt1-jh-tMW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="348" y="-1155"/>
+            <point key="canvasLocation" x="1464" y="-1155"/>
         </scene>
         <!--I Got Next-->
         <scene sceneID="kpe-1x-R9y">
@@ -1241,10 +1245,10 @@
             </objects>
             <point key="canvasLocation" x="-682.5" y="1053"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Main Tab Bar Controller-->
         <scene sceneID="dsq-ac-AY5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Nld-Mb-46e" customClass="RootViewController" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Nld-Mb-46e" customClass="MainTabBarController" sceneMemberID="viewController">
                     <toolbarItems/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="FVn-VO-ZIR">
@@ -1255,7 +1259,7 @@
                         <segue destination="hN6-Za-cIc" kind="relationship" relationship="viewControllers" id="XWd-YS-kG8"/>
                         <segue destination="eKX-wh-tEp" kind="relationship" relationship="viewControllers" id="Qid-Wi-VcU"/>
                         <segue destination="9ND-M2-Rxf" kind="relationship" relationship="viewControllers" id="8aA-6i-TCv"/>
-                        <segue destination="kyK-iL-dOW" kind="show" identifier="LoginSegue" id="UTy-BQ-NcK"/>
+                        <segue destination="kyK-iL-dOW" kind="presentation" identifier="LoginSegue" id="UTy-BQ-NcK"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0yE-j1-ZIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1311,6 +1315,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7Ep-iD-FQR"/>
+        <segue reference="VXv-GB-zAg"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
 </document>

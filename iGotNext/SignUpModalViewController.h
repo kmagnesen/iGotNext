@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class SignUpModalViewController;
 
 @protocol SignUpMVCDelegate
 
--(void)signUp;
+-(void)signUp:(SignUpModalViewController *)vc;
 
 @end
 
