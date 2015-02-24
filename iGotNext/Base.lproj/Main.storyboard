@@ -720,7 +720,6 @@
                                 </variation>
                                 <connections>
                                     <action selector="onNewAccountButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="3ZI-bq-snz"/>
-                                    <segue destination="HAw-u6-A5O" kind="show" id="cYX-fC-1MA"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5DN-wW-Gkt">
@@ -1018,6 +1017,7 @@
                                 </variation>
                                 <connections>
                                     <action selector="onLoginButtonTapped:" destination="kyK-iL-dOW" eventType="touchUpInside" id="qJL-UF-hVw"/>
+                                    <segue destination="Nld-Mb-46e" kind="show" id="U9f-xm-lMi"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1273,6 +1273,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7Ep-iD-FQR"/>
+        <segue reference="U9f-xm-lMi"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
 </document>

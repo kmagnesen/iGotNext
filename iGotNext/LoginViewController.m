@@ -41,13 +41,15 @@
     }
 }
 
--(void) dismissKeyboard:(id)sender {
+-(void)dismissKeyboard:(id)sender {
     [self.view endEditing:YES];
 }
 
 - (void)signUp {
-    InterestsViewController *interestsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InterestsVC"];
-    [self presentViewController:interestsVC animated:YES completion:nil];
+    [self dismissViewControllerAnimated:YES completion:^{
+        InterestsViewController *interestsVC = [self.storyboard instantiateViewControllerWithIdentifier:@"InterestsVC"];
+        [self presentViewController:interestsVC animated:YES completion:nil];
+    }];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

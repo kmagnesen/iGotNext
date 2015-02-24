@@ -36,14 +36,12 @@
     self.password = [NSString new];
 
     self.view.layer.cornerRadius = 5.f;
-//    self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
     self.view.backgroundColor = [[UIColor darkGrayColor]colorWithAlphaComponent:0.99];
     [self addSignUpButtons];
     [self addTextFields];
 }
 
-- (void)dismissKeyboard:(id)sender
-{
+- (void)dismissKeyboard:(id)sender {
     [self.view endEditing:YES];
 }
 
@@ -186,10 +184,8 @@
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (alertView.tag == 1) {
-        
-    }
-    else if (alertView.tag == 2)
-    {
+        ;
+    } else if (alertView.tag == 2) {
         [self.delegate signUp];
     }
 }
@@ -201,12 +197,9 @@
     NSLog(@"User: %@ and Pass:%@", usernameTF.text, passwordTF.text);
 
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (error)
-        {
+        if (error) {
             [self signupErrorAlert];
-        }
-        else
-        {
+        } else {
             [self successAlert];
             [self.delegate signUp];
             [self dismissViewControllerAnimated:YES completion:NULL];
