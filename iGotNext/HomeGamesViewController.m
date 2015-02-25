@@ -43,7 +43,7 @@
 
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
-    [self.locationManager requestAlwaysAuthorization];
+    [self.locationManager requestWhenInUseAuthorization];
 
     [self.locationManager startUpdatingLocation];
 
@@ -57,8 +57,10 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-    
-    [self loadGamesFeed];
+
+//    if ([PFUser currentUser]) {
+//        [self loadGamesFeed];
+//    }
     self.mapView.showsUserLocation = YES;
 }
 
