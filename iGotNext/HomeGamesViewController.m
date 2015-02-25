@@ -32,13 +32,14 @@
 @property GameAnnotation *gameAnnotation;
 @property Game *selectedGame;
 
+@property MKUserLocation *userLocation;
+
 @end
 
 @implementation HomeGamesViewController
 
 -(void)viewDidLoad {
     [super viewDidLoad];
-
 
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -138,28 +139,33 @@
 
 -(void)loadGamesFeed {
     User *currentUser = [User currentUser];
-
+    // User's location
+    PFGeoPoint *userGeoPoint = [PFGeoPoint geoPointWithLatitude:self.userLocation.coordinate.latitude longitude:self.userLocation.coordinate.longitude];
     //Make sure to include "games" a global variable
     self.games = [NSMutableArray new];
 
-    if ([User currentUser]) {
-        PFQuery *query = [Game query];
-        [query whereKey:@"category" containedIn:currentUser.interests];
-        [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
+    // Create a query for places
+    PFQuery *query = [PFQuery queryWithClassName:@"Game"];
 
-                if (!error) {
-                for (Game *game in returnedGames) {
-                    [self.games addObject:game];
-                }
-                [self.tableView reloadData];
-                [self loadMap];
-            } else {
-                NSLog(@"Error: %@ %@", error, [error userInfo]);
+    // Only find Games that pertain
+    [query whereKey:@"category" containedIn:currentUser.interests];
+    // Interested in locations near user.
+    [query whereKey:@"location" nearGeoPoint:userGeoPoint];
+    // Limit what could be a lot of points.
+    query.limit = 5;
+
+    [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
+        if (!error) {
+            for (Game *game in returnedGames) {
+                [self.games addObject:game];
             }
-        }];
-    }
+            [self.tableView reloadData];
+            [self loadMap];
+        } else {
+            NSLog(@"Error: %@ %@", error, [error userInfo]);
+        }
+    }];
 }
-
 
 
 #pragma mark ----- Delegate -----
@@ -248,7 +254,11 @@
     region.span = span;
     region.center = location;
     [mapView setRegion:region animated:YES];
-    //self.userLocation = userLocation;
+
+    self.userLocation = userLocation;
+
+    //new user location first
+    [self loadGamesFeed];
 }
 
 

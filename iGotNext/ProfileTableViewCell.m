@@ -10,7 +10,4 @@
 
 @implementation ProfileTableViewCell
 
-- (void)awakeFromNib {
-}
-
 @end
