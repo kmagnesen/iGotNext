@@ -501,6 +501,32 @@
                                     <action selector="onEditInterestsButtonTapped:" destination="nWv-mk-66D" eventType="touchUpInside" id="j7A-Hx-yMs"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Interests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uro-uk-KfW">
+                                <rect key="frame" x="16" y="253" width="69" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="184" id="0Ve-M6-j3h"/>
+                                    <constraint firstAttribute="width" constant="80" id="J2G-0Z-7Lb"/>
+                                    <constraint firstAttribute="height" constant="24" id="T1C-na-d3N"/>
+                                    <constraint firstAttribute="height" constant="24" id="iQJ-lg-8Pm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J2G-0Z-7Lb"/>
+                                        <exclude reference="T1C-na-d3N"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <exclude reference="0Ve-M6-j3h"/>
+                                        <include reference="J2G-0Z-7Lb"/>
+                                        <include reference="T1C-na-d3N"/>
+                                        <exclude reference="iQJ-lg-8Pm"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="sneaker" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-LY-JYd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <constraints>
@@ -515,7 +541,7 @@
                                     <constraint firstAttribute="height" constant="267" id="MuC-bx-hs7"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" id="Xm3-iK-XQb">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ProfileCell" id="Xm3-iK-XQb" customClass="ProfileTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xm3-iK-XQb" id="PbL-xT-UNE">
@@ -546,6 +572,10 @@
                                                 <constraint firstItem="F8x-vD-Kqc" firstAttribute="top" secondItem="PbL-xT-UNE" secondAttribute="topMargin" constant="2" id="yuv-Tk-xkM"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="sportImageView" destination="F8x-vD-Kqc" id="OcU-vg-S2S"/>
+                                            <outlet property="sportLabel" destination="lbe-RX-tVK" id="V5g-7L-3JE"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <variation key="widthClass=compact">
@@ -558,32 +588,6 @@
                                     <outlet property="delegate" destination="nWv-mk-66D" id="8ak-WZ-ZpX"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Interests" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uro-uk-KfW">
-                                <rect key="frame" x="16" y="253" width="69" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="184" id="0Ve-M6-j3h"/>
-                                    <constraint firstAttribute="width" constant="80" id="J2G-0Z-7Lb"/>
-                                    <constraint firstAttribute="height" constant="24" id="T1C-na-d3N"/>
-                                    <constraint firstAttribute="height" constant="24" id="iQJ-lg-8Pm"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="19"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="J2G-0Z-7Lb"/>
-                                        <exclude reference="T1C-na-d3N"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <exclude reference="0Ve-M6-j3h"/>
-                                        <include reference="J2G-0Z-7Lb"/>
-                                        <include reference="T1C-na-d3N"/>
-                                        <exclude reference="iQJ-lg-8Pm"/>
-                                    </mask>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.086274509799999996" green="0.66666666669999997" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
