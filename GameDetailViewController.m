@@ -17,7 +17,7 @@
 @property (strong, nonatomic) IBOutlet UITextView *eventDescriptionTextView;
 @property (strong, nonatomic) IBOutlet UIButton *attendButton;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
-
+@property User *currentUser;
 @property NSMutableArray *currentAttendees;
 
 
@@ -27,13 +27,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
-    self.currentAttendees = [NSMutableArray new];
-    self.currentAttendees = [NSMutableArray arrayWithArray:self.game.attendees];
-
+    
+    self.gameCategoryImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.game.category]];
     self.gameTitleLabel.text = self.game.title;
     self.gameTimeLabel.text = [NSString stringWithFormat:@"%@ Start: %@ Ends: %@", self.game.day, self.game.startTime, self.game.endTime];
     self.eventDescriptionTextView.text = self.game.gameDescription;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    self.currentAttendees = [NSMutableArray new];
+    self.currentAttendees = [NSMutableArray arrayWithArray:self.game.attendees];
+
+    self.currentUser = [User currentUser];
 
     [self buttonAttendanceLogic];
 }
@@ -52,36 +57,46 @@
     }];
 }
 
+
+#pragma mark ----- Button Logic -----
+
 - (IBAction)onAttendButtonTapped:(UIButton *)sender {
-    [self buttonAttendanceLogic];
+    //Changes the number of people attending on the button and saves the changes to the parse object
+    if ([self.game.attendees containsObject:self.currentUser]) {
+        [self.currentAttendees removeObject:self.currentUser];
+        [self buttonAttend];
+        [self saveUpdatedGame];
+    } else {
+        [self.currentAttendees addObject:self.currentUser];
+        [self buttonAttending];
+        [self saveUpdatedGame];
+    }
 }
 
 -(void)buttonAttendanceLogic {
-    User *currentUser = [User currentUser];
-
-    //Changes the number of people attending on the button and saves the changes to the parse object
-    if ([self.game.attendees containsObject:currentUser]) {
-        [self.currentAttendees removeObject:currentUser];
-
-        //change button to reflect attendance
-        [self.attendButton setTitle:@"Attending" forState:UIControlStateNormal];
-        [self.attendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-        [self.attendButton setBackgroundColor:[UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1]];
-
+    if ([self.game.attendees containsObject:self.currentUser]) {
+        [self buttonAttend];
         [self saveUpdatedGame];
-
     } else {
-        [self.currentAttendees addObject:currentUser];
-
-        //change button to reflect attendance
-        [self.attendButton setTitle:@"Attend" forState:UIControlStateNormal];
-        [self.attendButton setTitleColor:[UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1] forState:UIControlStateNormal];
-        [self.attendButton setBackgroundColor:[UIColor clearColor]];
-        [[self.attendButton layer] setBorderWidth:2.0f];
-        [[self.attendButton layer] setBorderColor:[UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1].CGColor];
-
+        [self buttonAttending];
         [self saveUpdatedGame];
     }
+}
+
+#pragma mark ----- Button Appearance -----
+
+-(void)buttonAttend{
+    [self.attendButton setTitle:@"Attend" forState:UIControlStateNormal];
+    [self.attendButton setTitleColor:[UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1] forState:UIControlStateNormal];
+    [self.attendButton setBackgroundColor:[UIColor clearColor]];
+    [[self.attendButton layer] setBorderWidth:2.0f];
+    [[self.attendButton layer] setBorderColor:[UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1].CGColor];
+}
+
+-(void)buttonAttending{
+    [self.attendButton setTitle:@"Attending" forState:UIControlStateNormal];
+    [self.attendButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.attendButton setBackgroundColor:[UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1]];
 }
 
 #pragma mark ----- TableView -----
@@ -95,6 +110,5 @@
     cell.user = [self.game.attendees objectAtIndex:indexPath.row];
     return  cell;
 }
-
 
 @end
