@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -20,7 +21,6 @@
             <string>Lato-Black</string>
         </mutableArray>
         <mutableArray key="Lato-Bold.ttf">
-            <string>Lato-Bold</string>
             <string>Lato-Bold</string>
             <string>Lato-Bold</string>
         </mutableArray>
@@ -43,6 +43,8 @@
             <string>Lato-Regular</string>
         </mutableArray>
         <mutableArray key="PressStart2P.ttf">
+            <string>PressStart2P</string>
+            <string>PressStart2P</string>
             <string>PressStart2P</string>
         </mutableArray>
     </customFonts>
@@ -1027,24 +1029,42 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="190" width="368" height="390"/>
-                                </variation>
                                 <connections>
                                     <outlet property="dataSource" destination="HAw-u6-A5O" id="7r4-wr-0P3"/>
                                     <outlet property="delegate" destination="HAw-u6-A5O" id="3iT-ZG-y23"/>
                                 </connections>
                             </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set Interests" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBI-pF-Fer">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.086274509803921567" green="0.66666666666666663" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="RBI-pF-Fer" secondAttribute="height" multiplier="4:1" id="Pn1-Ib-bKQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Pn1-Ib-bKQ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Pn1-Ib-bKQ"/>
+                                    </mask>
+                                </variation>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGj-GK-qMb">
                                 <rect key="frame" x="0.0" y="280" width="600" height="30"/>
-                                <color key="backgroundColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" secondItem="mGj-GK-qMb" secondAttribute="height" multiplier="1:1" id="AbP-lF-C84"/>
                                     <constraint firstAttribute="width" constant="250" id="bAJ-E7-Zmu"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="mFF-03-lNM"/>
                                     <constraint firstAttribute="height" constant="30" id="mv9-Ob-Mva"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="18"/>
-                                <state key="normal" title="Set Sport Interests">
+                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="21"/>
+                                <state key="normal" title="+">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -1052,9 +1072,14 @@
                                         <integer key="value" value="5"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <variation key="widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="298" y="28" width="86" height="30"/>
+                                <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="AbP-lF-C84"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="AbP-lF-C84"/>
                                         <exclude reference="bAJ-E7-Zmu"/>
                                         <exclude reference="mFF-03-lNM"/>
                                         <exclude reference="mv9-Ob-Mva"/>
@@ -1065,25 +1090,25 @@
                                     <segue destination="Nld-Mb-46e" kind="presentation" id="U9f-xm-lMi"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBI-pF-Fer">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="179" y="28" width="42" height="21"/>
-                                </variation>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="bIh-hO-35b" firstAttribute="trailing" secondItem="NGP-29-Rst" secondAttribute="trailingMargin" id="2c3-yb-lbo"/>
                             <constraint firstItem="Uh6-2c-PUg" firstAttribute="top" secondItem="mGj-GK-qMb" secondAttribute="bottom" constant="8" id="34b-2m-swu"/>
-                            <constraint firstItem="bIh-hO-35b" firstAttribute="top" secondItem="LGa-TN-H9r" secondAttribute="bottom" constant="8" id="LOI-04-9s7"/>
+                            <constraint firstItem="RBI-pF-Fer" firstAttribute="top" secondItem="LGa-TN-H9r" secondAttribute="bottom" id="3CM-Dt-U37"/>
+                            <constraint firstItem="RBI-pF-Fer" firstAttribute="leading" secondItem="NGP-29-Rst" secondAttribute="leadingMargin" constant="-16" id="InY-6C-u3W"/>
                             <constraint firstItem="mGj-GK-qMb" firstAttribute="top" secondItem="bIh-hO-35b" secondAttribute="bottom" constant="8" id="POo-l9-C7v"/>
                             <constraint firstItem="bIh-hO-35b" firstAttribute="leading" secondItem="NGP-29-Rst" secondAttribute="leadingMargin" id="Q8S-JO-s3A"/>
+                            <constraint firstItem="mGj-GK-qMb" firstAttribute="trailing" secondItem="NGP-29-Rst" secondAttribute="trailingMargin" id="QQ6-bE-eq1"/>
                             <constraint firstAttribute="centerX" secondItem="mGj-GK-qMb" secondAttribute="centerX" id="QuA-Dc-itm"/>
+                            <constraint firstItem="mGj-GK-qMb" firstAttribute="top" secondItem="LGa-TN-H9r" secondAttribute="bottom" constant="35" id="Xl4-Z3-d9Q"/>
+                            <constraint firstItem="bIh-hO-35b" firstAttribute="top" secondItem="RBI-pF-Fer" secondAttribute="bottom" constant="20" id="hpZ-hk-6WV"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RBI-pF-Fer" secondAttribute="trailing" constant="-16" id="j9x-6B-a8E"/>
                             <constraint firstItem="mGj-GK-qMb" firstAttribute="top" secondItem="bIh-hO-35b" secondAttribute="bottom" constant="8" id="jk1-WV-DJh"/>
+                            <constraint firstItem="Uh6-2c-PUg" firstAttribute="top" secondItem="bIh-hO-35b" secondAttribute="bottom" constant="20" id="rX6-Bh-ow3"/>
+                            <constraint firstItem="bIh-hO-35b" firstAttribute="leading" secondItem="NGP-29-Rst" secondAttribute="leadingMargin" id="ryE-gc-SKP"/>
+                            <constraint firstItem="bIh-hO-35b" firstAttribute="trailing" secondItem="NGP-29-Rst" secondAttribute="trailingMargin" id="tpZ-Mp-XxP"/>
+                            <constraint firstItem="mGj-GK-qMb" firstAttribute="leading" secondItem="NGP-29-Rst" secondAttribute="leadingMargin" constant="338" id="zJb-zR-Nar"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
@@ -1092,16 +1117,40 @@
                             <mask key="subviews">
                                 <exclude reference="RBI-pF-Fer"/>
                             </mask>
+                            <mask key="constraints">
+                                <exclude reference="3CM-Dt-U37"/>
+                                <exclude reference="InY-6C-u3W"/>
+                                <exclude reference="j9x-6B-a8E"/>
+                                <exclude reference="hpZ-hk-6WV"/>
+                                <exclude reference="ryE-gc-SKP"/>
+                                <exclude reference="tpZ-Mp-XxP"/>
+                                <exclude reference="QQ6-bE-eq1"/>
+                                <exclude reference="Xl4-Z3-d9Q"/>
+                                <exclude reference="zJb-zR-Nar"/>
+                                <exclude reference="rX6-Bh-ow3"/>
+                            </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="RBI-pF-Fer"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="34b-2m-swu"/>
+                                <include reference="3CM-Dt-U37"/>
+                                <include reference="InY-6C-u3W"/>
+                                <include reference="j9x-6B-a8E"/>
+                                <exclude reference="2c3-yb-lbo"/>
+                                <exclude reference="Q8S-JO-s3A"/>
+                                <include reference="hpZ-hk-6WV"/>
+                                <include reference="ryE-gc-SKP"/>
+                                <include reference="tpZ-Mp-XxP"/>
                                 <exclude reference="POo-l9-C7v"/>
+                                <include reference="QQ6-bE-eq1"/>
                                 <exclude reference="QuA-Dc-itm"/>
+                                <include reference="Xl4-Z3-d9Q"/>
                                 <exclude reference="jk1-WV-DJh"/>
+                                <include reference="zJb-zR-Nar"/>
+                                <exclude reference="34b-2m-swu"/>
+                                <include reference="rX6-Bh-ow3"/>
                             </mask>
                         </variation>
                     </view>
@@ -1311,7 +1360,7 @@
         <image name="volleyball" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="O8G-oh-GkA"/>
+        <segue reference="7Ep-iD-FQR"/>
         <segue reference="U9f-xm-lMi"/>
         <segue reference="NCM-0O-Bcm"/>
     </inferredMetricsTieBreakers>
