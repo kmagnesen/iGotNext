@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:PressStart2P.ttf">
+   </FileRef>
+   <FileRef
       location = "group:iGotNext.xcodeproj">
    </FileRef>
    <FileRef

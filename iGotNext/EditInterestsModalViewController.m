@@ -38,31 +38,31 @@
 
 -(void)createSportsInterestsArray {
 
-    Interest *hockey = [[Interest alloc] initWithImage:[UIImage imageNamed:@"hockey"]
+    Interest *hockey = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Hockey"]
                                           andSportName:@"Hockey"];
 
-    Interest *football = [[Interest alloc] initWithImage:[UIImage imageNamed:@"football"]
+    Interest *football = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Football"]
                                             andSportName:@"Football"];
 
-    Interest *soccer = [[Interest alloc] initWithImage:[UIImage imageNamed:@"soccer"]
+    Interest *soccer = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Soccer"]
                                           andSportName:@"Soccer"];
 
-    Interest *basketball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"basketball"]
+    Interest *basketball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Basketball"]
                                               andSportName:@"Basketball"];
 
-    Interest *volleyball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"volleyball"]
+    Interest *volleyball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Volleyball"]
                                               andSportName:@"Volleyball"];
 
-    Interest *dodgeball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"dodgeball"]
+    Interest *dodgeball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Dodgeball"]
                                              andSportName:@"Dodgeball"];
 
-    Interest *baseball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"baseball"]
+    Interest *baseball = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Baseball"]
                                                    andSportName:@"Baseball"];
 
-    Interest *tennis = [[Interest alloc] initWithImage:[UIImage imageNamed:@"tennis"]
+    Interest *tennis = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Tennis"]
                                             andSportName:@"Tennis"];
 
-    Interest *other = [[Interest alloc] initWithImage:[UIImage imageNamed:@"other"]
+    Interest *other = [[Interest alloc] initWithImage:[UIImage imageNamed:@"Other"]
                                          andSportName:@"Other"];
 
     self.interests = [[NSMutableArray alloc]initWithObjects:hockey, football, soccer, basketball, volleyball, dodgeball, baseball, other, tennis, nil];
@@ -123,7 +123,7 @@
     [_collectionView setUserInteractionEnabled:YES];
 
     [_collectionView registerClass:[EditCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    [_collectionView setBackgroundColor:[UIColor blackColor]];
+    [_collectionView setBackgroundColor:[UIColor clearColor]];
 
     [self.view addSubview:_collectionView];
 
@@ -153,7 +153,7 @@
 
 - (EditCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EditCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor whiteColor];
+    cell.backgroundColor = [UIColor clearColor];
     cell.interest = [self.interests objectAtIndex:indexPath.row];
 
     UIImageView *customImageView;
@@ -210,7 +210,7 @@
         [self saveInterests];
     } else {
         [self.selections addObject:cell.interest.sportName];
-        cell.backgroundColor = [UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1];
+        cell.backgroundColor = [UIColor colorWithRed:0 green:0.576 blue:0.682 alpha:1];
         [self saveInterests];
     }
 }
