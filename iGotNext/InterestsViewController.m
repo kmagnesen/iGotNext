@@ -84,12 +84,12 @@
     InteretsCollectionViewCell *cell = (InteretsCollectionViewCell *)[collectionView cellForItemAtIndexPath:indexPath];
     if ([self.selectedInterests containsObject:cell.interest.sportName]) {
         [self.selectedInterests removeObject:cell.interest.sportName];
-        cell.backgroundColor = [UIColor whiteColor];
+        cell.backgroundColor = [UIColor clearColor];
         [self saveInterests];
     } else {
         [self.selectedInterests addObject:cell.interest.sportName];
 //        cell.backgroundColor = [UIColor ]
-        cell.backgroundColor = [UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1];
+        cell.backgroundColor = [UIColor colorWithRed:0 green:0.467 blue:0.553 alpha:1];
         [self saveInterests];
     }
 }

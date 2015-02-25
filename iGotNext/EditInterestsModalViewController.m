@@ -210,7 +210,8 @@
         [self saveInterests];
     } else {
         [self.selections addObject:cell.interest.sportName];
-        cell.backgroundColor = [UIColor colorWithRed:0 green:0.576 blue:0.682 alpha:1];
+        //switching between background color and selected color
+        cell.backgroundColor = [UIColor colorWithRed:0 green:0.467 blue:0.553 alpha:1];
         [self saveInterests];
     }
 }
