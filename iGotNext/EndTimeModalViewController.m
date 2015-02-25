@@ -67,7 +67,7 @@
     _endDatePicker = [UIDatePicker new];
     _endDatePicker.translatesAutoresizingMaskIntoConstraints = NO;
     [_endDatePicker setDatePickerMode:UIDatePickerModeTime];
-    _endDatePicker.minimumDate = [NSDate date];
+//    _endDatePicker.minimumDate = [NSDate date];
     _endDatePicker.transform = CGAffineTransformMakeScale(0.7, 0.7);
 
     [self.view addSubview:_endDatePicker];
