@@ -1101,7 +1101,8 @@
                                         <exclude reference="AbP-lF-C84"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact">
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="334" y="55" width="30" height="30"/>
                                     <mask key="constraints">
                                         <include reference="AbP-lF-C84"/>
                                         <exclude reference="bAJ-E7-Zmu"/>
@@ -1122,8 +1123,8 @@
                             <constraint firstItem="RBI-pF-Fer" firstAttribute="top" secondItem="LGa-TN-H9r" secondAttribute="bottom" id="3CM-Dt-U37"/>
                             <constraint firstItem="RBI-pF-Fer" firstAttribute="leading" secondItem="NGP-29-Rst" secondAttribute="leadingMargin" constant="-16" id="InY-6C-u3W"/>
                             <constraint firstItem="mGj-GK-qMb" firstAttribute="top" secondItem="bIh-hO-35b" secondAttribute="bottom" constant="8" id="POo-l9-C7v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="mGj-GK-qMb" secondAttribute="trailing" constant="20" id="PeD-Lk-bUP"/>
                             <constraint firstItem="bIh-hO-35b" firstAttribute="leading" secondItem="NGP-29-Rst" secondAttribute="leadingMargin" id="Q8S-JO-s3A"/>
-                            <constraint firstItem="mGj-GK-qMb" firstAttribute="trailing" secondItem="NGP-29-Rst" secondAttribute="trailingMargin" id="QQ6-bE-eq1"/>
                             <constraint firstAttribute="centerX" secondItem="mGj-GK-qMb" secondAttribute="centerX" id="QuA-Dc-itm"/>
                             <constraint firstItem="mGj-GK-qMb" firstAttribute="top" secondItem="LGa-TN-H9r" secondAttribute="bottom" constant="35" id="Xl4-Z3-d9Q"/>
                             <constraint firstItem="bIh-hO-35b" firstAttribute="top" secondItem="RBI-pF-Fer" secondAttribute="bottom" constant="20" id="hpZ-hk-6WV"/>
@@ -1148,7 +1149,7 @@
                                 <exclude reference="hpZ-hk-6WV"/>
                                 <exclude reference="ryE-gc-SKP"/>
                                 <exclude reference="tpZ-Mp-XxP"/>
-                                <exclude reference="QQ6-bE-eq1"/>
+                                <exclude reference="PeD-Lk-bUP"/>
                                 <exclude reference="Xl4-Z3-d9Q"/>
                                 <exclude reference="zJb-zR-Nar"/>
                                 <exclude reference="rX6-Bh-ow3"/>
@@ -1168,7 +1169,7 @@
                                 <include reference="ryE-gc-SKP"/>
                                 <include reference="tpZ-Mp-XxP"/>
                                 <exclude reference="POo-l9-C7v"/>
-                                <include reference="QQ6-bE-eq1"/>
+                                <include reference="PeD-Lk-bUP"/>
                                 <exclude reference="QuA-Dc-itm"/>
                                 <include reference="Xl4-Z3-d9Q"/>
                                 <exclude reference="jk1-WV-DJh"/>
