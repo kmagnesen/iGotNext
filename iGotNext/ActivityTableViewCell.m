@@ -14,7 +14,8 @@
     _game = game;
 
     self.gameTitle.text = game.title;
-    self.gameAttendance.text = [NSString stringWithFormat:@"Attendance: %lu people", self.game.attendees.count];
+    self.gameAttendance.text = [NSString stringWithFormat:@"Attendance: %lu people", game.attendees.count];
+    self.gameImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", game.category]];
 }
 
 @end
