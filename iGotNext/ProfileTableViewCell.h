@@ -14,6 +14,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *sportImageView;
 @property (strong, nonatomic) IBOutlet UILabel *sportLabel;
 
-@property Interest *interest;
+@property (nonatomic) Interest *interest;
 
 @end

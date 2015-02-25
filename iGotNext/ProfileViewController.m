@@ -10,6 +10,7 @@
 #import "ProfileViewController.h"
 #import "Interest.h"
 #import "EditInterestsModalViewController.h"
+#import "ProfileTableViewCell.h"
 
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
@@ -106,9 +107,10 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileCell"];
-    cell.textLabel.text = [self.interests objectAtIndex:indexPath.row];
-
+    ProfileTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ProfileCell"];
+    NSString *interest = [self.interests objectAtIndex:indexPath.row];
+    cell.sportLabel.text = interest;
+    cell.sportImageView.image = [UIImage imageNamed:interest];
     return cell;
 }
 
