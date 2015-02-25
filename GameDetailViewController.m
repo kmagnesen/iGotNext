@@ -27,20 +27,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
+
+    self.currentUser = [User currentUser];
+    [self clearCurrentAttendees];
+
     self.gameCategoryImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.game.category]];
     self.gameTitleLabel.text = self.game.title;
     self.gameTimeLabel.text = [NSString stringWithFormat:@"%@ Start: %@ Ends: %@", self.game.day, self.game.startTime, self.game.endTime];
     self.eventDescriptionTextView.text = self.game.gameDescription;
+
+    [self buttonAttendanceLogic];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
+    [self clearCurrentAttendees];
+    [self buttonAttendanceLogic];
+}
+
+-(void)clearCurrentAttendees {
     self.currentAttendees = [NSMutableArray new];
     self.currentAttendees = [NSMutableArray arrayWithArray:self.game.attendees];
-
-    self.currentUser = [User currentUser];
-
-    [self buttonAttendanceLogic];
 }
 
 -(void)saveUpdatedGame {
@@ -75,11 +81,9 @@
 
 -(void)buttonAttendanceLogic {
     if ([self.game.attendees containsObject:self.currentUser]) {
-        [self buttonAttend];
-        [self saveUpdatedGame];
-    } else {
         [self buttonAttending];
-        [self saveUpdatedGame];
+    } else {
+        [self buttonAttend];
     }
 }
 

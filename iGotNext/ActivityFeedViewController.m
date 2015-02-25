@@ -27,11 +27,13 @@
 
     self.currentUser = [PFUser currentUser];
 
-    //View opens with "Events Created" higlighted
-    [self loadEventsCurrentUserCreated];
-
     [self.segmentedController setTitle:@"Events Created" forSegmentAtIndex:0];
     [self.segmentedController setTitle:@"Events Attending" forSegmentAtIndex:1];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    //To show changes in attendance count when come back to vc
+    [self loadEventsCurrentUserCreated];
 }
 
 - (IBAction)onSegmentedControllerTapped:(UISegmentedControl *)sender {
