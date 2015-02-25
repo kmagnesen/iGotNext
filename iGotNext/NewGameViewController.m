@@ -45,8 +45,14 @@
     self.startTime = [NSDate new];
     self.endTime = [NSDate new];
 
+    UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
+    [tapBackground setNumberOfTapsRequired:1];
+    [self.view addGestureRecognizer:tapBackground];
 }
 
+-(void)dismissKeyboard:(id)sender {
+    [self.view endEditing:YES];
+}
 
 #pragma mark ----- Game Parse Object Management -----
 
