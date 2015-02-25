@@ -99,12 +99,6 @@
 		CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndTimeModalViewController.m; sourceTree = "<group>"; };
 		CCBA1B061A8BF3E200018FC7 /* HomeGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeGamesViewController.h; sourceTree = "<group>"; };
 		CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeGamesViewController.m; sourceTree = "<group>"; };
-		CCBB41D21A9B9C36003F63FD /* Lato-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Black.ttf"; sourceTree = "<group>"; };
-		CCBB41D41A9B9C36003F63FD /* Lato-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Bold.ttf"; sourceTree = "<group>"; };
-		CCBB41DA1A9B9C36003F63FD /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
-		CCBB41DB1A9B9C36003F63FD /* Lato-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Light.ttf"; sourceTree = "<group>"; };
-		CCBB41DC1A9B9C36003F63FD /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-LightItalic.ttf"; sourceTree = "<group>"; };
-		CCBB41DF1A9B9C36003F63FD /* Lato-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Regular.ttf"; sourceTree = "<group>"; };
 		CCC8C4B51A9BFC96003DB079 /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
 		CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsViewController.m; sourceTree = "<group>"; };
 		CCC8C4CC1A9C30D3003DB079 /* MainTabBarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTabBarController.h; sourceTree = "<group>"; };
@@ -476,13 +470,7 @@
 		F9C2F5471A8915BE00342CE8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				CCBB41D21A9B9C36003F63FD /* Lato-Black.ttf */,
-				CCBB41D41A9B9C36003F63FD /* Lato-Bold.ttf */,
 				F991EC691A9E30C4003F826D /* PressStart2P.ttf */,
-				CCBB41DA1A9B9C36003F63FD /* Lato-Italic.ttf */,
-				CCBB41DB1A9B9C36003F63FD /* Lato-Light.ttf */,
-				CCBB41DC1A9B9C36003F63FD /* Lato-LightItalic.ttf */,
-				CCBB41DF1A9B9C36003F63FD /* Lato-Regular.ttf */,
 				F9C2F5481A8915BE00342CE8 /* Info.plist */,
 				F9C2F5491A8915BE00342CE8 /* main.m */,
 			);
