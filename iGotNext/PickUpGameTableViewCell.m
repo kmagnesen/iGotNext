@@ -14,7 +14,7 @@
     _game = game;
     self.nameLabel.text = game.title;
 
-    self.gameImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@Pin", [self.game.category stringByReplacingOccurrencesOfString:@" " withString:@""]]];
+    self.gameImage.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.game.category]];
 }
 
 
