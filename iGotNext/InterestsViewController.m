@@ -88,7 +88,7 @@
         [self saveInterests];
     } else {
         [self.selectedInterests addObject:cell.interest.sportName];
-        cell.backgroundColor = [UIColor blueColor];
+        cell.backgroundColor = [UIColor colorWithRed:0 green:184 blue:217 alpha:1];
         [self saveInterests];
     }
 }

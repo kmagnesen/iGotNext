@@ -287,21 +287,15 @@
                                     <action selector="onSetEndTimeTapped:" destination="xfe-W1-Xqe" eventType="touchUpInside" id="Ygr-VA-Unh"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvh-s5-Qgw">
-                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="158" id="4M7-Jt-082"/>
-                                    <constraint firstAttribute="height" constant="29" id="iec-q9-d1r"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dh9-a6-8C2">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="4Km-RZ-kaM"/>
-                                    <constraint firstAttribute="width" constant="158" id="AE7-Ah-G2n"/>
+                                    <constraint firstAttribute="height" constant="29" id="4Km-RZ-kaM">
+                                        <variation key="widthClass=compact" constant="24"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="158" id="AE7-Ah-G2n">
+                                        <variation key="widthClass=compact" constant="130"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <color key="textColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
@@ -332,7 +326,9 @@
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="LNR-RN-zZH"/>
-                                    <constraint firstAttribute="width" constant="158" id="WU6-Kt-tlM"/>
+                                    <constraint firstAttribute="width" constant="158" id="WU6-Kt-tlM">
+                                        <variation key="widthClass=compact" constant="130"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -341,12 +337,34 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TJe-om-ARk">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="158" id="jLj-yH-EsO"/>
+                                    <constraint firstAttribute="width" constant="158" id="jLj-yH-EsO">
+                                        <variation key="widthClass=compact" constant="130"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="29" id="rGE-ND-Yrc"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <color key="textColor" red="0.098039217289999994" green="0.098039217289999994" blue="0.098039217289999994" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNL-rE-ddH">
+                                <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="DgW-v6-yOI"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="DgW-v6-yOI"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="DgW-v6-yOI"/>
+                                    </mask>
+                                </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Mt-47-0s9">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -370,25 +388,17 @@
                                     <segue destination="tVB-IY-QsD" kind="unwind" unwindAction="unwindToGameFeed:" id="UhY-De-DQ0"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Create Your Event" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lNL-rE-ddH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvh-s5-Qgw">
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="DgW-v6-yOI"/>
+                                    <constraint firstAttribute="width" constant="158" id="4M7-Jt-082">
+                                        <variation key="widthClass=compact" constant="130"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="29" id="iec-q9-d1r"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <color key="textColor" red="0.098039217293262482" green="0.098039217293262482" blue="0.098039217293262482" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="DgW-v6-yOI"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="DgW-v6-yOI"/>
-                                    </mask>
-                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -398,7 +408,9 @@
                             <constraint firstItem="8Ws-Fc-3R5" firstAttribute="top" secondItem="lNL-rE-ddH" secondAttribute="bottom" constant="4" id="9vk-7K-GMG">
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
-                            <constraint firstItem="Dh9-a6-8C2" firstAttribute="top" secondItem="8Ws-Fc-3R5" secondAttribute="bottom" constant="16" id="ABN-oW-2Qr"/>
+                            <constraint firstItem="Dh9-a6-8C2" firstAttribute="top" secondItem="8Ws-Fc-3R5" secondAttribute="bottom" constant="16" id="ABN-oW-2Qr">
+                                <variation key="widthClass=compact" constant="21"/>
+                            </constraint>
                             <constraint firstItem="TJe-om-ARk" firstAttribute="top" secondItem="Lvh-s5-Qgw" secondAttribute="bottom" constant="30" id="EzC-Hd-e99"/>
                             <constraint firstItem="lNL-rE-ddH" firstAttribute="top" secondItem="k82-rn-DfQ" secondAttribute="bottom" id="Fgj-NU-gDJ"/>
                             <constraint firstItem="Fpy-ON-ugm" firstAttribute="trailing" secondItem="SVU-DD-K4D" secondAttribute="trailingMargin" id="JIj-qE-xJR"/>
@@ -458,7 +470,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4le-mi-KBR" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="tVB-IY-QsD" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1369.5" y="1053"/>
+            <point key="canvasLocation" x="-1369.5" y="1050"/>
         </scene>
         <!--Player Bio-->
         <scene sceneID="NPu-3n-YlF">
@@ -622,10 +634,12 @@
                                 <variation key="widthClass=compact" constant="28"/>
                             </constraint>
                             <constraint firstItem="jYu-LY-JYd" firstAttribute="top" secondItem="WGA-Dg-SOX" secondAttribute="bottom" constant="34" id="Kad-DT-Sis">
-                                <variation key="widthClass=compact" constant="26"/>
+                                <variation key="widthClass=compact" constant="11"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="Uro-uk-KfW" secondAttribute="centerX" id="S76-53-wBN"/>
-                            <constraint firstItem="StM-qe-6mC" firstAttribute="top" secondItem="ToS-3J-hfs" secondAttribute="bottom" constant="7.5" id="SoI-B3-q5b"/>
+                            <constraint firstItem="StM-qe-6mC" firstAttribute="top" secondItem="ToS-3J-hfs" secondAttribute="bottom" constant="7.5" id="SoI-B3-q5b">
+                                <variation key="widthClass=compact" constant="0.5"/>
+                            </constraint>
                             <constraint firstItem="jV6-SW-2n2" firstAttribute="leading" secondItem="Ek6-74-rEy" secondAttribute="leadingMargin" id="ZQV-Gz-G3o">
                                 <variation key="widthClass=compact" constant="-16"/>
                             </constraint>
@@ -1543,7 +1557,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="VXv-GB-zAg"/>
         <segue reference="NCM-0O-Bcm"/>
-        <segue reference="7Ep-iD-FQR"/>
+        <segue reference="O8G-oh-GkA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
 </document>
