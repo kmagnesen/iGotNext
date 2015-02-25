@@ -16,7 +16,7 @@
 @dynamic creator;
 @dynamic location;
 @dynamic category;
-@dynamic day;
+@dynamic startDate;
 @dynamic startTime;
 @dynamic endTime;
 @dynamic attendees;

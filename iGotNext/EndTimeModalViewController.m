@@ -64,16 +64,16 @@
 #pragma mark -------------- DatePicker --------------
 
 -(void)datePickerView {
-    UIDatePicker *datePicker = [UIDatePicker new];
-    datePicker.translatesAutoresizingMaskIntoConstraints = NO;
-    [datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
-    datePicker.minimumDate = [NSDate date];
-    datePicker.transform = CGAffineTransformMakeScale(0.7, 0.7);
+    _endDatePicker = [UIDatePicker new];
+    _endDatePicker.translatesAutoresizingMaskIntoConstraints = NO;
+    [_endDatePicker setDatePickerMode:UIDatePickerModeTime];
+    _endDatePicker.minimumDate = [NSDate date];
+    _endDatePicker.transform = CGAffineTransformMakeScale(0.7, 0.7);
 
-    [self.view addSubview:datePicker];
+    [self.view addSubview:_endDatePicker];
 
     //This in theory should be centering the datePicker to horizontal center of the view
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:datePicker
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:_endDatePicker
                                                           attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
@@ -82,18 +82,19 @@
                                                            constant:0.0]];
 
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:|-50-[datePicker]"
+                               constraintsWithVisualFormat:@"V:|-50-[_endDatePicker]"
                                options:0
                                metrics:nil
-                               views:NSDictionaryOfVariableBindings(datePicker)]];
+                               views:NSDictionaryOfVariableBindings(_endDatePicker)]];
 
-    self.endDate = [datePicker date];
 }
 
 #pragma mark -------------- Delegate --------------
 
 
 -(void)endTimePicked {
+    self.endDate = [_endDatePicker date];
+
     [self.delegate endTimeSetWith:self.endDate];
 }
 

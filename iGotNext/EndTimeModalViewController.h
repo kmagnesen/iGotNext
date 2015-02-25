@@ -15,6 +15,9 @@
 @end
 
 @interface EndTimeModalViewController : UIViewController
+{
+    UIDatePicker *_endDatePicker;
+}
 
 @property id<EndTimeVCDelegate> delegate;
 

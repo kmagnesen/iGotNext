@@ -17,7 +17,7 @@
 @property PFGeoPoint *location;
 @property User *creator;
 @property NSString *category;
-@property NSDate *day;
+@property NSDate *startDate;
 @property NSDate *startTime;
 @property NSDate *endTime;
 @property NSArray *attendees;

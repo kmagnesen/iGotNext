@@ -1,22 +1,23 @@
 //
-//  StartTimeModalViewController.m
+//  SetDateModalViewController.m
 //  iGotNext
 //
-//  Created by Katelyn Schneider on 2/18/15.
+//  Created by Kyle Magnesen on 2/24/15.
 //  Copyright (c) 2015 MobileMakers. All rights reserved.
 //
 
-#import "StartTimeModalViewController.h"
+#import "SetDateModalViewController.h"
 
-@interface StartTimeModalViewController () 
-- (void)addStartTimeButton;
-- (void)setStartTime:(id)sender ;
+@interface SetDateModalViewController ()
 
-@property NSDate *startDate;
+- (void)addStartDateButton;
+- (void)setStartDate:(id)sender ;
+
+@property NSDate *gameDay;
 
 @end
 
-@implementation StartTimeModalViewController
+@implementation SetDateModalViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,23 +25,23 @@
     self.view.layer.cornerRadius = 8.f;
     self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
 
-    [self addStartTimeButton];
+    [self addStartDateButton];
     [self datePickerView];
 }
 
 
 #pragma mark -------------- Set Start Time Button --------------
 
-- (void)addStartTimeButton {
-    UIButton *startTimeButton = [UIButton buttonWithType:UIButtonTypeSystem];
-    startTimeButton.translatesAutoresizingMaskIntoConstraints = NO;
-    startTimeButton.tintColor = [UIColor whiteColor];
-    startTimeButton.titleLabel.font = [UIFont fontWithName:@"Avenir" size:20];
-    [startTimeButton setTitle:@"Set Start Time" forState:UIControlStateNormal];
-    [startTimeButton addTarget:self action:@selector(setStartTime:) forControlEvents:UIControlEventTouchUpInside];
-    [self.view addSubview:startTimeButton];
+- (void)addStartDateButton {
+    UIButton *startDateButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    startDateButton.translatesAutoresizingMaskIntoConstraints = NO;
+    startDateButton.tintColor = [UIColor whiteColor];
+    startDateButton.titleLabel.font = [UIFont fontWithName:@"Avenir" size:20];
+    [startDateButton setTitle:@"Set Start Time" forState:UIControlStateNormal];
+    [startDateButton addTarget:self action:@selector(setStartDate:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:startDateButton];
 
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:startTimeButton
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:startDateButton
                                                           attribute:NSLayoutAttributeCenterX
                                                           relatedBy:NSLayoutRelationEqual
                                                              toItem:self.view
@@ -49,14 +50,14 @@
                                                            constant:0.f]];
 
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:[startTimeButton]-|"
+                               constraintsWithVisualFormat:@"V:[startDateButton]-|"
                                options:0
                                metrics:nil
-                               views:NSDictionaryOfVariableBindings(startTimeButton)]];
+                               views:NSDictionaryOfVariableBindings(startDateButton)]];
 }
 
-- (void)setStartTime:(id)sender {
-    [self startTimePicked];
+- (void)setStartDate:(id)sender {
+    [self startDatePicked];
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
@@ -65,7 +66,7 @@
 -(void)datePickerView {
     _datePicker = [UIDatePicker new];
     _datePicker.translatesAutoresizingMaskIntoConstraints = NO;
-    [_datePicker setDatePickerMode:UIDatePickerModeTime];
+    [_datePicker setDatePickerMode:UIDatePickerModeDate];
 
     _datePicker.minimumDate = [NSDate date];
     _datePicker.transform = CGAffineTransformMakeScale(0.7, 0.7);
@@ -92,9 +93,9 @@
 
 #pragma mark -------------- Delegate --------------
 
--(void)startTimePicked {
-    self.startDate = [_datePicker date];
-    [self.delegate startTimeSetWith:self.startDate];
+-(void)startDatePicked {
+    self.gameDay = [_datePicker date];
+    [self.delegate startDateSetWith:self.gameDay];
 }
 
 @end

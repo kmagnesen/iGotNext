@@ -8,6 +8,7 @@
 #import <QuartzCore/QuartzCore.h>
 #import "NewGameViewController.h"
 #import "CategoryModalViewController.h"
+#import "SetDateModalViewController.h"
 #import "StartTimeModalViewController.h"
 #import "EndTimeModalViewController.h"
 #import "Game.h"
@@ -16,7 +17,7 @@
 #import "DismissingAnimation.h"
 
 
-@interface NewGameViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartTimeVCDelegate, EndTimeVCDelegate>
+@interface NewGameViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartDateVCDelegate, StartTimeVCDelegate, EndTimeVCDelegate>
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *evenDescriptionTextField;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
@@ -27,6 +28,7 @@
 @property (strong, nonatomic) NSArray *sportsArray;
 
 @property NSString *category;
+@property NSDate *startDate;
 @property NSDate *startTime;
 @property NSDate *endTime;
 
@@ -42,6 +44,7 @@
     self.category = @"";
     self.startTime = [NSDate new];
     self.endTime = [NSDate new];
+
 }
 
 
@@ -49,7 +52,7 @@
 
 -(void)saveUpdatedGame {
     self.game[@"title"] = self.eventNameTextField.text;
-    self.game[@"description"] = self.evenDescriptionTextField.text;
+    self.game[@"gameDescription"] = self.evenDescriptionTextField.text;
     self.game[@"startTime"] = self.startTime;
     self.game[@"endTime"] = self.endTime;
     self.game[@"category"] = self.category;
@@ -77,6 +80,14 @@
 }
 
 - (IBAction)onDateTapped:(UIButton *)sender {
+    SetDateModalViewController *startDateVC = [SetDateModalViewController new];
+    startDateVC.delegate = self;
+    startDateVC.transitioningDelegate = self;
+    startDateVC.modalPresentationStyle = UIModalPresentationCustom;
+
+    [self presentViewController:startDateVC
+                                            animated:YES
+                                          completion:NULL];
 }
 
 - (IBAction)onSetStartTimeTapped:(id)sender {
@@ -124,13 +135,22 @@
     self.categoryLabel.text = self.category;
 }
 
+-(void)startDateSetWith:(NSDate *)eventStartDate {
+    self.startDate = [NSDate new];
+    self.startDate = eventStartDate;
+
+    self.dateLabel.text = [NSDateFormatter localizedStringFromDate:self.startDate
+                                                         dateStyle:NSDateFormatterMediumStyle
+                                                         timeStyle:NSDateFormatterNoStyle];
+}
+
 -(void)startTimeSetWith:(NSDate *)eventStartDate {
     self.startTime = [NSDate new];
     self.startTime = eventStartDate;
 
     self.startTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.startTime
-                                                              dateStyle:NSDateFormatterShortStyle
-                                                              timeStyle:NSDateFormatterFullStyle];
+                                                              dateStyle:NSDateFormatterNoStyle
+                                                              timeStyle:NSDateFormatterShortStyle];
 }
 
 -(void)endTimeSetWith:(NSDate *)eventEndDate {
@@ -138,8 +158,8 @@
     self.endTime = eventEndDate;
 
     self.endTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.endTime
-                                                            dateStyle:NSDateFormatterShortStyle
-                                                            timeStyle:NSDateFormatterFullStyle];
+                                                            dateStyle:NSDateFormatterNoStyle
+                                                            timeStyle:NSDateFormatterShortStyle];
 }
 
 
