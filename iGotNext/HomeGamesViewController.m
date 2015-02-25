@@ -156,7 +156,7 @@
     [query whereKey:@"category" containedIn:currentUser.interests];
 
     // Interested in locations near user.
-    [query whereKey:@"location" nearGeoPoint:userGeoPoint];
+//    [query whereKey:@"location" nearGeoPoint:userGeoPoint];
 
 
     // Limit what could be a lot of points.
