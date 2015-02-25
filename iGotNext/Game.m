@@ -12,10 +12,9 @@
 @implementation Game
 
 @dynamic title;
-@dynamic description;
+@dynamic gameDescription;
 @dynamic creator;
 @dynamic location;
-@dynamic attendance;
 @dynamic category;
 @dynamic startDate;
 @dynamic startTime;
@@ -30,7 +29,7 @@
     return @"Game";
 }
 
--(instancetype)initWithUser:(PFUser *)currentUser andLocation:(MKPointAnnotation *)location {
+-(instancetype)initWithUser:(User *)currentUser andLocation:(MKPointAnnotation *)location {
     self = [super init];
 
     PFGeoPoint *point = [PFGeoPoint geoPointWithLatitude:location.coordinate.latitude
@@ -39,6 +38,7 @@
     if (self) {
         self.creator = currentUser;
         self.location = point;
+        self.attendees = [NSArray new];
     }
 
     return self;

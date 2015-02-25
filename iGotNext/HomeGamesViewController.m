@@ -31,7 +31,6 @@
 @property NSArray *sortedGames;
 @property GameAnnotation *gameAnnotation;
 @property Game *selectedGame;
-//@property MKUserLocation *userLocation;
 
 @end
 
@@ -40,7 +39,6 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
 
-    //self.userLocation = [MKUserLocation new];
 
     self.locationManager = [[CLLocationManager alloc]init];
     self.locationManager.delegate = self;
@@ -54,12 +52,12 @@
 
     self.tableView.hidden = YES;
 
-    [self loadGamesFeed];
 }
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:YES];
-
+    
+    [self loadGamesFeed];
     self.mapView.showsUserLocation = YES;
 }
 
@@ -69,7 +67,7 @@
 -(void)setUpLongTouchGesture {
     UILongPressGestureRecognizer *lpgr = [[UILongPressGestureRecognizer alloc]
                                           initWithTarget:self action:@selector(handleLongPress:)];
-    lpgr.minimumPressDuration = 1.0; //user needs to press for 2 seconds
+    lpgr.minimumPressDuration = 1.0;
     [self.mapView addGestureRecognizer:lpgr];
 }
 
@@ -97,7 +95,7 @@
     [confirmationAlert show];
 }
 
-- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex {
     if (buttonIndex == [alertView cancelButtonIndex]){
         //TODO: get so pin does not stay on map
         ;
@@ -118,9 +116,10 @@
             ;
         }
         gameDetailVC.game = self.selectedGame;
+
     } if([[segue identifier] isEqualToString:@"NewGameSegue"]) {
         NewGameViewController *newGameVC = segue.destinationViewController;
-        PFUser *currentUser = [PFUser currentUser];
+        User *currentUser = [User currentUser];
 
         //Creates a new game object that is passed using the recently dropped pin
         Game *newGame = [[Game alloc] initWithUser:currentUser andLocation:self.droppedAnnotation];
@@ -130,41 +129,10 @@
     }
 }
 
+
 - (IBAction)unwindToGameFeed:(UIStoryboardSegue *)unwindSegue {
     [self loadGamesFeed];
 }
-
-
-//
-//-(void)findParkNear:(CLLocation *)location {
-////    MKLocalSearchRequest *request = [[MKLocalSearchRequest alloc]init];
-////    request.naturalLanguageQuery = @"Sports";
-////    request.region = MKCoordinateRegionMake(location.coordinate, MKCoordinateSpanMake(1, 1));
-////
-////    MKLocalSearch *search = [[MKLocalSearch alloc] initWithRequest:request];
-////    [search startWithCompletionHandler:^(MKLocalSearchResponse *response, NSError *error) {
-////        self.mapItems = response.mapItems;
-//
-//        for (MKMapItem *parkMapItem in self.mapItems) {
-//            CLLocationCoordinate2D coordinate = parkMapItem.placemark.location.coordinate;
-//
-//            MKPointAnnotation *annotation = [[MKPointAnnotation alloc]init];
-//            annotation.coordinate = coordinate;
-//            //NSLog(@"%@", parkMapItem.placemark.name);
-//            annotation.title = parkMapItem.placemark.name;
-//            annotation.subtitle = parkMapItem.placemark.title;
-//
-//            [self.mapView addAnnotation:annotation];
-//
-//            MKCircle *circle = [MKCircle circleWithCenterCoordinate:coordinate radius:500];
-//            [self.mapView addOverlay:circle];
-//
-//        }
-//        [self.mapView showAnnotations:self.mapView.annotations animated:YES];
-//        [self.tableView reloadData];
-////    }];
-//}
-
 
 #pragma mark ----- Load Games -----
 
@@ -183,7 +151,6 @@
                 for (Game *game in returnedGames) {
                     [self.games addObject:game];
                 }
-    //            [self sortGames];
                 [self.tableView reloadData];
                 [self loadMap];
             } else {
@@ -193,12 +160,7 @@
     }
 }
 
-//-(void)sortGames{
-//    self.sortedGames = [NSArray new];
-//    NSSortDescriptor *dateDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"eventStartTime" ascending:YES];
-//    NSArray *sortDescriptors = [NSArray arrayWithObject:dateDescriptor];
-//    self.sortedGames = [self.games sortedArrayUsingDescriptors:sortDescriptors];
-//}
+
 
 #pragma mark ----- Delegate -----
 
@@ -249,7 +211,6 @@
         GameAnnotation *gameAnnotation = [[GameAnnotation alloc]initWithGame:game];
         [self.mapView addAnnotation:gameAnnotation];
     }
-    //[self.mapView showAnnotations:self.mapView.annotations animated:YES];
 }
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation {
@@ -267,7 +228,6 @@
 
 
     pin.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-  //  pin.image = [UIImage imageNamed:@""];
     return pin;
 }
 

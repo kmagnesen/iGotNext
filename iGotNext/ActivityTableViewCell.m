@@ -14,8 +14,7 @@
     _game = game;
 
     self.gameTitle.text = game.title;
-    self.gameAttendance.text = [NSString stringWithFormat:@"Attendance: %@ people", self.game.attendance];
-    
+    self.gameAttendance.text = [NSString stringWithFormat:@"Attendance: %lu people", self.game.attendees.count];
 }
 
 @end

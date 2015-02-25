@@ -8,21 +8,21 @@
 #import <MapKit/MapKit.h>
 #import <Parse/Parse.h>
 #import <Foundation/Foundation.h>
+#import "User.h"
 
 @interface Game : PFObject <PFSubclassing>
 
 @property NSString *title;
-@property NSString *description;
+@property NSString *gameDescription;
 @property PFGeoPoint *location;
-@property PFUser *creator;
-@property NSNumber *attendance;
+@property User *creator;
 @property NSString *category;
 @property NSDate *startDate;
 @property NSDate *startTime;
 @property NSDate *endTime;
 @property NSArray *attendees;
 
--(instancetype)initWithUser:(PFUser *)currentUser andLocation:(MKPointAnnotation *)location;
+-(instancetype)initWithUser:(User *)currentUser andLocation:(MKPointAnnotation *)location;
 
 + (NSString *)parseClassName;
 
