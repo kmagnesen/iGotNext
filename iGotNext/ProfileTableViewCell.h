@@ -7,7 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Interest.h"
 
 @interface ProfileTableViewCell : UITableViewCell
+
+@property Interest *interest;
 
 @end
