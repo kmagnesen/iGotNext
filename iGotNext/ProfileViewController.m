@@ -17,7 +17,6 @@
 
 @interface ProfileViewController () <UIViewControllerTransitioningDelegate, UITableViewDataSource, UITabBarDelegate, UpdateInterestTVCDelegate>
 
-@property (strong, nonatomic) IBOutlet UITextView *interestsTextView;
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UITableView *profileTableView;
 
