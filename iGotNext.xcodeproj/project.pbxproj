@@ -23,6 +23,7 @@
 		CCC8C4B71A9BFC96003DB079 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */; };
 		CCC8C4CE1A9C30D3003DB079 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */; };
 		CCE3D8071A9CF1F800020BE6 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3D8061A9CF1F800020BE6 /* ActivityTableViewCell.m */; };
+		CCE3D80B1A9D627F00020BE6 /* GameDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3D80A1A9D627F00020BE6 /* GameDetailTableViewCell.m */; };
 		F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */; };
 		F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BBC1A969C1C0002AD85 /* EditCollectionViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* PickUpGameTableViewCell.m */; };
@@ -109,6 +110,8 @@
 		CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTabBarController.m; sourceTree = "<group>"; };
 		CCE3D8051A9CF1F800020BE6 /* ActivityTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewCell.h; sourceTree = "<group>"; };
 		CCE3D8061A9CF1F800020BE6 /* ActivityTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewCell.m; sourceTree = "<group>"; };
+		CCE3D8091A9D627F00020BE6 /* GameDetailTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameDetailTableViewCell.h; sourceTree = "<group>"; };
+		CCE3D80A1A9D627F00020BE6 /* GameDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDetailTableViewCell.m; sourceTree = "<group>"; };
 		F9110BB81A96516F0002AD85 /* EditInterestsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInterestsModalViewController.h; sourceTree = "<group>"; };
 		F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInterestsModalViewController.m; sourceTree = "<group>"; };
 		F9110BBB1A969C1C0002AD85 /* EditCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCollectionViewCell.h; sourceTree = "<group>"; };
@@ -285,6 +288,7 @@
 				CCC8C4BD1A9C0928003DB079 /* Annotation */,
 				CC451A971A8E5B5D009AD5D3 /* GameDetailViewController.h */,
 				CC451A981A8E5B5D009AD5D3 /* GameDetailViewController.m */,
+				CCE3D80C1A9D628C00020BE6 /* Cell */,
 			);
 			name = "Game Feed";
 			sourceTree = "<group>";
@@ -405,6 +409,15 @@
 			children = (
 				CCE3D8051A9CF1F800020BE6 /* ActivityTableViewCell.h */,
 				CCE3D8061A9CF1F800020BE6 /* ActivityTableViewCell.m */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		CCE3D80C1A9D628C00020BE6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3D8091A9D627F00020BE6 /* GameDetailTableViewCell.h */,
+				CCE3D80A1A9D627F00020BE6 /* GameDetailTableViewCell.m */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -629,6 +642,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCE3D80B1A9D627F00020BE6 /* GameDetailTableViewCell.m in Sources */,
 				F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */,
 				F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */,
 				F991EC621A9CCE3B003F826D /* User.m in Sources */,

@@ -9,6 +9,7 @@
 #import "ActivityFeedViewController.h"
 #import "Game.h"
 #import "ActivityTableViewCell.h"
+#import "GameDetailViewController.h"
 
 @interface ActivityFeedViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,15 +28,10 @@
     self.currentUser = [PFUser currentUser];
 
     //View opens with "Events Created" higlighted
-//    [self loadEventsCurrentUserCreated];
+    [self loadEventsCurrentUserCreated];
 
     [self.segmentedController setTitle:@"Events Created" forSegmentAtIndex:0];
     [self.segmentedController setTitle:@"Events Attending" forSegmentAtIndex:1];
-}
-
--(void)viewWillAppear:(BOOL)animated {
-    //View opens with "Events Created" higlighted
-    [self segmentedControllerLogic];
 }
 
 - (IBAction)onSegmentedControllerTapped:(UISegmentedControl *)sender {
@@ -59,7 +55,7 @@
 
     //Pulls events based on their eventCreator property
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
-    [query whereKey:@"eventCreator" equalTo:self.currentUser];
+    [query whereKey:@"creator" equalTo:self.currentUser];
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {
@@ -106,5 +102,14 @@
     activityCell.game = game;
     return activityCell;
 }
+
+#pragma mark ----------- Segue -----------
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"GameDetailSegue"]) {
+        GameDetailViewController *gameDetailVC = segue.destinationViewController;
+        gameDetailVC.game = [self.gamesDisplayed objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    }
+}
+
 
 @end
