@@ -19,7 +19,7 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *passwordTextField;
-
+@property (strong, nonatomic) IBOutlet UIButton *createNewButton;
 @end
 
 @implementation LoginViewController
@@ -34,6 +34,9 @@
 
     self.usernameTextField.delegate = self;
     self.passwordTextField.delegate = self;
+
+    [[self.createNewButton layer] setBorderWidth:2.0f];
+    [[self.createNewButton layer] setBorderColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1].CGColor];
 }
 
 -(void)dismissKeyboard:(id)sender {
