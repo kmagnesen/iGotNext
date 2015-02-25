@@ -837,14 +837,14 @@
                                                     <exclude reference="5jw-nB-Cbh"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="aqs-03-1GG"/>
-                                                    <exclude reference="tSr-K3-vfC"/>
                                                     <exclude reference="4Ki-rg-Dbk"/>
                                                     <exclude reference="Uvn-oS-wuo"/>
                                                     <exclude reference="VYp-3w-sI4"/>
                                                     <exclude reference="E44-JI-zR0"/>
                                                     <exclude reference="GKb-qR-EPT"/>
                                                     <exclude reference="qsv-qp-Jtg"/>
+                                                    <exclude reference="aqs-03-1GG"/>
+                                                    <exclude reference="tSr-K3-vfC"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -854,14 +854,14 @@
                                                     <include reference="5jw-nB-Cbh"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="aqs-03-1GG"/>
-                                                    <include reference="tSr-K3-vfC"/>
                                                     <include reference="4Ki-rg-Dbk"/>
                                                     <include reference="Uvn-oS-wuo"/>
                                                     <include reference="VYp-3w-sI4"/>
                                                     <include reference="E44-JI-zR0"/>
                                                     <include reference="GKb-qR-EPT"/>
                                                     <include reference="qsv-qp-Jtg"/>
+                                                    <include reference="aqs-03-1GG"/>
+                                                    <include reference="tSr-K3-vfC"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -1578,12 +1578,12 @@
                                 <exclude reference="Dj3-QW-Py0"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="NzZ-dM-6Ol"/>
-                                <exclude reference="iwR-do-8ae"/>
-                                <exclude reference="zVJ-Zn-IPi"/>
                                 <exclude reference="053-7n-Igz"/>
                                 <exclude reference="FF4-36-FDF"/>
                                 <exclude reference="T8L-43-Nus"/>
+                                <exclude reference="NzZ-dM-6Ol"/>
+                                <exclude reference="iwR-do-8ae"/>
+                                <exclude reference="zVJ-Zn-IPi"/>
                                 <exclude reference="Wca-vV-W7T"/>
                                 <exclude reference="Yrr-gE-Vur"/>
                                 <exclude reference="ZML-zT-QVx"/>
@@ -1596,12 +1596,12 @@
                                 <include reference="Dj3-QW-Py0"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="NzZ-dM-6Ol"/>
-                                <include reference="iwR-do-8ae"/>
-                                <include reference="zVJ-Zn-IPi"/>
                                 <include reference="053-7n-Igz"/>
                                 <include reference="FF4-36-FDF"/>
                                 <include reference="T8L-43-Nus"/>
+                                <include reference="NzZ-dM-6Ol"/>
+                                <include reference="iwR-do-8ae"/>
+                                <include reference="zVJ-Zn-IPi"/>
                                 <include reference="Wca-vV-W7T"/>
                                 <include reference="Yrr-gE-Vur"/>
                                 <include reference="ZML-zT-QVx"/>
@@ -1692,8 +1692,8 @@
         <image name="sneaker" width="245" height="245"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="NCM-0O-Bcm"/>
         <segue reference="VXv-GB-zAg"/>
-        <segue reference="UTy-BQ-NcK"/>
         <segue reference="O8G-oh-GkA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
