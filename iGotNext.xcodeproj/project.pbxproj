@@ -137,6 +137,7 @@
 		F991EC611A9CCE3B003F826D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		F991EC631A9D81A5003F826D /* SetDateModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDateModalViewController.h; sourceTree = "<group>"; };
 		F991EC641A9D81A5003F826D /* SetDateModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDateModalViewController.m; sourceTree = "<group>"; };
+		F991EC661A9E134D003F826D /* PressStart2P.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = PressStart2P.ttf; path = "../../../../Downloads/codeman38_press-start-2p/PressStart2P.ttf"; sourceTree = "<group>"; };
 		F9C2F5441A8915BE00342CE8 /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C2F5481A8915BE00342CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C2F5491A8915BE00342CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -477,6 +478,7 @@
 				CCBB41DB1A9B9C36003F63FD /* Lato-Light.ttf */,
 				CCBB41DC1A9B9C36003F63FD /* Lato-LightItalic.ttf */,
 				CCBB41DF1A9B9C36003F63FD /* Lato-Regular.ttf */,
+				F991EC661A9E134D003F826D /* PressStart2P.ttf */,
 				F9C2F5481A8915BE00342CE8 /* Info.plist */,
 				F9C2F5491A8915BE00342CE8 /* main.m */,
 			);
