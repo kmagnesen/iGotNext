@@ -17,6 +17,7 @@
 @dynamic location;
 @dynamic attendance;
 @dynamic category;
+@dynamic startDate;
 @dynamic startTime;
 @dynamic endTime;
 @dynamic attendees;

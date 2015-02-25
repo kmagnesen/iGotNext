@@ -17,6 +17,7 @@
 @property PFUser *creator;
 @property NSNumber *attendance;
 @property NSString *category;
+@property NSDate *startDate;
 @property NSDate *startTime;
 @property NSDate *endTime;
 @property NSArray *attendees;

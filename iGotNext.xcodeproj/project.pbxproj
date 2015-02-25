@@ -34,6 +34,7 @@
 		F991EC5C1A9CC120003F826D /* ProfilePicModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC5B1A9CC120003F826D /* ProfilePicModalViewController.m */; };
 		F991EC5F1A9CC406003F826D /* EditPicCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC5E1A9CC406003F826D /* EditPicCollectionViewCell.m */; };
 		F991EC621A9CCE3B003F826D /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC611A9CCE3B003F826D /* User.m */; };
+		F991EC651A9D81A5003F826D /* SetDateModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC641A9D81A5003F826D /* SetDateModalViewController.m */; };
 		F9C2F54A1A8915BE00342CE8 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F5491A8915BE00342CE8 /* main.m */; };
 		F9C2F54D1A8915BE00342CE8 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54C1A8915BE00342CE8 /* AppDelegate.m */; };
 		F9C2F5501A8915BE00342CE8 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */; };
@@ -131,6 +132,8 @@
 		F991EC5E1A9CC406003F826D /* EditPicCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditPicCollectionViewCell.m; sourceTree = "<group>"; };
 		F991EC601A9CCE3B003F826D /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		F991EC611A9CCE3B003F826D /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		F991EC631A9D81A5003F826D /* SetDateModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetDateModalViewController.h; sourceTree = "<group>"; };
+		F991EC641A9D81A5003F826D /* SetDateModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetDateModalViewController.m; sourceTree = "<group>"; };
 		F9C2F5441A8915BE00342CE8 /* iGotNext.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGotNext.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F9C2F5481A8915BE00342CE8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F9C2F5491A8915BE00342CE8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -253,6 +256,8 @@
 			children = (
 				CC558DCB1A93C93900AE0566 /* CategoryModalViewController.h */,
 				CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */,
+				F991EC631A9D81A5003F826D /* SetDateModalViewController.h */,
+				F991EC641A9D81A5003F826D /* SetDateModalViewController.m */,
 				CC558DD51A94CA5B00AE0566 /* StartTimeModalViewController.h */,
 				CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */,
 				CC558DD91A94CAB500AE0566 /* EndTimeModalViewController.h */,
@@ -651,6 +656,7 @@
 				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
 				CCC8C4B71A9BFC96003DB079 /* InterestsViewController.m in Sources */,
 				CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */,
+				F991EC651A9D81A5003F826D /* SetDateModalViewController.m in Sources */,
 				F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */,
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
 				F991EC5F1A9CC406003F826D /* EditPicCollectionViewCell.m in Sources */,

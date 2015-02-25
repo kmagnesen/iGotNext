@@ -15,6 +15,9 @@
 @end
 
 @interface StartTimeModalViewController : UIViewController
+{
+    UIDatePicker *_datePicker;
+}
 
 @property id<StartTimeVCDelegate> delegate;
 
