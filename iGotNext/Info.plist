@@ -26,13 +26,13 @@
 	<string>So we can find pick-up games near you.</string>
 	<key>UIAppFonts</key>
 	<array>
-		<string>PressStart2p.ttf</string>
 		<string>Lato-Black.ttf</string>
 		<string>Lato-Bold.ttf</string>
 		<string>Lato-Italic.ttf</string>
 		<string>Lato-Light.ttf</string>
 		<string>Lato-LightItalic.ttf</string>
 		<string>Lato-Regular.ttf</string>
+		<string>PressStart2p.ttf</string>
 	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
