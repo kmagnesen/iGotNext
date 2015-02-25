@@ -53,6 +53,7 @@
 -(void)saveUpdatedGame {
     self.game[@"title"] = self.eventNameTextField.text;
     self.game[@"gameDescription"] = self.evenDescriptionTextField.text;
+    self.game[@"startDate"] = self.startDate;
     self.game[@"startTime"] = self.startTime;
     self.game[@"endTime"] = self.endTime;
     self.game[@"category"] = self.category;
@@ -144,9 +145,9 @@
                                                          timeStyle:NSDateFormatterNoStyle];
 }
 
--(void)startTimeSetWith:(NSDate *)eventStartDate {
+-(void)startTimeSetWith:(NSDate *)eventStartTime {
     self.startTime = [NSDate new];
-    self.startTime = eventStartDate;
+    self.startTime = eventStartTime;
 
     self.startTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.startTime
                                                               dateStyle:NSDateFormatterNoStyle

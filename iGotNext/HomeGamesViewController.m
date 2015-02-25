@@ -142,7 +142,7 @@
     //Make sure to include "games" a global variable
     self.games = [NSMutableArray new];
 
-    if ([PFUser currentUser]) {
+    if ([User currentUser]) {
         PFQuery *query = [Game query];
         [query whereKey:@"category" containedIn:currentUser.interests];
         [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
