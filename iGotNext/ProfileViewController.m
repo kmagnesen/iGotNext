@@ -20,9 +20,8 @@
 
 @property (strong, nonatomic) IBOutlet UILabel *usernameLabel;
 @property (strong, nonatomic) IBOutlet UITableView *profileTableView;
-
+@property (strong, nonatomic) IBOutlet UIButton *updateButton;
 @property NSMutableArray *interests;
-//@property PFUser *currentUser;
 
 @end
 
@@ -31,7 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-//    self.currentUser = [PFUser new];
+    [[self.updateButton layer] setBorderWidth:2.0f];
+    [[self.updateButton layer] setBorderColor:[UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1].CGColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated{

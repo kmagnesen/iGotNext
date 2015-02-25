@@ -63,7 +63,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="38" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QZ2-t0-b48">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="568"/>
                                 <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="separatorColor" red="0.0" green="0.72156862749999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CellID" rowHeight="38" id="Vui-Te-YqE" customClass="GameDetailTableViewCell">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -350,7 +350,9 @@
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="DgW-v6-yOI"/>
+                                    <constraint firstAttribute="height" constant="80" id="DgW-v6-yOI">
+                                        <variation key="widthClass=compact" constant="70"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -484,29 +486,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="551"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jV6-SW-2n2">
-                                <rect key="frame" x="143" y="175" width="110" height="21"/>
-                                <color key="backgroundColor" red="0.0" green="0.72156862749999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="24" id="xzT-Qa-lG1">
-                                        <variation key="widthClass=compact" constant="80"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <color key="highlightedColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ToS-3J-hfs">
                                 <rect key="frame" x="292" y="245" width="90" height="30"/>
-                                <color key="backgroundColor" red="0.0" green="0.72156862749999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="74" id="ZoW-r5-1hC"/>
                                     <constraint firstAttribute="height" constant="25.5" id="tjf-6i-RG8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <state key="normal" title="Update">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -682,17 +670,36 @@
                                     <outlet property="delegate" destination="nWv-mk-66D" id="8ak-WZ-ZpX"/>
                                 </connections>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="drose" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-LY-JYd">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="sneaker" translatesAutoresizingMaskIntoConstraints="NO" id="jYu-LY-JYd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="90" id="ITB-BB-NH8">
                                         <variation key="widthClass=compact" constant="115"/>
                                     </constraint>
                                     <constraint firstAttribute="width" constant="159" id="wRB-UT-Wxi">
-                                        <variation key="widthClass=compact" constant="100"/>
+                                        <variation key="widthClass=compact" constant="143"/>
                                     </constraint>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="USERNAME" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jV6-SW-2n2">
+                                <rect key="frame" x="143" y="175" width="110" height="21"/>
+                                <color key="backgroundColor" red="0.0" green="0.72156862749999995" blue="0.85098039219999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="xzT-Qa-lG1">
+                                        <variation key="widthClass=compact" constant="70"/>
+                                    </constraint>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="highlightedColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -700,9 +707,11 @@
                             <constraint firstAttribute="trailingMargin" secondItem="StM-qe-6mC" secondAttribute="trailing" constant="-16" id="Dha-IT-cFT"/>
                             <constraint firstItem="vBe-oX-Ydr" firstAttribute="top" secondItem="StM-qe-6mC" secondAttribute="bottom" id="EhO-y6-BjE"/>
                             <constraint firstItem="Uro-uk-KfW" firstAttribute="top" secondItem="jV6-SW-2n2" secondAttribute="bottom" constant="134" id="FKt-qJ-Mda">
-                                <variation key="widthClass=compact" constant="133"/>
+                                <variation key="widthClass=compact" constant="143"/>
                             </constraint>
-                            <constraint firstItem="ToS-3J-hfs" firstAttribute="top" secondItem="jV6-SW-2n2" secondAttribute="bottom" constant="133" id="Fd3-BY-LBh"/>
+                            <constraint firstItem="ToS-3J-hfs" firstAttribute="top" secondItem="jV6-SW-2n2" secondAttribute="bottom" constant="133" id="Fd3-BY-LBh">
+                                <variation key="widthClass=compact" constant="143"/>
+                            </constraint>
                             <constraint firstItem="StM-qe-6mC" firstAttribute="top" secondItem="Uro-uk-KfW" secondAttribute="bottom" constant="9" id="Fkl-u1-jhf"/>
                             <constraint firstItem="vBe-oX-Ydr" firstAttribute="top" secondItem="ToS-3J-hfs" secondAttribute="bottom" constant="299" id="GPY-UI-HTr"/>
                             <constraint firstAttribute="centerX" secondItem="Uro-uk-KfW" secondAttribute="centerX" id="S76-53-wBN"/>
@@ -725,7 +734,7 @@
                                 <variation key="widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="jYu-LY-JYd" firstAttribute="top" secondItem="jV6-SW-2n2" secondAttribute="bottom" constant="8" id="wZE-x6-ifc">
-                                <variation key="widthClass=compact" constant="0.0"/>
+                                <variation key="widthClass=compact" constant="20"/>
                             </constraint>
                         </constraints>
                         <variation key="default">
@@ -773,6 +782,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="profileTableView" destination="StM-qe-6mC" id="cdj-Wq-96M"/>
+                        <outlet property="updateButton" destination="ToS-3J-hfs" id="gME-V6-BCR"/>
                         <outlet property="usernameLabel" destination="jV6-SW-2n2" id="Xf0-hY-Vmt"/>
                     </connections>
                 </viewController>
@@ -808,6 +818,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-U7-lkq">
                                 <rect key="frame" x="0.0" y="49" width="600" height="504"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="separatorColor" red="0.1019607843" green="0.59999999999999998" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
@@ -953,7 +964,9 @@
                                 <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                                 <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="80" id="vsi-bY-aXq"/>
+                                    <constraint firstAttribute="height" constant="80" id="vsi-bY-aXq">
+                                        <variation key="widthClass=compact" constant="70"/>
+                                    </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1209,7 +1222,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="vYY-bp-fIs">
-                                        <variation key="widthClass=compact" constant="80"/>
+                                        <variation key="widthClass=compact" constant="70"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
@@ -1299,8 +1312,7 @@
                                                             <exclude reference="aMq-Uz-HpM"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="15" y="8" width="20" height="50"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <exclude reference="0gd-8u-5ea"/>
                                                             <include reference="aMq-Uz-HpM"/>
@@ -1323,8 +1335,7 @@
                                                             <exclude reference="GHV-Tn-Jhi"/>
                                                         </mask>
                                                     </variation>
-                                                    <variation key="widthClass=compact" misplaced="YES">
-                                                        <rect key="frame" x="0.0" y="60" width="50" height="20"/>
+                                                    <variation key="widthClass=compact">
                                                         <mask key="constraints">
                                                             <include reference="GHV-Tn-Jhi"/>
                                                             <exclude reference="mFT-my-Pyo"/>
@@ -1700,7 +1711,6 @@
     </scenes>
     <resources>
         <image name="BlankSlate" width="375" height="667"/>
-        <image name="drose" width="155" height="165"/>
         <image name="games" width="80" height="40"/>
         <image name="gamesPlayed" width="40" height="37"/>
         <image name="iGotNextTextLabel" width="226" height="47"/>
@@ -1709,8 +1719,8 @@
         <image name="volleyball" width="90" height="90"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="U9f-xm-lMi"/>
         <segue reference="NCM-0O-Bcm"/>
-        <segue reference="VXv-GB-zAg"/>
         <segue reference="O8G-oh-GkA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
