@@ -28,7 +28,7 @@
     [super viewDidLoad];
 
     self.view.layer.cornerRadius = 5.f;
-    self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
+    self.view.backgroundColor = [UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1];
     [self addEditInterestsButton];
     [self createSportsInterestsArray];
     [self addCollectionView];
@@ -123,7 +123,7 @@
     [_collectionView setUserInteractionEnabled:YES];
 
     [_collectionView registerClass:[EditCollectionViewCell class] forCellWithReuseIdentifier:@"cellIdentifier"];
-    [_collectionView setBackgroundColor:[UIColor clearColor]];
+    [_collectionView setBackgroundColor:[UIColor blackColor]];
 
     [self.view addSubview:_collectionView];
 
@@ -153,7 +153,7 @@
 
 - (EditCollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     EditCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cellIdentifier" forIndexPath:indexPath];
-
+    cell.backgroundColor = [UIColor whiteColor];
     cell.interest = [self.interests objectAtIndex:indexPath.row];
 
     UIImageView *customImageView;
@@ -194,7 +194,7 @@
                                                                              options:0
                                                                              metrics:nil
                                                                                views:views]];
-    NSLog(@"%@", cell.contentView.constraints);
+//    NSLog(@"%@", cell.contentView.constraints);
 
     customImageView.image = cell.interest.sportImage;
     customLabel.text = cell.interest.sportName;
@@ -210,7 +210,7 @@
         [self saveInterests];
     } else {
         [self.selections addObject:cell.interest.sportName];
-        cell.backgroundColor = [UIColor blueColor];
+        cell.backgroundColor = [UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1];
         [self saveInterests];
     }
 }
