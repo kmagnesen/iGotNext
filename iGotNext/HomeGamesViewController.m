@@ -174,7 +174,7 @@
 
 
     // Limit what could be a lot of points.
-    query.limit = 30;
+    query.limit = 100;
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
         if (!error) {

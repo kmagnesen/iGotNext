@@ -29,11 +29,13 @@
 
     [self.segmentedController setTitle:@"Events Created" forSegmentAtIndex:0];
     [self.segmentedController setTitle:@"Events Attending" forSegmentAtIndex:1];
+
+    [self loadEventsCurrentUserCreated];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
     //To show changes in attendance count when come back to vc
-    [self loadEventsCurrentUserCreated];
+    [self segmentedControllerLogic];
 }
 
 - (IBAction)onSegmentedControllerTapped:(UISegmentedControl *)sender {
@@ -86,7 +88,7 @@
 
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }else{
-            NSLog(@"It didn't go as planned %d", editingStyle);
+            //NSLog(@"It didn't go as planned %d", editingStyle);
         }
     }
 }
@@ -95,6 +97,8 @@
     self.gamesDisplayed = [NSMutableArray new];
 
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
+    [query whereKey:@"startTime" greaterThanOrEqualTo:[NSDate date]];
+
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedEvents, NSError *error) {
 
         if (!error) {

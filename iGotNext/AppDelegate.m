@@ -27,7 +27,7 @@
     // [Optional] Track statistics around application opens.
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
-    if (![PFUser currentUser]) {
+    if (![PFUser currentUser].isAuthenticated) {
 
         //BIG HACKS FOLLOW
         // abstract: prevent flicker to tabBarController by forcing
