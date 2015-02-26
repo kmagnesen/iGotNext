@@ -149,13 +149,13 @@
     PFQuery *query = [PFQuery queryWithClassName:@"Game"];
 
     // Only find live events
-    //[query whereKey:@"startDate" greaterThanOrEqualTo:[NSDate date]];
+    [query whereKey:@"startTime" greaterThanOrEqualTo:[NSDate date]];
 
     // Only find games relevant to user's interests
     [query whereKey:@"category" containedIn:currentUser.interests];
 
     // Interested in locations near user.
-//    [query whereKey:@"location" nearGeoPoint:userGeoPoint];
+    [query whereKey:@"location" nearGeoPoint:userGeoPoint];
 
 
     // Limit what could be a lot of points.
