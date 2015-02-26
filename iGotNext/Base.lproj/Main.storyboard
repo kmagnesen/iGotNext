@@ -350,9 +350,9 @@
                     <connections>
                         <outlet property="categoryLabel" destination="Dh9-a6-8C2" id="OVB-8c-NB3"/>
                         <outlet property="createButton" destination="7Mt-47-0s9" id="yUS-uD-3yd"/>
-                        <outlet property="dateLabel" destination="Fpy-ON-ugm" id="cnH-aP-9lP"/>
                         <outlet property="evenDescriptionTextField" destination="BFi-jC-ePt" id="oM6-qD-O2b"/>
                         <outlet property="eventNameTextField" destination="oyl-b5-rla" id="psd-KX-KwC"/>
+                        <outlet property="startTimeLabel" destination="Fpy-ON-ugm" id="WgM-hJ-Vos"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4le-mi-KBR" userLabel="First Responder" sceneMemberID="firstResponder"/>

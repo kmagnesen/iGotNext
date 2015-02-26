@@ -69,7 +69,7 @@
     [_datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
 
     _datePicker.minimumDate = [NSDate date];
-    _datePicker.transform = CGAffineTransformMakeScale(0.8, 0.8);
+    _datePicker.transform = CGAffineTransformMakeScale(0.75, 0.75);
 
     [self.view addSubview:_datePicker];
 
