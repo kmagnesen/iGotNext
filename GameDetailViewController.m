@@ -33,7 +33,7 @@
 
     self.gameCategoryImageView.image = [UIImage imageNamed:[NSString stringWithFormat:@"%@", self.game.category]];
     self.gameTitleLabel.text = self.game.title;
-    self.gameTimeLabel.text = [NSString stringWithFormat:@"%@ Start: %@ Ends: %@", self.game.startDate, self.game.startTime, self.game.endTime];
+    self.gameTimeLabel.text = [NSString stringWithFormat:@"Starts: %@", self.game.startTime];
     self.eventDescriptionTextView.text = self.game.gameDescription;
 
     [self buttonAttendanceLogic];

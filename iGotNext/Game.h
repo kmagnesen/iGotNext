@@ -17,9 +17,7 @@
 @property PFGeoPoint *location;
 @property User *creator;
 @property NSString *category;
-@property NSDate *startDate;
 @property NSDate *startTime;
-@property NSDate *endTime;
 @property NSArray *attendees;
 
 -(instancetype)initWithUser:(User *)currentUser andLocation:(MKPointAnnotation *)location;
