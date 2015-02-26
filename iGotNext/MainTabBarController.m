@@ -16,6 +16,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+
+    [[UITabBar appearance] setTintColor:[UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1]];
+    [[UITabBar appearance] setBarTintColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1]];
 }
 
 //- (void)viewWillAppear:(BOOL)animated {
