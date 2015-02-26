@@ -131,6 +131,8 @@
     }
 }
 
+- (IBAction)onAddButtonTapped:(UIBarButtonItem *)sender {
+}
 
 - (IBAction)unwindToGameFeed:(UIStoryboardSegue *)unwindSegue {
     [self loadGamesFeed];
