@@ -23,6 +23,7 @@
 		CCE3D8071A9CF1F800020BE6 /* ActivityTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3D8061A9CF1F800020BE6 /* ActivityTableViewCell.m */; };
 		CCE3D80B1A9D627F00020BE6 /* GameDetailTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3D80A1A9D627F00020BE6 /* GameDetailTableViewCell.m */; };
 		CCE3D8161A9E2A6600020BE6 /* ProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3D8151A9E2A6600020BE6 /* ProfileTableViewCell.m */; };
+		CCE3D81E1A9F990A00020BE6 /* NewGameAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CCE3D81D1A9F990A00020BE6 /* NewGameAnimation.m */; };
 		F9110BBA1A96516F0002AD85 /* EditInterestsModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */; };
 		F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BBC1A969C1C0002AD85 /* EditCollectionViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* PickUpGameTableViewCell.m */; };
@@ -102,6 +103,8 @@
 		CCE3D80A1A9D627F00020BE6 /* GameDetailTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameDetailTableViewCell.m; sourceTree = "<group>"; };
 		CCE3D8141A9E2A6600020BE6 /* ProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileTableViewCell.h; sourceTree = "<group>"; };
 		CCE3D8151A9E2A6600020BE6 /* ProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileTableViewCell.m; sourceTree = "<group>"; };
+		CCE3D81C1A9F990A00020BE6 /* NewGameAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGameAnimation.h; sourceTree = "<group>"; };
+		CCE3D81D1A9F990A00020BE6 /* NewGameAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGameAnimation.m; sourceTree = "<group>"; };
 		F9110BB81A96516F0002AD85 /* EditInterestsModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditInterestsModalViewController.h; sourceTree = "<group>"; };
 		F9110BB91A96516F0002AD85 /* EditInterestsModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditInterestsModalViewController.m; sourceTree = "<group>"; };
 		F9110BBB1A969C1C0002AD85 /* EditCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCollectionViewCell.h; sourceTree = "<group>"; };
@@ -245,6 +248,7 @@
 				CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */,
 				F991EC631A9D81A5003F826D /* SetDateModalViewController.h */,
 				F991EC641A9D81A5003F826D /* SetDateModalViewController.m */,
+				CCE3D81B1A9F98B200020BE6 /* Animation */,
 			);
 			name = "Modal Views";
 			sourceTree = "<group>";
@@ -409,6 +413,15 @@
 				CCE3D8151A9E2A6600020BE6 /* ProfileTableViewCell.m */,
 			);
 			name = Cell;
+			sourceTree = "<group>";
+		};
+		CCE3D81B1A9F98B200020BE6 /* Animation */ = {
+			isa = PBXGroup;
+			children = (
+				CCE3D81C1A9F990A00020BE6 /* NewGameAnimation.h */,
+				CCE3D81D1A9F990A00020BE6 /* NewGameAnimation.m */,
+			);
+			name = Animation;
 			sourceTree = "<group>";
 		};
 		F9C2F53B1A8915BE00342CE8 = {
@@ -652,6 +665,7 @@
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,
 				F93463851A93BBC100600BED /* InteretsCollectionViewCell.m in Sources */,
 				CCE3D8071A9CF1F800020BE6 /* ActivityTableViewCell.m in Sources */,
+				CCE3D81E1A9F990A00020BE6 /* NewGameAnimation.m in Sources */,
 				CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

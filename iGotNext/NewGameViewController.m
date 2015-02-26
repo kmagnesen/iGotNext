@@ -14,7 +14,7 @@
 
 #import "Game.h"
 
-#import "PresentingAnimation.h"
+#import "NewGameAnimation.h"
 #import "DismissingAnimation.h"
 
 
@@ -107,7 +107,7 @@
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForPresentedController:(UIViewController *)presented
                                                                   presentingController:(UIViewController *)presenting
                                                                       sourceController:(UIViewController *)source {
-    return [PresentingAnimation new];
+    return [NewGameAnimation new];
 }
 
 - (id<UIViewControllerAnimatedTransitioning>)animationControllerForDismissedController:(UIViewController *)dismissed {

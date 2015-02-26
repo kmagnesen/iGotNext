@@ -24,8 +24,9 @@
     [super viewDidLoad];
 
     self.view.layer.cornerRadius = 5.f;
-    self.view.backgroundColor = [UIColor colorWithRed:0.106 green:0.529 blue:0.722 alpha:1];
+    self.view.backgroundColor = [UIColor whiteColor];
     [self addSetSportButton];
+    [self addTitleLabel];
 
     self.sportsArray = @[@"Baseball", @"Basketball", @"Dodgeball", @"Football", @"Hockey", @"Soccer", @"Tennis", @"VolleyBall", @"Other"];
 
@@ -35,14 +36,46 @@
     self.category = @"Baseball";
 }
 
+#pragma mark -------------- Set Title Label --------------
+- (void)addTitleLabel {
+    UILabel *titleLabel = [UILabel new];
+    titleLabel.translatesAutoresizingMaskIntoConstraints = NO;
+    titleLabel.textColor = [UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1]
+    ;
+    [titleLabel.layer setBorderColor:[UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1].CGColor];
+    titleLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:18];
+    titleLabel.text = @"Select Sport";
+
+    [self.view addSubview:titleLabel];
+
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:titleLabel
+                                                          attribute:NSLayoutAttributeCenterX
+                                                          relatedBy:NSLayoutRelationEqual
+                                                             toItem:self.view
+                                                          attribute:NSLayoutAttributeCenterX
+                                                         multiplier:1.f
+                                                           constant:0.f]];
+
+    [self.view addConstraints:[NSLayoutConstraint
+                               constraintsWithVisualFormat:@"V:|-8-[titleLabel]"
+                               options:0
+                               metrics:nil
+                               views:NSDictionaryOfVariableBindings(titleLabel)]];
+}
+
+
 #pragma mark -------------- Set Sport Button --------------
 
 - (void)addSetSportButton {
     UIButton *setSportButton = [UIButton buttonWithType:UIButtonTypeSystem];
     setSportButton.translatesAutoresizingMaskIntoConstraints = NO;
-    setSportButton.tintColor = [UIColor whiteColor];
-    setSportButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
-    [setSportButton setTitle:@"Set Sport" forState:UIControlStateNormal];
+    setSportButton.tintColor = [UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1]
+    ;
+    [setSportButton.layer setBorderWidth:2.0f];
+    [setSportButton.layer setCornerRadius:5.0f];
+    [setSportButton.layer setBorderColor:[UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1].CGColor];
+    setSportButton.titleLabel.font = [UIFont fontWithName:@"Helvetica-Regular" size:18];
+    [setSportButton setTitle:@"Set" forState:UIControlStateNormal];
     [setSportButton addTarget:self action:@selector(setSport:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:setSportButton];
 
@@ -55,10 +88,17 @@
                                                            constant:0.f]];
 
     [self.view addConstraints:[NSLayoutConstraint
-                               constraintsWithVisualFormat:@"V:[setSportButton]-|"
+                               constraintsWithVisualFormat:@"V:[setSportButton(30)]-8-|"
                                options:0
                                metrics:nil
                                views:NSDictionaryOfVariableBindings(setSportButton)]];
+
+    [self.view addConstraints:[NSLayoutConstraint
+                               constraintsWithVisualFormat:@"H:[setSportButton(100)]"
+                               options:0
+                               metrics:nil
+                               views:NSDictionaryOfVariableBindings(setSportButton)]];
+
 }
 
 - (void)setSport:(id)sender {
@@ -85,11 +125,11 @@
                                                           attribute:NSLayoutAttributeCenterX
                                                          multiplier:1.f
                                                            constant:0.f]];
-
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-50-[categoryPickerView]"
-                                                                      options:0
-                                                                      metrics:nil
-                                                                        views:NSDictionaryOfVariableBindings(categoryPickerView)]];
+//
+//    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[categoryPickerView]"
+//                                                                      options:0
+//                                                                      metrics:nil
+//                                                                        views:NSDictionaryOfVariableBindings(categoryPickerView)]];
 
 }
 
