@@ -29,7 +29,6 @@
 		F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F9110BBC1A969C1C0002AD85 /* EditCollectionViewCell.m */; };
 		F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB31A89509D005CD279 /* PickUpGameTableViewCell.m */; };
 		F92CEFB71A8952B3005CD279 /* NewGameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F92CEFB61A8952B3005CD279 /* NewGameViewController.m */; };
-		F93463821A93B73300600BED /* InterestsCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F93463811A93B73300600BED /* InterestsCollectionViewController.m */; };
 		F93463851A93BBC100600BED /* InteretsCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = F93463841A93BBC100600BED /* InteretsCollectionViewCell.m */; };
 		F93463881A93DA6100600BED /* Interest.m in Sources */ = {isa = PBXBuildFile; fileRef = F93463871A93DA6100600BED /* Interest.m */; };
 		F991EC591A9A9AD8003F826D /* SignUpModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F991EC581A9A9AD8003F826D /* SignUpModalViewController.m */; };
@@ -117,8 +116,6 @@
 		F92CEFB31A89509D005CD279 /* PickUpGameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickUpGameTableViewCell.m; sourceTree = "<group>"; };
 		F92CEFB51A8952B3005CD279 /* NewGameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewGameViewController.h; sourceTree = "<group>"; };
 		F92CEFB61A8952B3005CD279 /* NewGameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewGameViewController.m; sourceTree = "<group>"; };
-		F93463801A93B73300600BED /* InterestsCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsCollectionViewController.h; sourceTree = "<group>"; };
-		F93463811A93B73300600BED /* InterestsCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InterestsCollectionViewController.m; sourceTree = "<group>"; };
 		F93463831A93BBC100600BED /* InteretsCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteretsCollectionViewCell.h; sourceTree = "<group>"; };
 		F93463841A93BBC100600BED /* InteretsCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteretsCollectionViewCell.m; sourceTree = "<group>"; };
 		F93463861A93DA6100600BED /* Interest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Interest.h; path = ../Interest.h; sourceTree = "<group>"; };
@@ -268,8 +265,6 @@
 				F9C2F54E1A8915BE00342CE8 /* LoginViewController.h */,
 				F9C2F54F1A8915BE00342CE8 /* LoginViewController.m */,
 				CCC8C4C61A9C0D92003DB079 /* Modal View */,
-				F93463811A93B73300600BED /* InterestsCollectionViewController.m */,
-				F93463801A93B73300600BED /* InterestsCollectionViewController.h */,
 				CCC8C4B51A9BFC96003DB079 /* InterestsViewController.h */,
 				CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */,
 				CCC8C4C01A9C0969003DB079 /* Cell */,
@@ -657,7 +652,6 @@
 				CC5244D81A89456900F52859 /* Game.m in Sources */,
 				F92CEFB71A8952B3005CD279 /* NewGameViewController.m in Sources */,
 				CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */,
-				F93463821A93B73300600BED /* InterestsCollectionViewController.m in Sources */,
 				F991EC591A9A9AD8003F826D /* SignUpModalViewController.m in Sources */,
 				F9C2F54A1A8915BE00342CE8 /* main.m in Sources */,
 				50BA68531A9AA1F0000F6469 /* GameAnnotation.m in Sources */,
