@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nld-Mb-46e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Nld-Mb-46e">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -53,7 +53,7 @@
                                     <action selector="onAttendButtonTapped:" destination="OeW-G6-eWA" eventType="touchUpInside" id="T2a-43-1LT"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QZ2-t0-b48">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="QZ2-t0-b48">
                                 <rect key="frame" x="0.0" y="312" width="320" height="207"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -520,11 +520,36 @@
                         <viewControllerLayoutGuide type="bottom" id="gwE-DN-dMv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="0RK-0h-ZYA">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-U7-lkq">
-                                <rect key="frame" x="0.0" y="163" width="320" height="356"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-Up Game Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd4-MA-yJp">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="vsi-bY-aXq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-kx-nE2">
+                                <rect key="frame" x="0.0" y="70" width="320" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="364-pF-bys"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="onSegmentedControllerTapped:" destination="aYF-Dt-POk" eventType="valueChanged" id="XQD-bz-v0H"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-U7-lkq">
+                                <rect key="frame" x="0.0" y="99" width="320" height="356"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="separatorColor" red="0.1019607843" green="0.59999999999999998" blue="0.7725490196" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
@@ -575,6 +600,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" red="0.20000000300000001" green="0.20000000300000001" blue="0.20000000300000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <inset key="separatorInset" minX="4" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <connections>
                                             <outlet property="gameAttendance" destination="Th5-AG-JRa" id="JNW-cr-Va6"/>
                                             <outlet property="gameImageView" destination="sNd-3i-hrX" id="na8-1I-SFW"/>
@@ -588,31 +614,6 @@
                                     <outlet property="delegate" destination="aYF-Dt-POk" id="Kif-aF-a9M"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick-Up Game Log" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nd4-MA-yJp">
-                                <rect key="frame" x="0.0" y="64" width="320" height="70"/>
-                                <color key="backgroundColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="vsi-bY-aXq"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="PressStart2P" family="Press Start 2P" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-kx-nE2">
-                                <rect key="frame" x="0.0" y="134" width="320" height="29"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="364-pF-bys"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <color key="tintColor" red="0.29803922772407532" green="0.29803922772407532" blue="0.29803922772407532" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="onSegmentedControllerTapped:" destination="aYF-Dt-POk" eventType="valueChanged" id="XQD-bz-v0H"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -628,6 +629,7 @@
                             <constraint firstItem="Wvw-kx-nE2" firstAttribute="leading" secondItem="0RK-0h-ZYA" secondAttribute="leadingMargin" constant="-16" id="xSq-Pr-c6q"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="VkT-Y8-QrQ">
                         <barButtonItem key="backBarButtonItem" title="Back" id="6mT-Dw-otZ"/>
                     </navigationItem>
@@ -1050,8 +1052,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="I Got Next" id="40x-RU-Tt1">
                         <barButtonItem key="backBarButtonItem" title="Cancel" id="a7Q-VG-JM9"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="WXk-gS-FoO">
+                            <connections>
+                                <action selector="onAddButtonTapped:" destination="wl2-eX-EWm" id="8U5-hI-Wyg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="hintButton" destination="WXk-gS-FoO" id="PNh-CQ-HNM"/>
                         <outlet property="mapView" destination="Dj3-QW-Py0" id="uE7-2u-itb"/>
                         <outlet property="segmentController" destination="uBj-eI-a84" id="g0v-N2-f4F"/>
                         <outlet property="tableView" destination="pBi-tV-OJZ" id="pgG-cQ-zow"/>
@@ -1147,9 +1155,9 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="7Ep-iD-FQR"/>
         <segue reference="U9f-xm-lMi"/>
         <segue reference="NCM-0O-Bcm"/>
-        <segue reference="7Ep-iD-FQR"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
 </document>
