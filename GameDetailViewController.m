@@ -59,6 +59,11 @@
         game[@"attendees"] = self.currentAttendees;
         [game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
             if (!error) {
+                dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                    for (PFObject *user in game[@"attendees"]) {
+                        [user fetchIfNeeded];
+                    }
+                });
                 [self.tableView reloadData];
             }
         }];
