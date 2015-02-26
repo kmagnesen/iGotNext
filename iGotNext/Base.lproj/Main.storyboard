@@ -1059,6 +1059,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="hintButton" destination="WXk-gS-FoO" id="PNh-CQ-HNM"/>
                         <outlet property="mapView" destination="Dj3-QW-Py0" id="uE7-2u-itb"/>
                         <outlet property="segmentController" destination="uBj-eI-a84" id="g0v-N2-f4F"/>
                         <outlet property="tableView" destination="pBi-tV-OJZ" id="pgG-cQ-zow"/>

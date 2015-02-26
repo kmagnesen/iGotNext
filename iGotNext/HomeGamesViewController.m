@@ -19,6 +19,7 @@
 
 @interface HomeGamesViewController () <UITableViewDataSource, UITableViewDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UITableViewDelegate, UIAlertViewDelegate, NewGameDelegate>
 
+@property (strong, nonatomic) IBOutlet UIBarButtonItem *hintButton;
 @property CLLocationManager *locationManager;
 @property (strong, nonatomic) IBOutlet MKMapView *mapView;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;
@@ -63,6 +64,19 @@
     self.mapView.showsUserLocation = YES;
 }
 
+- (IBAction)onAddButtonTapped:(UIBarButtonItem *)sender {
+    [self createGameHintAlert];
+}
+
+-(void)createGameHintAlert{
+    UIAlertController *inputAlert = [UIAlertController alertControllerWithTitle:@"Create New Game:" message:@"Press & Hold On Map To Create A New Pick-Up Game At That Location" preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *dismissAction = [UIAlertAction actionWithTitle:@"Dismiss" style:UIAlertActionStyleCancel handler:nil];
+
+    [inputAlert addAction:dismissAction];
+
+    [self presentViewController:inputAlert animated:true completion:nil];
+}
 
 #pragma mark ----- New Pin Methods -----
 
@@ -131,8 +145,7 @@
     }
 }
 
-- (IBAction)onAddButtonTapped:(UIBarButtonItem *)sender {
-}
+
 
 - (IBAction)unwindToGameFeed:(UIStoryboardSegue *)unwindSegue {
     [self loadGamesFeed];
