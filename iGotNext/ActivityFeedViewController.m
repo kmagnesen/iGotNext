@@ -86,7 +86,7 @@
 
             [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         }else{
-            NSLog(@"It didn't go as planned %ld", editingStyle);
+            NSLog(@"It didn't go as planned %d", editingStyle);
         }
     }
 }
