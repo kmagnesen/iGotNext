@@ -103,7 +103,7 @@
 #pragma mark ----- New Pin AlertView -----
 
 -(void) confirmLocationAlert {
-    UIAlertView *confirmationAlert = [[UIAlertView alloc] initWithTitle: @"Title"
+    UIAlertView *confirmationAlert = [[UIAlertView alloc] initWithTitle: @"New Game Location"
                                                                 message:@"Are you sure you want to create a new pick-up game here?"
                                                                delegate:self
                                                       cancelButtonTitle:@"Oops, wrong spot"
