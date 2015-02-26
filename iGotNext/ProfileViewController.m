@@ -70,9 +70,15 @@
 }
 
 - (IBAction)onLogOutButtonTapped:(UIBarButtonItem *)sender {
-    [PFUser logOut];
-    LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"];
-    [self presentViewController:loginVC animated:YES completion:nil];
+
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"LogOutSegue"]) {
+        [PFUser logOut];
+        LoginViewController *loginVC = [self.storyboard instantiateViewControllerWithIdentifier:@"LoginID"];
+        [self presentViewController:loginVC animated:YES completion:nil];
+    }
 }
 
 - (IBAction)onEditInterestsButtonTapped:(UIButton *)sender {
