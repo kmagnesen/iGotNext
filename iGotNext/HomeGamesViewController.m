@@ -164,11 +164,18 @@
 
     [query findObjectsInBackgroundWithBlock:^(NSArray *returnedGames, NSError *error) {
         if (!error) {
-            for (Game *game in returnedGames) {
-                [self.games addObject:game];
-            }
-            [self.tableView reloadData];
-            [self loadMap];
+            dispatch_async(dispatch_get_global_queue(0, 0), ^{
+                for (Game *game in returnedGames) {
+                    for (PFObject *user in game[@"attendees"]) {
+                         [user fetchIfNeeded];
+                    }
+                }
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    [self.games addObjectsFromArray:returnedGames];
+                    [self.tableView reloadData];
+                    [self loadMap];
+                });
+            });
         } else {
             NSLog(@"Error: %@ %@", error, [error userInfo]);
         }
@@ -192,11 +199,6 @@
     PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     cell.game = [self.games objectAtIndex:indexPath.row];
     return cell;
-}
-
--(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-
-
 }
 
 
