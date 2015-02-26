@@ -198,6 +198,9 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
     cell.game = [self.games objectAtIndex:indexPath.row];
+    PFGeoPoint *userLocation = [PFGeoPoint geoPointWithLocation:self.userLocation.location];
+    float distance = [cell.game.location distanceInMilesTo:userLocation];
+    cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f miles away", distance];
     return cell;
 }
 
