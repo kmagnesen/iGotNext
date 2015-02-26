@@ -49,8 +49,13 @@
     UIButton *signUpButton = [UIButton buttonWithType:UIButtonTypeCustom];
     signUpButton.translatesAutoresizingMaskIntoConstraints = NO;
     signUpButton.tintColor = [UIColor whiteColor];
-    signUpButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Bold" size:30];
-    [signUpButton setTitle:@"Create New Account" forState:UIControlStateNormal];
+    signUpButton.titleLabel.font = [UIFont fontWithName:@"Avenir-Bold" size:26];
+    signUpButton.titleLabel.adjustsFontSizeToFitWidth = YES;
+    [signUpButton.titleLabel setMinimumScaleFactor:.7f];
+    [signUpButton.layer setBorderColor: [UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1].CGColor];
+    signUpButton.layer.cornerRadius = 4.0f;
+    [[signUpButton layer] setBorderWidth:1.0f];
+    [signUpButton setTitle:@" Create New Account " forState:UIControlStateNormal];
     [signUpButton addTarget:self action:@selector(setCredentials:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:signUpButton];
 
@@ -85,12 +90,12 @@
                                                          multiplier:1.f
                                                            constant:0.f]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[signUpButton(20)]-10-[cancelButton]-65-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[signUpButton(20)]-15-[cancelButton]-45-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:viewz]];
 
-    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[cancelButton(20)]-65-|"
+    [self.view addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[cancelButton(20)]-45-|"
                                                                       options:0
                                                                       metrics:nil
                                                                         views:viewz]];
