@@ -28,7 +28,6 @@
 @property (nonatomic)NSMutableArray *geofences;
 @property (nonatomic,strong) UILongPressGestureRecognizer *lpgr;
 @property NSMutableArray *games;
-@property NSArray *sortedGames;
 @property GameAnnotation *gameAnnotation;
 @property Game *selectedGame;
 
@@ -171,7 +170,14 @@
                     }
                 }
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    [self.games addObjectsFromArray:returnedGames];
+                    self.games = [[returnedGames sortedArrayUsingComparator:^NSComparisonResult(Game *game1, Game *game2) {
+                        CLLocation *game1Location = [[CLLocation alloc] initWithLatitude:game1.location.latitude longitude:game1.location.longitude];
+                        CLLocation *game2Location = [[CLLocation alloc] initWithLatitude:game2.location.latitude longitude:game2.location.longitude];
+                        CLLocationDistance d1 = [self.userLocation.location distanceFromLocation:game1Location];
+                        CLLocationDistance d2 = [self.userLocation.location distanceFromLocation:game2Location];
+                        return d1 - d2;
+                    }] mutableCopy];
+
                     [self.tableView reloadData];
                     [self loadMap];
                 });
@@ -197,10 +203,16 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     PickUpGameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CellID"];
-    cell.game = [self.games objectAtIndex:indexPath.row];
     PFGeoPoint *userLocation = [PFGeoPoint geoPointWithLocation:self.userLocation.location];
+    cell.game = [self.games objectAtIndex:indexPath.row];
     float distance = [cell.game.location distanceInMilesTo:userLocation];
-    cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f miles away", distance];
+    if (distance < 1) {
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%.2f miles away", distance];
+    } else if (distance < 10) {
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%.1f miles away", distance];
+    } else {
+        cell.distanceLabel.text = [NSString stringWithFormat:@"%@ miles away", [@(round(distance)) descriptionWithLocale:[NSLocale currentLocale]]];
+    }
     return cell;
 }
 
