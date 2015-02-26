@@ -519,6 +519,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Player Bio" id="2mU-31-yty">
                         <barButtonItem key="rightBarButtonItem" title="Log Out" id="nFt-E1-W1u">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <action selector="onLogOutButtonTapped:" destination="nWv-mk-66D" id="E72-ui-R1Y"/>
                                 <segue destination="kyK-iL-dOW" kind="modal" id="NCM-0O-Bcm"/>
@@ -547,19 +548,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-kx-nE2">
-                                <rect key="frame" x="0.0" y="134" width="320" height="29"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="364-pF-bys"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="First"/>
-                                    <segment title="Second"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onSegmentedControllerTapped:" destination="aYF-Dt-POk" eventType="valueChanged" id="XQD-bz-v0H"/>
-                                </connections>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="60" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-U7-lkq">
                                 <rect key="frame" x="0.0" y="163" width="320" height="356"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -635,6 +623,21 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Wvw-kx-nE2">
+                                <rect key="frame" x="0.0" y="134" width="320" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="364-pF-bys"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <color key="tintColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <action selector="onSegmentedControllerTapped:" destination="aYF-Dt-POk" eventType="valueChanged" id="XQD-bz-v0H"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -658,7 +661,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5F5-RU-1V0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="400" y="996.84000000000003"/>
+            <point key="canvasLocation" x="400" y="996"/>
         </scene>
         <!--Games-->
         <scene sceneID="d5H-4Z-NK9">
@@ -669,6 +672,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Iaq-zd-EbH">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -734,7 +741,7 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2ET-g1-FmM">
                                 <rect key="frame" x="35" y="292" width="250" height="30"/>
-                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.20000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="80a-gD-eqG"/>
                                     <constraint firstAttribute="width" constant="250" id="Wxo-oN-NeL"/>
@@ -852,7 +859,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mGj-GK-qMb">
                                 <rect key="frame" x="114" y="98" width="92" height="33"/>
-                                <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="33" id="rM4-dL-I19"/>
                                     <constraint firstAttribute="width" constant="92" id="tN2-2b-F8b"/>
@@ -888,14 +895,8 @@
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0bt-Uo-WSL">
-                                                    <rect key="frame" x="15" y="8" width="50" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="aMq-Uz-HpM"/>
-                                                    </constraints>
-                                                </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oXK-R3-GSR">
-                                                    <rect key="frame" x="0.0" y="60" width="80" height="20"/>
+                                                    <rect key="frame" x="0.0" y="58" width="80" height="20"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="GHV-Tn-Jhi"/>
                                                     </constraints>
@@ -903,6 +904,12 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0bt-Uo-WSL">
+                                                    <rect key="frame" x="15" y="8" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="50" id="aMq-Uz-HpM"/>
+                                                    </constraints>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -911,7 +918,7 @@
                                             <constraint firstItem="0bt-Uo-WSL" firstAttribute="top" secondItem="oD5-gM-Nrp" secondAttribute="topMargin" id="CYh-Kn-rJs"/>
                                             <constraint firstItem="0bt-Uo-WSL" firstAttribute="leading" secondItem="oD5-gM-Nrp" secondAttribute="leadingMargin" constant="7" id="h61-gj-2hL"/>
                                             <constraint firstItem="oXK-R3-GSR" firstAttribute="leading" secondItem="oD5-gM-Nrp" secondAttribute="leadingMargin" constant="-8" id="vjM-cL-gSF"/>
-                                            <constraint firstItem="oXK-R3-GSR" firstAttribute="top" secondItem="0bt-Uo-WSL" secondAttribute="bottom" constant="2" id="wLt-x3-MvO"/>
+                                            <constraint firstItem="oXK-R3-GSR" firstAttribute="top" secondItem="0bt-Uo-WSL" secondAttribute="bottom" id="wLt-x3-MvO"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="oXK-R3-GSR" secondAttribute="trailing" constant="-8" id="zro-l3-OQj"/>
                                         </constraints>
                                         <connections>
@@ -961,6 +968,7 @@
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="uBj-eI-a84">
                                 <rect key="frame" x="0.0" y="64" width="320" height="29"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="28" id="75H-fN-0o1"/>
                                 </constraints>
@@ -968,6 +976,7 @@
                                     <segment title="Map View"/>
                                     <segment title="Game List"/>
                                 </segments>
+                                <color key="tintColor" red="0.0" green="0.72156862745098038" blue="0.85098039215686272" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <action selector="segementedControlSwitched:" destination="wl2-eX-EWm" eventType="valueChanged" id="Kee-yo-6Mn"/>
                                 </connections>
@@ -1104,6 +1113,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="S0I-kd-yFL">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1123,6 +1136,10 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mNg-Wy-SpD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -1137,7 +1154,7 @@
     <resources>
         <image name="BlankSlate" width="375" height="667"/>
         <image name="games" width="80" height="40"/>
-        <image name="gamesPlayed" width="40" height="37"/>
+        <image name="gamesPlayed" width="40" height="39"/>
         <image name="iGotNextTextLabel" width="226" height="47"/>
         <image name="playa1" width="25" height="31"/>
         <image name="sneaker" width="245" height="245"/>
@@ -1149,7 +1166,7 @@
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="U9f-xm-lMi"/>
-        <segue reference="UTy-BQ-NcK"/>
+        <segue reference="NCM-0O-Bcm"/>
         <segue reference="O8G-oh-GkA"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="0.20000000298023224" green="0.20000000298023224" blue="0.20000000298023224" alpha="1" colorSpace="calibratedRGB"/>

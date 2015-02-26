@@ -180,7 +180,7 @@
                                                                              metrics:nil
                                                                                views:views]];
 
-    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[customImageView]-[customLabel]|"
+    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|-[customImageView]-1-[customLabel]-(-1)-|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:views]];
@@ -190,7 +190,7 @@
                                                                              metrics:nil
                                                                                views:views]];
 
-    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[customLabel]-0-|"
+    [cell.contentView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:[customLabel]-(-1)-|"
                                                                              options:0
                                                                              metrics:nil
                                                                                views:views]];
