@@ -7,32 +7,32 @@
 //
 #import <QuartzCore/QuartzCore.h>
 #import "NewGameViewController.h"
+
 #import "CategoryModalViewController.h"
 #import "SetDateModalViewController.h"
 #import "StartTimeModalViewController.h"
-#import "EndTimeModalViewController.h"
+
 #import "Game.h"
 
 #import "PresentingAnimation.h"
 #import "DismissingAnimation.h"
 
 
-@interface NewGameViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartDateVCDelegate, StartTimeVCDelegate, EndTimeVCDelegate>
+@interface NewGameViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartDateVCDelegate>
 
 @property (strong, nonatomic) IBOutlet UIButton *createButton;
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *evenDescriptionTextField;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
 @property (strong, nonatomic) IBOutlet UILabel *startTimeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *endTimeLabel;
-@property (strong, nonatomic) IBOutlet UILabel *dateLabel;
 
 @property (strong, nonatomic) NSArray *sportsArray;
 
 @property NSString *category;
-@property NSDate *startDate;
 @property NSDate *startTime;
-@property NSDate *endTime;
+
+
+@property BOOL unwind;
 
 @end
 
@@ -43,9 +43,10 @@
 
     self.eventNameTextField.text = @"";
     self.evenDescriptionTextField.text = @"";
+    self.categoryLabel.text = @"";
+    self.startTimeLabel.text = @"";
     self.category = @"";
     self.startTime = [NSDate new];
-    self.endTime = [NSDate new];
 
     [[self.createButton layer] setBorderWidth:2.0f];
     [[self.createButton layer] setBorderColor:[UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1].CGColor];
@@ -64,9 +65,7 @@
 -(void)saveUpdatedGame {
     self.game[@"title"] = self.eventNameTextField.text;
     self.game[@"gameDescription"] = self.evenDescriptionTextField.text;
-    self.game[@"startDate"] = self.startDate;
     self.game[@"startTime"] = self.startTime;
-    self.game[@"endTime"] = self.endTime;
     self.game[@"category"] = self.category;
     [self.game saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (succeeded) {
@@ -102,28 +101,6 @@
                                           completion:NULL];
 }
 
-- (IBAction)onSetStartTimeTapped:(id)sender {
-    StartTimeModalViewController *startTimeVC = [StartTimeModalViewController new];
-    startTimeVC.delegate = self;
-    startTimeVC.transitioningDelegate = self;
-    startTimeVC.modalPresentationStyle = UIModalPresentationCustom;
-
-    [self presentViewController:startTimeVC
-                                            animated:YES
-                                          completion:NULL];
-}
-
-- (IBAction)onSetEndTimeTapped:(id)sender {
-    EndTimeModalViewController *endTimeVC = [EndTimeModalViewController new];
-    endTimeVC.delegate = self;
-    endTimeVC.transitioningDelegate = self;
-    endTimeVC.modalPresentationStyle = UIModalPresentationCustom;
-
-    [self presentViewController:endTimeVC
-                                            animated:YES
-                                          completion:NULL];
-}
-
 
 #pragma mark ----- UIViewControllerTransitioningDelegate -----
 
@@ -148,37 +125,59 @@
 }
 
 -(void)startDateSetWith:(NSDate *)eventStartDate {
-    self.startDate = [NSDate new];
-    self.startDate = eventStartDate;
-
-    self.dateLabel.text = [NSDateFormatter localizedStringFromDate:self.startDate
-                                                         dateStyle:NSDateFormatterMediumStyle
-                                                         timeStyle:NSDateFormatterNoStyle];
-}
-
--(void)startTimeSetWith:(NSDate *)eventStartTime {
     self.startTime = [NSDate new];
-    self.startTime = eventStartTime;
+    self.startTime = eventStartDate;
 
     self.startTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.startTime
                                                               dateStyle:NSDateFormatterNoStyle
                                                               timeStyle:NSDateFormatterShortStyle];
 }
 
--(void)endTimeSetWith:(NSDate *)eventEndDate {
-    self.endTime = [NSDate new];
-    self.endTime = eventEndDate;
-
-    self.endTimeLabel.text = [NSDateFormatter localizedStringFromDate:self.endTime
-                                                            dateStyle:NSDateFormatterNoStyle
-                                                            timeStyle:NSDateFormatterShortStyle];
-}
-
 
 #pragma mark ----- Pre-Unwind action -----
 
 - (IBAction)onCreateTapped:(UIButton *)sender {
-    [self saveUpdatedGame];
+    [self checkGameInputs];
+
 }
+
+#pragma mark ----- Check Inputs -----
+
+-(void)checkGameInputs {
+    if ([self.eventNameTextField.text isEqualToString:@""] || [self.evenDescriptionTextField.text isEqualToString:@""] || [self.categoryLabel.text isEqualToString:@""] || [self.startTimeLabel.text isEqualToString:@""]) {
+
+        [self checkInputsAlert];
+        
+        self.unwind = NO;
+
+        [self shouldPerformSegueWithIdentifier:@"unwindToGameFeed" sender:nil];
+
+    } else {
+        [self saveUpdatedGame];
+
+        self.unwind = YES;
+
+        [self shouldPerformSegueWithIdentifier:@"unwindToGameFeed" sender:nil];
+
+    }
+}
+
+-(void)checkInputsAlert{
+    UIAlertController *inputAlert = [UIAlertController alertControllerWithTitle:@"Oops" message:@"It seems at least one of fields was not set." preferredStyle:UIAlertControllerStyleAlert];
+
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleCancel handler:nil];
+
+    [inputAlert addAction:cancelAction];
+
+    [self presentViewController:inputAlert animated:true completion:nil];
+}
+
+- (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
+    if (self.unwind == NO) {
+        return NO;
+    }
+    return YES;
+}
+
 
 @end

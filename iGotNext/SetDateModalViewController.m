@@ -66,10 +66,10 @@
 -(void)datePickerView {
     _datePicker = [UIDatePicker new];
     _datePicker.translatesAutoresizingMaskIntoConstraints = NO;
-    [_datePicker setDatePickerMode:UIDatePickerModeDate];
+    [_datePicker setDatePickerMode:UIDatePickerModeDateAndTime];
 
     _datePicker.minimumDate = [NSDate date];
-    _datePicker.transform = CGAffineTransformMakeScale(0.7, 0.7);
+    _datePicker.transform = CGAffineTransformMakeScale(0.75, 0.75);
 
     [self.view addSubview:_datePicker];
 

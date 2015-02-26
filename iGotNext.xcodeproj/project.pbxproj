@@ -17,8 +17,6 @@
 		CC558DCD1A93C93900AE0566 /* CategoryModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */; };
 		CC558DD01A9436EF00AE0566 /* PresentingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DCF1A9436EF00AE0566 /* PresentingAnimation.m */; };
 		CC558DD41A94C06000AE0566 /* DismissingAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DD31A94C06000AE0566 /* DismissingAnimation.m */; };
-		CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */; };
-		CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */; };
 		CCBA1B081A8BF3E200018FC7 /* HomeGamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */; };
 		CCC8C4B71A9BFC96003DB079 /* InterestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4B61A9BFC96003DB079 /* InterestsViewController.m */; };
 		CCC8C4CE1A9C30D3003DB079 /* MainTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = CCC8C4CD1A9C30D3003DB079 /* MainTabBarController.m */; };
@@ -92,10 +90,6 @@
 		CC558DCF1A9436EF00AE0566 /* PresentingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PresentingAnimation.m; sourceTree = "<group>"; };
 		CC558DD21A94C06000AE0566 /* DismissingAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DismissingAnimation.h; sourceTree = "<group>"; };
 		CC558DD31A94C06000AE0566 /* DismissingAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DismissingAnimation.m; sourceTree = "<group>"; };
-		CC558DD51A94CA5B00AE0566 /* StartTimeModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StartTimeModalViewController.h; sourceTree = "<group>"; };
-		CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StartTimeModalViewController.m; sourceTree = "<group>"; };
-		CC558DD91A94CAB500AE0566 /* EndTimeModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EndTimeModalViewController.h; sourceTree = "<group>"; };
-		CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EndTimeModalViewController.m; sourceTree = "<group>"; };
 		CCBA1B061A8BF3E200018FC7 /* HomeGamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeGamesViewController.h; sourceTree = "<group>"; };
 		CCBA1B071A8BF3E200018FC7 /* HomeGamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeGamesViewController.m; sourceTree = "<group>"; };
 		CCC8C4B51A9BFC96003DB079 /* InterestsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InterestsViewController.h; sourceTree = "<group>"; };
@@ -251,10 +245,6 @@
 				CC558DCC1A93C93900AE0566 /* CategoryModalViewController.m */,
 				F991EC631A9D81A5003F826D /* SetDateModalViewController.h */,
 				F991EC641A9D81A5003F826D /* SetDateModalViewController.m */,
-				CC558DD51A94CA5B00AE0566 /* StartTimeModalViewController.h */,
-				CC558DD61A94CA5B00AE0566 /* StartTimeModalViewController.m */,
-				CC558DD91A94CAB500AE0566 /* EndTimeModalViewController.h */,
-				CC558DDA1A94CAB500AE0566 /* EndTimeModalViewController.m */,
 			);
 			name = "Modal Views";
 			sourceTree = "<group>";
@@ -651,14 +641,12 @@
 				F93463881A93DA6100600BED /* Interest.m in Sources */,
 				CC5244D81A89456900F52859 /* Game.m in Sources */,
 				F92CEFB71A8952B3005CD279 /* NewGameViewController.m in Sources */,
-				CC558DDB1A94CAB500AE0566 /* EndTimeModalViewController.m in Sources */,
 				F991EC591A9A9AD8003F826D /* SignUpModalViewController.m in Sources */,
 				F9C2F54A1A8915BE00342CE8 /* main.m in Sources */,
 				50BA68531A9AA1F0000F6469 /* GameAnnotation.m in Sources */,
 				F92CEFB41A89509D005CD279 /* PickUpGameTableViewCell.m in Sources */,
 				F9C2F5781A891F8100342CE8 /* ActivityFeedViewController.m in Sources */,
 				CCC8C4B71A9BFC96003DB079 /* InterestsViewController.m in Sources */,
-				CC558DD71A94CA5B00AE0566 /* StartTimeModalViewController.m in Sources */,
 				F991EC651A9D81A5003F826D /* SetDateModalViewController.m in Sources */,
 				F9110BBD1A969C1C0002AD85 /* EditCollectionViewCell.m in Sources */,
 				F9C2F5751A891F4900342CE8 /* ProfileViewController.m in Sources */,

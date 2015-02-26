@@ -16,9 +16,7 @@
 @dynamic creator;
 @dynamic location;
 @dynamic category;
-@dynamic startDate;
 @dynamic startTime;
-@dynamic endTime;
 @dynamic attendees;
 
 + (void)load {
