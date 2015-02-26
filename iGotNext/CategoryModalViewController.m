@@ -41,7 +41,7 @@
     UIButton *setSportButton = [UIButton buttonWithType:UIButtonTypeSystem];
     setSportButton.translatesAutoresizingMaskIntoConstraints = NO;
     setSportButton.tintColor = [UIColor whiteColor];
-    setSportButton.titleLabel.font = [UIFont fontWithName:@"Avenir" size:20];
+    setSportButton.titleLabel.font = [UIFont fontWithName:@"Helvetica" size:20];
     [setSportButton setTitle:@"Set Sport" forState:UIControlStateNormal];
     [setSportButton addTarget:self action:@selector(setSport:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:setSportButton];
