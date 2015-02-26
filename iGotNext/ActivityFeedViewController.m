@@ -70,6 +70,26 @@
         }
     }];
 }
+-(void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (self.segmentedController.selectedSegmentIndex == 0) {
+
+        if (editingStyle == UITableViewCellEditingStyleDelete) {
+            self.segmentedController.selectedSegmentIndex = 0;
+            Game *game = [self.gamesDisplayed objectAtIndex:indexPath.row];
+            [self.gamesDisplayed removeObjectAtIndex:indexPath.row];
+            [game deleteInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                if (succeeded) {
+                    [self.tableView reloadData];
+                }
+            }];
+
+            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+        }else{
+            NSLog(@"It didn't go as planned %ld", editingStyle);
+        }
+    }
+}
 
 -(void)loadEventsCurrentUserIsAttending {
     self.gamesDisplayed = [NSMutableArray new];
