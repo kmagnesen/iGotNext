@@ -45,6 +45,8 @@
     [self.view endEditing:YES];
 }
 
+
+
 - (void)addSignUpButtons {
     UIButton *signUpButton = [UIButton buttonWithType:UIButtonTypeCustom];
     signUpButton.translatesAutoresizingMaskIntoConstraints = NO;
@@ -114,6 +116,7 @@
     usernameTF.placeholder = @"Enter Desired Username";
     usernameTF.autocorrectionType = UITextAutocorrectionTypeNo;
     usernameTF.returnKeyType = UIReturnKeyDone;
+    [usernameTF resignFirstResponder];
     [self.view addSubview:usernameTF];
 
     passwordTF.translatesAutoresizingMaskIntoConstraints = NO;

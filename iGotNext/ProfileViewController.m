@@ -31,7 +31,7 @@
     [super viewDidLoad];
 
     [[self.updateButton layer] setBorderWidth:2.0f];
-    [[self.updateButton layer] setBorderColor:[UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1].CGColor];
+    [[self.updateButton layer] setBorderColor:[UIColor colorWithRed:0.2 green:0.2 blue:0.2 alpha:1].CGColor];
 }
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -54,8 +54,6 @@
         [userQuery getObjectInBackgroundWithId:currentUser.objectId block:^(PFObject *object, NSError *error) {
 
             if (!error) {
-                self.navigationItem.title = [NSString stringWithFormat:@"Profile"];
-
                 self.usernameLabel.text = [NSString stringWithFormat:@"%@",[[PFUser currentUser]valueForKey:@"username"]];
                 self.interests = [NSMutableArray arrayWithArray:[[PFUser currentUser]valueForKey:@"interests"]];
 
