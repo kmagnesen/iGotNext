@@ -18,6 +18,8 @@
 
 
 @interface NewGameViewController () <UIViewControllerTransitioningDelegate, CategoryVCDelegate, StartDateVCDelegate, StartTimeVCDelegate, EndTimeVCDelegate>
+
+@property (strong, nonatomic) IBOutlet UIButton *createButton;
 @property (strong, nonatomic) IBOutlet UITextField *eventNameTextField;
 @property (strong, nonatomic) IBOutlet UITextField *evenDescriptionTextField;
 @property (strong, nonatomic) IBOutlet UILabel *categoryLabel;
@@ -44,6 +46,9 @@
     self.category = @"";
     self.startTime = [NSDate new];
     self.endTime = [NSDate new];
+
+    [[self.createButton layer] setBorderWidth:2.0f];
+    [[self.createButton layer] setBorderColor:[UIColor colorWithRed:0 green:0.722 blue:0.851 alpha:1].CGColor];
 
     UITapGestureRecognizer *tapBackground = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(dismissKeyboard:)];
     [tapBackground setNumberOfTapsRequired:1];
